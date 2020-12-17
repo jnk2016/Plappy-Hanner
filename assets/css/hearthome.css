@@ -1,0 +1,216 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 375px;
+  height: 812px;
+  font-family: "spartan";
+  color: black;
+  overflow: hidden;
+}
+
+.mainhome {
+  margin: 1em;
+}
+
+.mainhome .header_heart {
+  width: 100%;
+  position: fixed;
+}
+
+.heading_heart h2 {
+  font-size: 16px;
+  display: inline;
+  line-height: 40px;
+}
+
+.heading_heart p {
+  color: rgba(56, 56, 56, 0.8);
+  font-size: 14px;
+}
+
+.header_heart img {
+  right: 2em;
+  position: absolute;
+  display: inline;
+  vertical-align: middle;
+}
+
+.mainNotification {
+  margin-top: 6em;
+  background: #9b9b9b;
+  width: 100%;
+  height: 280px;
+  border-radius: 30px 30px 0px 0px;
+  /* z-index: -1; */
+  position: absolute;
+  display:block;
+}
+
+.homeCalendar {
+  color: white;
+}
+
+.homeCalendar p {
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  padding: 1.5em;
+  font-weight: bold;
+}
+
+.options {
+  margin-left: 10px;
+}
+
+.options ul {
+  display: block;
+  list-style: none;
+  position: fixed;
+}
+
+.options ul li {
+  display: inline-block;
+}
+
+.options ul li a {
+  text-decoration: none;
+  display: inline;
+  float: left;
+  color: white;
+  padding: 0.3em;
+  text-align: center;
+  line-height: 30px;
+}
+
+.options #main {
+  background: rgba(93, 124, 184, 0.25);
+  border-radius: 10px;
+}
+
+.home_button_nav {
+  margin: 16em 0 0 1.3em;
+  padding-top: 1em;
+  display: inline-block;
+  background: #FFfad1;
+  border-radius: 10px;
+  width: 90%;
+  height: 130px;
+  z-index: 1;
+  position: absolute;
+}
+
+.home_button_nav ul {
+  margin-left: 0.8em;
+}
+
+.home_button_nav ul li {
+  display: inline-block;
+  font-family: "spartan";
+  color: black;
+}
+
+.home_button_nav button {
+  height: 30px;
+  width: auto;
+  background: #CCDED6;
+  border-radius: 20px;
+  padding: 0 15px 0 15px;
+  border: none;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+
+.home_button_nav button:hover {
+  background: #7EBD9F;
+}
+
+.notification {
+  list-style-type: none;
+}
+
+.notification ul {
+  list-style: none;
+  width: 100%;
+}
+
+.notification ul li {
+  display: inline-block;
+  margin: 1em 0.6em 0.6em 0.8em;
+}
+
+.notifications .events, .tasks {
+  display:inline;
+  position:relative;
+}
+
+.homeEvents {
+  background: #FFFFFF;
+  width: 100px;
+  height: 60px;
+  padding: 0.4em;
+}
+
+.homeTasks {
+  background: #FFFFFF;
+  width: 100px;
+  height: 60px;
+  padding: 0.4em;
+}
+
+.notification h3 {
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0.5em;
+  color: black;
+}
+
+.notification h4 {
+  font-size: 24px;
+  text-align: center;
+  color: rgba(56, 56, 56, 0.8);
+}
+
+.notification p {
+  font-size: 9px;
+  text-align: center;
+  color: rgba(56, 56, 56, 0.8);
+}
+
+.feat_container {
+  position: absolute;
+  background: white;
+  height: 200px;
+  padding-top: 6em;
+  border-radius: 20px 20px 0 0;
+  margin-top: 20em;
+}
+
+.feat_options h5 {
+  margin-left: 1.5em;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+}
+
+.feat_container ul {
+  list-style: none;
+}
+
+.feat_container ul li {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 0.7em;
+}
+
+.feat_options button {
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+  border: none;
+  font-family: "spartan";
+  line-height: 20px;
+  margin: 1em;
+}
+/*# sourceMappingURL=hearthome.css.map */

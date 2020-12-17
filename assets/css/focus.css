@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: white;
+  font-family: "spartan";
+  height: 800px;
+  width:375px;
+}
+
+.focusHeader {
+  width: 100%;
+  position: fixed;
+}
+
+.focusHeader ul li {
+  display: inline-block;
+  margin: 1em 0 2em 1em;
+}
+
+.focusHeader ul li a {
+  font-size: 20px;
+  letter-spacing: 0.2em;
+  position: relative;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+
+.focusHeader ul li img.calendar {
+  display: inline;
+  vertical-align: bottom;
+}
+
+.focusHeader ul li img.avatar {
+  right: 0;
+  top: 0;
+  padding: 0.5em;
+  position: absolute;
+}
+
+.focusContainer {
+  background: #e5e5e5;
+  width: 100%;
+  height: auto;
+  border-radius: 30px 30px 0 0;
+  margin-top:6em;
+}
+
+.focusContainer ul li {
+  margin: 1em;
+  list-style: none;
+  position: relative;
+  display: inline;
+}
+
+.focusContainer .goal {
+  background: white;
+  width: 300px;
+  height: 185px;
+  border-radius: 20px;
+  margin-left: 2em;
+}
+
+.goal a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  margin-left: 4em;
+  line-height: 50px;
+}
+
+.button_container {
+  background: #e5e5e5;
+  width: 210px;
+  height: 120px;
+  border-radius: 20px;
+  margin-left: 3em;
+}
+
+.button_container p {
+  color: black;
+  padding: 1.5em 1em 0.5em 1em;
+  font-size: 14px;
+}
+
+mark.orange {
+  color: #e0812a;
+  background: none;
+}
+
+.button_container button {
+  width: 160px;
+  height: 40px;
+  text-align: center;
+  border-radius: 20px;
+  margin-left: 2em;
+  background: white;
+  margin-top: 0.8em;
+}
+
+.focusContainer .vision {
+  background: white;
+  width: 300px;
+  height: 185px;
+  border-radius: 20px;
+  margin-left: 2em;
+}
+
+.vision h2 {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  margin-left: 4em;
+  line-height: 50px;
+  font-weight: normal;
+}
+
+.visionButton_container2 {
+  background: #e5e5e5;
+  background-image: url(../images/whiteboard.png);
+  background-repeat: no-repeat;
+  background-position: top;
+  width: 240px;
+  height: 110px;
+  border-radius: 20px;
+  margin-left: 1.8em;
+  position: relative;
+  padding-top: 3.5px;
+}
+
+.visionButton_container2 p {
+  font-size: 14px;
+  padding: 1em 1em 1em 2em;
+}
+
+.visionButton_container2 button {
+  width: 160px;
+  height: 40px;
+  text-align: center;
+  border-radius: 20px;
+  margin-left: 3em;
+  background: white;
+  margin-top: 0.8em;
+}
+
+.focusContainer .budget {
+  background: white;
+  width: 300px;
+  height: 185px;
+  border-radius: 20px;
+  margin-left: 2em;
+}
+
+.budget h3 {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  margin-left: 3em;
+  line-height: 50px;
+  font-weight: normal;
+}
+
+.budget .button_container3 {
+  background: #e5e5e5;
+  width: 200px;
+  height: 120px;
+  border-radius: 20px;
+  margin-left: 3em;
+  position: relative;
+  padding-top: 3px;
+}
+
+.button_container3 h4 {
+  text-decoration: none;
+  color: black;
+  font-size: 12px;
+  margin-left: 3.5em;
+  padding-top: 10px;
+  font-weight: normal;
+}
+
+.button_container3 ul {
+  position: relative;
+  margin-left: 0.5em;
+  padding-top: 10px;
+}
+
+.button_container3 ul li {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+.button_container3 .month {
+  background: #ccded6;
+  width: 80px;
+  height: 30px;
+  border-radius: 10px;
+  padding: 0.2em;
+}
+
+.month p {
+  font-size: 10px;
+  text-align: center;
+}
+
+.month a {
+  font-size: 16px;
+  margin: 3em 1em 0.5em 0.5em;
+  text-decoration: none;
+  color: black;
+}
+
+.button_container3 .year {
+  background: #ccded6;
+  width: 80px;
+  height: 30px;
+  border-radius: 10px;
+  padding: 0.2em;
+}
+
+.year p {
+  font-size: 10px;
+  text-align: center;
+}
+
+.year a {
+  font-size: 16px;
+  color: white;
+  text-decoration: none;
+  margin: 3em 1em 0.5em 0.5em;
+}
+
+.button_container3 button {
+  width: 160px;
+  height: 40px;
+  text-align: center;
+  border-radius: 20px;
+  margin-left: 1.5em;
+  background: white;
+  margin-top: 0.3em;
+}
+/*# sourceMappingURL=focus.css.map */
