@@ -67,7 +67,7 @@ class Focus extends Component {
                                     </div>
                                 </li>
                             </ul>
-                            <button>TRACK SAVINGS</button>
+                            <button onClick={()=> this.props.navigation.navigate('BudgetTracker')}>TRACK SAVINGS</button>
                         </div>
                     </div>
                 </li>
