@@ -6,6 +6,7 @@
 html, body {
   width:100%;
   height:100%;
+  /* overflow: scroll; */
 }
 
 .Home body {
@@ -17,6 +18,8 @@ html, body {
   line-height: 0.1;
   overflow-y: visible;
   display:block;
+  padding-top: 2%;
+  margin-top: -6%;
 }
 
 .Home main {
@@ -35,7 +38,7 @@ html, body {
   z-index: 1;
 }
 
-h2 {
+.calendar-wrap h2 {
   font-size: 18px;
   padding: 1.5em 1em;
 }
