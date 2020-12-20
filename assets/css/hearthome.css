@@ -3,214 +3,192 @@
   padding: 0;
 }
 
-body {
-  width: 375px;
-  height: 812px;
+html, body {
+  width:100%;
+  height:100%;
+}
+
+.Home body {
+  margin: 0;
   font-family: "spartan";
+  background: white;
   color: black;
-  overflow: hidden;
-}
-
-.mainhome {
-  margin: 1em;
-}
-
-.mainhome .header_heart {
-  width: 100%;
-  position: fixed;
-}
-
-.heading_heart h2 {
-  font-size: 16px;
-  display: inline;
-  line-height: 40px;
-}
-
-.heading_heart p {
-  color: rgba(56, 56, 56, 0.8);
   font-size: 14px;
-}
-
-.header_heart img {
-  right: 2em;
-  position: absolute;
-  display: inline;
-  vertical-align: middle;
-}
-
-.mainNotification {
-  margin-top: 6em;
-  background: #9b9b9b;
-  width: 100%;
-  height: 280px;
-  border-radius: 30px 30px 0px 0px;
-  /* z-index: -1; */
-  position: absolute;
+  line-height: 0.1;
+  overflow-y: visible;
   display:block;
 }
 
-.homeCalendar {
+.Home main {
+  position: relative;
+  height:100%;
+}
+
+#section-a {
+  background: #c4c4c4;
+  width: 100%;
+  height: 100%;
   color: white;
-}
-
-.homeCalendar p {
-  font-size: 18px;
-  letter-spacing: 0.1em;
-  padding: 1.5em;
-  font-weight: bold;
-}
-
-.options {
-  margin-left: 10px;
-}
-
-.options ul {
-  display: block;
-  list-style: none;
-  position: fixed;
-}
-
-.options ul li {
+  border-radius: 30px 30px 0 0;
   display: inline-block;
-}
-
-.options ul li a {
-  text-decoration: none;
-  display: inline;
-  float: left;
-  color: white;
-  padding: 0.3em;
-  text-align: center;
-  line-height: 30px;
-}
-
-.options #main {
-  background: rgba(93, 124, 184, 0.25);
-  border-radius: 10px;
-}
-
-.home_button_nav {
-  margin: 16em 0 0 1.3em;
-  padding-top: 1em;
-  display: inline-block;
-  background: #FFfad1;
-  border-radius: 10px;
-  width: 90%;
-  height: 130px;
-  z-index: 1;
   position: absolute;
+  z-index: 1;
 }
 
-.home_button_nav ul {
-  margin-left: 0.8em;
+h2 {
+  font-size: 18px;
+  padding: 1.5em 1em;
 }
 
-.home_button_nav ul li {
+.days-jan {
+  margin: 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+.days-jan ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.days-jan ul li {
   display: inline-block;
-  font-family: "spartan";
+  margin: 0.5em;
+}
+
+.days-jan ul li a {
+  color: white;
+  text-decoration: none;
+  line-height: 2;
+}
+
+.days-jan #main {
+  background: rgba(93, 124, 184, 0.25);
+  display: block;
+  padding: 0.5em;
+  border-radius: 10px;
+}
+
+#section-b {
+  background-color: #fffad1;
+  top: 150px;
+  width: 90%;
+  height:auto;
+  position: relative;
+  border-radius: 10px;
+  z-index: 3;
+  padding:0.5em;
+  text-align: center;
+  margin:1em auto;
+}
+
+.main-static {
   color: black;
+  width: 90%;
+  height: 30%;
+  margin:1em auto;
 }
 
-.home_button_nav button {
-  height: 30px;
-  width: auto;
-  background: #CCDED6;
-  border-radius: 20px;
-  padding: 0 15px 0 15px;
-  border: none;
-  font-size: 9px;
-  letter-spacing: 0.1em;
-}
-
-.home_button_nav button:hover {
-  background: #7EBD9F;
-}
-
-.notification {
+.main-static ul {
   list-style-type: none;
 }
 
+.main-static ul li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+.main-static button {
+  display: inline;
+  background: #ccded6;
+  border-radius: 20px;
+  padding: 1em;
+  margin:0.3em;
+  letter-spacing: 0.1em;
+  border: none;
+  font-size: 10px;
+}
+
+.main-static button:active {
+  background: #7ebd9f;
+}
+
+.notification {
+  padding: 0.1em;
+  text-align: center;
+  width:100%;
+}
+
 .notification ul {
-  list-style: none;
-  width: 100%;
+  list-style-type: none;
 }
 
 .notification ul li {
-  display: inline-block;
-  margin: 1em 0.6em 0.6em 0.8em;
-}
-
-.notifications .events, .tasks {
-  display:inline;
-  position:relative;
-}
-
-.homeEvents {
-  background: #FFFFFF;
-  width: 100px;
-  height: 60px;
-  padding: 0.4em;
-}
-
-.homeTasks {
-  background: #FFFFFF;
-  width: 100px;
-  height: 60px;
-  padding: 0.4em;
-}
-
-.notification h3 {
-  font-size: 10px;
-  font-weight: bold;
-  text-align: center;
-  margin: 0.5em;
-  color: black;
-}
-
-.notification h4 {
-  font-size: 24px;
-  text-align: center;
-  color: rgba(56, 56, 56, 0.8);
-}
-
-.notification p {
-  font-size: 9px;
-  text-align: center;
-  color: rgba(56, 56, 56, 0.8);
-}
-
-.feat_container {
-  position: absolute;
-  background: white;
-  height: 200px;
-  padding-top: 6em;
-  border-radius: 20px 20px 0 0;
-  margin-top: 20em;
-}
-
-.feat_options h5 {
-  margin-left: 1.5em;
-  font-size: 16px;
-  letter-spacing: 0.1em;
-}
-
-.feat_container ul {
-  list-style: none;
-}
-
-.feat_container ul li {
-  display: inline-block;
-  vertical-align: top;
-  margin-left: 0.7em;
-}
-
-.feat_options button {
-  width: 80px;
-  height: 80px;
-  border-radius: 50px;
-  border: none;
-  font-family: "spartan";
-  line-height: 20px;
+  display:inline-block;
   margin: 1em;
 }
-/*# sourceMappingURL=hearthome.css.map */
+
+.homeEvents , .tasks {
+  background: white;
+  min-width: 120px;
+  min-height: 80px;
+  text-align: center;
+  line-height: 20px;
+  display: block;
+}
+
+.homeEvents h3, .tasks h3 {
+  padding: 0.5em;
+  font-size: 12px;
+}
+
+.homeEvents h4, .tasks h4 {
+  font-size: 24px;
+}
+
+
+.homeEvents  p, .tasks p {
+  padding: 0;
+}
+
+#section-c {
+  position: relative;
+  background: white;
+  border-radius: 30px 30px 0 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  padding-top:150px;
+}
+
+.features-menu {
+  text-align: left;
+}
+
+.features-menu ul {
+  list-style-type: none;
+}
+
+.features-menu ul li {
+  display: inline-block;
+}
+
+.features-menu button {
+  margin: 1em;
+  width: 90px;
+  height: 90px;
+  border-radius: 50px;
+  padding: 1em;
+  border: none;
+  font-size: 14px;
+  vertical-align: top;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.features-menu h6 {
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  padding: 1em;
+}
+/*# sourceMappingURL=home.css.map */

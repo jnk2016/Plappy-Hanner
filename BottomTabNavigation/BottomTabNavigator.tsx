@@ -9,6 +9,8 @@ import SelfCare from '../screens/SelfCare';
 import Health from '../screens/Health';
 import Focus from '../screens/Focus';
 import Calendar from '../screens/Calendar';
+import Settings from '../screens/Settings';
+import BudgetTracker from '../screens/BudgetTracker';
 
 const Tab = createBottomTabNavigator();
 
@@ -32,12 +34,16 @@ export default function MyTabs() {
                  else if(route.name === 'FeatureList'){
                      return(<Image source={require('../assets/images/ACTIVITY.png')}style={{width:25, height:40, marginBottom: 15}}/>)
                  }
+                 else if(route.name === 'Settings'){
+                     return(<Image source={require('../assets/images/SETTINGS.png')}style={{width:28, height:28}}/>)
+                 }
              }
          })}
          >
             <Tab.Screen name="Home" component={HomeStackScreen} options={{tabBarLabel:''}}/>
             <Tab.Screen name="Calendar" component={Calendar} options={{tabBarLabel:''}}/>
             <Tab.Screen name="FeatureList" component={FeaturesStackScreen} options={{tabBarLabel:''}}/>
+            <Tab.Screen name="Settings" component={SettingsStackScreen} options={{tabBarLabel:''}}/>
         </Tab.Navigator>
     </NavigationContainer>
   );
@@ -46,7 +52,7 @@ export default function MyTabs() {
 const HomeStack = createStackNavigator();
 function HomeStackScreen(){
     return(
-        <HomeStack.Navigator screenOptions={{ headerShown: true }}>
+        <HomeStack.Navigator screenOptions={{ headerShown: false }}>
             <HomeStack.Screen name = "Home" component={Home}
                               options={{
                                 title: "Hello, Danphuong",
@@ -58,7 +64,8 @@ function HomeStackScreen(){
                                   fontWeight: 'bold', //Set Header text style
                                 },
                                 headerRight: ()=> <ProfilePic/>,
-                              }}/>
+                              }}
+                              />
         </HomeStack.Navigator>
     );
 }
@@ -70,16 +77,31 @@ function FeaturesStackScreen(){
             <FeaturesStack.Screen name = "FeatureList" component={FeatureList}/>
             <FeaturesStack.Screen name = "SelfCare" component={SelfCare}/>
             <FeaturesStack.Screen name = "Health" component={Health}/>
-            <FeaturesStack.Screen name = "Focus" component={Focus}/>
+            <FeaturesStack.Screen name = "Focus" component={FocusStackScreen}/>
         </FeaturesStack.Navigator>
     );
 }
 
-function ProfilePic(){
-  // const back = () => {
-  //   props.navigationProps.navigate("UserProfileScreen", {screen: 'UserProfileScreen'});
-  // };
+const FocusStack = createStackNavigator();
+function FocusStackScreen(){
+  return(
+      <FocusStack.Navigator screenOptions={{ headerShown: false }}>
+          <FocusStack.Screen name = "Focus" component={Focus}/>
+          <FocusStack.Screen name = "BudgetTracker" component={BudgetTracker}/>
+      </FocusStack.Navigator>
+  );
+}
 
+const SettingsStack = createStackNavigator();
+function SettingsStackScreen(){
+    return(
+        <SettingsStack.Navigator screenOptions={{ headerShown: false }}>
+            <SettingsStack.Screen name = "Settings" component={Settings}/>
+        </SettingsStack.Navigator>
+    );
+}
+
+function ProfilePic(){
   return (
     <View style={{ flexDirection: 'row' }}>
         {/* Back Button Image */}
