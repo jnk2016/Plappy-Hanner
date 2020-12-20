@@ -52,7 +52,7 @@ export default function MyTabs() {
 const HomeStack = createStackNavigator();
 function HomeStackScreen(){
     return(
-        <HomeStack.Navigator screenOptions={{ headerShown: false }}>
+        <HomeStack.Navigator screenOptions={{ headerShown: true }}>
             <HomeStack.Screen name = "Home" component={Home}
                               options={{
                                 title: "Hello, Danphuong",
@@ -62,6 +62,7 @@ function HomeStackScreen(){
                                 headerTintColor: '#000000', //Set Header text color
                                 headerTitleStyle: {
                                   fontWeight: 'bold', //Set Header text style
+                                  fontFamily: 'Spartan',
                                 },
                                 headerRight: ()=> <ProfilePic/>,
                               }}
