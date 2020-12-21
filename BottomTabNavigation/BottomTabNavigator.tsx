@@ -81,8 +81,8 @@ function FeaturesStackScreen(){
     return(
         <FeaturesStack.Navigator screenOptions={{ headerShown: false }}>
             <FeaturesStack.Screen name = "FeatureList" component={FeaturesList}/>
-            <FeaturesStack.Screen name = "SelfCare" component={NewSelfCare}/>
-            <FeaturesStack.Screen name = "Health" component={NewHealth}/>
+            <FeaturesStack.Screen name = "SelfCare" component={SelfCare}/>
+            <FeaturesStack.Screen name = "Health" component={Health}/>
             <FeaturesStack.Screen name = "Focus" component={FocusStackScreen}/>
         </FeaturesStack.Navigator>
     );
@@ -92,7 +92,7 @@ const FocusStack = createStackNavigator();
 function FocusStackScreen(){
   return(
       <FocusStack.Navigator screenOptions={{ headerShown: false }}>
-          <FocusStack.Screen name = "Focus" component={NewFocus}/>
+          <FocusStack.Screen name = "Focus" component={Focus}/>
           <FocusStack.Screen name = "BudgetTracker" component={BudgetTracker}/>
       </FocusStack.Navigator>
   );
