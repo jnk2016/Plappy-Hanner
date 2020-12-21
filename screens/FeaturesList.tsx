@@ -1,32 +1,27 @@
+import useFloatingHeaderHeight from '@react-navigation/stack/lib/typescript/src/utils/useHeaderHeight';
 import React, {useState} from 'react';
 import { Image, StyleSheet, View, Button, TouchableOpacity, Text} from 'react-native';
 
 export default function NewFeaturesList({navigation}){
 
     return(
-        <View>
+        <View style={{backgroundColor: 'white'}}>
             <View style = {styles.bigContainer}>
                 <View style={styles.smallContainer}>
-                    <Image source={require('../assets/images/Ellipseavatar.png')}
-                    style={{width: '18%',height:'18%', resizeMode: 'contain', alignSelf: 'center', marginTop: '-18%'}}/>
-                    <Text style={{fontWeight: '400', fontSize:'18px', alignSelf: 'center', marginTop: '-8%', marginBottom: '10%', fontFamily: 'Spartan'}}>Danphuong Hoang</Text>
-                    <TouchableOpacity style={styles.optionsContainer} onPress={()=>console.log("button pressed")}>
-                        <Text style={styles.optionsText}>account</Text>
+                    <TouchableOpacity style={styles.selfcareOptionsContainer} onPress={()=>console.log("button pressed")}>
+                        <Text style={styles.optionsText}>SELFCARE</Text>
+                        <Image source={require('../assets/images/Vector.png')}
+                        style={{width: '100%', height: '100%',resizeMode: 'contain'}}/>
+                 </TouchableOpacity>
+                    <TouchableOpacity style={styles.healthOptionsContainer} onPress={()=>console.log("button pressed")}>
+                        <Text style={styles.optionsText}>HEALTH</Text>
+                        <Image source={require('../assets/images/heart.png')}
+                        style={{width: '100%', height: '100%',resizeMode: 'contain'}}/>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.optionsContainer} onPress={()=>console.log("button pressed")}>
-                        <Text style={styles.optionsText}>feature preferences</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.optionsContainer} onPress={()=>console.log("button pressed")}>
-                        <Text style={styles.optionsText}>notifications</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.optionsContainer} onPress={()=>console.log("button pressed")}>
-                        <Text style={styles.optionsText}>help</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.optionsContainer} onPress={()=>console.log("button pressed")}>
-                        <Text style={styles.optionsText}>display</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.optionsContainer} onPress={()=>console.log("button pressed")}>
-                        <Text style={styles.optionsText}>about</Text>
+                    <TouchableOpacity style={styles.focusOptionsContainer} onPress={()=>console.log("button pressed")}>
+                        <Text style={styles.optionsText}>FOCUS</Text>
+                        <Image source={require('../assets/images/bx_bx-calendar-star.png')}
+                        style={{width: '100%', height: '100%',resizeMode: 'contain'}}/>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -38,28 +33,29 @@ export default function NewFeaturesList({navigation}){
 const styles = StyleSheet.create({
     headingContainer:{
         backgroundColor: '#ffffff',
-        paddingTop: '2%'
+        paddingTop: '2%',
+        height:'100%',
         // paddingBottom: '10%',
     },
     bigContainer:{
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#ffffff',
-        overflow: 'scroll',
+        overflow: 'hidden',
         paddingBottom: '30px',
         paddingTop: '10%',
+        height:'100%',
     },
     smallContainer:{
         borderRadius: 8,
         width: '90%',
-        height: 650,
+        height: '100%',
         margin: '10px',
         padding: '5px',
         // shadowColor: "#000",
         // shadowOpacity: 0.25,
         // shadowRadius: 8,
         elevation: 5,
-        backgroundColor: '#DCF0E7'
     },
     heading:{
         fontSize:'18px',
@@ -70,18 +66,40 @@ const styles = StyleSheet.create({
         marginLeft: 40,
         marginTop: 20,
     },
-    optionsContainer:{
+    selfcareOptionsContainer:{
+        width:'90%',
         textAlignVertical: 'center',
-        marginVertical: '1%',
+        marginVertical: '3%',
         marginHorizontal: '2%',
-        backgroundColor: 'white',
-        paddingVertical: '5%',
-        borderRadius: 6
+        paddingVertical: '25%',
+        borderRadius: 20,
+        flexDirection: 'row',
+        backgroundColor:'#f2e6fc',
+    },
+    healthOptionsContainer:{
+        width:'90%',
+        textAlignVertical: 'center',
+        marginVertical: '3%',
+        marginHorizontal: '2%',
+        paddingVertical: '25%',
+        borderRadius: 20,
+        flexDirection: 'row',
+        backgroundColor:'#e3edff',
+    },
+    focusOptionsContainer:{
+        width:'90%',
+        textAlignVertical: 'center',
+        marginVertical: '3%',
+        marginHorizontal: '2%',
+        paddingVertical: '25%',
+        borderRadius: 20,
+        flexDirection: 'row',
+        backgroundColor:'#e5e5e5',
     },
     optionsText:{
         marginLeft: '4%',
-        fontSize: '13px',
+        fontSize: '20px',
         fontWeight: '500',
-        fontFamily: 'Spartan'
+        fontFamily: 'Spartan',
     }
 });
