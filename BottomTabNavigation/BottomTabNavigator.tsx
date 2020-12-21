@@ -11,6 +11,7 @@ import Focus from '../screens/Focus';
 import Calendar from '../screens/Calendar';
 import Settings from '../screens/Settings';
 import BudgetTracker from '../screens/BudgetTracker';
+import FeaturesList from '../screens/FeaturesList'
 
 const Tab = createBottomTabNavigator();
 
@@ -75,7 +76,7 @@ const FeaturesStack = createStackNavigator();
 function FeaturesStackScreen(){
     return(
         <FeaturesStack.Navigator screenOptions={{ headerShown: false }}>
-            <FeaturesStack.Screen name = "FeatureList" component={FeatureList}/>
+            <FeaturesStack.Screen name = "FeatureList" component={FeaturesList}/>
             <FeaturesStack.Screen name = "SelfCare" component={SelfCare}/>
             <FeaturesStack.Screen name = "Health" component={Health}/>
             <FeaturesStack.Screen name = "Focus" component={FocusStackScreen}/>

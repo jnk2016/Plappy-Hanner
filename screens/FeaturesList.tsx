@@ -1,18 +1,10 @@
 import React, {useState} from 'react';
-import { Image, StyleSheet, View, Button, TouchableOpacity} from 'react-native';
-import { Text} from '../components/Themed';
-import StarRating from '../screens/StarRating';
-import AxiosLatestStatement from '../Axios Functions/AxiosLatestStatement';
-import AxiosLatestPayment from '../Axios Functions/AxiosLatestPayment';
-import AxiosMileage from '../Axios Functions/AxiosMileage';
+import { Image, StyleSheet, View, Button, TouchableOpacity, Text} from 'react-native';
 
-export default function UserProfileScreen({navigation}){
+export default function NewFeaturesList({navigation}){
 
     return(
         <View>
-            <View style = {styles.headingContainer}>
-                <Text style={styles.heading}>SETTINGS</Text> 
-            </View>
             <View style = {styles.bigContainer}>
                 <View style={styles.smallContainer}>
                     <Image source={require('../assets/images/Ellipseavatar.png')}

@@ -2,69 +2,98 @@ import React, {Component, useState} from 'react';
 import {Button, Image, StyleSheet, TextInput, TouchableHighlight, Text, View, Alert} from 'react-native';
 import AxiosLogin from '../Axios Functions/AxiosLogin';
 import Modal from 'modal-react-native-web';
-import '../assets/css/home.css';
+import '../assets/css/sched.css';
 import Ellipseavatar from '../assets/images/Ellipseavatar.png'; 
 
 class Calendar extends Component {
 
   render() {return (
     <div className="Calendar">
-        <html lang="en">
-        <head>
-            <meta charSet="UTF-8"/>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-            <title>HOME</title>
-            <link rel="stylesheet" href="home.css"/>
-            <style>@import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');</style>
-        </head>
-        <body>
-            <div className="calendarCal">
-                <p><b>JANUARY 2021</b></p>
-                <div className="options">
-                    <ul>
-                        <li><a href="#" id="main">SUN<br/>3</a></li>
-                        <li><a href="#">MON<br/>4</a></li>
-                        <li><a href="#">TUE<br/>5</a></li>
-                        <li><a href="#">WED<br/>6</a></li>
-                        <li><a href="#">THU<br/>7</a></li>
-                        <li><a href="#">FRI<br/>8</a></li>
-                        <li><a href="#">SAT<br/>9</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div className="headerCalendar">
-                <h1>TODAY</h1>
-                <h2>My tasks</h2>
-                <h3>TO DO
-                    <a href="#">you have 5 tasks to start</a>
-                </h3>
-                <h4>IN PROGRESS
-                    <a href="#">you have 1 task to complete</a>
-                </h4>
-                <h5>My Schedule
-                    <div className="events">
+    <html lang="en">
+    <head>
+        <meta charSet="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>SCHEDULE</title>
+        <link rel="stylesheet" href="sched.css"/>
+        <style>@import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');</style>
+    </head>
+    <body>
+        <main>
+            <section id="section-asched" className="grid">
+                <div className="calendar-head">
+                    <h1 className="month-name">JAN 2021</h1>
+                    <div className="days-janhead">
                         <ul>
-                            <li>
-                                <div className="study">10 AM
-                                    <a href="#">STUDY</a>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="work">1-9 PM 
-                                    <a href="#">WORK</a>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="dinner">9:30 PM
-                                    <a href="#">DINNER</a>
-                                </div>
-                            </li>    
+                            <li><a href="#">SUN<br/>3</a></li>
+                            <li><a href="#">MON<br/>4</a></li>
+                            <li><a href="#">TUE<br/>5</a></li>
+                            <li><a href="#">WED<br/>6</a></li>
+                            <li><a href="#">THU<br/>7</a></li>
+                            <li><a href="#" id="main">FRI<br/>8</a></li>
+                            <li><a href="#">SAT<br/>9</a></li>
                         </ul>
                     </div>
-                </h5>
-            </div>
-        </body>
-        </html>
+                </div>
+            </section>
+            <section id="section-bsched" className="grid">
+                <div className="sched-head">
+                    <div className="today">
+                        <h2 className="sched-today">TODAY</h2>
+                    </div>
+                    <div className="sched-sections">
+                        <ul>
+                            <li>
+                                <div className="my-tasks">
+                                    <h3>My tasks</h3>
+                                    <ul>
+                                        <li>
+                                            <div className="pending">
+                                                <h4 className="blue">PENDING</h4>
+                                                <p>you have 5 tasks to start</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div className="progress">
+                                                <h4 className="white">IN PROGRESS</h4>
+                                                <p>you have 1 task to complete</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div className="my-schedule">
+                                    <h3>My Schedule</h3>
+                                    <ul>
+                                        <li>
+                                            <div className="study-bar">
+                                                <h4>10 AM</h4>
+                                                <h5>STUDY!</h5>
+                                                <h6>CSS GRIDS</h6>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div className="work-bar">
+                                                <h4>1-9 PM</h4>
+                                                <h5>WORK</h5>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div className="dinner-bar">
+                                                <h4>9:30 PM</h4>
+                                                <h5>DINNER</h5>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div> 
+            </section>
+        </main>
+    </body>
+    </html>
       </div>
   );
   }
