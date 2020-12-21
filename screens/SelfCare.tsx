@@ -23,59 +23,52 @@ class SelfCare extends Component {
         <style>@import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');</style>
     </head>
     <body>
-        {/* <div className="navbar">
-            <div className="bottom_options">
+        <div className="selfcareHeader">
+            <img src={Vector} alt="flower" className="flower"/>  
+        </div>
+        <div className="selfcareCalendar">
+            <div className="selfcareWeek">
+                <h1 className="currentWeek">CURRENT WEEK</h1>
+                <div className="selfDays">
+                    <a href="#">SUN <br/>3</a>
+                    <a href="#">MON <br/>4</a>
+                    <a href="#">TUE <br/>5</a>
+                    <a href="#">WED <br/>6</a>
+                    <a href="#">THU <br/>7</a>
+                    <a href="#" id="selfMain">FRI <br/>8</a>
+                    <a href="#">SAT <br/>9</a>
+                </div>
+            </div>
+            <div className="selfcareContainer">
                 <ul>
-                    <li><a href="#"><img src="images/home.png" alt="home" id="home"/></a></li>
-                    <li><a href="#"><img src="images/CALENDAR.png" alt="calen" id="calendar"/></a></li>
-                    <li><a href="#"><img src="images/EVENT.png" alt="event" id="event"/></a></li>
-                    <li><a href="#"><img src="images/ACTIVITY.png" alt="activity" id="activity"/></a></li>
-                    <li><a href="#"><img src="images/SETTINGS.png" alt="settings" id="settings"/></a></li>
+                    <li>
+                        <h2 className="selfHead">AVERAGE PER DAY</h2>
+                    </li>
+                    <li>
+                        <div className="selfCircle">
+                            <h3 className="selfNumber">5</h3>
+                            <p className="selfDesc">habits</p>
+                        </div>
+                    </li>
+                    <li>
+                    <button className="selfTrack">START TRACKING</button>
+                    </li>
                 </ul>
             </div>
-        </div> */}
-        <div className="selfcareHeader">
-            <ul>
-                <li><a href="#">SELF CARE</a></li>
-                <li><img src={Vector} alt="flower" className="flower"/></li>
-                <li><img src={Ellipseavatar} alt="avatar" className="avatar"/></li>
-            </ul>
         </div>
-        <div className="selfcareContainer">
+        
+        <div className="selfButton">
             <ul>
                 <li>
-                    <div className="habit">
-                        <a href="#">HABIT TRACKER</a>
-                        <div className="selfcare_button_container">
-                            <button>TRACK MY PROGRESS</button>
-                            <ul className="days">
-                                <li>S</li>
-                                <li>M</li>
-                                <li>T</li>
-                                <li>W</li>
-                                <li>R</li>
-                                <li>F</li>
-                                <li>S</li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div className="mood">
-                        <a href="#">MOOD TRACKER</a>
-                        <div className="selfcare_button_container2">I AM FEELING...
-                            <button>SHARE MY MOOD</button>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div className="brain">
-                        <h3>BRAIN DUMP</h3>
-                        <div className="selfcare_button_container3">
-                            <h4>WHAT'S ON YOUR MIND?</h4>
-                            <button>DECLUTTER MY MIND</button>
-                        </div>
-                    </div>
+                    <button className="selfHabit">
+                        HABIT TRACKER
+                    </button>
+                    <button className="selfMood">
+                        MOOD TRACKER
+                    </button>
+                    <button className="selfBrain">
+                        BRAIN DUMP
+                    </button>
                 </li>
             </ul>
         </div>

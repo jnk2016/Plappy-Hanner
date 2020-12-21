@@ -6,273 +6,155 @@
 .Health body {
   background: white;
   font-family: "spartan";
-  height: 800px;
-  width:375px;
+  height: 100%;
+  width:100%;
+  display:block;
+  overflow:visible;
 }
 
 .healthHeader {
-  width: 100%;
-  position: fixed;
+  height:15%;
+  width:100%;
+  background:#E3EDFF;
+  border-radius: 0 0 30px 30px;
+  text-align:center;
+  position:relative;
+  padding: 1em 0 0 0;
+}
+
+.healthCalendar {
+  padding-left:0.5em;
+  width:100%;
+}
+
+.healthHeader img {
   padding:1em;
 }
 
-.healthHeader ul li {
-  display: inline-block;
-  margin: 0 0 2em 1em;
+.healthWeek {
+  background:#e5e5e5;
+  position:relative;
+  width:90%;
+  height:25%;
+  border-radius:30px;
+  padding:0.5em;
 }
 
-.healthHeader ul li a {
-  font-size: 20px;
-  letter-spacing: 0.2em;
-  position: relative;
-  font-weight: bold;
+.healthcurrentWeek {
+  font-size:12px;
+  margin:0.5em 0 0 0.5em;
+  font-weight:normal;
+  letter-spacing: 0.1em;
+}
+
+.healthDays {
+  margin-left:1em;
+}
+
+.healthDays a {
+  display:inline-block;
   text-decoration: none;
-  color: black;
+  color:black;
+  text-align: center;
+  margin:0 0.5em;
+  font-size:12px;
+  line-height: 25px;
 }
 
-.healthHeader ul li img.heart {
-  display: inline;
-  vertical-align: middle;
-}
-
-.healthHeader ul li img.avatar {
-  right: 0;
-  top: 0;
-  padding: 0.8em 2.8em 0 0;
-  position: absolute;
+#healthMain {
+  background: rgba(93, 124, 184, 0.26);
+  border-radius: 10px;
+  padding:1em;
 }
 
 .healthContainer {
-  background: #e3edff;
-  width: 100%;
-  height: auto;
-  border-radius: 30px 30px 0 0;
-  margin-top:6em;
+  text-align:Center;
+  align-items: center;
 }
 
 .healthContainer ul li {
-  margin: 1em;
-  list-style: none;
-  position: relative;
-  display: inline;
+  display:block;
 }
 
-.healthContainer .period {
-  background: white;
-  width: 300px;
-  height: 185px;
-  border-radius: 20px;
-  margin-left: 2em;
+.healthHead {
+  font-size:16px;
+  color:rgba(56, 56, 56, 0.8);
+  text-align:Center;
+  margin-top:2em;
 }
 
-.period a {
-  text-decoration: none;
-  color: black;
-  font-size: 18px;
-  margin-left: 3em;
-  line-height: 50px;
+.healthCircle {
+  border-radius:50%;
+  background:#ffa0a0;
+  width:50%;
+  height:70%;
+  padding:1em;
+  position:relative;
+  text-align:center;
+  display:inline-block;
 }
 
-.periodButton_container {
-  background: #e5e5e5;
-  width: 210px;
-  height: 120px;
-  border-radius: 20px;
-  margin-left: 3em;
+.healthNumber {
+  padding:1em 1em 0 1em;
+  color:white;
+  font-size:48px;
 }
 
-.periodButton_container p {
-  padding: 1em 1em 0.5em 1em;
-  font-size:14px;
+.healthDesc {
+  color:white;
+  font-size:24px;
+  padding-bottom:2em;
+  font-family:"spartan";
+  font-weight:600;
+  letter-spacing:0.1em;
 }
 
-.periodButton_container h2 {
-  color: red;
-  text-align: center;
-  font-size: 24px;
-  font-weight: normal;
+.healthTrack {
+  background: #DCF0E7;
+  padding:1em;
+  border-radius:30px;
+  border:none;
+  margin:1em;
+  font-family:"spartan";
+  font-weight:600;
+  letter-spacing:0.1em;
 }
 
-.periodButton_container button {
-  width: 160px;
-  height: 40px;
-  text-align: center;
-  border-radius: 20px;
-  margin-left: 2em;
-  background: white;
-  margin-top: 0.3em;
+.healthButton {
+  background:#E3EDFF;
+  width:100%;
+  height:40%;
 }
 
-.healthContainer .meal {
-  background: white;
-  width: 300px;
-  height: 185px;
-  border-radius: 20px;
-  margin-left: 2em;
+.healthButton ul {
+  list-style:none;
+  height:100%;
 }
 
-.meal h3 {
-  text-decoration: none;
-  color: black;
-  font-size: 18px;
-  margin-left: 3.5em;
-  line-height: 50px;
-  font-weight: normal;
+.healthButton ul li {
+  display:inline-block;
+  text-decoration:none;
+  margin:0.5em 0 0 0.5em;
 }
 
-.mealButton_container {
-  background: #e5e5e5;
-  width: 260px;
-  height: 125px;
-  border-radius: 20px;
-  margin-left: 1.3em;
-  position: relative;
-  padding-top: 3px;
+.healthButton ul li button {
+  background:white;
+  height:60%;
+  width:30%;
+  padding:3em 0.5em 3em 0.5em;
+  border-radius:20px;
+  text-align:center;
+  margin:0.3em;
+  border:none;
+  font-size:16px;
+  font-family:"spartan";
+  font-weight:600;
+  letter-spacing:0.1em;
+  line-height:24px;
 }
 
-.mealButton_container ul {
-  display: block;
-  list-style: none;
-  margin-left: 1.5em;
-}
-
-.mealButton_container ul li {
-  display: inline-block;
-  font-size: 14px;
-  margin: 0;
-  padding-top: 1em;
-  vertical-align: top;
-}
-
-.mealButton_container .breakfast {
-  display: block;
-  color: black;
-  text-align: left;
-}
-
-.breakfast .cal {
-  background: #ffc997;
-  width: 60px;
-  height: 45px;
-  font-size: 14px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.cal a {
-  font-size: 10px;
-  color: white;
-  text-decoration: none;
-}
-
-.mealButton_container .lunch {
-  display: block;
-  color: black;
-  text-align: center;
-  margin-left:0.5em;
-}
-
-.lunch .cal2 {
-  background: #ffc997;
-  width: 60px;
-  height: 45px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.cal2 a {
-  font-size: 10px;
-  color: white;
-  text-decoration: none;
-}
-
-.mealButton_container .dinnerContainer {
-  display: block;
-  color: black;
-  text-align: center;
-  margin-left: 0.7em;
-}
-
-.dinnerContainer .cal3 {
-  background: #ffc997;
-  width: 60px;
-  height: 45px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.cal3 a {
-  font-size: 14px;
-  color: white;
-  text-decoration: none;
-}
-
-.mealButton_container button {
-  width: 160px;
-  height: 40px;
-  text-align: center;
-  border-radius: 20px;
-  margin-left: 4em;
-  background: white;
-  margin-top: 0.3em;
-}
-
-.healthContainer .activity {
-  background: white;
-  width: 300px;
-  height: 185px;
-  border-radius: 20px;
-  margin-left: 2em;
-}
-
-.activity h3 {
-  text-decoration: none;
-  color: black;
-  font-size: 18px;
-  margin-left: 3.2em;
-  line-height: 50px;
-  font-weight: normal;
-}
-
-.activity .activityButton_container3 {
-  background: #e5e5e5;
-  width: 280px;
-  height: 120px;
-  border-radius: 20px;
-  margin-left: 0.7em;
-  position: relative;
-  padding-top: 3px;
-}
-
-.activityButton_container3 ul {
-  position: relative;
-  margin-left:0.5em;
-}
-
-.activityButton_container3 ul li {
-  margin: 0.4em;
-  padding: 0 0.5em 1em 0.5em;
-  background: white;
-  width: 70px;
-  height: 90px;
-  border-radius: 5px;
-}
-
-.activityButton_container3 ul li img {
-  -o-object-fit: contain;
-     object-fit: contain;
-  margin-top: 1.5em;
-  vertical-align: middle;
-  /* padding: 0 0 1em 0; */
-}
-
-.activityButton_container3 button {
-  width: 160px;
-  height: 40px;
-  text-align: center;
-  border-radius: 20px;
-  margin-left: 4em;
-  background: white;
-  margin-top: 0.3em;
+.healthButton .healthPeriod {
+  border:1px solid yellow;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 /*# sourceMappingURL=health.css.map */

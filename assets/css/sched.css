@@ -12,89 +12,83 @@
   line-height: 0.1;
 }
 
-.Calendar main {
-  display: block;
+.calendarComponents {
+  width:100%;
+  height:100%;
+  display:block;
 }
 
-#section-asched {
-  background: #c4c4c4;
+.calendarHead {
   width: 100%;
-  height: 50%;
-  display: block;
-  padding:1em;
-  color: white;
-  position: absolute;
-  margin-bottom: 1em;
+  height: 100%;
+  background:#c4c4c4;
+  position:relative;
+  padding-bottom:2em;
 }
 
-.calendar-head {
-  width: 100%;
-  height: 40%;
-}
-
-.month-name {
+.calendarMonth {
   font-size: 20px;
   padding: 1.5em 1em;
+  color:white;
 }
 
-.days-janhead {
+.calendarDays {
   margin: 0;
   font-size: 14px;
   text-align: center;
 }
 
-.days-janhead ul {
+.calendarDays ul {
   list-style-type: none;
   padding: 0;
 }
 
-.days-janhead ul li {
+.calendarDays ul li {
   display: inline-block;
   margin: 0.5em;
 }
 
-.days-janhead ul li a {
+.calendarDays ul li a {
   color: white;
   text-decoration: none;
   line-height: 2;
 }
 
-.days-janhead #main {
+#calendarMain {
   background: rgba(93, 124, 184, 0.25);
   display: block;
   padding: 0.5em;
   border-radius: 10px;
 }
 
-#section-bsched {
+.calendarSection {
   background: white;
   width: 100%;
-  height: 50%;
+  height: 100%;
   display: block;
   position: absolute;
   line-height: 20px;
-  margin-top: 12em;
   border-radius: 30px 30px 0 0;
   text-align: center;
+  margin-top:-30px;
 }
 
-.today {
+.calendarToday {
   display: block;
   background: #f9f7f7;
-  height: 40%;
+  height: auto;
   text-align: center;
   border-radius: 10px;
   position: relative;
-  margin: -1em 1em;
+  margin: -2em 1em 1em 1em;
 }
 
-.sched-today h2 {
+.sched-today {
   padding: 0.5em;
   font-size: 24px;
 }
 
-.sched-sections {
-  padding-top: 3em;
+.calendarContainer {
   text-align: left;
   display: block;
 }
@@ -109,27 +103,42 @@
   display: inline;
 }
 
-.my-tasks {
+.myTasks {
   width: 100%;
   height: auto;
 }
 
-.my-tasks h3 {
+.tasksHeader {
   font-size: 20px;
   padding-left: 1em;
+  letter-spacing: 0.1em;
+  font-weight:600;
 }
 
-.blue h4 {
+.blue {
   font-size: 18px;
+  font-weight:600;
+}
+
+.white {
+  font-size: 18px;
+  font-weight:600;
 }
 
 .pending p {
   font-size: 14px;
   color: darkgray;
   padding-bottom: 20px;
+  font-weight:600;
+}
+.progress p {
+  font-size: 14px;
+  color: darkgray;
+  padding-bottom: 20px;
+  font-weight:600;
 }
 
-.my-tasks ul li {
+.myTasks ul li {
   display: block;
   margin: 0.5em 1em;
 }
@@ -150,16 +159,40 @@
   border-radius: 10px;
 }
 
-.my-schedule {
+.mySchedule {
   width: 100%;
   height: auto;
   margin-top: 1em;
 }
 
-.my-schedule ul li {
+.mySchedule ul li {
   color: white;
   display: block;
   margin: 0.5em 1em;
+}
+
+.scheduleHeader {
+  font-size:20px;
+  padding-left: 1em;
+  letter-spacing: 0.1em;
+  font-weight:600;
+}
+
+.calendarTime {
+  font-size:16px;
+  font-weight:800;
+}
+
+.calendarTopic {
+  font-size:16px;
+  padding-left:1em;
+  font-weight:600;
+}
+
+.calendarDesc {
+  font-size:14px;
+  padding-left:1em;
+  font-weight:normal;
 }
 
 .study-bar {

@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
         paddingVertical: '25%',
         borderRadius: 20,
         flexDirection: 'row',
-        backgroundColor:'#e5e5e5',
+        backgroundColor:'#c4c4c4',
     },
     optionsText:{
         marginLeft: '4%',

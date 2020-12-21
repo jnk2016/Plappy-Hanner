@@ -28,70 +28,52 @@ class Health extends Component {
         <style>@import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');</style>
     </head>
     <body>
-        <div className="healthHeader">
-            <ul>
-                <li><a href="#">HEALTH</a></li>
-                <li><img src={Heart} alt="heart" className="heart"/></li>
-                <li><img src={Ellipseavatar} alt="avatar" className="avatar"/></li>
-            </ul>
+    <div className="healthHeader">
+            <img src={Heart} alt="heart" className="heart"/>  
         </div>
-        <div className="healthContainer">
+        <div className="healthCalendar">
+            <div className="healthWeek">
+                <h1 className="healthcurrentWeek">CURRENT WEEK</h1>
+                <div className="healthDays">
+                    <a href="#">SUN <br/>3</a>
+                    <a href="#">MON <br/>4</a>
+                    <a href="#">TUE <br/>5</a>
+                    <a href="#">WED <br/>6</a>
+                    <a href="#">THU <br/>7</a>
+                    <a href="#" id="healthMain">FRI <br/>8</a>
+                    <a href="#">SAT <br/>9</a>
+                </div>
+            </div>
+            <div className="healthContainer">
+                <ul>
+                    <li>
+                        <h2 className="healthHead">PERIOD IN</h2>
+                    </li>
+                    <li>
+                        <div className="healthCircle">
+                            <h3 className="healthNumber">5</h3>
+                            <p className="healthDesc">days</p>
+                        </div>
+                    </li>
+                    <li>
+                    <button className="healthTrack">LOG MY PERIOD</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div className="healthButton">
             <ul>
                 <li>
-                    <div className="period">
-                        <a href="#">PERIOD TRACKER</a>
-                        <div className="periodButton_container">
-                            <p>PERIOD IN:</p>
-                            <h2>5 DAYS</h2>
-                            <button>LOG MY PERIOD</button>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div className="meal">
-                        <h3>MEAL PLANNER</h3>
-                        <div className="mealButton_container">
-                            <ul>
-                                <li>
-                                    <div className="breakfast">breakfast
-                                        <div className="cal">
-                                            <a href="#">270 <br/>cal </a>
-                                        </div>  
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="lunch">lunch
-                                        <div className="cal2">
-                                            <a href="#">400<br/>cal</a>
-                                        </div>  
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="dinnerContainer">dinner
-                                        <div className="cal3">
-                                            <a href="#">...</a>
-                                        </div>  
-                                    </div>
-                                </li>
-                            </ul>
-                            <button>PLAN MY MEALS</button>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div className="activity">
-                        <h3>ACTIVITY TRACKER</h3>
-                        <div className="activityButton_container3">
-                            <ul>
-                                <li><img src={bed} alt="bed"/></li>
-                                <li><img src={water} alt="water"/></li>
-                                <li><img src={fire} alt="fire"/></li>
-                                <li><img src={fheart} alt="fheart"/></li>
-                                <li><img src={steps} alt="step"/></li>
-                            </ul>
-                            <button>SEE MY ACTIVITY</button>
-                        </div>
-                    </div>
+                    <button className="healthPeriod">
+                        PERIOD TRACKER
+                    </button>
+                    <button className="healthMeal">
+                        MEAL PLANNER
+                    </button>
+                    <button className="healthActivity">
+                        ACTIVITY TRACKER
+                    </button>
                 </li>
             </ul>
         </div>

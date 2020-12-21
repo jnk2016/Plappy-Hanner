@@ -7,15 +7,19 @@ export default function NewSelfCare({navigation}){
     return(
         <View style={{backgroundColor: 'white'}}>
             <View style = {styles.bigContainer}>
-                <View style={styles.smallContainer}>
-                    <View style={styles.habitContainer}>
-                        <Text style={styles.optionText}>HABIT TRACKER</Text>
-                        <View style={styles.buttonContainer}>
-                            <TouchableOpacity style={styles.selfcareOptionsContainer} onPress={()=>console.log("button pressed")}>
-                                <Text style={styles.optionsText}>START TRACKING</Text>
-                            </TouchableOpacity>
-                        </View>
-                    </View>
+                <View style={styles.iconContainer}>
+                    <Image source={require('../assets/images/Vector.png')}
+                    style={{marginTop: '35%',width: '100px', height: '100px',resizeMode: 'center', alignSelf: 'center'}}/>
+                </View>
+                <View style={styles.weekContainer}>
+                    <Text style={styles.optionsheadingText}>CURRENT WEEK</Text>
+                    <Text style={styles.daysText}>SUN</Text>
+                    <Text style={styles.daysText}>MON</Text>
+                    <Text style={styles.daysText}>TUE</Text>
+                    <Text style={styles.daysText}>WED</Text>
+                    <Text style={styles.daysText}>THU</Text>
+                    <Text style={styles.daysText}>FRI</Text>
+                    <Text style={styles.daysText}>SAT</Text>
                 </View>
             </View>
         </View>
@@ -24,46 +28,46 @@ export default function NewSelfCare({navigation}){
 }
 
 const styles = StyleSheet.create({
-    headingContainer:{
-        backgroundColor: '#ffffff',
-        paddingTop: '2%',
-        height:'100%',
-        // paddingBottom: '10%',
-    },
     bigContainer:{
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#ffffff',
         overflow: 'hidden',
-        paddingBottom: '30px',
-        paddingTop: '10%',
         height:'100%',
     },
-    smallContainer:{
-        borderRadius: 8,
-        width: '100%',
-        height: '100%',
-        margin: '10px',
-        padding: '5px',
-        // shadowColor: "#000",
-        // shadowOpacity: 0.25,
-        // shadowRadius: 8,
-        elevation: 5,
+    // smallContainer:{
+    //     borderRadius: 20,
+    //     width: '100%',
+    //     height: '100%',
+    //     backgroundColor: 'white',
+    // },
+
+    iconContainer:{
+        width:'100%',
+        height:'70%',
+        // paddingVertical:'5%',
+        alignContent: 'center',
+        justifyContent: 'center',
+        borderBottomLeftRadius: 20,
+        borderBottomRightRadius:20,
+        flexDirection: 'row',
+        backgroundColor:'#f2e6fc',
+        alignItems: 'center',
     },
-    heading:{
-        fontSize:'18px',
-        fontFamily: 'Spartan',
-        color: 'black',
-        fontWeight: 'bold',
-        flex: 1,
-        marginLeft: 40,
-        marginTop: 20,
-    },
-    optionsText:{
-        marginLeft: '4%',
-        fontSize: '20px',
-        fontWeight: '500',
-        fontFamily: 'Spartan',
+
+    weekContainer: {
+        backgroundColor:'#e5e5e5b',
+        width:'100%',
+        height:'100%',
     },
     
+    optionsheadingText: {
+        fontSize: 14,
+        color:'black',
+    },
+
+    daysText: {
+        fontSize: 12,
+        color:'lightgray',
+    }
 });

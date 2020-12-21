@@ -80,7 +80,7 @@ html, body {
   position: relative;
   border-radius: 10px;
   z-index: 3;
-  padding:0.5em;
+  padding:0.3em;
   text-align: center;
   margin:1em auto;
 }
@@ -128,7 +128,7 @@ html, body {
 
 .notification ul li {
   display:inline-block;
-  margin: 1em;
+  margin: 1em 1em 0 1em;
 }
 
 .homeEvents , .tasks {
@@ -143,6 +143,7 @@ html, body {
 .homeEvents h3, .tasks h3 {
   padding: 0.5em;
   font-size: 12px;
+  font-weight:600;
 }
 
 .homeEvents h4, .tasks h4 {
@@ -192,6 +193,7 @@ html, body {
 .features-menu h6 {
   font-size: 16px;
   letter-spacing: 0.1em;
-  padding: 1em;
+  padding: 1em 0 0 1em;
+  font-weight:600;
 }
 /*# sourceMappingURL=home.css.map */

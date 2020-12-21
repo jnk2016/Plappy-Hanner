@@ -16,6 +16,8 @@ class Home extends Component {
             <title>HOMESCREEN</title>
             <link rel="stylesheet" href="hearthome.css"/>
             <style>@import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');</style>
+            <style>@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');</style>
+        <style>@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@600&display=swap');</style>
         </head>
         <body>
             <main>
@@ -70,14 +72,14 @@ class Home extends Component {
                         <h6>My Features</h6>
                         <ul>
                             <li><button style={{backgroundColor: "#e8d7f7"}}>HABITS</button></li>
-                            <li><button style={{backgroundColor: "#ffe6ef"}}>PERIOD</button></li>
+                            <li><button style={{backgroundColor: "#ffa0a0"}}>PERIOD</button></li>
                             <li><button style={{backgroundColor:"#EEB4C9"}}>GOALS</button></li>
-                            <li><button style={{background: "#FFF9C4"}}>MOOD</button></li>
-                            <li><button style={{background: "#FFE0C2"}}>MEAL</button></li>
-                            <li><button style={{background: "rgba(255, 151, 151, 0.5)"}}>VISION <br/> BOARD</button></li>
-                            <li><button style={{background: "#E3EDFF"}}>BRAIN <br/> DUMP</button></li>
+                            <li><button style={{background: "#f4eac7"}}>MOOD</button></li>
+                            <li><button style={{background: "#FFc997"}}>MEAL</button></li>
+                            <li><button style={{background: "#ff6f6f"}}>TASKS</button></li>
+                            <li><button style={{background: "#c8d8f9"}}>BRAIN <br/> DUMP</button></li>
                             <li><button style={{background: "#E5E5E5"}}>ACTIVITY</button></li>
-                            <li><button style={{background: "#CCDED6"}}>BUDGET</button></li>
+                            <li><button style={{background: "#7ebd9f"}}>BUDGET</button></li>
                         </ul>
                     </div>
                 </section>

@@ -6,202 +6,155 @@
 .SelfCare body {
   background: white;
   font-family: "spartan";
-  height: 800px;
-  width:375px;
+  height: 100%;
+  width:100%;
+  display:block;
+  overflow:visible;
 }
 
 .selfcareHeader {
-  width: 100%;
-  position: fixed;
-  padding:1em;
+  height:15%;
+  width:100%;
+  background:#f2e6fc;
+  border-radius: 0 0 30px 30px;
+  text-align:center;
+  position:relative;
+  padding: 1em 0 0 0;
 }
-.selfcareHeader ul {
+
+.selfcareCalendar {
+  padding-left:0.5em;
   width:100%;
 }
 
-.selfcareHeader ul li {
-  display: inline-block;
-  /* margin: 2em 0 2em 1em; */
+.selfcareHeader img {
+  padding:1em;
 }
 
-.selfcareHeader ul li a {
-  font-size: 20px;
-  letter-spacing: 0.2em;
-  position: relative;
-  font-weight: bold;
+.selfcareWeek {
+  background:#e5e5e5;
+  position:relative;
+  width:90%;
+  height:25%;
+  border-radius:30px;
+  padding:0.5em;
+}
+
+.currentWeek {
+  font-size:12px;
+  margin:0.5em 0 0 0.5em;
+  font-weight:normal;
+  letter-spacing: 0.1em;
+}
+
+.selfDays {
+  margin-left:1em;
+}
+
+.selfDays a {
+  display:inline-block;
   text-decoration: none;
-  color: black;
+  color:black;
+  text-align: center;
+  margin:0 0.5em;
+  font-size:12px;
+  line-height: 25px;
 }
 
-.selfcareHeader ul li img.flower {
-  display: inline-block;
-  vertical-align: middle;
-  padding:0.8em;
-}
-
-.selfcareHeader ul li img.avatar {
-  right: 0;
-  top: 0;
-  padding: 1.3em 4em 0 0;
-  position: absolute;
+#selfMain {
+  background: rgba(93, 124, 184, 0.26);
+  border-radius: 10px;
+  padding:1em;
 }
 
 .selfcareContainer {
-  margin-top:6em;
-  background: #f2e6fc;
-  width: 100%;
-  height: 100%;
-  border-radius: 30px 30px 0 0;
+  text-align:Center;
+  align-items: center;
 }
 
 .selfcareContainer ul li {
-  margin: 2.5em;
-  list-style: none;
-  position: relative;
-  display: inline;
+  display:block;
 }
 
-.selfcareContainer .habit {
-  background: white;
-  width: 300px;
-  height: 180px;
-  list-style-type: none;
-  color: black;
-  margin-left: 2.5em;
-  border-radius: 20px;
+.selfHead {
+  font-size:16px;
+  color:rgba(56, 56, 56, 0.8);
+  text-align:Center;
+  margin-top:2em;
 }
 
-.habit a {
-  text-decoration: none;
-  color: black;
-  margin-left: 3em;
-  padding: 2em;
-  position: relative;
-  line-height: 50px;
-  letter-spacing: 5%;
+.selfCircle {
+  border-radius:50%;
+  background:#dfb7ff;
+  width:50%;
+  height:70%;
+  padding:1em;
+  position:relative;
+  text-align:center;
+  display:inline-block;
 }
 
-.habit .selfcare_button_container {
-  background: #e5e5e5;
-  width: 215px;
-  height: 95px;
-  margin: 1em 1em 1em 2.7em;
-  position: relative;
-  border-radius: 20px;
+.selfNumber {
+  padding:1em 1em 0 1em;
+  color:white;
+  font-size:48px;
 }
 
-.selfcare_button_container button {
-  width: 160px;
-  height: 40px;
-  text-align: center;
-  border-radius: 20px;
-  margin-left: 2em;
-  margin-top: 1em;
-  background: white;
+.selfDesc {
+  color:white;
+  font-size:24px;
+  padding-bottom:2em;
+  font-family:"spartan";
+  font-weight:600;
+  letter-spacing:0.1em;
 }
 
-.selfcare_button_container ul {
-  display: block;
-  list-style: none;
-  margin-left: 2em;
+.selfTrack {
+  background: #DCF0E7;
+  padding:1em;
+  border-radius:30px;
+  border:none;
+  margin:1em;
+  font-family:"spartan";
+  font-weight:600;
+  letter-spacing:0.1em;
 }
 
-.selfcare_button_container ul li {
-  display: inline;
-  padding: 0.18em;
-  margin: 0.1em;
-  font-size: 14px;
-  line-height: 40px;
-  border: 1px solid black;
+.selfButton {
+  background:#f2e6fc;
+  width:100%;
+  height:40%;
 }
 
-.selfcareContainer .mood {
-  background: white;
-  width: 300px;
-  height: 180px;
-  list-style-type: none;
-  color: black;
-  margin-left: 2.5em;
-  border-radius: 20px;
+.selfButton ul {
+  list-style:none;
+  height:100%;
 }
 
-.mood a {
-  text-decoration: none;
-  color: black;
-  margin-left: 3em;
-  padding: 2em;
-  position: relative;
-  line-height: 50px;
-  letter-spacing: 5%;
+.selfButton ul li {
+  display:inline-block;
+  text-decoration:none;
+  margin:0.5em 0 0 0.5em;
 }
 
-.selfcare_button_container2 {
-  background: #e5e5e5;
-  width: 215px;
-  height: 80px;
-  margin: 1em 1em 1em 2.7em;
-  position: relative;
-  border-radius: 20px;
-  color: #5d7cb8;
-  text-align: center;
-  padding-top: 20px;
-  letter-spacing: 5%;
+.selfButton ul li button {
+  background:white;
+  height:60%;
+  width:30%;
+  padding:3em 0.5em 3em 0.5em;
+  border-radius:20px;
+  text-align:center;
+  margin:0.3em;
+  border:none;
+  font-size:16px;
+  font-family:"spartan";
+  font-weight:600;
+  letter-spacing:0.1em;
+  line-height: 25px;
 }
 
-.selfcare_button_container2 button {
-  width: 160px;
-  height: 40px;
-  text-align: center;
-  border-radius: 20px;
-  margin-top: 1em;
-  background: white;
-}
-
-.selfcareContainer .brain {
-  background: white;
-  width: 300px;
-  height: 180px;
-  list-style-type: none;
-  color: black;
-  margin-left: 2.5em;
-  border-radius: 20px;
-}
-
-.brain h3 {
-  text-align: center;
-  text-decoration: none;
-  color: black;
-  font-weight: normal;
-  padding-top: 20px;
-}
-
-.selfcare_button_container3 {
-  background: #e5e5e5;
-  background-image: url(../images/iwwa_lightbulb.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 240px;
-  height: 110px;
-  margin: 1em 1em 1em 2em;
-  position: relative;
-  border-radius: 20px;
-}
-
-.selfcare_button_container3 h4 {
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 40px;
-  margin-left: 2em;
-}
-
-.selfcare_button_container3 button {
-  width: 160px;
-  height: 40px;
-  text-align: center;
-  border-radius: 20px;
-  margin-top: 1em;
-  background: white;
-  margin-left: 3em;
-  position: relative;
+.selfButton .selfHabit {
+  border:1px solid yellow;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 /*# sourceMappingURL=selfcare.css.map */

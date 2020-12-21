@@ -6,241 +6,157 @@
 .Focus body {
   background: white;
   font-family: "spartan";
-  height: 800px;
-  width:375px;
+  height: 100%;
+  width:100%;
+  display:block;
+  overflow:visible;
 }
 
 .focusHeader {
-  width: 100%;
-  position: fixed;
+  height:15%;
+  width:100%;
+  background:#c4c4c4;
+  border-radius: 0 0 30px 30px;
+  text-align:center;
+  position:relative;
+  padding: 1em 0 0 0;
 }
 
-.focusHeader ul li {
-  display: inline-block;
-  margin: 1em 0 2em 1em;
+.focusCalendar {
+  padding-left:0.5em;
+  width:100%;
 }
 
-.focusHeader ul li a {
-  font-size: 20px;
-  letter-spacing: 0.2em;
-  position: relative;
-  font-weight: bold;
+.focusHeader img {
+  padding:1em;
+}
+
+.focusWeek {
+  background:#e5e5e5;
+  position:relative;
+  width:90%;
+  height:25%;
+  border-radius:30px;
+  padding:0.5em;
+}
+
+.focuscurrentWeek {
+  font-size:12px;
+  margin:0.5em 0 0 0.5em;
+  font-weight:normal;
+  letter-spacing: 0.1em;
+}
+
+.focusDays {
+  margin-left:1em;
+}
+
+.focusDays a {
+  display:inline-block;
   text-decoration: none;
-  color: black;
+  color:black;
+  text-align: center;
+  margin:0 0.5em;
+  font-size:12px;
+  line-height: 25px;
 }
 
-.focusHeader ul li img.calendar {
-  display: inline;
-  vertical-align: bottom;
-}
-
-.focusHeader ul li img.avatar {
-  right: 0;
-  top: 0;
-  padding: 0.5em;
-  position: absolute;
+#focusMain {
+  background: rgba(93, 124, 184, 0.26);
+  border-radius: 10px;
+  padding:1em;
 }
 
 .focusContainer {
-  background: #e5e5e5;
-  width: 100%;
-  height: auto;
-  border-radius: 30px 30px 0 0;
-  margin-top:6em;
+  text-align:Center;
+  align-items: center;
+  font-family:"spartan";
+  letter-spacing:0.1em;
 }
 
 .focusContainer ul li {
-  margin: 1em;
-  list-style: none;
-  position: relative;
-  display: inline;
+  display:block;
 }
 
-.focusContainer .goal {
-  background: white;
-  width: 300px;
-  height: 185px;
-  border-radius: 20px;
-  margin-left: 2em;
+.focusHead {
+  font-size:16px;
+  color:rgba(56, 56, 56, 0.8);
+  text-align:Center;
+  margin-top:2em;
 }
 
-.goal a {
-  text-decoration: none;
-  color: black;
-  font-size: 18px;
-  margin-left: 4em;
-  line-height: 50px;
+.focusCircle {
+  border-radius:50%;
+  background:#eeb4c9;
+  width:50%;
+  height:70%;
+  padding:1em;
+  position:relative;
+  text-align:center;
+  display:inline-block;
 }
 
-.button_container {
-  background: #e5e5e5;
-  width: 210px;
-  height: 120px;
-  border-radius: 20px;
-  margin-left: 3em;
+.focusNumber {
+  padding:1em 1em 0 1em;
+  color:white;
+  font-size:48px;
 }
 
-.button_container p {
-  color: black;
-  padding: 1.5em 1em 0.5em 1em;
-  font-size: 14px;
+.focusDesc {
+  color:white;
+  font-size:24px;
+  padding-bottom:2em;
+  font-family:"spartan";
+  font-weight:600;
+  letter-spacing:0.1em;
 }
 
-mark.orange {
-  color: #e0812a;
-  background: none;
+.focusTrack {
+  background: #DCF0E7;
+  padding:1em;
+  border-radius:30px;
+  border:none;
+  margin:1em;
+  font-family:"spartan";
+  font-weight:600;
+  letter-spacing:0.1em;
 }
 
-.button_container button {
-  width: 160px;
-  height: 40px;
-  text-align: center;
-  border-radius: 20px;
-  margin-left: 2em;
-  background: white;
-  margin-top: 0.8em;
+.focusButton {
+  background:#c4c4c4;
+  width:100%;
+  height:40%;
 }
 
-.focusContainer .vision {
-  background: white;
-  width: 300px;
-  height: 185px;
-  border-radius: 20px;
-  margin-left: 2em;
+.focusButton ul {
+  list-style:none;
+  height:100%;
 }
 
-.vision h2 {
-  text-decoration: none;
-  color: black;
-  font-size: 18px;
-  margin-left: 4em;
-  line-height: 50px;
-  font-weight: normal;
+.focusButton ul li {
+  display:inline-block;
+  text-decoration:none;
+  margin:0.5em 0 0 0.5em;
 }
 
-.visionButton_container2 {
-  background: #e5e5e5;
-  background-image: url(../images/whiteboard.png);
-  background-repeat: no-repeat;
-  background-position: top;
-  width: 240px;
-  height: 110px;
-  border-radius: 20px;
-  margin-left: 1.8em;
-  position: relative;
-  padding-top: 3.5px;
+.focusButton ul li button {
+  background:white;
+  height:60%;
+  width:30%;
+  padding:3em 0.5em 3em 0.3em;
+  border-radius:20px;
+  text-align:center;
+  margin:0.3em;
+  border:none;
+  font-size:16px;
+  font-family:"spartan";
+  font-weight:600;
+  letter-spacing:0.1em;
+  line-height:25px;
 }
 
-.visionButton_container2 p {
-  font-size: 14px;
-  padding: 1em 1em 1em 2em;
-}
-
-.visionButton_container2 button {
-  width: 160px;
-  height: 40px;
-  text-align: center;
-  border-radius: 20px;
-  margin-left: 3em;
-  background: white;
-  margin-top: 0.8em;
-}
-
-.focusContainer .budget {
-  background: white;
-  width: 300px;
-  height: 185px;
-  border-radius: 20px;
-  margin-left: 2em;
-}
-
-.budget h3 {
-  text-decoration: none;
-  color: black;
-  font-size: 18px;
-  margin-left: 3em;
-  line-height: 50px;
-  font-weight: normal;
-}
-
-.budget .button_container3 {
-  background: #e5e5e5;
-  width: 200px;
-  height: 120px;
-  border-radius: 20px;
-  margin-left: 3em;
-  position: relative;
-  padding-top: 3px;
-}
-
-.button_container3 h4 {
-  text-decoration: none;
-  color: black;
-  font-size: 12px;
-  margin-left: 3.5em;
-  padding-top: 10px;
-  font-weight: normal;
-}
-
-.button_container3 ul {
-  position: relative;
-  margin-left: 0.5em;
-  padding-top: 10px;
-}
-
-.button_container3 ul li {
-  margin: 0;
-  padding: 0;
-  display: inline-block;
-}
-
-.button_container3 .month {
-  background: #ccded6;
-  width: 80px;
-  height: 30px;
-  border-radius: 10px;
-  padding: 0.2em;
-}
-
-.month p {
-  font-size: 10px;
-  text-align: center;
-}
-
-.month a {
-  font-size: 16px;
-  margin: 3em 1em 0.5em 0.5em;
-  text-decoration: none;
-  color: black;
-}
-
-.button_container3 .year {
-  background: #ccded6;
-  width: 80px;
-  height: 30px;
-  border-radius: 10px;
-  padding: 0.2em;
-}
-
-.year p {
-  font-size: 10px;
-  text-align: center;
-}
-
-.year a {
-  font-size: 16px;
-  color: white;
-  text-decoration: none;
-  margin: 3em 1em 0.5em 0.5em;
-}
-
-.button_container3 button {
-  width: 160px;
-  height: 40px;
-  text-align: center;
-  border-radius: 20px;
-  margin-left: 1.5em;
-  background: white;
-  margin-top: 0.3em;
+.focusButton .focusGoal {
+  border:1px solid yellow;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 /*# sourceMappingURL=focus.css.map */

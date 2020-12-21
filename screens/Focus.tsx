@@ -4,7 +4,7 @@ import AxiosLogin from '../Axios Functions/AxiosLogin';
 import Modal from 'modal-react-native-web';
 import '../assets/css/focus.css';
 import Ellipseavatar from '../assets/images/Ellipseavatar.png';
-import Calendar from '../assets/images/CALENDAR.png';
+import CalStar from '../assets/images/bx_bx-calendar-star.png';
 
 
 class Focus extends Component {
@@ -19,57 +19,55 @@ class Focus extends Component {
         <link rel="stylesheet" href="focus.css"/>
         <style>@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');</style>
         <style>@import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');</style>
+        <style>@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@600&display=swap');</style>
     </head>
     <body>
         <div className="focusHeader">
-            <ul>
-                <li><a href="#">FOCUS</a></li>
-                <li><img src={Calendar} alt="calendar" className="calendi"/></li>
-                <li><img src={Ellipseavatar} alt="avatar" className="avatar"/></li>
-            </ul>
+            <img src={CalStar} alt="focus" className="focus"/>  
         </div>
-        <div className="focusContainer">
+        <div className="focusCalendar">
+            <div className="focusWeek">
+                <h1 className="focuscurrentWeek">CURRENT WEEK</h1>
+                <div className="focusDays">
+                    <a href="#">SUN <br/>3</a>
+                    <a href="#">MON <br/>4</a>
+                    <a href="#">TUE <br/>5</a>
+                    <a href="#">WED <br/>6</a>
+                    <a href="#">THU <br/>7</a>
+                    <a href="#" id="focusMain">FRI <br/>8</a>
+                    <a href="#">SAT <br/>9</a>
+                </div>
+            </div>
+            <div className="focusContainer">
+                <ul>
+                    <li>
+                        <h2 className="focusHead">CURRENT GOALS</h2>
+                    </li>
+                    <li>
+                        <div className="focusCircle">
+                            <h3 className="focusNumber">4</h3>
+                            <p className="focusDesc">in progress</p>
+                        </div>
+                    </li>
+                    <li>
+                    <button className="focusTrack">PLAN MY GOALS</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div className="focusButton">
             <ul>
                 <li>
-                    <div className="goal">
-                        <a href="#">GOAL TRACKER</a>
-                        <div className="button_container">
-                            <p>4 GOALS <mark className="orange">IN PROGRESS</mark></p>
-                            <button>KEEP WORKING</button>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div className="vision">
-                        <h2>VISION BOARD</h2>
-                        <div className="visionButton_container2">
-                            <p>ENVISION YOUR GOALS</p>
-                            <button>GET INSPIRED</button>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div className="budget">
-                        <h3>BUDGET TRACKER</h3>
-                        <div className="button_container3">
-                            <h4>SAVINGS GOAL</h4>
-                            <ul>
-                                <li>
-                                    <div className="month">
-                                        <p>per month</p>
-                                        <a href="#">$1500</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="year">
-                                        <p>for year</p>
-                                        <a href="#">$18000</a>
-                                    </div>
-                                </li>
-                            </ul>
-                            <button onClick={()=> this.props.navigation.navigate('BudgetTracker')}>TRACK SAVINGS</button>
-                        </div>
-                    </div>
+                    <button className="focusGoal">
+                        GOAL TRACKER
+                    </button>
+                    <button className="focusTask">
+                        TASK MANAGER
+                    </button>
+                    <button className="focusBudget">
+                        BUDGET TRACKER
+                    </button>
                 </li>
             </ul>
         </div>
