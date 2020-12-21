@@ -11,17 +11,17 @@ export default function NewFeaturesList({navigation}){
                     <TouchableOpacity style={styles.selfcareOptionsContainer} onPress={()=>console.log("button pressed")}>
                         <Text style={styles.optionsText}>SELFCARE</Text>
                         <Image source={require('../assets/images/Vector.png')}
-                        style={{width: '100%', height: '100%',resizeMode: 'contain'}}/>
+                        style={{width: '100%', height: '150%',resizeMode: 'contain'}}/>
                  </TouchableOpacity>
                     <TouchableOpacity style={styles.healthOptionsContainer} onPress={()=>console.log("button pressed")}>
                         <Text style={styles.optionsText}>HEALTH</Text>
                         <Image source={require('../assets/images/heart.png')}
-                        style={{width: '100%', height: '100%',resizeMode: 'contain'}}/>
+                        style={{width: '100%', height: '150%',resizeMode: 'contain'}}/>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.focusOptionsContainer} onPress={()=>console.log("button pressed")}>
                         <Text style={styles.optionsText}>FOCUS</Text>
                         <Image source={require('../assets/images/bx_bx-calendar-star.png')}
-                        style={{width: '100%', height: '100%',resizeMode: 'contain'}}/>
+                        style={{width: '100%', height: '150%',resizeMode: 'contain'}}/>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     },
     smallContainer:{
         borderRadius: 8,
-        width: '90%',
+        width: '100%',
         height: '100%',
         margin: '10px',
         padding: '5px',
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
         marginTop: 20,
     },
     selfcareOptionsContainer:{
-        width:'90%',
+        width:'95%',
         textAlignVertical: 'center',
         marginVertical: '3%',
         marginHorizontal: '2%',
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
         backgroundColor:'#f2e6fc',
     },
     healthOptionsContainer:{
-        width:'90%',
+        width:'95%',
         textAlignVertical: 'center',
         marginVertical: '3%',
         marginHorizontal: '2%',
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
         backgroundColor:'#e3edff',
     },
     focusOptionsContainer:{
-        width:'90%',
+        width:'95%',
         textAlignVertical: 'center',
         marginVertical: '3%',
         marginHorizontal: '2%',
