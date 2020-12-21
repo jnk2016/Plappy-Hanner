@@ -2,23 +2,23 @@ import useFloatingHeaderHeight from '@react-navigation/stack/lib/typescript/src/
 import React, {useState} from 'react';
 import { Image, StyleSheet, View, Button, TouchableOpacity, Text} from 'react-native';
 
-export default function NewFeaturesList({navigation}){
+export default function NewFocus({navigation}){
 
     return(
         <View style={{backgroundColor: 'white'}}>
             <View style = {styles.bigContainer}>
                 <View style={styles.smallContainer}>
-                    <TouchableOpacity style={styles.selfcareOptionsContainer} onPress={()=>navigation.navigate('SelfCare')}>
+                    <TouchableOpacity style={styles.selfcareOptionsContainer} onPress={()=>console.log("button pressed")}>
                         <Text style={styles.optionsText}>SELFCARE</Text>
                         <Image source={require('../assets/images/Vector.png')}
                         style={{width: '95%', height: '150%',resizeMode: 'contain'}}/>
                  </TouchableOpacity>
-                    <TouchableOpacity style={styles.healthOptionsContainer} onPress={()=>navigation.navigate('Health')}>
+                    <TouchableOpacity style={styles.healthOptionsContainer} onPress={()=>console.log("button pressed")}>
                         <Text style={styles.optionsText}>HEALTH</Text>
                         <Image source={require('../assets/images/heart.png')}
                         style={{width: '100%', height: '150%',resizeMode: 'contain'}}/>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.focusOptionsContainer} onPress={()=>navigation.navigate('Focus')}>
+                    <TouchableOpacity style={styles.focusOptionsContainer} onPress={()=>console.log("button pressed")}>
                         <Text style={styles.optionsText}>FOCUS</Text>
                         <Image source={require('../assets/images/bx_bx-calendar-star.png')}
                         style={{width: '100%', height: '150%',resizeMode: 'contain'}}/>
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
         paddingVertical: '25%',
         borderRadius: 20,
         flexDirection: 'row',
-        backgroundColor:'#f2e6fc',
+        backgroundColor:'#e5e5e5',
     },
     healthOptionsContainer:{
         width:'95%',
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
         paddingVertical: '25%',
         borderRadius: 20,
         flexDirection: 'row',
-        backgroundColor:'#e3edff',
+        backgroundColor:'#e5e5e5',
     },
     focusOptionsContainer:{
         width:'95%',
