@@ -6,9 +6,6 @@ export default function BudgetTracker({navigation}){
 
     return(
         <View>
-            <View style = {styles.headingContainer}>
-                <Text style={styles.heading}>BUDGET TRACKER</Text>
-            </View>
             <View style = {styles.bigContainer}>
                 <View style={styles.samelineText}>
                     <Text style={{fontWeight: '700', fontSize:'18px', fontFamily: 'Spartan', letterSpacing: '0.2em'}}>JANUARY</Text>

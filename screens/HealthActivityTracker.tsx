@@ -14,7 +14,7 @@ import fheart from '../assets/images/fheart.png';
 import steps from '../assets/images/steps.png';
 
 
-class Health extends Component {
+class HealthActivityTracker extends Component {
 
   render() {return (
     <div className="Health">
@@ -47,16 +47,16 @@ class Health extends Component {
             <div className="healthContainer">
                 <ul>
                     <li>
-                        <h2 className="healthHead">PERIOD IN</h2>
+                        <h2 className="healthHead">AVERAGE CALORIE INTAKE</h2>
                     </li>
                     <li>
-                        <div className="healthCirclePeriod">
-                            <h3 className="healthNumber">5</h3>
-                            <p className="healthDesc">days</p>
+                        <div className="healthCircleActivity">
+                            <h3 className="healthNumber">1020</h3>
+                            <p className="healthDesc">kcal</p>
                         </div>
                     </li>
                     <li>
-                    <button className="healthTrack" onClick={()=> this.props.navigation.navigate('Period')}>LOG MY PERIOD</button>
+                    <button className="healthTrack" onClick={()=> this.props.navigation.navigate('ActivityTracker')}>SEE MY ACTIVITY</button>
                     </li>
                 </ul>
             </div>
@@ -65,13 +65,13 @@ class Health extends Component {
         <div className="healthButton">
             <ul>
                 <li>
-                    <button className="healthPeriodGold">
+                    <button className="healthPeriod" onClick={()=> this.props.navigation.navigate('Health')}>
                         PERIOD TRACKER
                     </button>
                     <button className="healthMeal" onClick={()=> this.props.navigation.navigate('HealthMealPlanner')}>
                         MEAL PLANNER
                     </button>
-                    <button className="healthActivity" onClick={()=> this.props.navigation.navigate('HealthActivityTracker')}>
+                    <button className="healthActivityGold">
                         ACTIVITY TRACKER
                     </button>
                 </li>
@@ -83,4 +83,4 @@ class Health extends Component {
   );
   }
 }
-export default Health;
+export default HealthActivityTracker;

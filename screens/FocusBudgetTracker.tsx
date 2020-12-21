@@ -7,7 +7,7 @@ import Ellipseavatar from '../assets/images/Ellipseavatar.png';
 import CalStar from '../assets/images/bx_bx-calendar-star.png';
 
 
-class Focus extends Component {
+class FocusBudgetTracker extends Component {
 
   render() {return (
     <div className="Focus">
@@ -41,16 +41,16 @@ class Focus extends Component {
             <div className="focusContainer">
                 <ul>
                     <li>
-                        <h2 className="focusHead">CURRENT GOALS</h2>
+                        <h2 className="focusHead">MONTHLY BUDGET</h2>
                     </li>
                     <li>
-                        <div className="focusCircle">
-                            <h3 className="focusNumber">4</h3>
-                            <p className="focusDesc">in progress</p>
+                        <div className="focusCircleBudget">
+                            <h3 className="focusNumber">1500</h3>
+                            <p className="focusDesc">dollars</p>
                         </div>
                     </li>
                     <li>
-                    <button className="focusTrack" onClick={()=> this.props.navigation.navigate('Goal')}>PLAN MY GOALS</button>
+                    <button className="focusTrack" onClick={()=> this.props.navigation.navigate('BudgetTracker')}>PLAN MY BUDGET</button>
                     </li>
                 </ul>
             </div>
@@ -59,13 +59,13 @@ class Focus extends Component {
         <div className="focusButton">
             <ul>
                 <li>
-                    <button className="focusGoalGold">
+                    <button className="focusGoal" onClick={()=> this.props.navigation.navigate('Focus')}>
                         GOAL TRACKER
                     </button>
                     <button className="focusTask" onClick={()=> this.props.navigation.navigate('FocusTaskManager')}>
                         TASK MANAGER
                     </button>
-                    <button className="focusBudget" onClick={()=> this.props.navigation.navigate('FocusBudgetTracker')}>
+                    <button className="focusBudgetGold">
                         BUDGET TRACKER
                     </button>
                 </li>
@@ -77,4 +77,4 @@ class Focus extends Component {
   );
   }
 }
-export default Focus;
+export default FocusBudgetTracker;

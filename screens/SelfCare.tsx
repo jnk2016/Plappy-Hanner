@@ -45,13 +45,13 @@ class SelfCare extends Component {
                         <h2 className="selfHead">AVERAGE PER DAY</h2>
                     </li>
                     <li>
-                        <div className="selfCircle">
+                        <div className="selfCircleHabit">
                             <h3 className="selfNumber">5</h3>
                             <p className="selfDesc">habits</p>
                         </div>
                     </li>
                     <li>
-                    <button className="selfTrack">START TRACKING</button>
+                    <button className="selfTrack" onClick={()=> this.props.navigation.navigate('HabitTracker')}>START TRACKING</button>
                     </li>
                 </ul>
             </div>
@@ -60,13 +60,13 @@ class SelfCare extends Component {
         <div className="selfButton">
             <ul>
                 <li>
-                    <button className="selfHabit">
+                    <button className="selfHabitGold">
                         HABIT TRACKER
                     </button>
-                    <button className="selfMood">
+                    <button className="selfMood" onClick={()=> this.props.navigation.navigate('SelfCareMoodTracker')}>
                         MOOD TRACKER
                     </button>
-                    <button className="selfBrain">
+                    <button className="selfBrain" onClick={()=> this.props.navigation.navigate('SelfCareBrainDump')}>
                         BRAIN DUMP
                     </button>
                 </li>

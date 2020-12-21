@@ -57,18 +57,6 @@ class FeatureList extends Component {
                 </div>
             </div>
         </div>
-            
-        {/* <div className="navbar">
-            <div className="bottom_options">
-                <ul>
-                    <li><a href="#"><img src="images/home.png" alt="home" id="home"/></a></li>
-                    <li><a href="#"><img src="images/CALENDAR.png" alt="calen" id="calendar"/></a></li>
-                    <li><a href="#"><img src="images/EVENT.png" alt="event" id="event"/></a></li>
-                    <li><a href="#"><img src="images/ACTIVITY.png" alt="activity" id="activity"/></a></li>
-                    <li><a href="#"><img src="images/SETTINGS.png" alt="settings" id="settings"/></a></li>
-                </ul>
-            </div>
-        </div> */}
     </body>
     </html>
     </div>

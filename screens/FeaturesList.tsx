@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#ffffff',
         overflow: 'hidden',
         paddingBottom: '30px',
-        paddingTop: '10%',
+        paddingTop: '3%',
         height:'100%',
     },
     smallContainer:{

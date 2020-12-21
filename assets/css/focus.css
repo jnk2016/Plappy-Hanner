@@ -96,6 +96,28 @@
   display:inline-block;
 }
 
+.focusCircleBudget {
+  border-radius:50%;
+  background:#7EBD9F;
+  width:50%;
+  height:70%;
+  padding:1em;
+  position:relative;
+  text-align:center;
+  display:inline-block;
+}
+
+.focusCircleTask {
+  border-radius:50%;
+  background:#FF6F6F;
+  width:50%;
+  height:70%;
+  padding:1em;
+  position:relative;
+  text-align:center;
+  display:inline-block;
+}
+
 .focusNumber {
   padding:1em 1em 0 1em;
   color:white;
@@ -155,7 +177,17 @@
   line-height:25px;
 }
 
-.focusButton .focusGoal {
+.focusButton .focusGoalGold {
+  border:1px solid yellow;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.focusButton .focusTaskGold {
+  border:1px solid yellow;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.focusButton .focusBudgetGold {
   border:1px solid yellow;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }

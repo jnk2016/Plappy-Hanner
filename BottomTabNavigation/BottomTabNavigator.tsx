@@ -10,12 +10,35 @@ import Health from '../screens/Health';
 import Focus from '../screens/Focus';
 import Calendar from '../screens/Calendar';
 import Settings from '../screens/Settings';
-import BudgetTracker from '../screens/BudgetTracker';
 import FeaturesList from '../screens/FeaturesList';
 
 import NewHealth from '../screens/newHealth';
 import NewFocus from '../screens/newFocus';
 import NewSelfCare from '../screens/newSelfCare';
+
+/* Focus Screens */
+import FocusBudgetTracker from '../screens/FocusBudgetTracker';
+import FocusTaskManager from '../screens/FocusTaskManager';
+
+import BudgetTracker from '../screens/BudgetTracker';
+import Tasks from '../screens/Tasks';
+import Goal from '../screens/Goal';
+
+/* Health Screens */
+import HealthMealPlanner from '../screens/HealthMealPlanner';
+import HealthActivityTracker from '../screens/HealthActivityTracker';
+
+import Period from '../screens/Period';
+import Meal from '../screens/Meal';
+import ActivityTracker from '../screens/ActivityTracker';
+
+/* SelfCare Screens */
+import SelfCareMoodTracker from '../screens/SelfCareMoodTracker';
+import SelfCareBrainDump from '../screens/SelfCareBrainDump';
+
+import HabitTracker from '../screens/HabitTracker';
+import Mood from '../screens/Mood';
+import BrainDump from '../screens/BrainDump';
 
 const Tab = createBottomTabNavigator();
 
@@ -31,7 +54,7 @@ export default function MyTabs() {
          screenOptions={({ route }) => ({
              tabBarIcon: ({ focused, color, size }) => {
                  if(route.name === 'Home'){
-                     return(<Image source={require('../assets/images/home.png')} style={{width:30, height:30}}/>)
+                     return(<Image source={require('../assets/images/home.png')} style={{width:33, height:33, marginBottom: 1}}/>)
                  }
                  else if(route.name === 'Calendar'){
                      return(<Image source={require('../assets/images/CALENDAR.png')}style={{width:25, height:25}}/>)
@@ -57,16 +80,17 @@ export default function MyTabs() {
 const HomeStack = createStackNavigator();
 function HomeStackScreen(){
     return(
-        <HomeStack.Navigator screenOptions={{ headerShown: true }}>
+        <HomeStack.Navigator screenOptions={{ headerShown: true}}>
             <HomeStack.Screen name = "Home" component={Home}
                               options={{
                                 title: "Hello, Danphuong",
                                 headerStyle: {
+                                  borderBottomColor: 'transparent',
                                   backgroundColor: '#FFFFFF', //Set Header color
                                 },
                                 headerTintColor: '#000000', //Set Header text color
                                 headerTitleStyle: {
-                                  fontWeight: 'bold', //Set Header text style
+                                  fontWeight: '600', //Set Header text style
                                   fontFamily: 'Spartan',
                                 },
                                 headerRight: ()=> <ProfilePic/>,
@@ -80,12 +104,145 @@ const FeaturesStack = createStackNavigator();
 function FeaturesStackScreen(){
     return(
         <FeaturesStack.Navigator screenOptions={{ headerShown: false }}>
-            <FeaturesStack.Screen name = "FeatureList" component={FeaturesList}/>
-            <FeaturesStack.Screen name = "SelfCare" component={SelfCare}/>
-            <FeaturesStack.Screen name = "Health" component={Health}/>
+            <FeaturesStack.Screen name = "FeatureList" component={FeaturesList}
+                              options={{
+                                title: "My Features",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '600', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                  letterSpacing: '0.05em',
+                                }, headerShown: true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
+            <FeaturesStack.Screen name = "SelfCare" component={SelfCareStackScreen}/>
+            <FeaturesStack.Screen name = "Health" component={HealthStackScreen}/>
             <FeaturesStack.Screen name = "Focus" component={FocusStackScreen}/>
         </FeaturesStack.Navigator>
     );
+}
+
+const SelfCareStack = createStackNavigator();
+function SelfCareStackScreen(){
+  return(
+      <SelfCareStack.Navigator screenOptions={{ headerShown: false }}>
+          <SelfCareStack.Screen name = "SelfCare" component={SelfCare}/>
+          <SelfCareStack.Screen name = "HabitTracker" component={HabitTracker}
+                              options={{
+                                title: "HABIT TRACKER",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '700', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                  letterSpacing: '0.1em',
+                                }, headerShown: true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
+          <SelfCareStack.Screen name = "SelfCareMoodTracker" component={SelfCareMoodTracker}/>
+          <SelfCareStack.Screen name = "Mood" component={Mood}
+                              options={{
+                                title: "MOODS",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '700', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                  letterSpacing: '0.1em',
+                                }, headerShown: true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
+          <SelfCareStack.Screen name = "SelfCareBrainDump" component={SelfCareBrainDump}/>
+          <SelfCareStack.Screen name = "BrainDump" component={BrainDump}
+                              options={{
+                                title: "BRAIN DUMP",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '700', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                  letterSpacing: '0.1em',
+                                }, headerShown: true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
+      </SelfCareStack.Navigator>
+  );
+}
+
+const HealthStack = createStackNavigator();
+function HealthStackScreen(){
+  return(
+      <HealthStack.Navigator screenOptions={{ headerShown: false }}>
+          <HealthStack.Screen name = "Health" component={Health}/>
+          <HealthStack.Screen name = "Period" component={Period}
+                              options={{
+                                title: "PERIOD TRACKER",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '700', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                  letterSpacing: '0.1em',
+                                }, headerShown: true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
+          <HealthStack.Screen name = "HealthMealPlanner" component={HealthMealPlanner}/>
+          <HealthStack.Screen name = "Meal" component={Meal}
+                              options={{
+                                title: "MEALS",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '700', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                  letterSpacing: '0.1em',
+                                }, headerShown: true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
+          <HealthStack.Screen name = "HealthActivityTracker" component={HealthActivityTracker}/>
+          <HealthStack.Screen name = "ActivityTracker" component={ActivityTracker}
+                              options={{
+                                title: "TODAY",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '700', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                  letterSpacing: '0.1em',
+                                }, headerShown: true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
+      </HealthStack.Navigator>
+  );
 }
 
 const FocusStack = createStackNavigator();
@@ -93,7 +250,56 @@ function FocusStackScreen(){
   return(
       <FocusStack.Navigator screenOptions={{ headerShown: false }}>
           <FocusStack.Screen name = "Focus" component={Focus}/>
-          <FocusStack.Screen name = "BudgetTracker" component={BudgetTracker}/>
+          <FocusStack.Screen name = "Goal" component={Goal}
+                              options={{
+                                title: "MY GOALS",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '700', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                  letterSpacing: '0.1em',
+                                }, headerShown: true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
+          <FocusStack.Screen name = "FocusTaskManager" component={FocusTaskManager}/>
+          <FocusStack.Screen name = "Tasks" component={Tasks}
+                              options={{
+                                title: "MY TASKS",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '700', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                  letterSpacing: '0.1em',
+                                }, headerShown: true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
+          <FocusStack.Screen name = "FocusBudgetTracker" component={FocusBudgetTracker}/>
+          <FocusStack.Screen name = "BudgetTracker" component={BudgetTracker}
+                              options={{
+                                title: "BUDGET TRACKER",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '700', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                  letterSpacing: '0.1em',
+                                }, headerShown: true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
       </FocusStack.Navigator>
   );
 }
@@ -114,8 +320,8 @@ function ProfilePic(){
         <Image
           source={require('../assets/images/Ellipseavatar.png')}
           style={{
-            width: 45,
-            height: 45,
+            width: 50,
+            height: 50,
             marginRight: 10,
           }}
         />
