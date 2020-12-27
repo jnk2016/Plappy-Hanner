@@ -5,89 +5,133 @@ import Modal from 'modal-react-native-web';
 import '../assets/css/hearthome.css';
 import Ellipseavatar from '../assets/images/Ellipseavatar.png'; 
 
+
 class Home extends Component {
 
-  render() {return (
-    <div className="Home">
-        <html lang="en">
-        <head>
-            <meta charSet="UTF-8"/>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-            <title>HOMESCREEN</title>
-            <link rel="stylesheet" href="hearthome.css"/>
-            <style>@import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');</style>
-            <style>@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');</style>
-        <style>@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@600&display=swap');</style>
-        </head>
-        <body>
-            <main>
-                <section id="section-a" className="grid">
-                    <div className="calendar-wrap">
-                        <h2 className="month-name">JAN 2021</h2>
-                        <div className="days-jan">
-                            <ul>
-                                <li><a href="#">SUN<br/>3</a></li>
-                                <li><a href="#">MON<br/>4</a></li>
-                                <li><a href="#">TUE<br/>5</a></li>
-                                <li><a href="#">WED<br/>6</a></li>
-                                <li><a href="#">THU<br/>7</a></li>
-                                <li><a href="#" id="main">FRI<br/>8</a></li>
-                                <li><a href="#">SAT<br/>9</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-                <section id="section-b" className="grid"> 
-                    <div className="yellow-wrap">
-                        <div className="main-static">
-                            <ul>
-                                <li><button>OVERVIEW</button></li>
-                                <li><button>DAILY</button></li>
-                                <li><button>WEEKLY</button></li>
-                                <li><button>MONTHLY</button></li>
-                            </ul>
-                            <div className="notification">
-                                <ul>
-                                    <li>
-                                        <div className="homeEvents">
-                                            <h3>EVENTS</h3>
-                                            <h4>3</h4>
-                                            <p>upcoming</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="tasks">
-                                            <h3>TASKS</h3>
-                                            <h4>12</h4>
-                                            <p>pending</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section id="section-c" className="grid">
-                    <div className="features-menu">
-                        <h6>My Features</h6>
-                        <ul>
-                            <li><button style={{backgroundColor: "#e8d7f7"}}>HABITS</button></li>
-                            <li><button style={{backgroundColor: "#ffa0a0"}}>PERIOD</button></li>
-                            <li><button style={{backgroundColor:"#EEB4C9"}}>GOALS</button></li>
-                            <li><button style={{background: "#f4eac7"}}>MOOD</button></li>
-                            <li><button style={{background: "#FFc997"}}>MEAL</button></li>
-                            <li><button style={{background: "#ff6f6f"}}>TASKS</button></li>
-                            <li><button style={{background: "#c8d8f9"}}>BRAIN <br/> DUMP</button></li>
-                            <li><button style={{background: "#E5E5E5"}}>ACTIVITY</button></li>
-                            <li><button style={{background: "#7ebd9f"}}>BUDGET</button></li>
-                        </ul>
-                    </div>
-                </section>
-            </main>
-        </body>
-        </html>
-      </div>
-  );
+    render() {return (
+      <div className="Home">
+          <html lang="en">
+          <head>
+              <meta charSet="UTF-8"/>
+              <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+              <title>HOMESCREEN</title>
+              <link rel="stylesheet" href="hearthome.css"/>
+              <style>@import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');</style>
+              <style>@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');</style>
+              <style>@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@600&display=swap');</style>
+              <style>@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap');</style>
+          </head>
+          <body>
+              <div className="homescreen">
+                  <div className="homeSearch">
+                      <input type="text" placeholder="Search"/>
+                  </div>
+              </div>
+              <div className="homeContainer">
+                  <div className="homeVariable">
+                      <ul>
+                          <li>
+                              <time>15:01</time>
+                              <h2 className="homeDay">friday, january 8</h2>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+              <div className="homeSections">
+                  <div className="homeSide">
+                      <ul>
+                          <li>
+                              <div className="homeGoals">
+                                  <div className="homeNumber">
+                                      4
+                                  </div>
+                                  <p>goals</p>
+                              </div>
+                          </li>
+                          <li>
+                              <div className="homeTasks">
+                                  <div className="homeNumber">
+                                      12
+                                  </div>
+                                  <p>tasks</p>
+                              </div>
+                          </li>
+                          <li>
+                              <div className="homeEvents">
+                                  <div className="homeNumber">
+                                      3
+                                  </div>
+                                  <p>events</p>
+                              </div>
+                          </li>
+                      </ul>
+                  </div>
+                  <div className="homeCalendar">
+                      <div className="homeWeek">
+                          <ul>
+                              <li>SUN</li>
+                              <li>MON</li>
+                              <li>TUE</li>
+                              <li>WED</li>
+                              <li>THU</li>
+                              <li>FRI
+                                  <a href="#">1</a>
+                              </li>
+                              <li>SAT
+                                  <a href="#">2</a>
+                              </li>
+                          </ul>
+                      </div>
+                      <div className="homeWeekdays">
+                          <ul>
+                              
+                              <li>3</li>
+                              <li>4</li>
+                              <li>5</li>
+                              <li>6</li>
+                              <li>7</li>
+                              <li>8</li>
+                              <li>9</li>
+                              <li>10</li>
+                              <li>11</li>
+                              <li>12</li>
+                              <li>13</li>
+                              <li>14</li>
+                              <li>15</li>
+                              <li>16</li>
+                              <li>17</li>
+                              <li>18</li>
+                              <li>19</li>
+                              <li>20</li>
+                              <li>21</li>
+                              <li>22</li>
+                              <li>23</li>
+                              <li>24</li>
+                              <li>25</li>
+                              <li>26</li>
+                              <li>27</li>
+                              <li>28</li>
+                              <li>29</li>
+                              <li>30</li>
+                              <li>31</li>
+                          </ul>
+                      </div>
+                  </div>
+              </div> 
+              <div className="homeSchedule">
+                  <h3>Schedule</h3>
+                  <div className="homeButtons">
+                      <ul>
+                          <li><button className="homeDaily">DAILY</button></li>
+                          <li><button className="homeWeekly">WEEKLY</button></li>
+                          <li><button className="homeMonthly">MONTHLY</button></li>
+                      </ul>
+                  </div>
+              </div>
+          </body>
+          </html>
+        </div>
+    );
+    }
   }
-}
-export default Home;
+  export default Home;

@@ -6,15 +6,24 @@ import Vector from '../assets/images/Vector.png';
 import Heart from '../assets/images/heart.png';
 import CalStar from '../assets/images/bx_bx-calendar-star.png';
 
-
-class Goal extends Component {
-
-  render() {return (
-    <div className="SelfCare">
-    <html lang="en">
-    </html>
-    </div>
+export default function Goal ({navigation}){
+  return(
+    <View style={styles.container}>
+      <Text style={styles.text}>Hello World</Text>
+    </View>
   );
-  }
 }
-export default Goal;
+
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex:1,
+    justifyContent:'center',
+    alignItems: 'center',
+  },
+  text: {
+    color:'black',
+    fontSize:30,
+  }
+})

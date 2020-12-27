@@ -45,7 +45,7 @@ class FocusBudgetTracker extends Component {
                     </li>
                     <li>
                         <div className="focusCircleBudget">
-                            <h3 className="focusNumber">1500</h3>
+                            <h3 className="focusNumber" id="focusB">2500</h3>
                             <p className="focusDesc">dollars</p>
                         </div>
                     </li>

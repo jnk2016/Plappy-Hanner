@@ -72,7 +72,7 @@ class Health extends Component {
                         MEAL PLANNER
                     </button>
                     <button className="healthActivity" onClick={()=> this.props.navigation.navigate('HealthActivityTracker')}>
-                        ACTIVITY TRACKER
+                        WATER TRACKER
                     </button>
                 </li>
             </ul>

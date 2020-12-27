@@ -47,12 +47,12 @@ class HealthActivityTracker extends Component {
             <div className="healthContainer">
                 <ul>
                     <li>
-                        <h2 className="healthHead">AVERAGE CALORIE INTAKE</h2>
+                        <h2 className="healthHead">AVERAGE DAILY WATER INTAKE</h2>
                     </li>
                     <li>
                         <div className="healthCircleActivity">
-                            <h3 className="healthNumber">1020</h3>
-                            <p className="healthDesc">kcal</p>
+                            <h3 className="healthNumber">5</h3>
+                            <p className="healthDesc">cups</p>
                         </div>
                     </li>
                     <li>
@@ -72,7 +72,7 @@ class HealthActivityTracker extends Component {
                         MEAL PLANNER
                     </button>
                     <button className="healthActivityGold">
-                        ACTIVITY TRACKER
+                        WATER TRACKER
                     </button>
                 </li>
             </ul>
