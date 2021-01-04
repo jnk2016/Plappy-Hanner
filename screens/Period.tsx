@@ -18,7 +18,6 @@ export default function Period ({navigation}) {
         <View style={styles.mainContainer}>
           <Text style={styles.header}>CURRENT CYCLE</Text>
           <View style={styles.cycleContainer}>
-            <View style={styles.cycleCircle}>
               <View style={styles.cycleTop}>
                 <Text style={styles.dateText}>Friday, Jan 8 2021</Text>
                 <Text style={styles.cycleText}>CYCLE DAY 24</Text>
@@ -27,43 +26,46 @@ export default function Period ({navigation}) {
                 <Text style={styles.periodText}>PERIOD IN:</Text> 
                 <Text style={styles.periodDayText}>5 DAYS</Text> 
               </View>
-          </View>
         </View>
         <View style={styles.todayContainer}>
           <Text style={styles.lowerHeader}>TODAY'S SYMPTOMS</Text>
           <View style={styles.symptomContainer}>
             <Text style={styles.symptomHeadText}>creamy</Text>
-            <View style={styles.protectContainer}>
-              <Image
-              source={{uri:Protect}}
-              style={{width:35,height:35}}
-              />
-            </View>
-            <View style={styles.tenderContainer}>
-              <Image
-              source={{uri:Polygon}}
-              style={{width:35,height:35}}
-              />
-            </View>
+            <View style={styles.circleContainer}>
+              <View style={styles.protectContainer}>
+                <Image
+                source={{uri:Protect}}
+                style={{width:35,height:35}}
+                />
+              </View>
+              <View style={styles.tenderContainer}>
+                <Image
+                source={{uri:Polygon}}
+                style={{width:35,height:35}}
+                />
+              </View>
+              </View>
           </View>
         </View>
         </View>
         <View style={styles.insightContainer}>
           <Text style={styles.lowerHeader}>INSIGHTS</Text>
           <View style={styles.buttonContainer}>
-            <TouchableOpacity style={styles.symptomButton}>
-              <Text style={styles.buttonText}>Log symptoms</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.buttonContainer}>
-            <TouchableOpacity style={styles.calendarButton}>
-              <Text style={styles.buttonText}>View Calendar</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.buttonContainer}>
-            <TouchableOpacity style={styles.periodButton}>
-              <Text style={styles.buttonText}>Log period</Text>
-            </TouchableOpacity>
+            <View style={styles.lowerContainer}>
+              <TouchableOpacity style={styles.symptomButton}>
+                <Text style={styles.buttonText}>Log symptoms</Text>
+              </TouchableOpacity>
+            </View>
+            <View style={styles.lowerContainer}>
+              <TouchableOpacity style={styles.calendarButton}>
+                <Text style={styles.buttonText}>View Calendar</Text>
+              </TouchableOpacity>
+            </View>
+            <View style={styles.lowerContainer}>
+              <TouchableOpacity style={styles.periodButton}>
+                <Text style={styles.buttonText}>Log period</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
       </View>
@@ -81,13 +83,13 @@ const styles = StyleSheet.create ({
     alignItems:'center',
     justifyContent:'center',
     width:'100%',
-    height:'100%',
-    borderTopLeftRadius: 30,
-    borderTopRightRadius: 30,
+    height:'auto',
+    borderRadius: 30,
     marginTop:20,
+    paddingTop:60,
   },
   header: {
-    fontSize:24,
+    fontSize:20,
     letterSpacing:1,
     color:'black',
     fontFamily:'spartan',
@@ -114,10 +116,11 @@ const styles = StyleSheet.create ({
     fontFamily:'spartan',
   },
   cycleText: {
-    fontSize:30,
+    fontSize:28,
     fontWeight:'bold',
     color:'rgba(56,56,56,0.8)',
     letterSpacing:1,
+    paddingTop:30,
   },
   cycleBottom: {
     backgroundColor:'#FF9797',
@@ -132,11 +135,98 @@ const styles = StyleSheet.create ({
     color:'white',
     fontSize:18,
     fontFamily:'spartan',
+    letterSpacing:1,
   },
   periodDayText: {
     fontSize:30,
     fontWeight:"600",
-    lineHeight:20,
-    color:'white'
+    lineHeight:25,
+    color:'white',
+    letterSpacing:1,
+  },
+  todayContainer: {
+    width:'100%',
+    height:'auto',
+    display:'flex',
+    flexDirection:'column',
+  },
+  lowerHeader: {
+    marginLeft:10,
+    padding:5,
+    fontSize:18,
+    fontFamily:'spartan',
+    letterSpacing:1,
+  },
+  symptomContainer: {
+    backgroundColor:'white',
+    width:'95%',
+    height:'auto',
+    padding:10,
+    borderRadius:20,
+    flexDirection:'column',
+    marginLeft:10,
+    marginBottom:10,
+  },
+  symptomHeadText: {
+    fontFamily:'spartan',
+    fontSize:14
+  },
+  circleContainer: {
+    flexDirection:'row',
+    padding:10,
+  },
+  protectContainer: {
+    backgroundColor:'#ffe5ef',
+    width:50,
+    height:50,
+    borderRadius:25,
+    padding:8,
+  },
+  tenderContainer: {
+    backgroundColor:'#fff9c3',
+    width:50,
+    height:50,
+    borderRadius:25,
+    padding:8,
+  },
+  insightContainer: {
+    backgroundColor:'white',
+    width:'100%',
+    height:'auto',
+  },
+  buttonContainer: {
+    width:'100%',
+    margin:5,
+    display:'flex',
+    flexDirection:'row'
+  },
+  lowerContainer: {
+    flexDirection:'row',
+  },
+  symptomButton: {
+    backgroundColor:'#ffe5ef',
+    borderRadius:20,
+    width:'80%',
+    height:'auto',
+    padding:10,
+  },
+  calendarButton: {
+    backgroundColor:'#c8d8f9',
+    borderRadius:20,
+    width:'80%',
+    height:'auto',
+    padding:10,
+  },
+  periodButton: {
+    backgroundColor:'#ccded6',
+    borderRadius:20,
+    width:'80%',
+    height:'auto',
+    padding:10,
+  },
+  buttonText: {
+    fontSize:14,
+    fontFamily:'Spartan',
+    textAlign:'center'
   }
 });

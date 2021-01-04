@@ -51,9 +51,9 @@ class Home extends Component {
                           <li>
                               <div className="homeTasks">
                                   <div className="homeNumber">
-                                      12
+                                      0
                                   </div>
-                                  <p>tasks</p>
+                                  <p>birthdays</p>
                               </div>
                           </li>
                           <li>
