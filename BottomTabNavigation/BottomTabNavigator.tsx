@@ -28,8 +28,14 @@ import Goal from '../screens/Goal';
 import HealthMealPlanner from '../screens/HealthMealPlanner';
 import HealthActivityTracker from '../screens/HealthActivityTracker';
 
+// Period Screens
 import Period from '../screens/Period';
+import PeriodSymptoms from '../screens/PeriodSymptoms';
+import PeriodCalendar from '../screens/PeriodCalendar';
+import PeriodLog from '../screens/PeriodLog';
+// Meal Screens
 import Meal from '../screens/Meal';
+// ActivityTracker Screens
 import ActivityTracker from '../screens/ActivityTracker';
 
 /* SelfCare Screens */
@@ -191,22 +197,7 @@ function HealthStackScreen(){
   return(
       <HealthStack.Navigator screenOptions={{ headerShown: false }}>
           <HealthStack.Screen name = "Health" component={Health}/>
-          <HealthStack.Screen name = "Period" component={Period}
-                              options={{
-                                title: "PERIOD TRACKER",
-                                headerStyle: {
-                                  borderBottomColor: 'transparent',
-                                  backgroundColor: '#FFFFFF', //Set Header color
-                                },
-                                headerTintColor: '#000000', //Set Header text color
-                                headerTitleStyle: {
-                                  fontWeight: '700', //Set Header text style
-                                  fontFamily: 'Spartan',
-                                  letterSpacing: '0.1em',
-                                }, headerShown: true,
-                                headerRight: ()=> <ProfilePic/>,
-                              }}
-                              />
+          <HealthStack.Screen name = "Period" component={PeriodStackScreen}/>
           <HealthStack.Screen name = "HealthMealPlanner" component={HealthMealPlanner}/>
           <HealthStack.Screen name = "Meal" component={Meal}
                               options={{
@@ -242,6 +233,78 @@ function HealthStackScreen(){
                               }}
                               />
       </HealthStack.Navigator>
+  );
+}
+
+const PeriodStack = createStackNavigator();
+function PeriodStackScreen(){
+  return(
+      <PeriodStack.Navigator screenOptions={{ headerShown: false }}>
+          <PeriodStack.Screen name = "Period" component={Period}
+                              options={{
+                                title: "PERIOD TRACKER",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '700', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                  letterSpacing: '0.1em',
+                                }, headerShown: true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
+          <PeriodStack.Screen name = "PeriodSymptoms" component={PeriodSymptoms}
+                              options={{
+                                title: "LOG SYMPTOMS",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '700', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                  letterSpacing: '0.1em',
+                                }, headerShown: true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
+          <PeriodStack.Screen name = "PeriodCalendar" component={PeriodCalendar}
+                              options={{
+                                title: "MY CYCLES",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '700', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                  letterSpacing: '0.1em',
+                                }, headerShown: true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
+          <PeriodStack.Screen name = "PeriodLog" component={PeriodLog}
+                              options={{
+                                title: "LOG PERIOD",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '700', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                  letterSpacing: '0.1em',
+                                }, headerShown: true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
+      </PeriodStack.Navigator>
   );
 }
 

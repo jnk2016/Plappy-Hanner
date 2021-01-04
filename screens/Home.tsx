@@ -53,7 +53,7 @@ class Home extends Component {
                                   <div className="homeNumber">
                                       0
                                   </div>
-                                  <p>birthdays</p>
+                                  <p>b-days</p>
                               </div>
                           </li>
                           <li>

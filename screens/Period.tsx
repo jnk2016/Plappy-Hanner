@@ -1,6 +1,5 @@
 import React, {Component, useState} from 'react';
 import {Button, Image, StyleSheet, TextInput, TouchableHighlight, Text, View, Alert} from 'react-native';
-// import '../assets/css/selfcare.css';
 import Ellipseavatar from '../assets/images/Ellipseavatar.png';
 import Vector from '../assets/images/Vector.png';
 import Heart from '../assets/images/heart.png';
@@ -52,17 +51,17 @@ export default function Period ({navigation}) {
           <Text style={styles.lowerHeader}>INSIGHTS</Text>
           <View style={styles.buttonContainer}>
             <View style={styles.lowerContainer}>
-              <TouchableOpacity style={styles.symptomButton}>
+              <TouchableOpacity style={styles.symptomButton} onPress={()=>navigation.navigate('PeriodSymptoms')}>
                 <Text style={styles.buttonText}>Log symptoms</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.lowerContainer}>
-              <TouchableOpacity style={styles.calendarButton}>
+              <TouchableOpacity style={styles.calendarButton} onPress={()=>navigation.navigate('PeriodCalendar')}>
                 <Text style={styles.buttonText}>View Calendar</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.lowerContainer}>
-              <TouchableOpacity style={styles.periodButton}>
+              <TouchableOpacity style={styles.periodButton} onPress={()=>navigation.navigate('PeriodLog')}>
                 <Text style={styles.buttonText}>Log period</Text>
               </TouchableOpacity>
             </View>
