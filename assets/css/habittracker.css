@@ -10,6 +10,7 @@ html, body {
 
 body {
     margin: 0;
+    height:100%;
     font-family: "spartan";
     background: white;
     color: black;
@@ -19,10 +20,12 @@ body {
 .habContainer {
     width:100%;
     height:100%;
+    padding-bottom:5em;
 }
 
 .habitHead {
-    width: 100%;
+    width: 98%;
+    margin-left:0.3em;
     height: auto;
     background:#e5e5e5;
     position:relative;
