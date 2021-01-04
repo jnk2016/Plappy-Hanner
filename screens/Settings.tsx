@@ -9,10 +9,7 @@ import AxiosMileage from '../Axios Functions/AxiosMileage';
 export default function UserProfileScreen({navigation}){
 
     return(
-        <View>
-            <View style = {styles.headingContainer}>
-                <Text style={styles.heading}>SETTINGS</Text> 
-            </View>
+        <View style={{height: '100%'}}>
             <View style = {styles.bigContainer}>
                 <View style={styles.smallContainer}>
                     <Image source={require('../assets/images/Ellipseavatar.png')}
@@ -56,11 +53,12 @@ const styles = StyleSheet.create({
         overflow: 'scroll',
         paddingBottom: '30px',
         paddingTop: '10%',
+        height: '100%'
     },
     smallContainer:{
         borderRadius: 8,
         width: '90%',
-        height: 650,
+        height: '100%',
         margin: '10px',
         padding: '5px',
         // shadowColor: "#000",

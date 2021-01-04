@@ -16,13 +16,14 @@ html, body {
   color: black;
   font-size: 14px;
   line-height: 0.1;
-  overflow-y: visible;
+  overflow-y: scroll;
   display:block;
+  overflow: scroll;
 }
 
 .homescreen {
   width:100%;
-  height:auto;
+  /* height:100%; */
 }
 
 .homeSearch input[type=text]{
@@ -69,9 +70,10 @@ html, body {
 .homeSections {
   background:#fffbdb;
   width:100%;
-  height:80%;
-  margin-top:-8em;
+  height:fit-content;
+  margin-top:-28%;
   border-radius:30px;
+  padding-bottom: 28%;
 }
 
 .homeSide {
@@ -171,8 +173,9 @@ html, body {
 .homeSchedule {
   background:#e5e5e5;
   width:100%;
-  height:40%;
-  margin-top:-6em;
+  height:auto;
+  margin-top:-20%;
+  padding-bottom: 8%;
   border-radius: 30px 30px 0 0;
   display:inline-block;
 }
@@ -182,6 +185,7 @@ html, body {
   font-family:"abhaya libre";
   font-weight:normal;
   padding:1em;
+  margin-top: 2%;
 }
 
 .homeButtons {
@@ -202,6 +206,7 @@ html, body {
   text-align:bottom;
   line-height: 50px;
   border:none;
+  font-weight: 600;
 }
 .homeButtons .homeWeekly {
   background: #AAD3C0;
@@ -211,6 +216,7 @@ html, body {
   margin:1em;
   line-height: 50px;
   border:none;
+  font-weight: 600;
 }
 .homeButtons .homeMonthly {
   background: #9CC3B0;
@@ -220,5 +226,6 @@ html, body {
   text-align:center;
   line-height: 50px;
   border:none;
+  font-weight: 600;
 }
 /*# sourceMappingURL=home.css.map */

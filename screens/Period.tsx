@@ -7,12 +7,12 @@ import CalStar from '../assets/images/bx_bx-calendar-star.png';
 import Protect from '../assets/images/bi_shield.png';
 import Polygon from '../assets/images/Polygon 4.png';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-
+import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
 
 export default function Period ({navigation}) {
 
   return (
-    <View>
+    <View style={{height:'100%'}}>
       <View style={styles.bigContainer}>
         <View style={styles.mainContainer}>
           <Text style={styles.header}>CURRENT CYCLE</Text>
@@ -62,7 +62,7 @@ export default function Period ({navigation}) {
             </View>
             <View style={styles.lowerContainer}>
               <TouchableOpacity style={styles.periodButton} onPress={()=>navigation.navigate('PeriodLog')}>
-                <Text style={styles.buttonText}>Log period</Text>
+                <Text style={styles.buttonText}>Log  period </Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -144,6 +144,8 @@ const styles = StyleSheet.create ({
     letterSpacing:1,
   },
   todayContainer: {
+    paddingTop:'10%',
+    paddingBottom:'2%',
     width:'100%',
     height:'auto',
     display:'flex',
@@ -191,16 +193,21 @@ const styles = StyleSheet.create ({
   insightContainer: {
     backgroundColor:'white',
     width:'100%',
-    height:'auto',
+    height:'100%',
+    marginTop:'3%',
   },
   buttonContainer: {
     width:'100%',
     margin:5,
     display:'flex',
-    flexDirection:'row'
+    flexDirection:'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center'
   },
   lowerContainer: {
     flexDirection:'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center'
   },
   symptomButton: {
     backgroundColor:'#ffe5ef',
@@ -208,6 +215,7 @@ const styles = StyleSheet.create ({
     width:'80%',
     height:'auto',
     padding:10,
+    marginHorizontal: '4%'
   },
   calendarButton: {
     backgroundColor:'#c8d8f9',
@@ -215,6 +223,7 @@ const styles = StyleSheet.create ({
     width:'80%',
     height:'auto',
     padding:10,
+    marginHorizontal: '4%'
   },
   periodButton: {
     backgroundColor:'#ccded6',
@@ -222,6 +231,8 @@ const styles = StyleSheet.create ({
     width:'80%',
     height:'auto',
     padding:10,
+    paddingHorizontal: 20,
+    marginHorizontal: '4%'
   },
   buttonText: {
     fontSize:14,

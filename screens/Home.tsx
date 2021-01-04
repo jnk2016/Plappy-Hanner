@@ -4,6 +4,7 @@ import AxiosLogin from '../Axios Functions/AxiosLogin';
 import Modal from 'modal-react-native-web';
 import '../assets/css/hearthome.css';
 import Ellipseavatar from '../assets/images/Ellipseavatar.png'; 
+import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
 
 
 class Home extends Component {
@@ -66,57 +67,49 @@ class Home extends Component {
                           </li>
                       </ul>
                   </div>
-                  <div className="homeCalendar">
-                      <div className="homeWeek">
-                          <ul>
-                              <li>SUN</li>
-                              <li>MON</li>
-                              <li>TUE</li>
-                              <li>WED</li>
-                              <li>THU</li>
-                              <li>FRI
-                                  <a href="#">1</a>
-                              </li>
-                              <li>SAT
-                                  <a href="#">2</a>
-                              </li>
-                          </ul>
-                      </div>
-                      <div className="homeWeekdays">
-                          <ul>
-                              
-                              <li>3</li>
-                              <li>4</li>
-                              <li>5</li>
-                              <li>6</li>
-                              <li>7</li>
-                              <li>8</li>
-                              <li>9</li>
-                              <li>10</li>
-                              <li>11</li>
-                              <li>12</li>
-                              <li>13</li>
-                              <li>14</li>
-                              <li>15</li>
-                              <li>16</li>
-                              <li>17</li>
-                              <li>18</li>
-                              <li>19</li>
-                              <li>20</li>
-                              <li>21</li>
-                              <li>22</li>
-                              <li>23</li>
-                              <li>24</li>
-                              <li>25</li>
-                              <li>26</li>
-                              <li>27</li>
-                              <li>28</li>
-                              <li>29</li>
-                              <li>30</li>
-                              <li>31</li>
-                          </ul>
-                      </div>
-                  </div>
+                    <View style={{paddingTop: '30%'}}>
+                        <Calendar // HOW TO USE CALENDAR https://github.com/wix/react-native-calendars
+                        // Collection of dates that have to be marked.
+                        // markedDates={{
+                        //     '2021-01-02': {textColor: 'red'},
+                        //     '2021-01-03': {textColor: 'red'},
+                        //     '2021-01-04': {textColor: 'red'},
+                        //     '2021-01-05': {textColor: 'red'},
+                        //     '2021-01-06': {textColor: 'red', marked: true, dotColor: 'pink'}
+                        // }}
+                        // // Date marking style [simple/period/multi-dot/custom]. Default = 'simple'
+                        // markingType='period'
+                        // Month format in calendar title. Formatting values: http://arshaw.com/xdate/#Formatting
+                        monthFormat={''}
+                        // Disable left arrow. Default = false
+                        disableArrowLeft={true}
+                        // Disable right arrow. Default = false
+                        disableArrowRight={true}
+                        theme={{
+                            textMonthFontSize: 10,
+                            'stylesheet.calendar.header': {
+                              week: {
+                                marginTop: '-3%',
+                                flexDirection: 'row',
+                                justifyContent: 'space-between',
+                              }
+                            },
+                            textDayHeaderFontSize: 11,
+                        }}
+                        dayComponent={({date, state}) => {
+                          return (
+                            <View>
+                              <Text style={{textAlign: 'center', marginVertical: '2%', fontSize: 10,fontFamily: 'Spartan', fontWeight: '600', color: state === 'disabled' ? 'gray' : 'black'}}>
+                                {date.day}
+                              </Text>
+                            </View>
+                          );
+                        }}
+                        // Do not show days of other months in month page. Default = false
+                        hideExtraDays={true}
+                        style={{width: '90%', alignSelf: 'center', borderRadius: 25, paddingBottom: '3%'}}
+                        />
+                    </View>
               </div> 
               <div className="homeSchedule">
                   <h3>Schedule</h3>

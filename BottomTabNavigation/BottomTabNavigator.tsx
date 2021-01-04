@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Text,TouchableOpacity, View, Image } from 'react-native';
 import { NavigationContainer,  } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Home from '../screens/Home';
+import Home from '../screens/Home'; // Going to experiment with Home copy 2
 import FeatureList from '../screens/FeatureList';
 import { createStackNavigator } from '@react-navigation/stack';
 import SelfCare from '../screens/SelfCare';
@@ -371,7 +371,23 @@ const SettingsStack = createStackNavigator();
 function SettingsStackScreen(){
     return(
         <SettingsStack.Navigator screenOptions={{ headerShown: false }}>
-            <SettingsStack.Screen name = "Settings" component={Settings}/>
+            <SettingsStack.Screen name = "Settings" component={Settings}
+                              options={{
+                                title: "SETTINGS",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: 'bold', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                  letterSpacing: '0.1em',
+                                  marginLeft: '8%',
+                                  marginTop: '5%',
+                                }, headerShown: true,
+                              }}
+                              />
         </SettingsStack.Navigator>
     );
 }
