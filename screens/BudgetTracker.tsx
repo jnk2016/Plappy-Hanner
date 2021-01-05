@@ -19,10 +19,10 @@ export default function BudgetTracker({navigation}){
                         <View style={{alignContent:'center', alignItems: 'center', alignSelf: 'center', justifyContent: 'center', marginTop: '30%'}}>
                             <PieChart style={{marginTop:'-50%', alignSelf: 'center'}}
                                 data={[
-                                    { title: 'One', value: 10, color: '#E8D7F6' },
-                                    { title: 'Two', value: 15, color: '#FDE7D3' },
-                                    { title: 'Three', value: 20, color: '#9CC3B0' },
-                                    { title: 'Four', value: 25, color: '#C4C4C4'},
+                                    { title: 'One', value: 1, color: '#E8D7F6' },
+                                    { title: 'Two', value: 2, color: '#FDE7D3' },
+                                    { title: 'Three', value: 8, color: '#9CC3B0' },
+                                    { title: 'Four', value: 4, color: '#C4C4C4'},
                                 ]} lineWidth={35} viewBoxSize={[100,100]}
                             />
                         </View>
