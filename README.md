@@ -3,17 +3,16 @@
 The React App for the Front-End of the project
 
 ## Installation
-
+CD into the project directory, and then run the command
 ```bash
-npm install
+yarn install react-native-cli
 ```
-CD into the project directory, and then run the command `npm install`
-After installing all dependencies including expo cli (`expo install` if needed), you can start the project
+After installing all dependencies including expo cli (`yarn global add expo-cli` if needed), you can start the project
 
 ## Usage
 
-```python
-npm start
+```bash
+yarn start
 ```
 This will open up localhost with the expo cli
 Click on the `Run in web browser` in the Metro Bundler to get started
