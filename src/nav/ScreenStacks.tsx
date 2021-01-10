@@ -56,7 +56,7 @@ export function HomeStackScreen(){
                                 headerTintColor: '#000000', //Set Header text color
                                 headerTitleStyle: {
                                   fontWeight: '600', //Set Header text style
-                                  fontFamily: 'Spartan',
+                                  fontFamily: 'Spartan-Regular',
                                 },
                                 headerRight: ()=> <ProfilePic/>,
                               }}
@@ -79,8 +79,8 @@ export function FeaturesStackScreen(){
                                 headerTintColor: '#000000', //Set Header text color
                                 headerTitleStyle: {
                                   fontWeight: '600', //Set Header text style
-                                  fontFamily: 'Spartan',
-                                  letterSpacing: '0.05em',
+                                  fontFamily: 'Spartan-Regular',
+                                  letterSpacing: 1,
                                 }, headerShown: true,
                                 headerRight: ()=> <ProfilePic/>,
                               }}
@@ -97,7 +97,7 @@ export function SelfCareStackScreen(){
   return(
       <SelfCareStack.Navigator screenOptions={{ headerShown: false }}>
           <SelfCareStack.Screen name = "SelfCare" component={SelfCare}/>
-          <SelfCareStack.Screen name = "HabitTracker" component={HabitTracker}
+          {/* <SelfCareStack.Screen name = "HabitTracker" component={HabitTracker}
                               options={{
                                 title: "HABIT TRACKER",
                                 headerStyle: {
@@ -107,8 +107,8 @@ export function SelfCareStackScreen(){
                                 headerTintColor: '#000000', //Set Header text color
                                 headerTitleStyle: {
                                   fontWeight: '700', //Set Header text style
-                                  fontFamily: 'Spartan',
-                                  letterSpacing: '0.1em',
+                                  fontFamily: 'Spartan-Regular',
+                                  letterSpacing: 1,
                                 }, headerShown: true,
                                 headerRight: ()=> <ProfilePic/>,
                               }}
@@ -124,8 +124,8 @@ export function SelfCareStackScreen(){
                                 headerTintColor: '#000000', //Set Header text color
                                 headerTitleStyle: {
                                   fontWeight: '700', //Set Header text style
-                                  fontFamily: 'Spartan',
-                                  letterSpacing: '0.1em',
+                                  fontFamily: 'Spartan-Regular',
+                                  letterSpacing: 1,
                                 }, headerShown: true,
                                 headerRight: ()=> <ProfilePic/>,
                               }}
@@ -141,12 +141,12 @@ export function SelfCareStackScreen(){
                                 headerTintColor: '#000000', //Set Header text color
                                 headerTitleStyle: {
                                   fontWeight: '700', //Set Header text style
-                                  fontFamily: 'Spartan',
-                                  letterSpacing: '0.1em',
+                                  fontFamily: 'Spartan-Regular',
+                                  letterSpacing: 1,
                                 }, headerShown: true,
                                 headerRight: ()=> <ProfilePic/>,
                               }}
-                              />
+                              /> */}
       </SelfCareStack.Navigator>
   );
 }
@@ -156,7 +156,7 @@ function HealthStackScreen(){
   return(
       <HealthStack.Navigator screenOptions={{ headerShown: false }}>
           <HealthStack.Screen name = "Health" component={Health}/>
-          <HealthStack.Screen name = "Period" component={PeriodStackScreen}/>
+          {/* <HealthStack.Screen name = "Period" component={PeriodStackScreen}/>
           <HealthStack.Screen name = "HealthMealPlanner" component={HealthMealPlanner}/>
           <HealthStack.Screen name = "Meal" component={Meal}
                               options={{
@@ -168,8 +168,8 @@ function HealthStackScreen(){
                                 headerTintColor: '#000000', //Set Header text color
                                 headerTitleStyle: {
                                   fontWeight: '700', //Set Header text style
-                                  fontFamily: 'Spartan',
-                                  letterSpacing: '0.1em',
+                                  fontFamily: 'Spartan-Regular',
+                                  letterSpacing: 1,
                                 }, headerShown: true,
                                 headerRight: ()=> <ProfilePic/>,
                               }}
@@ -185,94 +185,94 @@ function HealthStackScreen(){
                                 headerTintColor: '#000000', //Set Header text color
                                 headerTitleStyle: {
                                   fontWeight: '700', //Set Header text style
-                                  fontFamily: 'Spartan',
-                                  letterSpacing: '0.1em',
+                                  fontFamily: 'Spartan-Regular',
+                                  letterSpacing: 1,
                                 }, headerShown: true,
                                 headerRight: ()=> <ProfilePic/>,
                               }}
-                              />
+                              /> */}
       </HealthStack.Navigator>
   );
 }
 
-const PeriodStack = createStackNavigator();
-function PeriodStackScreen(){
-  return(
-      <PeriodStack.Navigator screenOptions={{ headerShown: false }}>
-          <PeriodStack.Screen name = "Period" component={Period}
-                              options={{
-                                title: "PERIOD TRACKER",
-                                headerStyle: {
-                                  borderBottomColor: 'transparent',
-                                  backgroundColor: '#FFFFFF', //Set Header color
-                                },
-                                headerTintColor: '#000000', //Set Header text color
-                                headerTitleStyle: {
-                                  fontWeight: '700', //Set Header text style
-                                  fontFamily: 'Spartan',
-                                  letterSpacing: '0.1em',
-                                }, headerShown: true,
-                                headerRight: ()=> <ProfilePic/>,
-                              }}
-                              />
-          <PeriodStack.Screen name = "PeriodSymptoms" component={PeriodSymptoms}
-                              options={{
-                                title: "LOG SYMPTOMS",
-                                headerStyle: {
-                                  borderBottomColor: 'transparent',
-                                  backgroundColor: '#FFFFFF', //Set Header color
-                                },
-                                headerTintColor: '#000000', //Set Header text color
-                                headerTitleStyle: {
-                                  fontWeight: '700', //Set Header text style
-                                  fontFamily: 'Spartan',
-                                  letterSpacing: '0.1em',
-                                }, headerShown: true,
-                                headerRight: ()=> <ProfilePic/>,
-                              }}
-                              />
-          <PeriodStack.Screen name = "PeriodCalendar" component={PeriodCalendar}
-                              options={{
-                                title: "MY CYCLES",
-                                headerStyle: {
-                                  borderBottomColor: 'transparent',
-                                  backgroundColor: '#FFFFFF', //Set Header color
-                                },
-                                headerTintColor: '#000000', //Set Header text color
-                                headerTitleStyle: {
-                                  fontWeight: '700', //Set Header text style
-                                  fontFamily: 'Spartan',
-                                  letterSpacing: '0.1em',
-                                }, headerShown: true,
-                                headerRight: ()=> <ProfilePic/>,
-                              }}
-                              />
-          <PeriodStack.Screen name = "PeriodLog" component={PeriodLog}
-                              options={{
-                                title: "LOG PERIOD",
-                                headerStyle: {
-                                  borderBottomColor: 'transparent',
-                                  backgroundColor: '#FFFFFF', //Set Header color
-                                },
-                                headerTintColor: '#000000', //Set Header text color
-                                headerTitleStyle: {
-                                  fontWeight: '700', //Set Header text style
-                                  fontFamily: 'Spartan',
-                                  letterSpacing: '0.1em',
-                                }, headerShown: true,
-                                headerRight: ()=> <ProfilePic/>,
-                              }}
-                              />
-      </PeriodStack.Navigator>
-  );
-}
+// const PeriodStack = createStackNavigator();
+// function PeriodStackScreen(){
+//   return(
+//       <PeriodStack.Navigator screenOptions={{ headerShown: false }}>
+//           <PeriodStack.Screen name = "Period" component={Period}
+//                               options={{
+//                                 title: "PERIOD TRACKER",
+//                                 headerStyle: {
+//                                   borderBottomColor: 'transparent',
+//                                   backgroundColor: '#FFFFFF', //Set Header color
+//                                 },
+//                                 headerTintColor: '#000000', //Set Header text color
+//                                 headerTitleStyle: {
+//                                   fontWeight: '700', //Set Header text style
+//                                   fontFamily: 'Spartan-Regular',
+//                                   letterSpacing: 1,
+//                                 }, headerShown: true,
+//                                 headerRight: ()=> <ProfilePic/>,
+//                               }}
+//                               />
+//           <PeriodStack.Screen name = "PeriodSymptoms" component={PeriodSymptoms}
+//                               options={{
+//                                 title: "LOG SYMPTOMS",
+//                                 headerStyle: {
+//                                   borderBottomColor: 'transparent',
+//                                   backgroundColor: '#FFFFFF', //Set Header color
+//                                 },
+//                                 headerTintColor: '#000000', //Set Header text color
+//                                 headerTitleStyle: {
+//                                   fontWeight: '700', //Set Header text style
+//                                   fontFamily: 'Spartan-Regular',
+//                                   letterSpacing: 1,
+//                                 }, headerShown: true,
+//                                 headerRight: ()=> <ProfilePic/>,
+//                               }}
+//                               />
+//           <PeriodStack.Screen name = "PeriodCalendar" component={PeriodCalendar}
+//                               options={{
+//                                 title: "MY CYCLES",
+//                                 headerStyle: {
+//                                   borderBottomColor: 'transparent',
+//                                   backgroundColor: '#FFFFFF', //Set Header color
+//                                 },
+//                                 headerTintColor: '#000000', //Set Header text color
+//                                 headerTitleStyle: {
+//                                   fontWeight: '700', //Set Header text style
+//                                   fontFamily: 'Spartan-Regular',
+//                                   letterSpacing: 1,
+//                                 }, headerShown: true,
+//                                 headerRight: ()=> <ProfilePic/>,
+//                               }}
+//                               />
+//           <PeriodStack.Screen name = "PeriodLog" component={PeriodLog}
+//                               options={{
+//                                 title: "LOG PERIOD",
+//                                 headerStyle: {
+//                                   borderBottomColor: 'transparent',
+//                                   backgroundColor: '#FFFFFF', //Set Header color
+//                                 },
+//                                 headerTintColor: '#000000', //Set Header text color
+//                                 headerTitleStyle: {
+//                                   fontWeight: '700', //Set Header text style
+//                                   fontFamily: 'Spartan-Regular',
+//                                   letterSpacing: 1,
+//                                 }, headerShown: true,
+//                                 headerRight: ()=> <ProfilePic/>,
+//                               }}
+//                               />
+//       </PeriodStack.Navigator>
+//   );
+// }
 
 const FocusStack = createStackNavigator();
 function FocusStackScreen(){
   return(
       <FocusStack.Navigator screenOptions={{ headerShown: false }}>
           <FocusStack.Screen name = "Focus" component={Focus}/>
-          <FocusStack.Screen name = "Goal" component={Goal}
+          {/* <FocusStack.Screen name = "Goal" component={Goal}
                               options={{
                                 title: "MY GOALS",
                                 headerStyle: {
@@ -282,8 +282,8 @@ function FocusStackScreen(){
                                 headerTintColor: '#000000', //Set Header text color
                                 headerTitleStyle: {
                                   fontWeight: '700', //Set Header text style
-                                  fontFamily: 'Spartan',
-                                  letterSpacing: '0.1em',
+                                  fontFamily: 'Spartan-Regular',
+                                  letterSpacing: 1,
                                 }, headerShown: true,
                                 headerRight: ()=> <ProfilePic/>,
                               }}
@@ -299,8 +299,8 @@ function FocusStackScreen(){
                                 headerTintColor: '#000000', //Set Header text color
                                 headerTitleStyle: {
                                   fontWeight: '700', //Set Header text style
-                                  fontFamily: 'Spartan',
-                                  letterSpacing: '0.1em',
+                                  fontFamily: 'Spartan-Regular',
+                                  letterSpacing: 1,
                                 }, headerShown: true,
                                 headerRight: ()=> <ProfilePic/>,
                               }}
@@ -316,12 +316,12 @@ function FocusStackScreen(){
                                 headerTintColor: '#000000', //Set Header text color
                                 headerTitleStyle: {
                                   fontWeight: '700', //Set Header text style
-                                  fontFamily: 'Spartan',
-                                  letterSpacing: '0.1em',
+                                  fontFamily: 'Spartan-Regular',
+                                  letterSpacing: 1,
                                 }, headerShown: true,
                                 headerRight: ()=> <ProfilePic/>,
                               }}
-                              />
+                              /> */}
       </FocusStack.Navigator>
   );
 }
@@ -340,8 +340,8 @@ export function SettingsStackScreen(){
                                 headerTintColor: '#000000', //Set Header text color
                                 headerTitleStyle: {
                                   fontWeight: 'bold', //Set Header text style
-                                  fontFamily: 'Spartan',
-                                  letterSpacing: '0.1em',
+                                  fontFamily: 'Spartan-Regular',
+                                  letterSpacing: 1,
                                   marginLeft: '8%',
                                   marginTop: '5%',
                                 }, headerShown: true,

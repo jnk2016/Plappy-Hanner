@@ -1,7 +1,7 @@
 import React, {Component, useState} from 'react';
 import {Button, Image, StyleSheet, TextInput, TouchableHighlight, Text, View, Alert, TouchableOpacity} from 'react-native';
 import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
-// import AbhayaLibre from '../fonts/AbhayaLibre-Medium.tff';
+import XDate from 'xdate';
 
 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
@@ -9,12 +9,14 @@ export default class Home extends Component {
 
     state = {
         curTime: null,
+        date: null,
     }
 
     componentDidMount(){
         setInterval(() => {
             this.setState({
-              curTime : new Date().toLocaleString('en-US',options),
+              curTime : new XDate().toString('HH:mm'),
+              date: new XDate().toString('dddd,  MMMM d')
             })
           }, 1000)
     }
@@ -28,8 +30,8 @@ export default class Home extends Component {
         <View style={styles.smallcontainer}>
             <View style={{marginTop: '-10%', marginHorizontal: '5%'}}>
                 <View style={styles.variables}>
-                    <Text style={styles.time}>15:01</Text>
-                    <Text style={styles.day}>friday, january 8</Text>
+                    <Text style={styles.time}>{this.state.curTime}</Text>
+                    <Text style={styles.day}>{this.state.date}</Text>
                 </View>
                 <Calendar // HOW TO USE CALENDAR https://github.com/wix/react-native-calendars
                 // Collection of dates that have to be marked.
@@ -63,7 +65,7 @@ export default class Home extends Component {
                 dayComponent={({date, state}) => {
                     return (
                     <View>
-                        <Text style={{textAlign: 'center', marginVertical: '2%', fontSize: 10,fontFamily: 'Spartan', fontWeight: '600', color: state === 'disabled' ? 'gray' : 'black'}}>
+                        <Text style={{textAlign: 'center', marginVertical: '2%', fontSize: 10,fontFamily: 'Spartan-Regular', fontWeight: '600', color: state === 'disabled' ? 'gray' : 'black'}}>
                         {date.day}
                         </Text>
                     </View>
@@ -71,11 +73,10 @@ export default class Home extends Component {
                 }}
                 // Do not show days of other months in month page. Default = false
                 hideExtraDays={true}
-                style={{width: '100%', alignSelf: 'center', borderRadius: 25, paddingBottom: '3%', marginHorizontal: '6%', marginVertical: '10%'}}
+                style={{width: '100%', alignSelf: 'center', borderRadius: 25, paddingBottom: '3%', marginHorizontal: '6%', marginVertical: '5%'}}
                 />
             </View>
             <View style={styles.sections}>
-                <View style={styles.left}>
                 <View style={styles.circleGoal}>
                     <Text style={styles.insideCircle}>4</Text>
                 </View>
@@ -88,7 +89,6 @@ export default class Home extends Component {
                     <Text style={styles.insideCircle}>3</Text>
                 </View>
                 <Text style={styles.subscript}>events</Text>
-                </View>
             </View>
         </View>
         <View style={{backgroundColor: '#fffbdb'}}>
@@ -123,8 +123,9 @@ export default class Home extends Component {
     },
     schedHeader:{
         fontSize: 18,
-        paddingVertical: '6%',
-        marginLeft: '2%'
+        paddingVertical: '4%',
+        marginLeft: '4%',
+        fontFamily: 'AbhayaLibre-Regular'
     },
     options:{
         flexDirection: 'row',
@@ -134,23 +135,24 @@ export default class Home extends Component {
     optionsdailyContainer:{
         backgroundColor: '#ccded6',
         borderRadius: 15,
-        paddingHorizontal: '6%',
-        paddingVertical: '10%'
+        paddingHorizontal: '5%',
+        paddingVertical: '10%',
     },
     optionsweeklyContainer:{
         backgroundColor: '#AAD3C0',
         borderRadius: 15,
-        paddingHorizontal: '6%',
-        paddingVertical: '10%'
+        paddingHorizontal: '5%',
+        paddingVertical: '10%',
     },
     optionsmonthlyContainer:{
         backgroundColor: '#9cc3b0',
         borderRadius: 15,
-        paddingHorizontal: '6%',
-        paddingVertical: '10%'
+        paddingHorizontal: '5%',
+        paddingVertical: '10%',
     },
     optionsText:{
-        fontSize: 15
+        fontSize: 15,
+        fontFamily: 'Spartan-Regular'
     },
     circleGoal:{
         borderRadius: 50,
@@ -175,12 +177,12 @@ export default class Home extends Component {
         textAlign: 'center',
         textAlignVertical: 'center',
         marginVertical: '1%',
-        fontFamily: 'Spartan'
+        fontFamily: 'Spartan-SemiBold'
     },
     subscript:{
         fontSize: 13,
-        fontFamily: 'Spartan',
-        paddingBottom: '80%',
+        fontFamily: 'Spartan-Regular',
+        paddingBottom: 20,
         textAlign: 'center'
     },
     sections:{
@@ -199,6 +201,7 @@ export default class Home extends Component {
         marginTop: '15%',
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
+        paddingBottom: '5%'
     },
     variables: {
         backgroundColor:'#e5e5e5',
@@ -210,13 +213,13 @@ export default class Home extends Component {
         
     },
     time: {
-        fontSize:54,
-        fontFamily:'Abhaya Libre',
+        fontSize:70,
+        fontFamily:'AbhayaLibre-Regular',
         textAlign:'left',
     },
     day: {
         fontSize:18,
-        fontFamily:'Abhaya Libre',
+        fontFamily:'AbhayaLibre-Regular',
     },
     left: {
         marginVertical: '2%',

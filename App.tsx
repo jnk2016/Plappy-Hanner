@@ -12,13 +12,72 @@ import { Header, LearnMoreLinks, Colors, DebugInstructions, ReloadInstructions, 
 
 import { NavigationContainer,  } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator } from '@react-navigation/stack';
 
-import {HomeStackScreen, CalendarScreen, FeaturesStackScreen, SettingsStackScreen } from './src/nav/ScreenStacks';
+// import {HomeStackScreen, CalendarScreen, FeaturesStackScreen, SettingsStackScreen } from './src/nav/ScreenStacks';
 
 import Home from './src/screens/Home';
-import Calendar from './src/screens/Calendar'
+import Calendar from './src/screens/Calendar';
+import Settings from './src/screens/Settings';
+import FeaturesList from './src/screens/FeaturesList';
+
 const Tab = createBottomTabNavigator();
 
+// const state = {
+//   routes: [
+//     {
+//       name: 'Home',
+//       state: {
+//         routes: [
+//           {
+//             name: 'Home',
+//           },
+//         ],
+//       },
+//     },
+//   ],
+// };
+
+// const config = {
+//   screens: {
+//     Home: {
+//       screens: {
+//         Home: 'home',
+//       },
+//     },
+//   },
+// };
+
+// const linking = {
+//   prefixes: [
+//     '/'
+//   ],
+//   config,
+// };
+
+
+// const HomeStack = createStackNavigator();
+// function HomeStackScreen(){
+//     return(
+//         <HomeStack.Navigator screenOptions={{ headerShown: true}}>
+//             <HomeStack.Screen name = "Home" component={Home}
+//                               options={{
+//                                 title: "Hello, Danphuong",
+//                                 headerStyle: {
+//                                   borderBottomColor: 'transparent',
+//                                   backgroundColor: '#FFFFFF', //Set Header color
+//                                 },
+//                                 headerTintColor: '#000000', //Set Header text color
+//                                 headerTitleStyle: {
+//                                   fontWeight: '600', //Set Header text style
+//                                   fontFamily: 'Spartan-Regular',
+//                                 },
+//                                 // headerRight: ()=> <ProfilePic/>,
+//                               }}
+//                               />
+//         </HomeStack.Navigator>
+//     );
+// }
 export default class App extends Component{
   render(){
   return ( 
@@ -29,7 +88,8 @@ export default class App extends Component{
           style={styles.scrollView}> */}
           {/* <Home/> */}
 
-          <NavigationContainer>
+          {/* <NavigationContainer linking={linking} fallback={<Text>Loading...</Text>}> */}
+          <NavigationContainer fallback={<Text>Loading...</Text>}>
               <Tab.Navigator 
               screenOptions={({ route }) => ({
                   tabBarIcon: ({ focused, color, size }) => {
@@ -48,10 +108,10 @@ export default class App extends Component{
                   }
               })}
               >
-                  <Tab.Screen name="Home" component={Home} options={{tabBarLabel:''}}/>
+                  <Tab.Screen name="Home" component={Home} options={{ tabBarLabel:'' }}/>
                   <Tab.Screen name="Calendar" component={Calendar} options={{tabBarLabel:''}}/>
-                  {/* <Tab.Screen name="FeatureList" component={FeaturesStackScreen} options={{tabBarLabel:''}}/>
-                  <Tab.Screen name="Settings" component={SettingsStackScreen} options={{tabBarLabel:''}}/> */}
+                  <Tab.Screen name="FeatureList" component={FeaturesList} options={{tabBarLabel:''}}/>
+                  <Tab.Screen name="Settings" component={Settings} options={{tabBarLabel:''}}/>
               </Tab.Navigator>
           </NavigationContainer>
 
@@ -62,55 +122,49 @@ export default class App extends Component{
 }}
 
 
-// const globalAny:any = global;
-// export default class App extends Component{
-//   render(){
-//   return (
-//     <>
-//       <StatusBar barStyle="dark-content" />
-//       <SafeAreaView>
-//         <ScrollView
-//           contentInsetAdjustmentBehavior="automatic"
-//           style={styles.scrollView}>
-//           <Header />
-//           {globalAny.HermesInternal == null ? null : (
-//             <View style={styles.engine}>
-//               <Text style={styles.footer}>Engine: Hermes</Text>
-//             </View>
-//           )}
-//           <View style={styles.body}>
-//             <View style={styles.sectionContainer}>
-//               <Text style={styles.sectionTitle}>Step One</Text>
-//               <Text style={styles.sectionDescription}>
-//                 Edit <Text style={styles.highlight}>App.js</Text> to change this
-//                 screen and then come back to see your edits.
-//               </Text>
-//             </View>
-//             <View style={styles.sectionContainer}>
-//               <Text style={styles.sectionTitle}>See Your Changes</Text>
-//               <Text style={styles.sectionDescription}>
-//                 <ReloadInstructions />
-//               </Text>
-//             </View>
-//             <View style={styles.sectionContainer}>
-//               <Text style={styles.sectionTitle}>Debug</Text>
-//               <Text style={styles.sectionDescription}>
-//                 <DebugInstructions />
-//               </Text>
-//             </View>
-//             <View style={styles.sectionContainer}>
-//               <Text style={styles.sectionTitle}>Learn More</Text>
-//               <Text style={styles.sectionDescription}>
-//                 Read the docs to discover what to do next:
-//               </Text>
-//             </View>
-//             <LearnMoreLinks />
-//           </View>
-//         </ScrollView>
-//       </SafeAreaView>
-//     </>
-//   );
-// }}
+
+// const FeaturesStack = createStackNavigator();
+// export function FeaturesStackScreen(){
+//     return(
+//         <FeaturesStack.Navigator screenOptions={{ headerShown: false }}>
+//             <FeaturesStack.Screen name = "FeatureList" component={FeaturesList}
+//                               options={{
+//                                 title: "My Features",
+//                                 headerStyle: {
+//                                   borderBottomColor: 'transparent',
+//                                   backgroundColor: '#FFFFFF', //Set Header color
+//                                 },
+//                                 headerTintColor: '#000000', //Set Header text color
+//                                 headerTitleStyle: {
+//                                   fontWeight: '600', //Set Header text style
+//                                   fontFamily: 'Spartan-Regular',
+//                                   letterSpacing: 1,
+//                                 }, headerShown: true,
+//                                 headerRight: ()=> <ProfilePic/>,
+//                               }}
+//                               />
+//             <FeaturesStack.Screen name = "SelfCare" component={SelfCareStackScreen}/>
+//             <FeaturesStack.Screen name = "Health" component={HealthStackScreen}/>
+//             <FeaturesStack.Screen name = "Focus" component={FocusStackScreen}/>
+//         </FeaturesStack.Navigator>
+//     );
+// }
+
+class ProfilePic extends Component{
+  render(){
+  return (
+    // <View style={{ flexDirection: 'row' }}>
+        <Image
+          source={require('./src/assets/images/Ellipseavatar.png')}
+          style={{
+            width: 50,
+            height: 50,
+            marginRight: 10,
+          }}
+        />
+    // </View>
+  );}
+}
 
 const styles = StyleSheet.create({
   scrollView: {

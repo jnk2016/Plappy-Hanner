@@ -1,12 +1,11 @@
 import React, {useState} from 'react';
-import { Image, StyleSheet, View, Button, TouchableOpacity} from 'react-native';
-import { Text} from '../components/Themed';
+import { Image, StyleSheet, View, Button, TouchableOpacity, Text} from 'react-native';
 import StarRating from '../screens/StarRating';
 import AxiosLatestStatement from '../Axios Functions/AxiosLatestStatement';
 import AxiosLatestPayment from '../Axios Functions/AxiosLatestPayment';
 import AxiosMileage from '../Axios Functions/AxiosMileage';
 
-export default function UserProfileScreen({navigation}){
+export default function Settings({navigation}){
 
     return(
         <View style={{height: '100%'}}>
@@ -14,7 +13,7 @@ export default function UserProfileScreen({navigation}){
                 <View style={styles.smallContainer}>
                     <Image source={require('../assets/images/Ellipseavatar.png')}
                     style={{width: '18%',height:'18%', resizeMode: 'contain', alignSelf: 'center', marginTop: '-18%'}}/>
-                    <Text style={{fontWeight: '400', fontSize:'18px', alignSelf: 'center', marginTop: '-8%', marginBottom: '10%', fontFamily: 'Spartan'}}>Danphuong Hoang</Text>
+                    <Text style={{fontWeight: '400', fontSize:18, alignSelf: 'center', marginTop: '-8%', marginBottom: '10%', fontFamily: 'Spartan'}}>Danphuong Hoang</Text>
                     <TouchableOpacity style={styles.optionsContainer} onPress={()=>console.log("button pressed")}>
                         <Text style={styles.optionsText}>account</Text>
                     </TouchableOpacity>
@@ -51,7 +50,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: '#ffffff',
         overflow: 'scroll',
-        paddingBottom: '30px',
+        paddingBottom: 30,
         paddingTop: '10%',
         height: '100%'
     },
@@ -59,22 +58,13 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         width: '90%',
         height: '100%',
-        margin: '10px',
-        padding: '5px',
+        margin: 10,
+        padding:5,
         // shadowColor: "#000",
         // shadowOpacity: 0.25,
         // shadowRadius: 8,
         elevation: 5,
         backgroundColor: '#DCF0E7'
-    },
-    heading:{
-        fontSize:'18px',
-        fontFamily: 'Spartan',
-        color: 'black',
-        fontWeight: 'bold',
-        flex: 1,
-        marginLeft: 40,
-        marginTop: 20,
     },
     optionsContainer:{
         textAlignVertical: 'center',
@@ -86,7 +76,7 @@ const styles = StyleSheet.create({
     },
     optionsText:{
         marginLeft: '4%',
-        fontSize: '13px',
+        fontSize: 13,
         fontWeight: '500',
         fontFamily: 'Spartan'
     }
