@@ -1,18 +1,12 @@
 import React, {Component, useState} from 'react';
-import {Button, Image, StyleSheet, TextInput, TouchableHighlight, Text, View, Alert} from 'react-native';
-import Ellipseavatar from '../assets/images/Ellipseavatar.png';
-import Vector from '../assets/images/Vector.png';
-import Heart from '../assets/images/heart.png';
-import CalStar from '../assets/images/bx_bx-calendar-star.png';
-import Protect from '../assets/images/bi_shield.png';
-import Polygon from '../assets/images/Polygon 4.png';
+import {Button,ScrollView, Image, StyleSheet, TextInput, TouchableHighlight, Text, View, Alert} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
 
 export default function Period ({navigation}) {
 
   return (
-    <View style={{height:'100%'}}>
+    <ScrollView>
+    {/* <View style={{height:'100%'}}> */}
       <View style={styles.bigContainer}>
         <View style={styles.mainContainer}>
           <Text style={styles.header}>CURRENT CYCLE</Text>
@@ -33,13 +27,13 @@ export default function Period ({navigation}) {
             <View style={styles.circleContainer}>
               <View style={styles.protectContainer}>
                 <Image
-                source={{uri:Protect}}
+                source={require('../assets/images/bi_shield.png')}
                 style={{width:35,height:35}}
                 />
               </View>
               <View style={styles.tenderContainer}>
                 <Image
-                source={{uri:Polygon}}
+                source={require('../assets/images/Polygon 4.png')}
                 style={{width:35,height:35}}
                 />
               </View>
@@ -68,7 +62,8 @@ export default function Period ({navigation}) {
           </View>
         </View>
       </View>
-    </View>
+    {/* </View> */}
+    </ScrollView>
   );
 }
 
@@ -76,6 +71,7 @@ const styles = StyleSheet.create ({
   bigContainer: {
     backgroundColor:'white',
     alignContent:'center',
+    height: '100%',
   },
   mainContainer: {
     backgroundColor:"#ffdede",
@@ -85,17 +81,17 @@ const styles = StyleSheet.create ({
     height:'auto',
     borderRadius: 30,
     marginTop:20,
-    paddingTop:60,
+    paddingTop:20,
   },
   header: {
     fontSize:20,
     letterSpacing:1,
     color:'black',
-    fontFamily:'spartan',
+    fontFamily:'Spartan-Regular',
     textAlign:'center'
   },
   cycleContainer: {
-    margin:10,
+    marginTop:10,
     display:'flex',
     flexDirection:'column',
   },
@@ -112,14 +108,16 @@ const styles = StyleSheet.create ({
     paddingTop:10,
     fontSize:12,
     color:'rgba(56,56,56,0.8)',
-    fontFamily:'spartan',
+    fontFamily:'Spartan-Regular',
+    alignSelf:'center'
   },
   cycleText: {
-    fontSize:28,
-    fontWeight:'bold',
+    fontSize:25,
     color:'rgba(56,56,56,0.8)',
     letterSpacing:1,
     paddingTop:30,
+    fontFamily: 'Spartan-Bold',
+    alignSelf: 'center'
   },
   cycleBottom: {
     backgroundColor:'#FF9797',
@@ -133,18 +131,21 @@ const styles = StyleSheet.create ({
   periodText: {
     color:'white',
     fontSize:18,
-    fontFamily:'spartan',
+    fontFamily:'Spartan-Regular',
     letterSpacing:1,
+    alignSelf: 'center'
   },
   periodDayText: {
     fontSize:30,
-    fontWeight:"600",
-    lineHeight:25,
+    // fontWeight:"600",
+    // lineHeight:25,
     color:'white',
     letterSpacing:1,
+    alignSelf: 'center',
+    fontFamily:'Spartan-SemiBold',
   },
   todayContainer: {
-    paddingTop:'10%',
+    paddingTop:'1%',
     paddingBottom:'2%',
     width:'100%',
     height:'auto',
@@ -155,7 +156,7 @@ const styles = StyleSheet.create ({
     marginLeft:10,
     padding:5,
     fontSize:18,
-    fontFamily:'spartan',
+    fontFamily:'Spartan-Regular',
     letterSpacing:1,
   },
   symptomContainer: {
@@ -169,7 +170,7 @@ const styles = StyleSheet.create ({
     marginBottom:10,
   },
   symptomHeadText: {
-    fontFamily:'spartan',
+    fontFamily:'Spartan-Regular',
     fontSize:14
   },
   circleContainer: {
@@ -236,7 +237,7 @@ const styles = StyleSheet.create ({
   },
   buttonText: {
     fontSize:14,
-    fontFamily:'Spartan',
+    fontFamily:'Spartan-Regular',
     textAlign:'center'
   }
 });

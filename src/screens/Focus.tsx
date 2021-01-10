@@ -11,7 +11,7 @@ export default function SelfCare ({navigation}) {
     const[count, handleCount] = useState('4');
     const[smallText, handleSmallText] = useState('in progress');
     const[button, handleButton] = useState('PLAN MY GOALS');
-    const[nav, handleNav] = useState('');
+    const[nav, handleNav] = useState('Goal');
 
     function buttonPress(selection){
         if(selection == 'Goal'){
@@ -20,6 +20,7 @@ export default function SelfCare ({navigation}) {
             handleCount('4');
             handleSmallText('in progress');
             handleButton('PLAN MY GOALS');
+            handleNav('Goal');
         }
         else if(selection == 'Task'){
             handleColor('#FF6F6F');
@@ -34,6 +35,7 @@ export default function SelfCare ({navigation}) {
             handleCount('1500');
             handleSmallText('dollars');
             handleButton('MANAGE MY BUDGET');
+            handleNav('BudgetTracker');
         }
     }
 
@@ -107,7 +109,7 @@ export default function SelfCare ({navigation}) {
                             {smallText}
                         </Text>
                     </View>
-                    <TouchableOpacity style={styles.circleButton} onPress={()=>console.log("button pressed")}>
+                    <TouchableOpacity style={styles.circleButton} onPress={()=>navigation.navigate(`${nav}`)}>
                         <Text style={styles.buttonText}>
                             {button}
                         </Text>
@@ -253,7 +255,8 @@ const styles = StyleSheet.create ({
         color:'black',
         fontSize:14,
         fontWeight:'500',
-        textAlign: 'center'
+        textAlign: 'center',
+        fontFamily: 'Spartan-Regular'
     },
     buttonContainer: {
         width:'100%',
@@ -264,7 +267,7 @@ const styles = StyleSheet.create ({
         backgroundColor:'#C4C4C4',
         paddingLeft:10,
         borderTopRightRadius:30,
-        borderTopLeftRadius:30,
+        borderTopLeftRadius:30
     },
     buttonOptions: {
         backgroundColor:'white',

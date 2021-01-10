@@ -8,7 +8,7 @@ export default function SelfCare ({navigation}) {
     const[count, handleCount] = useState('5');
     const[smallText, handleSmallText] = useState('habits');
     const[button, handleButton] = useState('START TRACKING');
-    const[nav, handleNav] = useState('');
+    const[nav, handleNav] = useState('HabitTracker');
 
     function buttonPress(selection){
         if(selection == 'Habit'){
@@ -17,6 +17,7 @@ export default function SelfCare ({navigation}) {
             handleCount('5');
             handleSmallText('habits');
             handleButton('START TRACKING');
+            handleNav('HabitTracker');
         }
         else if(selection == 'Mood'){
             handleColor('#F4EAC7');
@@ -24,6 +25,7 @@ export default function SelfCare ({navigation}) {
             handleCount('4');
             handleSmallText('days');
             handleButton('START TRACKING');
+            handleNav('Mood');
         }
         else if(selection == 'Brain'){
             handleColor('#E3EDFF');
@@ -31,6 +33,7 @@ export default function SelfCare ({navigation}) {
             handleCount('10');
             handleSmallText('dumps');
             handleButton('START DUMPING');
+            handleNav('BrainDump');
         }
     }
 
@@ -104,7 +107,7 @@ export default function SelfCare ({navigation}) {
                             {smallText}
                         </Text>
                     </View>
-                    <TouchableOpacity style={styles.circleButton} onPress={()=>console.log("button pressed")}>
+                    <TouchableOpacity style={styles.circleButton} onPress={()=>navigation.navigate(`${nav}`)}>
                         <Text style={styles.buttonText}>
                             {button}
                         </Text>
@@ -251,7 +254,8 @@ const styles = StyleSheet.create ({
         color:'black',
         fontSize:14,
         fontWeight:'500',
-        textAlign: 'center'
+        textAlign: 'center',
+        fontFamily: 'Spartan-Regular'
     },
     buttonContainer: {
         width:'100%',

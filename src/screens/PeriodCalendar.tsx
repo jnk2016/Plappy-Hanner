@@ -22,7 +22,7 @@ export default function PeriodCalendar ({navigation}) {
                       fontWeight: '700',
                       color: 'black',
                       marginVertical: '10%',
-                      letterSpacing: '0.1em',
+                      letterSpacing: 1,
                     },
                     dayHeader: {
                       marginTop: 2,
@@ -46,14 +46,14 @@ export default function PeriodCalendar ({navigation}) {
               hideExtraDays={true}
               // Collection of dates that have to be marked.
               markedDates={{
-                '2021-01-02': {textColor: 'red'},
-                '2021-01-03': {textColor: 'red'},
-                '2021-01-04': {textColor: 'red'},
-                '2021-01-05': {textColor: 'red'},
+                '2021-01-02': {textColor: 'red', marked: true, dotColor: 'pink'},
+                '2021-01-03': {textColor: 'red', marked: true, dotColor: 'pink'},
+                '2021-01-04': {textColor: 'red', marked: true, dotColor: 'pink'},
+                '2021-01-05': {textColor: 'red', marked: true, dotColor: 'pink'},
                 '2021-01-06': {textColor: 'red', marked: true, dotColor: 'pink'}
               }}
-              // Date marking style [simple/period/multi-dot/custom]. Default = 'simple'
-              markingType='period'
+              // // Date marking style [simple/period/multi-dot/custom]. Default = 'simple'
+              // markingType='period'
               // Handler which gets executed on day press. Default = undefined
               onDayPress={(day) => {console.log('selected day', day)}}
               style={{width: '90%', alignSelf: 'center', borderRadius: 25, paddingBottom: '3%'}}

@@ -8,6 +8,8 @@ target 'PlappyHannerAndroid' do
 
   use_react_native!(:path => config["reactNativePath"])
 
+  pod 'ReactNativeART', :path => '../node_modules/@react-native-community/art'
+
   target 'PlappyHannerAndroidTests' do
     inherit! :complete
     # Pods for testing

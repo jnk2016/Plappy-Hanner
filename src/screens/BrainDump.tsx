@@ -1,11 +1,5 @@
 import React, {Component, useState} from 'react';
 import {Button, Image, StyleSheet, TextInput, TouchableOpacity, TouchableHighlight, Text, View, Alert} from 'react-native';
-import Heart from '../assets/images/heart.png';
-import Event from '../assets/images/Event.png';
-import List from '../assets/images/jam_task-list.png';
-import Paint from '../assets/images/bx_bx-paint.png';
-import Mic from '../assets/images/ic_outline-keyboard-voice.png';
-import Picture from '../assets/images/jam_picture.png';
 
 
 export default function BrainDump ({navigation}) {
@@ -22,7 +16,7 @@ export default function BrainDump ({navigation}) {
           <View style={styles.grayContainer}>
             <TouchableOpacity style={styles.iconContainer} onPress={()=>console.log("button pressed")}>
               <Image
-              source={{uri:List}}
+              source={require('../assets/images/jam_task-list.png')}
               style={{width:50, height:50}}
               />
             </TouchableOpacity>
@@ -30,7 +24,7 @@ export default function BrainDump ({navigation}) {
           <View style={styles.grayContainer}>
             <TouchableOpacity style={styles.iconContainer} onPress={()=>console.log("button pressed")}>
               <Image
-              source={{uri:Paint}}
+              source={require('../assets/images/bx_bx-paint.png')}
               style={{width:50, height:50}}
               />
             </TouchableOpacity>
@@ -38,7 +32,7 @@ export default function BrainDump ({navigation}) {
           <View style={styles.grayContainer}>
             <TouchableOpacity style={styles.iconContainer} onPress={()=>console.log("button pressed")}>
               <Image
-              source={{uri:Mic}}
+              source={require('../assets/images/ic_outline-keyboard-voice.png')}
               style={{width:50, height:50}}
               />
             </TouchableOpacity>
@@ -46,7 +40,7 @@ export default function BrainDump ({navigation}) {
           <View style={styles.grayContainer}>
             <TouchableOpacity style={styles.iconContainer} onPress={()=>console.log("button pressed")}>
               <Image
-              source={{uri:Picture}}
+              source={require('../assets/images/jam_picture.png')}
               style={{width:50, height:50}}
               />
             </TouchableOpacity>
@@ -54,7 +48,7 @@ export default function BrainDump ({navigation}) {
           <View style={styles.grayContainer}>
             <TouchableOpacity style={styles.iconContainer} onPress={()=>console.log("button pressed")}>
               <Image
-              source={{uri:Event}}
+              source={require('../assets/images/EVENT.png')}
               style={{width:50, height:50}}
               />
             </TouchableOpacity>
@@ -79,8 +73,8 @@ export default function BrainDump ({navigation}) {
           <View style={styles.romanceContainer}>
             <Text style={styles.brainHeader}>ROMANCE</Text>
             <Image
-            source={{uri:Heart}}
-            style={{height:55,width:50,marginLeft:30}}
+              source={require('../assets/images/heart.png')}
+              style={{height:55,width:50,marginLeft:30}}
             />
           </View>
           <View style={styles.workContainer}>
@@ -206,7 +200,7 @@ const styles = StyleSheet.create ({
     fontSize:14,
     letterSpacing:1,
     textAlign:'center',
-    fontWeight:600,
+    fontWeight:'600',
   },
   brainDesc: {
     fontSize:12,

@@ -8,14 +8,14 @@ export default function Health ({navigation}) {
     const[count, handleCount] = useState('5');
     const[smallText, handleSmallText] = useState('days');
     const[button, handleButton] = useState('LOG MY PERIOD');
-    const[nav, handleNav] = useState('');
+    const[nav, handleNav] = useState('Period');
 
     function buttonPress(selection){
         if(selection == 'Period'){
             handleColor('#FFA0A0');
             handleHeader('PERIOD IN');
             handleCount('5');
-            handleSmallText('days');
+            handleSmallText('Period');
             handleButton('LOG MY PERIOD');
         }
         else if(selection == 'Meal'){
@@ -24,6 +24,7 @@ export default function Health ({navigation}) {
             handleCount('21');
             handleSmallText('meals');
             handleButton('PLAN MY MEALS');
+            handleNav('Meal');
         }
         else if(selection == 'Water'){
             handleColor('#9EB4DF');
@@ -31,6 +32,7 @@ export default function Health ({navigation}) {
             handleCount('5');
             handleSmallText('cups');
             handleButton('TRACK CONSUMPTION');
+            handleNav('ActivityTracker');
         }
     }
 
@@ -104,7 +106,7 @@ export default function Health ({navigation}) {
                             {smallText}
                         </Text>
                     </View>
-                    <TouchableOpacity style={styles.circleButton} onPress={()=>console.log("button pressed")}>
+                    <TouchableOpacity style={styles.circleButton} onPress={()=>navigation.navigate(`${nav}`)}>
                         <Text style={styles.buttonText}>
                             {button}
                         </Text>
@@ -250,7 +252,8 @@ const styles = StyleSheet.create ({
         color:'black',
         fontSize:14,
         fontWeight:'500',
-        textAlign: 'center'
+        textAlign: 'center',
+        fontFamily: 'Spartan-Regular'
     },
     buttonContainer: {
         width:'100%',
@@ -261,7 +264,7 @@ const styles = StyleSheet.create ({
         backgroundColor:'#E3EDFF',
         paddingLeft:10,
         borderTopRightRadius:30,
-        borderTopLeftRadius:30,
+        borderTopLeftRadius:30
     },
     buttonOptions: {
         backgroundColor:'white',

@@ -1,10 +1,5 @@
 import React, {Component, useState} from 'react';
 import {Button, Image, StyleSheet, TextInput, TouchableHighlight, Text, View, Alert} from 'react-native';
-// import '../assets/css/goal.css';
-import Ellipseavatar from '../assets/images/Ellipseavatar.png';
-import Vector from '../assets/images/Vector.png';
-import Heart from '../assets/images/heart.png';
-import CalStar from '../assets/images/bx_bx-calendar-star.png';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default function Goal ({navigation}) {
@@ -49,7 +44,7 @@ export default function Goal ({navigation}) {
   const styles = StyleSheet.create ({
     bigContainer: {
         alignItems: 'center',
-        paddingBottom:'30px',
+        paddingBottom:30,
         backgroundColor:'white',
     },
     searchBar: {
@@ -70,57 +65,64 @@ export default function Goal ({navigation}) {
     containerText: {
         color:'black',
         fontSize: 18,
-        fontFamily:'spartan',
+        fontFamily:'Spartan-SemiBold',
         textAlign:'center',
         letterSpacing:1,
+        alignSelf: 'center'
     },
     allContainer: {
         flex:1,
         backgroundColor:'#c5c5c5',
         height:'30%',
-        padding:'15px',
+        padding:20,
         width:'95%',
-        borderRadius: 20
+        borderRadius: 20,
+        justifyContent: 'center',
     },
     reviewContainer: {
         flex:2,
         backgroundColor: '#fa9d9d',
         height:'30%',
-        padding:'30px',
+        padding:45,
         width:'95%',
-        borderRadius: 20
+        borderRadius: 20,
+        justifyContent: 'center',
     },
     progressContainer: {
         flex:2,
         backgroundColor: '#ffc6c6',
         height:'30%',
-        padding:'30px',
+        padding:42,
         width:'95%',
-        borderRadius: 20
+        borderRadius: 20,
+        justifyContent: 'center',
     },
     openContainer: {
         flex:2,
         backgroundColor: '#ffdede',
         height:'30%',
-        padding:'30px',
+        padding:40,
         width:'95%',
-        borderRadius: 20
+        borderRadius: 20,
+        justifyContent: 'center',
     },
     developContainer: {
         flex:2,
         backgroundColor: '#ffeeee',
         height:'30%',
-        padding:'30px',
+        padding:40,
         width:'95%',
-        borderRadius: 20
+        borderRadius: 20,
+        justifyContent: 'center',
     },
     completeContainer: {
         flex:2,
         backgroundColor: '#fff7ef',
         height:'30%',
-        padding:'30px',
+        padding:40,
         width:'95%',
-        borderRadius: 20
+        borderRadius: 20,
+        justifyContent: 'center',
     },
     addContainer: {
         flex:3,
@@ -129,8 +131,10 @@ export default function Goal ({navigation}) {
         borderRadius: 50,
         borderWidth: 1,
         borderColor:'black',
-        padding:'10px',
+        padding:10,
         borderStyle: 'solid',
-        marginLeft:120
+        marginLeft:120,
+        justifyContent: 'center',
+        paddingVertical: '5%'
     }
 });

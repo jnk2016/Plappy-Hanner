@@ -35,7 +35,7 @@ export default class App extends Component{
 
           {/* <NavigationContainer linking={linking} fallback={<Text>Loading...</Text>}> */}
           <NavigationContainer fallback={<Text>Loading...</Text>}>
-              <Tab.Navigator 
+              <Tab.Navigator tabBarOptions={{showLabel: false}}
               screenOptions={({ route }) => ({
                   tabBarIcon: ({ focused, color, size }) => {
                       if(route.name === 'Home'){

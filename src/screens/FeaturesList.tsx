@@ -21,7 +21,7 @@ export default function NewFeaturesList({navigation}){
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.focusOptionsContainer} onPress={()=>navigation.navigate('Focus')}>
                     {/* <TouchableOpacity style={styles.focusOptionsContainer} onPress={()=>console.log("Button Pressed")}> */}
-                        <Text style={styles.optionsText}>FOCUS   </Text>
+                        <Text style={styles.optionsText}>FOCUS    </Text>
                         <Image source={require('../assets/images/bx_bx-calendar-star.png')}
                         style={{width: '100%', height: '150%',resizeMode: 'contain', alignSelf: 'center'}}/>
                     </TouchableOpacity>
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     },
     heading:{
         fontSize:18,
-        fontFamily: 'Spartan',
+        fontFamily: 'Spartan-Regular',
         color: 'black',
         fontWeight: 'bold',
         flex: 1,
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
         marginLeft: '4%',
         fontSize: 20,
         fontWeight: '500',
-        fontFamily: 'Spartan',
+        fontFamily: 'Spartan-Regular',
         // paddingRight: '3%'
     }
 });
