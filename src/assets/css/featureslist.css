@@ -1,0 +1,138 @@
+* {
+  margin:0;
+  padding:0;
+}
+
+.FeatureList body {
+  background: white;
+  font-family: "spartan";
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  padding-bottom: 10em;
+}
+
+.featuresList {
+  display:block;
+  position:relative;
+  height: 100%;
+  width:100%;
+}
+
+.headerFeatures {
+  position: fixed;
+  width:100%;
+  display:inline-block;
+  padding:1em;
+}
+
+.headerFeatures h1 {
+  color:black;
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display:inline;
+  /* letter-spacing: 0.2em; */
+  font-weight: bold;
+  background: none;
+}
+
+.headerFeatures img {
+  vertical-align: middle;
+  margin-left:8em;
+}
+
+.featuresContainer {
+  margin-top:6em;
+  margin-left: 1.2em;
+  height:100;
+}
+
+.containerFeatures {
+  display: block;
+  position:relative;
+  font-size: 20px;
+}
+
+.containerFeatures ul {
+  color: black;
+}
+
+.containerFeatures ul li {
+  list-style: none;
+  position: relative;
+}
+
+.containerFeatures ul li button {
+  border: none;
+}
+
+.selfcare {
+  background: #F2E6FC;
+  border-radius: 30px;
+  width: 325px;
+  height: 180px;
+  position: relative;
+  font-size: 20px;
+  text-align: left;
+  padding:2em;
+}
+
+.selfcare a {
+  text-decoration: none;
+  color:black;
+}
+
+.selfcare img {
+  position: absolute;
+  display:inline;
+  padding-left:4em;
+}
+
+.containerFeatures .health {
+  background: #E3EDFF;
+  border-radius: 30px;
+  width: 325px;
+  height: 180px;
+  display: inline-block;
+  position: relative;
+  font-size: 20px;
+  text-align: left;
+  padding:2em;
+  margin-top:1.5em;
+}
+
+.health a {
+  text-decoration: none;
+  color:black;
+}
+
+.health img {
+  padding-left:5.5em;
+  position: absolute;
+  vertical-align: bottom;
+}
+
+.containerFeatures .focus {
+  background: #e5e5e5;
+  border-radius: 30px;
+  width: 325px;
+  height: 180px;
+  display: inline-block;
+  position: relative;
+  font-size: 20px;
+  text-align: left;
+  padding:2em;
+  margin-top:1.5em;
+}
+
+.focus a {
+  text-decoration: none;
+  color:black;
+}
+
+.focus img {
+  padding-left:5.5em;
+  position: absolute;
+}
+/*# sourceMappingURL=featureslist.css.map */

@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.Focus body {
+  background: white;
+  font-family: "spartan";
+  height: 100%;
+  width:100%;
+  display:block;
+  overflow:visible;
+}
+
+.focusHeader {
+  height:15%;
+  width:100%;
+  background:#c4c4c4;
+  border-radius: 0 0 30px 30px;
+  text-align:center;
+  position:relative;
+  padding: 1em 0 0 0;
+}
+
+.focusCalendar {
+  padding-left:0.5em;
+  width:100%;
+}
+
+.focusHeader img {
+  padding:1em;
+}
+
+.focusWeek {
+  background:#e5e5e5;
+  position:relative;
+  width:90%;
+  height:25%;
+  border-radius:30px;
+  padding:0.5em;
+}
+
+.focuscurrentWeek {
+  font-size:12px;
+  margin:0.5em 0 0 0.5em;
+  font-weight:normal;
+  letter-spacing: 0.1em;
+}
+
+.focusDays {
+  margin-left:1em;
+}
+
+.focusDays a {
+  display:inline-block;
+  text-decoration: none;
+  color:black;
+  text-align: center;
+  margin:0 0.5em;
+  font-size:12px;
+  line-height: 25px;
+}
+
+#focusMain {
+  background: rgba(93, 124, 184, 0.26);
+  border-radius: 10px;
+  padding:1em;
+}
+
+.focusContainer {
+  text-align:Center;
+  align-items: center;
+  font-family:"spartan";
+  letter-spacing:0.1em;
+}
+
+.focusContainer ul li {
+  display:block;
+}
+
+.focusHead {
+  font-size:16px;
+  color:rgba(56, 56, 56, 0.8);
+  text-align:Center;
+  margin-top:2em;
+}
+
+.focusCircle {
+  border-radius:50%;
+  background:#eeb4c9;
+  width:50%;
+  height:70%;
+  padding:1em;
+  position:relative;
+  text-align:center;
+  display:inline-block;
+}
+
+.focusCircleBudget {
+  border-radius:50%;
+  background:#7EBD9F;
+  width:50%;
+  height:70%;
+  padding:1em;
+  position:relative;
+  text-align:center;
+  display:inline-block;
+}
+
+.focusCircleTask {
+  border-radius:50%;
+  background:#FF6F6F;
+  width:50%;
+  height:80%;
+  padding:1em;
+  position:relative;
+  text-align:center;
+  display:inline-block;
+}
+
+.focusNumber {
+  padding:1em 1em 0 1em;
+  color:white;
+  font-size:48px;
+}
+
+#focusB {
+  padding:1em 1em 0 0.5em;
+  color:white;
+  font-size:48px;
+}
+
+.focusDesc {
+  color:white;
+  font-size:24px;
+  padding-bottom:2em;
+  font-family:"spartan";
+  font-weight:600;
+  letter-spacing:0.1em;
+}
+
+.focusTrack {
+  background: #DCF0E7;
+  padding:1em;
+  border-radius:30px;
+  border:none;
+  margin:1em;
+  font-family:"spartan";
+  font-weight:600;
+  letter-spacing:0.1em;
+}
+
+.focusButton {
+  background:#c4c4c4;
+  width:100%;
+  height:40%;
+}
+
+.focusButton ul {
+  list-style:none;
+  height:100%;
+}
+
+.focusButton ul li {
+  display:inline-block;
+  text-decoration:none;
+  margin:0.5em 0 0 0.5em;
+}
+
+.focusButton ul li button {
+  background:white;
+  height:60%;
+  width:30%;
+  padding:3em 0.5em 3em 0.3em;
+  border-radius:20px;
+  text-align:center;
+  margin:0.3em;
+  border:none;
+  font-size:16px;
+  font-family:"spartan";
+  font-weight:600;
+  letter-spacing:0.1em;
+  line-height:25px;
+}
+
+.focusButton .focusGoalGold {
+  border:1px solid yellow;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.focusButton .focusTaskGold {
+  border:1px solid yellow;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.focusButton .focusBudgetGold {
+  border:1px solid yellow;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+/*# sourceMappingURL=focus.css.map */
