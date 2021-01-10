@@ -3,6 +3,36 @@ import {Button, Image, StyleSheet, TextInput, TouchableHighlight, Text, View, Al
 
 
 export default function SelfCare ({navigation}) {
+    const[color, handleColor] = useState('#DFB7FF');
+    const[header, handleHeader] = useState('AVERAGE PER DAY');
+    const[count, handleCount] = useState('5');
+    const[smallText, handleSmallText] = useState('habits');
+    const[button, handleButton] = useState('START TRACKING');
+    const[nav, handleNav] = useState('');
+
+    function buttonPress(selection){
+        if(selection == 'Habit'){
+            handleColor('#DFB7FF');
+            handleHeader('AVERAGE PER DAY');
+            handleCount('5');
+            handleSmallText('habits');
+            handleButton('START TRACKING');
+        }
+        else if(selection == 'Mood'){
+            handleColor('#F4EAC7');
+            handleHeader('CURRENT STREAK');
+            handleCount('4');
+            handleSmallText('days');
+            handleButton('START TRACKING');
+        }
+        else if(selection == 'Brain'){
+            handleColor('#E3EDFF');
+            handleHeader('CREATED THIS WEEK');
+            handleCount('10');
+            handleSmallText('dumps');
+            handleButton('START DUMPING');
+        }
+    }
 
     return (
         <View style={styles.bigContainer}> 
@@ -65,29 +95,29 @@ export default function SelfCare ({navigation}) {
                     </View>
                 </View>
                 <View style={styles.bigCircle}>
-                    <Text style={styles.circleHeader}>AVERAGE PER DAY</Text>
-                    <View style={styles.circleContainer}>
+                    <Text style={styles.circleHeader}>{header}</Text>
+                    <View style={{...styles.circleContainer, backgroundColor: `${color}`}}>
                         <Text style={styles.circlebigText}>
-                            5
+                            {count}
                         </Text>
                         <Text style={styles.circlesmallText}>
-                            habits
+                            {smallText}
                         </Text>
                     </View>
                     <TouchableOpacity style={styles.circleButton} onPress={()=>console.log("button pressed")}>
                         <Text style={styles.buttonText}>
-                            START TRACKING
+                            {button}
                         </Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.buttonContainer}>
-                    <TouchableOpacity style={styles.buttonOptions} onPress={()=>console.log("button pressed")}>
+                    <TouchableOpacity style={styles.buttonOptions} onPress={()=>buttonPress('Habit')}>
                         <Text style={styles.optionText}>HABIT TRACKER</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.buttonOptions} onPress={()=>console.log("button pressed")}>
+                    <TouchableOpacity style={styles.buttonOptions} onPress={()=>buttonPress('Mood')}>
                         <Text style={styles.optionText}>MOOD TRACKER</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.buttonOptions} onPress={()=>console.log("button pressed")}>
+                    <TouchableOpacity style={styles.buttonOptions} onPress={()=>buttonPress('Brain')}>
                         <Text style={styles.optionText}>BRAIN DUMP</Text>
                     </TouchableOpacity>
                 </View>
@@ -101,11 +131,12 @@ const styles = StyleSheet.create ({
     bigContainer: {
         width:'100%',
         height:'100%',
-        backgroundColor:'white',
+        backgroundColor: '#F2E6FC',
     },
     smallContainer: {
         width:'100%',
-        height:'100%',
+        height:'95%',
+        backgroundColor: 'white',
     },
     headerContainer: {
         width:'100%',
@@ -120,17 +151,17 @@ const styles = StyleSheet.create ({
     calendarContainer: {
         backgroundColor:'#e5e5e5',
         width:'90%',
-        height:'10%',
+        // height:'10%',
         borderRadius:20,
         alignContent:'center',
         textAlign:'center',
         marginLeft:20,
-        paddingBottom:20,
+        // paddingBottom:20,
     },
     weekHeader: {
         color:'black',
         fontSize:12,
-        fontFamily:'spartan',
+        fontFamily:'Spartan-Regular',
         textAlign:'left',
         marginTop:10,
         marginLeft:10,
@@ -149,7 +180,7 @@ const styles = StyleSheet.create ({
         margin:5,
         color:'rgba(56,56,56,0.6)',
         fontSize:11,
-        fontFamily:'spartan',
+        fontFamily:'Spartan-Regular',
     },
     weekNumbers: {
         display:'flex',
@@ -163,7 +194,7 @@ const styles = StyleSheet.create ({
         marginRight:28,
         textAlign:'center',
         color:'black',
-        fontFamily:'spartan',
+        fontFamily:'Spartan-Regular',
         fontSize:12,
     },
     bigCircle: {
@@ -175,24 +206,26 @@ const styles = StyleSheet.create ({
         fontSize:18,
         letterSpacing:1,
         textAlign:'center',
-        marginTop:30,
+        marginTop:10,
+        fontFamily: 'Spartan-Regular'
     },
     circleContainer: {
-        alignContent:'center',
+        justifyContent:'center',
+        alignSelf: 'center',
         textAlign:'center',
         margin:5,
-        marginLeft:90,
+        // marginLeft:90,
         width:200,
         height:200,
         borderRadius:125,
         padding:10,
-        backgroundColor:'#dfb7ff',
+        // backgroundColor:'#dfb7ff',
     },
     circlebigText: {
         color:'white',
         fontSize:54,
-        paddingTop:50,
-        fontFamily:'spartan',
+        // paddingTop:50,
+        fontFamily:'Spartan-Regular',
         textAlign:'center',
         fontWeight:'600',
     },
@@ -207,16 +240,18 @@ const styles = StyleSheet.create ({
         backgroundColor:'#DCF0E7',
         textAlign:'center',
         padding:10,
-        marginTop:20,
+        marginTop:10,
         width:'40%',
         height:'auto',
         borderRadius:30,
-        marginLeft:115,
+        alignSelf: 'center',
+        // marginLeft:115,
     },  
     buttonText: {
         color:'black',
         fontSize:14,
         fontWeight:'500',
+        textAlign: 'center'
     },
     buttonContainer: {
         width:'100%',
@@ -226,6 +261,8 @@ const styles = StyleSheet.create ({
         flexDirection:'row',
         backgroundColor:'#F2E6FC',
         paddingLeft:10,
+        borderTopRightRadius:30,
+        borderTopLeftRadius:30,
     },
     buttonOptions: {
         backgroundColor:'white',

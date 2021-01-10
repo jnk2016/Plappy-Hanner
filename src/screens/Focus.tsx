@@ -6,6 +6,36 @@ import Ellipseavatar from '../assets/images/Ellipseavatar.png';
 
 
 export default function SelfCare ({navigation}) {
+    const[color, handleColor] = useState('#EEB4C9');
+    const[header, handleHeader] = useState('CURRENT GOALS');
+    const[count, handleCount] = useState('4');
+    const[smallText, handleSmallText] = useState('in progress');
+    const[button, handleButton] = useState('PLAN MY GOALS');
+    const[nav, handleNav] = useState('');
+
+    function buttonPress(selection){
+        if(selection == 'Goal'){
+            handleColor('#EEB4C9');
+            handleHeader('CURRENT GOALS');
+            handleCount('4');
+            handleSmallText('in progress');
+            handleButton('PLAN MY GOALS');
+        }
+        else if(selection == 'Task'){
+            handleColor('#FF6F6F');
+            handleHeader('TASK PROGRESS');
+            handleCount('20');
+            handleSmallText('completed');
+            handleButton('MANAGE MY TASKS');
+        }
+        else if(selection == 'Budget'){
+            handleColor('#7EBD9F');
+            handleHeader('MONTHLY BUDGET');
+            handleCount('1500');
+            handleSmallText('dollars');
+            handleButton('MANAGE MY BUDGET');
+        }
+    }
 
     return (
         <View style={styles.bigContainer}> 
@@ -68,29 +98,29 @@ export default function SelfCare ({navigation}) {
                     </View>
                 </View>
                 <View style={styles.bigCircle}>
-                    <Text style={styles.circleHeader}>CURRENT GOALS</Text>
-                    <View style={styles.circleContainer}>
+                    <Text style={styles.circleHeader}>{header}</Text>
+                    <View style={{...styles.circleContainer, backgroundColor: `${color}`}}>
                         <Text style={styles.circlebigText}>
-                            4
+                            {count}
                         </Text>
                         <Text style={styles.circlesmallText}>
-                            in progress
+                            {smallText}
                         </Text>
                     </View>
                     <TouchableOpacity style={styles.circleButton} onPress={()=>console.log("button pressed")}>
                         <Text style={styles.buttonText}>
-                            PLAN MY GOALS
+                            {button}
                         </Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.buttonContainer}>
-                    <TouchableOpacity style={styles.buttonOptions} onPress={()=>console.log("button pressed")}>
+                    <TouchableOpacity style={styles.buttonOptions} onPress={()=>buttonPress('Goal')}>
                         <Text style={styles.optionText}>GOAL TRACKER</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.buttonOptions} onPress={()=>console.log("button pressed")}>
+                    <TouchableOpacity style={styles.buttonOptions} onPress={()=>buttonPress('Task')}>
                         <Text style={styles.optionText}>TASK MANAGER</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.buttonOptions} onPress={()=>console.log("button pressed")}>
+                    <TouchableOpacity style={styles.buttonOptions} onPress={()=>buttonPress('Budget')}>
                         <Text style={styles.optionText}>BUDGET TRACKER</Text>
                     </TouchableOpacity>
                 </View>
@@ -104,11 +134,12 @@ const styles = StyleSheet.create ({
     bigContainer: {
         width:'100%',
         height:'100%',
-        backgroundColor:'white',
+        backgroundColor: '#C4C4C4',
     },
     smallContainer: {
         width:'100%',
-        height:'100%',
+        height:'95%',
+        backgroundColor: 'white',
     },
     headerContainer: {
         width:'100%',
@@ -123,17 +154,17 @@ const styles = StyleSheet.create ({
     calendarContainer: {
         backgroundColor:'#e5e5e5',
         width:'90%',
-        height:'10%',
+        // height:'10%',
         borderRadius:20,
         alignContent:'center',
         textAlign:'center',
         marginLeft:20,
-        paddingBottom:20,
+        // paddingBottom:20,
     },
     weekHeader: {
         color:'black',
         fontSize:12,
-        fontFamily:'spartan',
+        fontFamily:'Spartan-Regular',
         textAlign:'left',
         marginTop:10,
         marginLeft:10,
@@ -152,7 +183,7 @@ const styles = StyleSheet.create ({
         margin:5,
         color:'rgba(56,56,56,0.6)',
         fontSize:11,
-        fontFamily:'spartan',
+        fontFamily:'Spartan-Regular',
     },
     weekNumbers: {
         display:'flex',
@@ -166,7 +197,7 @@ const styles = StyleSheet.create ({
         marginRight:28,
         textAlign:'center',
         color:'black',
-        fontFamily:'spartan',
+        fontFamily:'Spartan-Regular',
         fontSize:12,
     },
     bigCircle: {
@@ -178,24 +209,25 @@ const styles = StyleSheet.create ({
         fontSize:18,
         letterSpacing:1,
         textAlign:'center',
-        marginTop:30,
+        marginTop:10,
     },
     circleContainer: {
-        alignContent:'center',
+        justifyContent:'center',
+        alignSelf: 'center',
         textAlign:'center',
         margin:5,
-        marginLeft:90,
+        // marginLeft:90,
         width:200,
         height:200,
         borderRadius:125,
         padding:10,
-        backgroundColor:'#EEB4C9',
+        // backgroundColor:'#EEB4C9',
     },
     circlebigText: {
         color:'white',
         fontSize:54,
-        paddingTop:50,
-        fontFamily:'spartan',
+        // paddingTop:50,
+        fontFamily:'Spartan-Regular',
         textAlign:'center',
         fontWeight:'600',
     },
@@ -213,13 +245,15 @@ const styles = StyleSheet.create ({
         width:'40%',
         height:'auto',
         borderRadius:30,
-        marginLeft:110,
-        marginTop:20,
+        // marginLeft:110,
+        alignSelf: 'center',
+        marginTop:10,
     },  
     buttonText: {
         color:'black',
         fontSize:14,
         fontWeight:'500',
+        textAlign: 'center'
     },
     buttonContainer: {
         width:'100%',
@@ -229,6 +263,8 @@ const styles = StyleSheet.create ({
         flexDirection:'row',
         backgroundColor:'#C4C4C4',
         paddingLeft:10,
+        borderTopRightRadius:30,
+        borderTopLeftRadius:30,
     },
     buttonOptions: {
         backgroundColor:'white',

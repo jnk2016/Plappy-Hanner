@@ -13,7 +13,7 @@ export default function Settings({navigation}){
                 <View style={styles.smallContainer}>
                     <Image source={require('../assets/images/Ellipseavatar.png')}
                     style={{width: '18%',height:'18%', resizeMode: 'contain', alignSelf: 'center', marginTop: '-18%'}}/>
-                    <Text style={{fontWeight: '400', fontSize:18, alignSelf: 'center', marginTop: '-8%', marginBottom: '10%', fontFamily: 'Spartan'}}>Danphuong Hoang</Text>
+                    <Text style={{fontWeight: '400', fontSize:18, alignSelf: 'center', marginTop: '-5%', marginBottom: '10%', fontFamily: 'Spartan-Regular'}}>Danphuong Hoang</Text>
                     <TouchableOpacity style={styles.optionsContainer} onPress={()=>console.log("button pressed")}>
                         <Text style={styles.optionsText}>account</Text>
                     </TouchableOpacity>
@@ -78,6 +78,6 @@ const styles = StyleSheet.create({
         marginLeft: '4%',
         fontSize: 13,
         fontWeight: '500',
-        fontFamily: 'Spartan'
+        fontFamily: 'Spartan-Regular'
     }
 });

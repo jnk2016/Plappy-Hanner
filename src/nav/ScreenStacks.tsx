@@ -52,6 +52,7 @@ export function HomeStackScreen(){
                                 headerStyle: {
                                   borderBottomColor: 'transparent',
                                   backgroundColor: '#FFFFFF', //Set Header color
+                                  elevation: 0,
                                 },
                                 headerTintColor: '#000000', //Set Header text color
                                 headerTitleStyle: {
@@ -68,13 +69,14 @@ export function HomeStackScreen(){
 const FeaturesStack = createStackNavigator();
 export function FeaturesStackScreen(){
     return(
-        <FeaturesStack.Navigator screenOptions={{ headerShown: false }}>
+        <FeaturesStack.Navigator initialRouteName='FeatureList' screenOptions={{ headerShown: false }}>
             <FeaturesStack.Screen name = "FeatureList" component={FeaturesList}
                               options={{
                                 title: "My Features",
                                 headerStyle: {
                                   borderBottomColor: 'transparent',
                                   backgroundColor: '#FFFFFF', //Set Header color
+                                  elevation: 0,
                                 },
                                 headerTintColor: '#000000', //Set Header text color
                                 headerTitleStyle: {
@@ -103,6 +105,7 @@ export function SelfCareStackScreen(){
                                 headerStyle: {
                                   borderBottomColor: 'transparent',
                                   backgroundColor: '#FFFFFF', //Set Header color
+                                  elevation: 0,
                                 },
                                 headerTintColor: '#000000', //Set Header text color
                                 headerTitleStyle: {
@@ -120,6 +123,7 @@ export function SelfCareStackScreen(){
                                 headerStyle: {
                                   borderBottomColor: 'transparent',
                                   backgroundColor: '#FFFFFF', //Set Header color
+                                  elevation: 0,
                                 },
                                 headerTintColor: '#000000', //Set Header text color
                                 headerTitleStyle: {
@@ -137,6 +141,7 @@ export function SelfCareStackScreen(){
                                 headerStyle: {
                                   borderBottomColor: 'transparent',
                                   backgroundColor: '#FFFFFF', //Set Header color
+                                  elevation: 0,
                                 },
                                 headerTintColor: '#000000', //Set Header text color
                                 headerTitleStyle: {
@@ -164,6 +169,7 @@ function HealthStackScreen(){
                                 headerStyle: {
                                   borderBottomColor: 'transparent',
                                   backgroundColor: '#FFFFFF', //Set Header color
+                                  elevation: 0,
                                 },
                                 headerTintColor: '#000000', //Set Header text color
                                 headerTitleStyle: {
@@ -181,6 +187,7 @@ function HealthStackScreen(){
                                 headerStyle: {
                                   borderBottomColor: 'transparent',
                                   backgroundColor: '#FFFFFF', //Set Header color
+                                  elevation: 0,
                                 },
                                 headerTintColor: '#000000', //Set Header text color
                                 headerTitleStyle: {
@@ -205,6 +212,7 @@ function HealthStackScreen(){
 //                                 headerStyle: {
 //                                   borderBottomColor: 'transparent',
 //                                   backgroundColor: '#FFFFFF', //Set Header color
+                                  // elevation: 0,
 //                                 },
 //                                 headerTintColor: '#000000', //Set Header text color
 //                                 headerTitleStyle: {
@@ -221,6 +229,7 @@ function HealthStackScreen(){
 //                                 headerStyle: {
 //                                   borderBottomColor: 'transparent',
 //                                   backgroundColor: '#FFFFFF', //Set Header color
+                                  // elevation: 0,
 //                                 },
 //                                 headerTintColor: '#000000', //Set Header text color
 //                                 headerTitleStyle: {
@@ -237,6 +246,7 @@ function HealthStackScreen(){
 //                                 headerStyle: {
 //                                   borderBottomColor: 'transparent',
 //                                   backgroundColor: '#FFFFFF', //Set Header color
+                                  // elevation: 0,
 //                                 },
 //                                 headerTintColor: '#000000', //Set Header text color
 //                                 headerTitleStyle: {
@@ -253,6 +263,7 @@ function HealthStackScreen(){
 //                                 headerStyle: {
 //                                   borderBottomColor: 'transparent',
 //                                   backgroundColor: '#FFFFFF', //Set Header color
+                                  // elevation: 0,
 //                                 },
 //                                 headerTintColor: '#000000', //Set Header text color
 //                                 headerTitleStyle: {
@@ -278,6 +289,7 @@ function FocusStackScreen(){
                                 headerStyle: {
                                   borderBottomColor: 'transparent',
                                   backgroundColor: '#FFFFFF', //Set Header color
+                                  // elevation: 0,
                                 },
                                 headerTintColor: '#000000', //Set Header text color
                                 headerTitleStyle: {
@@ -295,6 +307,7 @@ function FocusStackScreen(){
                                 headerStyle: {
                                   borderBottomColor: 'transparent',
                                   backgroundColor: '#FFFFFF', //Set Header color
+                                  // elevation: 0,
                                 },
                                 headerTintColor: '#000000', //Set Header text color
                                 headerTitleStyle: {
@@ -312,6 +325,7 @@ function FocusStackScreen(){
                                 headerStyle: {
                                   borderBottomColor: 'transparent',
                                   backgroundColor: '#FFFFFF', //Set Header color
+                                  // elevation: 0,
                                 },
                                 headerTintColor: '#000000', //Set Header text color
                                 headerTitleStyle: {
@@ -336,11 +350,11 @@ export function SettingsStackScreen(){
                                 headerStyle: {
                                   borderBottomColor: 'transparent',
                                   backgroundColor: '#FFFFFF', //Set Header color
+                                  elevation: 0,
                                 },
                                 headerTintColor: '#000000', //Set Header text color
                                 headerTitleStyle: {
-                                  fontWeight: 'bold', //Set Header text style
-                                  fontFamily: 'Spartan-Regular',
+                                  fontFamily: 'Spartan-Bold',
                                   letterSpacing: 1,
                                   marginLeft: '8%',
                                   marginTop: '5%',

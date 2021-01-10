@@ -23,9 +23,9 @@ export default class Home extends Component {
 
     render() {return(
     <View style={styles.container}>
-        <TextInput style={{alignSelf: 'center',margin: '2%', borderRadius: 20, backgroundColor: '#e5e5e5', width: '80%', fontSize: 15}}
+        <TextInput style={{alignSelf: 'center',marginTop: '2%', borderRadius: 20, backgroundColor: '#e5e5e5', width: '80%', fontSize: 12, fontFamily: 'Spartan-Regular', height: '6%'}}
             inlineImageLeft='search_icon'
-            placeholder='Search'
+            placeholder='     Search'
             placeholderTextColor='#c4c4c4'/>
         <View style={styles.smallcontainer}>
             <View style={{marginTop: '-10%', marginHorizontal: '5%'}}>
@@ -55,7 +55,7 @@ export default class Home extends Component {
                     textMonthFontSize: 10,
                     'stylesheet.calendar.header': {
                         week: {
-                        marginTop: '-3%',
+                        marginTop: '-10%',
                         flexDirection: 'row',
                         justifyContent: 'space-between',
                         }
@@ -73,7 +73,7 @@ export default class Home extends Component {
                 }}
                 // Do not show days of other months in month page. Default = false
                 hideExtraDays={true}
-                style={{width: '100%', alignSelf: 'center', borderRadius: 25, paddingBottom: '3%', marginHorizontal: '6%', marginVertical: '5%'}}
+                style={{width: '100%', alignSelf: 'center', borderRadius: 25, paddingBottom: '3%', marginHorizontal: '6%', marginVertical: '4%'}}
                 />
             </View>
             <View style={styles.sections}>
@@ -119,13 +119,15 @@ export default class Home extends Component {
         width:'100%',
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
-        marginTop: '-5%'
+        marginTop: '-5%',
+        height:'100%'
     },
     schedHeader:{
         fontSize: 18,
         paddingVertical: '4%',
         marginLeft: '4%',
-        fontFamily: 'AbhayaLibre-Regular'
+        fontFamily: 'AbhayaLibre-Regular',
+        letterSpacing: 1
     },
     options:{
         flexDirection: 'row',
@@ -170,9 +172,9 @@ export default class Home extends Component {
         alignItems: 'center'
     },
     insideCircle:{
-        fontSize: 24,
-        paddingHorizontal: '4%',
-        paddingVertical: '3%',
+        fontSize: 22,
+        // paddingHorizontal: '3%',
+        paddingVertical: '4%',
         alignSelf: 'center',
         textAlign: 'center',
         textAlignVertical: 'center',
@@ -192,7 +194,8 @@ export default class Home extends Component {
     container: {
     //   justifyContent:'center',
     //   alignItems: 'center',
-    height: '100%',
+        height: '100%',
+        backgroundColor: 'white',
     },
     smallcontainer: {
         backgroundColor: '#fffbdb',
