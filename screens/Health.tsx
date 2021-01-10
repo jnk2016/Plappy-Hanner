@@ -85,20 +85,20 @@ export default function Health ({navigation}) {
                             days
                         </Text>
                     </View>
-                    <TouchableOpacity style={styles.circleButton} onPress={()=>console.log("button pressed")}>
+                    <TouchableOpacity style={styles.circleButton} onPress={()=>navigation.navigate('Period')}>
                         <Text style={styles.buttonText}>
                             LOG MY PERIOD
                         </Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.buttonContainer}>
-                    <TouchableOpacity style={styles.buttonOptions} onPress={()=>console.log("button pressed")}>
+                    <TouchableOpacity style={styles.buttonOptions} onPress={()=>navigation.navigate('Period')}>
                         <Text style={styles.optionText}>PERIOD TRACKER</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.buttonOptions} onPress={()=>console.log("button pressed")}>
+                    <TouchableOpacity style={styles.buttonOptions} onPress={()=>navigation.navigate('Meal')}>
                         <Text style={styles.optionText}>MEAL TRACKER</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.buttonOptions} onPress={()=>console.log("button pressed")}>
+                    <TouchableOpacity style={styles.buttonOptions} onPress={()=>navigation.navigate('ActivityTracker')}>
                         <Text style={styles.optionText}>WATER TRACKER</Text>
                     </TouchableOpacity>
                 </View>

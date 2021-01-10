@@ -78,20 +78,20 @@ export default function SelfCare ({navigation}) {
                             in progress
                         </Text>
                     </View>
-                    <TouchableOpacity style={styles.circleButton} onPress={()=>console.log("button pressed")}>
+                    <TouchableOpacity style={styles.circleButton} onPress={()=>navigation.navigate('Goal')}>
                         <Text style={styles.buttonText}>
                             PLAN MY GOALS
                         </Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.buttonContainer}>
-                    <TouchableOpacity style={styles.buttonOptions} onPress={()=>console.log("button pressed")}>
+                    <TouchableOpacity style={styles.buttonOptions} onPress={()=>navigation.navigate('Goal')}>
                         <Text style={styles.optionText}>GOAL TRACKER</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.buttonOptions} onPress={()=>console.log("button pressed")}>
+                    <TouchableOpacity style={styles.buttonOptions} onPress={()=>navigation.navigate('Tasks')}>
                         <Text style={styles.optionText}>TASK MANAGER</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.buttonOptions} onPress={()=>console.log("button pressed")}>
+                    <TouchableOpacity style={styles.buttonOptions} onPress={()=>navigation.navigate('BudgetTracker')}>
                         <Text style={styles.optionText}>BUDGET TRACKER</Text>
                     </TouchableOpacity>
                 </View>

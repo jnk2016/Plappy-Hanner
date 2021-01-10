@@ -87,13 +87,13 @@ export default function SelfCare ({navigation}) {
                     </TouchableOpacity>
                 </View>
                 <View style={styles.buttonContainer}>
-                    <TouchableOpacity style={styles.buttonOptions} onPress={()=>console.log("button pressed")}>
+                    <TouchableOpacity style={styles.buttonOptions} onPress={()=>navigation.navigate('HabitTracker')}>
                         <Text style={styles.optionText}>HABIT TRACKER</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.buttonOptions} onPress={()=>console.log("button pressed")}>
+                    <TouchableOpacity style={styles.buttonOptions} onPress={()=>navigation.navigate('Mood')}>
                         <Text style={styles.optionText}>MOOD TRACKER</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.buttonOptions} onPress={()=>console.log("button pressed")}>
+                    <TouchableOpacity style={styles.buttonOptions} onPress={()=>navigation.navigate('BrainDump')}>
                         <Text style={styles.optionText}>BRAIN DUMP</Text>
                     </TouchableOpacity>
                 </View>

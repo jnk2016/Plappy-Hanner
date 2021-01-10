@@ -17,27 +17,24 @@ export default function Mood ({navigation}) {
       <View style={styles.bigContainer}>
         <View style={styles.mainContainer}>
           <View style={styles.headerContainer}>
-            <View style={styles.leftContain}>
+            <View style={styles.leftHeader}>
               <Text style={styles.bigText}>DAILY CHECK-IN</Text>
-              <Text h3 style={{color:'#5D7CB8', fontSize:24, fontFamily:'spartan'}}>I'M FEELING:</Text>
+              <Text style={{color:'#5D7CB8', fontSize:24, fontFamily:'spartan'}}>I'M FEELING:</Text>
             </View>
-            <View style={styles.rightContain}>
-              <TouchableOpacity style={styles.checkIn}>
+            <View style={styles.rightHeader}>
+              <TouchableOpacity style={styles.checkIn} onPress={()=>console.log("button pressed")}>
                 <Text style={styles.buttonText}>Share my mood</Text>
               </TouchableOpacity>
             </View>
           </View>
-          <View style={styles.contentContainer}>
-            <View style={styles.leftContent}>
-              <Text style={styles.headerText}>STATISTICS</Text>
+          <View style={styles.moodContainer}>
+            <View style={styles.contentContainer}>
+                <Text style={styles.headerText}>STATISTICS</Text>
+                <TouchableOpacity style={styles.monthCheck}>
+                  <Text style={styles.buttonText}>MONTH VIEW</Text>
+                </TouchableOpacity>
+              </View>
             </View>
-            <View style={styles.rightContent}>
-              <TouchableOpacity style={styles.monthCheck}>
-                <Text style={styles.buttonText}>MONTH VIEW</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-          <View style={styles.bottomContainer}>
             <View style={styles.statContainer}>
               <View style={styles.leftStat}>
                 <Text style={styles.statText}>you have checked in:</Text>
@@ -57,7 +54,7 @@ export default function Mood ({navigation}) {
             <Text style={styles.latestText}>latest check in:</Text>
             <View style={styles.latestUpdate}>
               <View style={styles.leftUpdate}>
-                <Text h4 style={{color:'#5D7CB8', fontSize:14, fontFamily:'spartan',textAlign:'left'}}>I'M FEELING:
+                <Text style={{color:'#5D7CB8', fontSize:14, fontFamily:'spartan',textAlign:'left'}}>I'M FEELING:
                   <Text style={{color:'black', fontSize:14, fontFamily:'spartan'}}>HAPPY</Text>
                 </Text>
                 <Image
@@ -100,36 +97,48 @@ export default function Mood ({navigation}) {
               </View>
             </View>
           </View>
-          </View>
+        </View>
         </View>
       </View>
-    </View>
   );
 }
 
 const styles = StyleSheet.create ({
   bigContainer: {
     backgroundColor:'white',
-    alignContent:'center'
+    alignContent:'center',
+    width:'100%',
+    height:'100%',
+  },
+  mainContainer: {
+    backgroundColor: '#F4EAC7',
+    width:'100%',
+    height:'100%',
+    marginTop:30,
+    borderTopLeftRadius:30,
+    borderTopRightRadius:30,
+    paddingBottom:30,
   },
   headerContainer: {
     backgroundColor:'#e5e5e5',
     width:'90%',
     height:'auto',
-    padding:20,
+    padding:10,
     display:'flex',
     borderRadius: 30,
     flexDirection:'row',
-    flex:1,
     marginLeft:20,
   },
-  leftContain: {
-    flexDirection:'column',
+  leftHeader: {
+    margin:5,
   },
   bigText: {
     fontSize:16,
     color:'black',
     fontFamily:'spartan',
+    margin:5,
+  },
+  rightHeader: {
     margin:5,
   },
   checkIn: {
@@ -144,25 +153,21 @@ const styles = StyleSheet.create ({
     textAlign:'center',
     fontSize:12,
   },
-  mainContainer: {
-    backgroundColor: '#F4EAC7',
-    width:'100%',
-    height:'auto',
-    marginTop:30,
-    borderTopLeftRadius:30,
-    borderTopRightRadius:30,
-    paddingBottom:30,
-  },
   headerText: {
     paddingTop:10,
     fontSize:16,
     marginLeft:20,
     fontFamily:'spartan',
   },
+  moodContainer: {
+    width:'100%',
+    height:'auto',
+  },
   contentContainer: {
     display:'flex',
     flexDirection:'row',
-    margin:10,
+    marginLeft:10,
+    marginTop:10,
   },
   monthCheck: {
     width:'70%',
@@ -172,19 +177,22 @@ const styles = StyleSheet.create ({
     marginLeft:90,
   },
   statContainer: {
-    width:'95%',
+    width:'90%',
     height:'auto',
-    margin:20,
+    marginLeft:15,
+    marginTop:10,
     display:'flex',
     flexDirection:'row',
   },
   leftStat: {
     backgroundColor:'white',
-    width:'40%',
+    width:'50%',
+    padding:5,
   },
   rightStat: {
     backgroundColor:'#c5c5c5',
     width:'50%',
+    padding:5,
   },
   rightText: {
     fontSize:13,
@@ -194,7 +202,7 @@ const styles = StyleSheet.create ({
   },
   statText: {
     color:'black',
-    fontSize:14,
+    fontSize:12,
     fontFamily:'spartan',
     margin:5,
   },
@@ -216,13 +224,14 @@ const styles = StyleSheet.create ({
     fontFamily:"spartan",
     letterSpacing:1,
     textAlign:'center',
+    marginTop:10,
   },
   latestUpdate: {
     backgroundColor:'white',
     width:'90%',
     height:'auto',
     padding:10,
-    marginTop:20,
+    marginTop:5,
     display:'flex',
     flexDirection:'row',
   },
@@ -248,6 +257,7 @@ const styles = StyleSheet.create ({
   },
   weekContainer: {
     display:'flex',
+    marginLeft:10,
     flexDirection:'row'
   },
   lastContainer: {
