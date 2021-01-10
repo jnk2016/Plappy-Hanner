@@ -1,10 +1,10 @@
 import React, {Component, useState} from 'react';
-import {Button, Image, StyleSheet, TextInput, TouchableOpacity, TouchableHighlight, Text, View, Alert} from 'react-native';
+import {Button, Image, StyleSheet, TextInput, TouchableOpacity, TouchableHighlight, Text, View, Alert, ScrollView} from 'react-native';
 
 
 export default function BrainDump ({navigation}) {
   return (
-    <View>
+    <ScrollView>
       <View style={styles.bigContainer}>
         <TextInput style={styles.searchBar}
         underlineColorAndroid='transparent'
@@ -84,7 +84,7 @@ export default function BrainDump ({navigation}) {
        </View> 
       </View>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 
