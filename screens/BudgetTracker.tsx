@@ -5,29 +5,82 @@ import { PieChart } from 'react-minimal-pie-chart';
 export default function BudgetTracker({navigation}){
 
     return(
-        <View>
-            <View style = {styles.bigContainer}>
-                <View style={styles.samelineText}>
-                    <Text style={{fontWeight: '700', fontSize:'18px', fontFamily: 'Spartan', letterSpacing: '0.2em'}}>JANUARY</Text>
-                    <Text style ={{fontWeight: '500', fontSize:'18px', fontFamily: 'Spartan', letterSpacing: '0.2em'}}> 2021</Text>
-                </View>
-                <View style={styles.greyContainer}>
-                    <Text style={{fontWeight: '500', fontSize:'14px', fontFamily: 'Spartan', letterSpacing: '0.05em', margin: '6%'}}>MONTHLY BUDGET</Text>
-                    <Text style={{fontWeight: '500', fontSize:'36px', fontFamily: 'Spartan', letterSpacing: '0.05em', marginBottom: '6%', alignSelf: 'center'}}>$2,500.00</Text>
-                    <View style={styles.greenContainer}>
-                        <View style={styles.whiteContainer}></View>
-                        <View style={{alignContent:'center', alignItems: 'center', alignSelf: 'center', justifyContent: 'center', marginTop: '30%'}}>
-                            <PieChart style={{marginTop:'-50%', alignSelf: 'center'}}
-                                data={[
-                                    { title: 'One', value: 1, color: '#E8D7F6' },
-                                    { title: 'Two', value: 2, color: '#FDE7D3' },
-                                    { title: 'Three', value: 8, color: '#9CC3B0' },
-                                    { title: 'Four', value: 4, color: '#C4C4C4'},
-                                ]} lineWidth={35} viewBoxSize={[100,100]}
-                            />
+        <View style = {styles.bigContainer}>
+            <View style={styles.smallContainer}>
+            <Text style={styles.mainHead}>MY SPENDING</Text>
+                <View style={styles.mainContainer}>
+                    <View style={styles.leftContainer}>
+                        <View style={styles.leftExpense}>
+                            <View style={styles.leftLeft}>
+                                <View style={styles.circleLeft}>
+                                    <Text style={styles.circleNumber}>$150</Text>
+                                </View>
+                                <View style={styles.circleLeft}>
+                                    <Text style={styles.circleNumber}>$850</Text>
+                                </View>
+                                <View style={styles.circleLeft}>
+                                    <Text style={styles.circleNumber}>$250</Text>
+                                </View>
+                                <View style={styles.circleLeft}>
+                                    <Text style={styles.circleNumber}>$250</Text>
+                                </View>
+                                <View style={styles.circleLeft}>
+                                    <Text style={styles.circleNumber}>$50</Text>
+                                </View>
+                            </View>
+                            <View style={styles.rightLeft}>
+                                <Text style={styles.expenseText}>PERSONAL</Text>
+                                <Text style={styles.expenseText}>BILLS</Text>
+                                <Text style={styles.expenseText}>FOOD</Text>
+                                <Text style={styles.expenseText}>FOODS</Text>
+                                <Text style={styles.expenseText}>HOME</Text>
+                            </View>
                         </View>
-                        <Text style={{fontWeight: '500', fontSize:'14px', fontFamily: 'Spartan', letterSpacing: '0.05em', marginTop: '-10%', marginLeft: '6%'}}>REMAINING</Text>
-                        <Text style={{fontWeight: '500', fontSize:'36px', fontFamily: 'Spartan', letterSpacing: '0.05em', marginBottom: '6%', alignSelf: 'center', marginTop: '3%'}}>$2225.33</Text>
+                    <View style={styles.headButton}>
+                        <TouchableOpacity style={styles.addButton}>
+                            <Text style={styles.addText}>ADD TRANSACTION</Text>
+                        </TouchableOpacity>
+                    </View>
+                    </View>
+                    <View style={styles.rightContainer}>
+                        <View style={styles.rightButtons}>
+                            <TouchableOpacity style={styles.redButton} onPress={()=> console.log("button pressed")}>
+                                <View style={styles.titleLine}>
+                                    <Text style={styles.buttonText}>BUDGETS</Text>
+                                </View>
+                                <Text style={styles.buttonNumber}>10</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={styles.redButton} onPress={()=> console.log("button pressed")}>
+                                <View style={styles.titleLine}>
+                                    <Text style={styles.buttonText}>PAYMENTS</Text>
+                                </View>
+                                <Text style={styles.buttonNumber}>10</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={styles.redButton} onPress={()=> console.log("button pressed")}>
+                                <View style={styles.titleLine}>
+                                    <Text style={styles.buttonText}>GOALS</Text>
+                                </View>
+                                <Text style={styles.buttonNumber}>10</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                </View>
+                <View style={styles.bottomContainer}>
+                    <View style={styles.borderContainer}>
+                        <Text style={styles.bottomText}>
+                            <Text>INCOME</Text>
+                            <Text>$2800</Text>
+                        </Text>
+                        <Text style={styles.bottomText}>
+                            <Text>EXPENSES</Text>
+                            <Text>$1330</Text>
+                        </Text>
+                    </View>
+                    <View style={styles.blackContainer}>
+                        <Text style={styles.endText}>
+                            <Text>REMAINING</Text>
+                            <Text style={{fontSize:24,}}>$1470</Text>
+                        </Text>
                     </View>
                 </View>
             </View>
@@ -37,73 +90,183 @@ export default function BudgetTracker({navigation}){
 }
 
 const styles = StyleSheet.create({
-    headingContainer:{
-        backgroundColor: '#ffffff',
-        paddingTop: '2%',
-        letterSpacing: '0.1em',
-        // paddingBottom: '10%',
-    },
-    samelineText:{
-        // flex: 1,
-        flexDirection: 'row',
-        alignSelf: 'center', 
-    },
     bigContainer:{
-        alignItems: 'center',
-        justifyContent: 'center',
         backgroundColor: '#ffffff',
         // overflow: 'scroll',
         paddingTop: '10%',
+        width:'100%',
+        height:'100%',
     },
-    greyContainer:{
-        borderRadius: 30,
-        width: '100%',
-        height: '100%',
-        marginTop: '1%',
-        // shadowColor: "#000",
-        // shadowOpacity: 0.25,
-        // shadowRadius: 8,
-        elevation: 5,
-        backgroundColor: '#E5E5E5'
+    mainHead: {
+        color:'black',
+        fontSize:14,
+        fontFamily:'spartan',
+        letterSpacing:1,
+        textAlign:'left',
+        fontWeight:'600',
+        margin:20,
     },
-    greenContainer:{
-        borderRadius: 30,
-        width: '100%',
-        height: 900,
-        marginTop: '20%',
-        elevation: 5,
-        backgroundColor: '#CCDED6'
+    smallContainer: {
+        backgroundColor:'#f9eff0',
+        width:'100%',
+        height:'100%',
+        display:'flex',
+        flexDirection:'column',
     },
-    whiteContainer:{
-        borderRadius: 8,
-        width: '90%',
-        height: '22%',
-        marginTop: '-20%',
-        alignSelf: 'center',
-        elevation: 5,
-        backgroundColor: 'white'
+    mainContainer: {
+        display:'flex',
+        flexDirection:'row',
+        width:'100%',
+        height:'70%',
     },
-    heading:{
-        fontSize:'18px',
-        fontFamily: 'Spartan',
-        color: 'black',
-        fontWeight: 'bold',
-        flex: 1,
-        marginLeft: 40,
-        marginTop: 20,
+    leftContainer: {
+        width:'60%',
+        height:'100%',
+        backgroundColor:'#c6d9d0',
     },
-    optionsContainer:{
-        textAlignVertical: 'center',
-        marginVertical: '1%',
-        marginHorizontal: '2%',
-        backgroundColor: 'white',
-        paddingVertical: '5%',
-        borderRadius: 6
+    leftExpense: {
+        flexDirection:'row',
+        display:'flex',
+        width:'100%',
+        height:'90%',
+        alignItems:'center',
     },
-    optionsText:{
-        marginLeft: '4%',
-        fontSize: '13px',
-        fontWeight: '500',
-        fontFamily: 'Spartan'
+    leftLeft: {
+        display:'flex',
+        flexDirection:'column',
+        alignItems:'center',
+        justifyContent:'space-between',
+        width:'40%',
+        height:'90%',
+    },
+    rightLeft: {
+        display:'flex',
+        flexDirection:'column',
+        alignItems:'flex-start',
+        justifyContent:'space-between',
+        width:'60%',
+        height:'80%',
+        textAlign:'left',
+    },
+    circleLeft:{
+        backgroundColor:'white',
+        width:50,
+        height:50,
+        borderRadius:25,
+        textAlign:'center',
+    },
+    circleNumber: {
+        color:'#ed4d4d',
+        fontSize:12,
+        fontFamily:'spartan',
+        letterSpacing:1,
+        paddingTop:20,
+    },
+    expenseText: {
+        color:'black',
+        fontSize:14,
+        letterSpacing:1,
+        fontFamily:'spartan',
+        textAlign:'left'
+    },
+    headButton: {
+        width:'100%',
+        marginRight:-80,
+        alignSelf:'flex-end'
+    },
+    addButton: {
+        backgroundColor:'#c4c4c4',
+        padding:10,
+        width:140,
+        height:35,
+        textAlign:'center',
+        borderRadius:10,
+    },
+    addText: {
+        color:'black',
+        fontSize:10,
+        fontFamily:'spartan',
+    },
+    rightContainer: {
+        width:'40%',
+        height:'100%',
+    },
+    rightButtons: {
+        display:'flex',
+        flexDirection:'column',
+        width:'100%',
+        height:'80%',
+        alignSelf:'center',
+        justifyContent:'space-between',
+        marginLeft:30,
+    },
+    redButton: {
+        backgroundColor:'#ff9797',
+        width:100,
+        height:100,
+        textAlign:'center',
+    },
+    titleLine: {
+        borderBottomColor:'black',
+        borderBottomWidth:1,
+        width:'120%',
+        height:'auto',
+        marginLeft:-10,
+    },
+    buttonText: {
+        color:'black',
+        fontSize:12,
+        letterSpacing:2,
+        fontFamily:'spartan',
+        paddingTop:30,
+        textAlign:'center',
+    },
+    buttonNumber: {
+        color:'black',
+        fontSize:24,
+        marginTop:20,
+    },
+    bottomContainer: {
+        display:'flex',
+        flexDirection:'column',
+        width:'100%',
+        height:'20%',
+    },
+    borderContainer: {
+        borderWidth:1,
+        borderColor:'black',
+        width:'100%',
+        height:'70%',
+    },
+    bottomText: {
+        marginTop:10,
+        display:'flex',
+        flexDirection:'row',
+        alignSelf:'center',
+        justifyContent:'space-between',
+        width:'80%',
+        height:'auto',
+        padding:10,
+        fontSize:14,
+        color:'black',
+        fontFamily:'spartan'
+    },
+    blackContainer: {
+        width:'100%',
+        height:'30%',
+        backgroundColor:'#383838',
+    },
+    endText: {
+        display:'flex',
+        flexDirection:'row',
+        alignSelf:'center',
+        justifyContent:'space-between',
+        width:'80%',
+        height:'auto',
+        padding:10,
+        color:'white',
+        fontWeight:'600',
+        fontSize:18,
+        alignContent:'center'
     }
 });
