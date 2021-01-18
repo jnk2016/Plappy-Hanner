@@ -12,62 +12,55 @@ import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
 export default function Period ({navigation}) {
 
   return (
-    <View style={{height:'100%'}}>
       <View style={styles.bigContainer}>
-        <View style={styles.mainContainer}>
-          <Text style={styles.header}>CURRENT CYCLE</Text>
-          <View style={styles.cycleContainer}>
-              <View style={styles.cycleTop}>
-                <Text style={styles.dateText}>Friday, Jan 8 2021</Text>
-                <Text style={styles.cycleText}>CYCLE DAY 24</Text>
+        <View style={styles.smallContainer}>
+          <Text style={styles.headerText}>CURRENT CYCLE</Text>
+          <View style={styles.mainLeft}></View>
+          
+            <View style={styles.cycleCircle}>
+              <View style={styles.innerCircle}>
+                <Text style={styles.cycleText}>
+                  <Text>CYCLE DAY</Text>
+                  <Text style={{fontSize:48}}>24</Text>
+                </Text>
+                <TouchableOpacity style={styles.mainButton} >
+                  <Text style={styles.buttonText}>View calendar</Text>
+                </TouchableOpacity>
               </View>
-              <View style={styles.cycleBottom}>
-                <Text style={styles.periodText}>PERIOD IN:</Text> 
-                <Text style={styles.periodDayText}>5 DAYS</Text> 
-              </View>
-        </View>
-        <View style={styles.todayContainer}>
-          <Text style={styles.lowerHeader}>TODAY'S SYMPTOMS</Text>
-          <View style={styles.symptomContainer}>
-            <Text style={styles.symptomHeadText}>creamy</Text>
-            <View style={styles.circleContainer}>
-              <View style={styles.protectContainer}>
-                <Image
-                source={{uri:Protect}}
-                style={{width:35,height:35}}
-                />
-              </View>
-              <View style={styles.tenderContainer}>
-                <Image
-                source={{uri:Polygon}}
-                style={{width:35,height:35}}
-                />
-              </View>
-              </View>
-          </View>
-        </View>
-        </View>
-        <View style={styles.insightContainer}>
-          <Text style={styles.lowerHeader}>INSIGHTS</Text>
-          <View style={styles.buttonContainer}>
-            <View style={styles.lowerContainer}>
-              <TouchableOpacity style={styles.symptomButton} onPress={()=>navigation.navigate('PeriodSymptoms')}>
-                <Text style={styles.buttonText}>Log symptoms</Text>
-              </TouchableOpacity>
             </View>
-            <View style={styles.lowerContainer}>
-              <TouchableOpacity style={styles.calendarButton} onPress={()=>navigation.navigate('PeriodCalendar')}>
-                <Text style={styles.buttonText}>View Calendar</Text>
-              </TouchableOpacity>
+            <View style={styles.mainRight}>
+              <Text style={styles.monthVertical}>
+                <Text>J</Text>
+                <Text>A</Text>
+                <Text>N</Text>
+                <Text>U</Text>
+                <Text>A</Text>
+                <Text>R</Text>
+                <Text>Y</Text>
+              </Text>
             </View>
-            <View style={styles.lowerContainer}>
-              <TouchableOpacity style={styles.periodButton} onPress={()=>navigation.navigate('PeriodLog')}>
-                <Text style={styles.buttonText}>Log  period </Text>
-              </TouchableOpacity>
+            <View style={styles.symptomContainer}>
+              <View style={styles.innerSymptom}>
+                <TouchableOpacity style={[styles.circleButton,{marginLeft:120, marginTop:20}]} onPress={()=>navigation.navigate('Period', {screen: 'PeriodSymptoms'})}>
+                  <Text style={styles.circleText}>ADD SYMPTOMS</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={[styles.circleButton,{marginTop:-20, marginLeft:30}]} onPress={()=> console.log("button pressed")}>
+                  <Text style={[styles.circleText,{paddingTop:40}]}>EDIT CYCLE</Text>
+                </TouchableOpacity>
+              </View>
             </View>
-          </View>
+            <View style={styles.periodContainer}>
+              <View style={styles.innerPeriod}>
+                <Text style={styles.periodText}>
+                  <Text>period in:</Text>
+                  <Text style={{fontWeight:'600', fontSize:36, color:'white'}}>5 DAYS</Text>
+                </Text>
+              </View>
+            <TouchableOpacity style={styles.periodButton} onPress={()=> console.log("button pressed")}>
+              <Text style={styles.buttonText}>Log Period</Text>
+            </TouchableOpacity>
+          </View> 
         </View>
-      </View>
     </View>
   );
 }
@@ -76,167 +69,171 @@ const styles = StyleSheet.create ({
   bigContainer: {
     backgroundColor:'white',
     alignContent:'center',
-  },
-  mainContainer: {
-    backgroundColor:"#ffdede",
-    alignItems:'center',
-    justifyContent:'center',
-    width:'100%',
-    height:'auto',
-    borderRadius: 30,
-    marginTop:20,
-    paddingTop:60,
-  },
-  header: {
-    fontSize:20,
-    letterSpacing:1,
-    color:'black',
-    fontFamily:'spartan',
-    textAlign:'center'
-  },
-  cycleContainer: {
-    margin:10,
-    display:'flex',
-    flexDirection:'column',
-  },
-  cycleTop: {
-    backgroundColor:'#e5e5e5',
-    width:250,
-    height:125,
-    borderTopLeftRadius:125,
-    borderTopRightRadius:125,
-    textAlign:'center',
-    padding:20,
-  },
-  dateText: {
-    paddingTop:10,
-    fontSize:12,
-    color:'rgba(56,56,56,0.8)',
-    fontFamily:'spartan',
-  },
-  cycleText: {
-    fontSize:28,
-    fontWeight:'bold',
-    color:'rgba(56,56,56,0.8)',
-    letterSpacing:1,
-    paddingTop:30,
-  },
-  cycleBottom: {
-    backgroundColor:'#FF9797',
-    width:250,
-    height:125,
-    borderBottomLeftRadius:125,
-    borderBottomRightRadius:125,
-    textAlign:'center',
-    padding:20,
-  },
-  periodText: {
-    color:'white',
-    fontSize:18,
-    fontFamily:'spartan',
-    letterSpacing:1,
-  },
-  periodDayText: {
-    fontSize:30,
-    fontWeight:"600",
-    lineHeight:25,
-    color:'white',
-    letterSpacing:1,
-  },
-  todayContainer: {
-    paddingTop:'10%',
-    paddingBottom:'2%',
-    width:'100%',
-    height:'auto',
-    display:'flex',
-    flexDirection:'column',
-  },
-  lowerHeader: {
-    marginLeft:10,
-    padding:5,
-    fontSize:18,
-    fontFamily:'spartan',
-    letterSpacing:1,
-  },
-  symptomContainer: {
-    backgroundColor:'white',
-    width:'95%',
-    height:'auto',
-    padding:10,
-    borderRadius:20,
-    flexDirection:'column',
-    marginLeft:10,
-    marginBottom:10,
-  },
-  symptomHeadText: {
-    fontFamily:'spartan',
-    fontSize:14
-  },
-  circleContainer: {
-    flexDirection:'row',
-    padding:10,
-  },
-  protectContainer: {
-    backgroundColor:'#ffe5ef',
-    width:50,
-    height:50,
-    borderRadius:25,
-    padding:8,
-  },
-  tenderContainer: {
-    backgroundColor:'#fff9c3',
-    width:50,
-    height:50,
-    borderRadius:25,
-    padding:8,
-  },
-  insightContainer: {
-    backgroundColor:'white',
     width:'100%',
     height:'100%',
-    marginTop:'3%',
   },
-  buttonContainer: {
+  smallContainer: {
     width:'100%',
-    margin:5,
+    height:'100%',
+    alignSelf:'center',
+    position:'relative'
+  },
+  headerText: {
+    fontSize:20,
+    color:'black',
+    letterSpacing:1,
+    textAlign:'right',
+    fontFamily:'spartan',
+    fontWeight:'600',
+    margin:20,
+  },
+  mainLeft: {
     display:'flex',
-    flexDirection:'row',
-    justifyContent: 'space-evenly',
-    alignItems: 'center'
+    flexDirection:'column',
+    width:'70%',
+    height:'100%',
+    backgroundColor:'rgba(140,150,171,0.4)',
+    alignSelf:'flex-end',
+    zIndex:0,
+    position:'absolute',
   },
-  lowerContainer: {
-    flexDirection:'row',
-    justifyContent: 'space-evenly',
-    alignItems: 'center'
+  cycleCircle: {
+    backgroundColor:'#ffdede',
+    width:250,
+    height:250,
+    borderRadius:125,
+    alignItems:'center',
+    marginLeft:10,
+    marginTop:50,
+    zIndex:1,
   },
-  symptomButton: {
-    backgroundColor:'#ffe5ef',
-    borderRadius:20,
-    width:'80%',
+  innerCircle: {
+    borderColor:'black',
+    borderWidth:1,
+    width:250,
+    height:250,
+    borderRadius:125,
+    textAlign:'center',
+    marginTop:-30,
+    marginLeft:50,
+  },
+  cycleText: {
+    color:'#727272',
+    fontSize:24,
+    letterSpacing:2,
+    lineHeight:50,
+    textAlign:'center',
+    display:'flex',
+    flexDirection:'column',
+    fontWeight:'600',
+    fontFamily:'spartan',
+    paddingTop:80,
+  },
+  mainButton: {
+    width:115,
     height:'auto',
+    backgroundColor:'#c4c4c4',
     padding:10,
-    marginHorizontal: '4%'
-  },
-  calendarButton: {
-    backgroundColor:'#c8d8f9',
-    borderRadius:20,
-    width:'80%',
-    height:'auto',
-    padding:10,
-    marginHorizontal: '4%'
-  },
-  periodButton: {
-    backgroundColor:'#ccded6',
-    borderRadius:20,
-    width:'80%',
-    height:'auto',
-    padding:10,
-    paddingHorizontal: 20,
-    marginHorizontal: '4%'
+    borderRadius:10,
+    textAlign:'center',
+    marginLeft:80,
+    marginTop:40,
   },
   buttonText: {
+    color:'black',
+    fontSize:12,
+    fontFamily:'spartan',
+  },
+  symptomContainer: {
+    borderColor:'#8b8b8b',
+    width:300,
+    height:265,
+    borderWidth:3,
+    marginLeft:30,
+    marginTop:-30,
+  },
+  innerSymptom: {
+    width:245,
+    height:210,
+    backgroundColor:'#D7E0F1',
+    marginTop:20,
+    marginLeft:30,
+  },
+  circleButton: {
+    width:100,
+    height:100,
+    borderRadius:50,
+    backgroundColor:'#fffbdb',
+    textAlign:'center',
+  },
+  circleText: {
     fontSize:14,
-    fontFamily:'Spartan',
-    textAlign:'center'
+    color:'#727272',
+    fontWeight:'600',
+    lineHeight:25,
+    paddingTop:20,
+    fontFamily:'spartan',
+  },
+  periodContainer: {
+    backgroundColor:'#dda7a7',
+    width:145,
+    height:145,
+    borderRadius:20,
+    alignSelf:'flex-end',
+    zIndex:2,
+    marginTop:-80,
+    marginRight:20,
+  },
+  innerPeriod: {
+    borderWidth:1,
+    borderColor:'black',
+    width:150,
+    height:150,
+    borderRadius:20,
+    textAlign:'center',
+    marginRight:40,
+    padding:10,
+  },
+  periodText: {
+    display:'flex',
+    flexDirection:'column',
+    width:130,
+    height:150,
+    color:'black',
+    fontSize:18,
+    fontFamily:'spartan',
+    letterSpacing:1,
+  },
+  periodButton: {
+    width:90,
+    height:33,
+    padding:10,
+    borderRadius:10,
+    marginTop:-20,
+    backgroundColor:'#dcf0e7',
+    textAlign:'center',
+    alignSelf:'center',
+    
+  },
+  mainRight: {
+    width:'15%',
+    height:'40%',
+    borderColor:'#dda7a7',
+    borderWidth:3,
+    backgroundColor:'white',
+    zIndex:0,
+    margin:20,
+    marginTop:60,
+    position:'absolute',
+    alignSelf:'flex-end',
+    textAlign:'center',
+  },
+  monthVertical: {
+    display:'flex',
+    flexDirection:'column',
+    color:'#727272',
+    fontSize:24,
+    lineHeight:35,
+    fontWeight:"600",
   }
 });
