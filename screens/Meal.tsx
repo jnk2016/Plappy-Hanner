@@ -74,21 +74,21 @@ export default function Meal ({navigation}) {
               </View>
             </View>
             <View style={styles.buttonContainer}>
-              <TouchableOpacity style={styles.mainButton} onPress={()=>console.log("button pressed")}>
+              <TouchableOpacity style={styles.mainButton} onPress={()=>navigation.navigate('MealRecipes')}>
                 <Image
                 source={Hat}
                 style={{width:40, height:40, alignSelf:'center'}}
               />
               <Text style={styles.buttonText}>MY RECIPES</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.mainButton} onPress={()=>console.log("button pressed")}>
+              <TouchableOpacity style={styles.mainButton} onPress={()=>navigation.navigate('MealGrocery')}>
                 <Image
                 source={Cart}
                 style={{width:40, height:40, alignSelf:'center'}}
               />
               <Text style={styles.buttonText}>GROCERY LIST</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.mainButton} onPress={()=>console.log("button pressed")}>
+              <TouchableOpacity style={styles.mainButton}  onPress={()=>navigation.navigate('MealPlanner')}>
                 <Image
                 source={Journal}
                 style={{width:40, height:40, alignSelf:'center'}}
