@@ -1,6 +1,6 @@
-# Toyota - Pay Per Drive
+# Happy Planner Mobile Applicatoin
 
-The React App for the Front-End of the project
+The React App for the Front-End of the Android/IOS application
 
 ## Installation
 CD into the project directory, and then run the command
