@@ -20,7 +20,7 @@ import NewSelfCare from '../screens/newSelfCare';
 import FocusBudgetTracker from '../screens/FocusBudgetTracker';
 import FocusTaskManager from '../screens/FocusTaskManager';
 
-import BudgetTracker from '../screens/BudgetTracker';
+// import BudgetTracker from '../screens/BudgetTracker';
 import Tasks from '../screens/Tasks';
 import Goal from '../screens/Goal';
 
@@ -40,7 +40,11 @@ import MealGrocery from '../screens/MealGrocery';
 import MealPlanner from '../screens/MealPlanner';
 // ActivityTracker Screens
 import ActivityTracker from '../screens/ActivityTracker';
-
+//BudgetTracker Screens
+import BudgetTracker from '../screens/BudgetTracker';
+import BudgetBudgets from '../screens/BudgetBudgets';
+import BudgetPayments from '../screens/BudgetPayments';
+import BudgetGoals from '../screens/BudgetGoals';
 /* SelfCare Screens */
 import SelfCareMoodTracker from '../screens/SelfCareMoodTracker';
 import SelfCareBrainDump from '../screens/SelfCareBrainDump';
@@ -367,6 +371,77 @@ function PeriodStackScreen(){
       </PeriodStack.Navigator>
   );
 }
+const BudgetTrackerStack = createStackNavigator();
+function BudgetTrackerStackScreen(){
+  return(
+      <BudgetTrackerStack.Navigator screenOptions={{ headerShown: false }}>
+          <BudgetTrackerStack.Screen name = "BudgetTracker" component={BudgetTracker}
+                              options={{
+                                title: "BUDGET TRACKER",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '700', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                  letterSpacing: '0.1em',
+                                }, headerShown: true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
+          <BudgetTrackerStack.Screen name = "BudgetBudgets" component={BudgetBudgets}
+                              options={{
+                                title: "BUDGETS",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '700', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                  letterSpacing: '0.1em',
+                                }, headerShown: true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
+          <BudgetTrackerStack.Screen name = "BudgetPayments" component={BudgetPayments}
+                              options={{
+                                title: "PAYMENTS",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '700', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                  letterSpacing: '0.1em',
+                                }, headerShown: true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
+          <BudgetTrackerStack.Screen name = "BudgetGoals" component={BudgetGoals}
+                              options={{
+                                title: "SAVINGS GOALS",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '700', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                  letterSpacing: '0.1em',
+                                }, headerShown: true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
+      </BudgetTrackerStack.Navigator>
+  );
+}
 
 const FocusStack = createStackNavigator();
 function FocusStackScreen(){
@@ -407,22 +482,7 @@ function FocusStackScreen(){
                               }}
                               />
           <FocusStack.Screen name = "FocusBudgetTracker" component={FocusBudgetTracker}/>
-          <FocusStack.Screen name = "BudgetTracker" component={BudgetTracker}
-                              options={{
-                                title: "BUDGET TRACKER",
-                                headerStyle: {
-                                  borderBottomColor: 'transparent',
-                                  backgroundColor: '#FFFFFF', //Set Header color
-                                },
-                                headerTintColor: '#000000', //Set Header text color
-                                headerTitleStyle: {
-                                  fontWeight: '700', //Set Header text style
-                                  fontFamily: 'Spartan',
-                                  letterSpacing: '0.1em',
-                                }, headerShown: true,
-                                headerRight: ()=> <ProfilePic/>,
-                              }}
-                              />
+          <FocusStack.Screen name = "BudgetTracker" component={BudgetTrackerStackScreen}/>
       </FocusStack.Navigator>
   );
 }

@@ -44,19 +44,19 @@ export default function BudgetTracker({navigation}){
                     </View>
                     <View style={styles.rightContainer}>
                         <View style={styles.rightButtons}>
-                            <TouchableOpacity style={styles.redButton} onPress={()=> console.log("button pressed")}>
+                            <TouchableOpacity style={styles.redButton} onPress={()=>navigation.navigate('BudgetBudgets')}>
                                 <View style={styles.titleLine}>
                                     <Text style={styles.buttonText}>BUDGETS</Text>
                                 </View>
                                 <Text style={styles.buttonNumber}>10</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity style={styles.redButton} onPress={()=> console.log("button pressed")}>
+                            <TouchableOpacity style={styles.redButton} onPress={()=>navigation.navigate('BudgetPayments')}>
                                 <View style={styles.titleLine}>
                                     <Text style={styles.buttonText}>PAYMENTS</Text>
                                 </View>
                                 <Text style={styles.buttonNumber}>10</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity style={styles.redButton} onPress={()=> console.log("button pressed")}>
+                            <TouchableOpacity style={styles.redButton} onPress={()=>navigation.navigate('BudgetGoals')}>
                                 <View style={styles.titleLine}>
                                     <Text style={styles.buttonText}>GOALS</Text>
                                 </View>
