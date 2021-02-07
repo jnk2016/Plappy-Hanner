@@ -26,7 +26,7 @@ export default function BrainDump ({navigation}) {
         allowFontScaling={true}/>
         <View style={styles.buttonContainer}>
           <View style={styles.grayContainer}>
-            <TouchableOpacity style={styles.iconContainer} onPress={()=>navigation.navigate('DumpList',{screen:'DumpList'})}>
+            <TouchableOpacity style={styles.iconContainer} onPress={()=>console.log("button pressed")}>
               <Image
               source={{uri:List}}
               style={{width:50, height:50}}
@@ -34,7 +34,7 @@ export default function BrainDump ({navigation}) {
             </TouchableOpacity>
           </View>
           <View style={styles.grayContainer}>
-            <TouchableOpacity style={styles.iconContainer} onPress={()=>navigation.navigate('DumpDraw',{screen:'DumpDraw'})}>
+            <TouchableOpacity style={styles.iconContainer} onPress={()=>console.log("button pressed")}>
               <Image
               source={{uri:Paint}}
               style={{width:50, height:50}}
@@ -42,7 +42,7 @@ export default function BrainDump ({navigation}) {
             </TouchableOpacity>
           </View>
           <View style={styles.grayContainer}>
-            <TouchableOpacity style={styles.iconContainer} onPress={()=>navigation.navigate('DumpRecord',{screen:'DumpRecord'})}>
+            <TouchableOpacity style={styles.iconContainer} onPress={()=>console.log("button pressed")}>
               <Image
               source={{uri:Mic}}
               style={{width:50, height:50}}
@@ -50,7 +50,7 @@ export default function BrainDump ({navigation}) {
             </TouchableOpacity>
           </View>
           <View style={styles.grayContainer}>
-            <TouchableOpacity style={styles.iconContainer} onPress={()=>navigation.navigate('DumpPicture',{screen:'DumpPicture'})}>
+            <TouchableOpacity style={styles.iconContainer} onPress={()=>console.log("button pressed")}>
               <Image
               source={{uri:Picture}}
               style={{width:50, height:50}}
@@ -58,7 +58,7 @@ export default function BrainDump ({navigation}) {
             </TouchableOpacity>
           </View>
           <View style={styles.grayContainer}>
-            <TouchableOpacity style={styles.iconContainer} onPress={()=>navigation.navigate('DumpNormal',{screen:'DumpNormal'})}>
+            <TouchableOpacity style={styles.iconContainer} onPress={()=>console.log("button pressed")}>
               <Image
               source={{uri:Event}}
               style={{width:50, height:50}}
@@ -212,12 +212,12 @@ const styles = StyleSheet.create ({
     fontSize:14,
     letterSpacing:1,
     textAlign:'center',
-    fontWeight:'600',
+    fontWeight:600,
   },
   brainDesc: {
     fontSize:12,
     fontFamily:'spartan',
     textAlign:'left',
     lineHeight:20,
-  },
+  }
 });

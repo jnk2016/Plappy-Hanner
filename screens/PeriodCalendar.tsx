@@ -58,8 +58,8 @@ export default function PeriodCalendar ({navigation}) {
               onDayPress={(day) => {console.log('selected day', day)}}
               style={{width: '90%', alignSelf: 'center', borderRadius: 25, paddingBottom: '3%'}}
             />
-            <TouchableOpacity style={{justifyContent: 'center', marginVertical: '3%',marginHorizontal: '30%',backgroundColor: '#CCDED6',paddingVertical: '4%',borderRadius: 30}}>
-              <Text style={{alignSelf: 'center', fontFamily: 'Spartan', fontSize: 13, fontWeight: '600'}}>Edit Period Dates</Text>
+            <TouchableOpacity style={{justifyContent: 'center', marginVertical: '3%',marginHorizontal: '30%',backgroundColor: '#E5E5E5',paddingVertical: '4%',borderRadius: 10}}>
+              <Text style={{alignSelf: 'center', fontFamily: 'Spartan', fontSize: 10}}>EDIT PERIOD DATES</Text>
             </TouchableOpacity>
             </View>
         </View>

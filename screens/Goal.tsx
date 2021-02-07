@@ -12,80 +12,61 @@ export default function Goal ({navigation}) {
   return (
         <View style={styles.bigContainer}>
             <View style={styles.smallContainer}>
-                <View style={styles.mainContainer}>
-                <Text style={styles.mainHead}>upcoming deadlines</Text>
+                <View style={styles.topContainer}>
+                    <View style={styles.buttonList}>
+                    <TouchableOpacity style={styles.rightButton} onPress={()=> console.log("button pressed")}>
+                        <View style={styles.buttonContent}>
+                            <View style={[styles.circleColor,{backgroundColor:'#aa7c7a'}]}></View>
+                            <Text style={styles.rightbuttonText}>to review</Text>
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.rightButton} onPress={()=> console.log("button pressed")}>
+                        <View style={styles.buttonContent}>
+                            <View style={[styles.circleColor,{backgroundColor:'#beaba7'}]}></View>
+                            <Text style={styles.rightbuttonText}>in progress</Text>
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.rightButton} onPress={()=> console.log("button pressed")}>
+                        <View style={styles.buttonContent}>
+                            <View style={[styles.circleColor,{backgroundColor:'#e8dbd4'}]}></View>
+                            <Text style={styles.rightbuttonText}>open</Text>
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.rightButton} onPress={()=> console.log("button pressed")}>
+                        <View style={styles.buttonContent}>
+                            <View style={[styles.circleColor,{backgroundColor:'#cad0da'}]}></View>
+                            <Text style={styles.rightbuttonText}>developing</Text>
+                        </View>
+                    </TouchableOpacity>
+                    </View>
+                </View>
+                <View style={styles.bottomContainer}>
+                    <Text style={styles.mainHead}>upcoming deadlines</Text>
                     <View style={styles.mainBox}>
                         <View style={styles.goalNames}>
-                            <View style={styles.projectLines}>
-                                <View style={styles.projectBox}>
-                                    <Text style={styles.goalDates}>1/20</Text>
-                                </View>
-                                <Text style={styles.goalText}>APP PROJECT</Text>
-                            </View>
-                            <View style={styles.projectLines}>
-                                <View style={styles.projectBox}>
-                                    <Text style={styles.goalDates}>1/20</Text>
-                                </View>
-                                <Text style={styles.goalText}>APP PROJECT</Text>
-                            </View>
-                            <View style={styles.projectLines}>
-                                <View style={styles.projectBox}>
-                                    <Text style={styles.goalDates}>1/20</Text>
-                                </View>
-                                <Text style={styles.goalText}>APP PROJECT</Text>
-                            </View>
-                            <View style={styles.projectLines}>
-                                <View style={styles.projectBox}>
-                                    <Text style={styles.goalDates}>1/20</Text>
-                                </View>
-                                <Text style={styles.goalText}>APP PROJECT</Text>
-                            </View>
-                            <View style={styles.projectLines}>
-                                <View style={styles.projectBox}>
-                                    <Text style={styles.goalDates}>1/20</Text>
-                                </View>
-                                <Text style={styles.goalText}>APP PROJECT</Text>
-                            </View>
-                            <View style={styles.projectLines}>
-                                <View style={styles.projectBox}>
-                                    <Text style={styles.goalDates}>1/20</Text>
-                                </View>
-                                <Text style={styles.goalText}>APP PROJECT</Text>
-                            </View>
-                            
+                            <Text style={styles.goalDesc}>
+                                <Text>1/20</Text>
+                                <Text>APP PROJECT</Text>
+                            </Text>
+                            <TouchableOpacity style={styles.boxButton}></TouchableOpacity>
                         </View>
-                </View>
-                    <View style={styles.mainbuttonContainer}>
-
-                        <TouchableOpacity style={styles.mainButton}>
-                            <Text style={styles.mainbuttonText}>ADD GOAL</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.mainButton}>
-                            <Text style={styles.mainbuttonText}>VIEW ALL</Text>
-                        </TouchableOpacity>
+                        <View style={styles.goalNames}>
+                            <Text style={styles.goalDesc}>
+                                <Text>1/20</Text>
+                                <Text>APP PROJECT</Text>
+                            </Text>
+                            <TouchableOpacity style={styles.boxButton}></TouchableOpacity>
+                        </View>
+                        <View style={styles.goalNames}>
+                            <Text style={styles.goalDesc}>
+                                <Text>1/20</Text>
+                                <Text>APP PROJECT</Text>
+                            </Text>
+                            <TouchableOpacity style={styles.boxButton}></TouchableOpacity>
+                        </View>
                     </View>
             </View>
-            <View style={styles.sideContainer}>
-                    <View style={styles.leftContainer}>
-                        <TouchableOpacity style={styles.leftButton}>
-                            <Text style={styles.leftbuttonText}>COMPLETED</Text>
-                        </TouchableOpacity>
-                </View> 
-                <View style={styles.rightContainer}>
-                    <TouchableOpacity style={[styles.rightButtons,{backgroundColor:'#bc855c'}]} onPress={()=> console.log("button pressed")}>
-                        <Text style={styles.rightbuttonText}>to review</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={[styles.rightButtons,{backgroundColor:'#ddbda7'}]} onPress={()=> console.log("button pressed")}>
-                        <Text style={styles.rightbuttonText}>in progress</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={[styles.rightButtons,{backgroundColor:'#dcc7b4'}]} onPress={()=> console.log("button pressed")}>
-                        <Text style={styles.rightbuttonText}>open</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={[styles.rightButtons,{backgroundColor:'#d2cac2'}]} onPress={()=> console.log("button pressed")}>
-                        <Text style={styles.rightbuttonText}>developing</Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
+            <View style={{position:'absolute',borderLeftWidth:1,borderLeftColor:'black',width:'80%',height:'100%', marginLeft:100, marginTop:50, zIndex:-1,}}></View>
         </View>
      </View>
   );
@@ -94,153 +75,111 @@ export default function Goal ({navigation}) {
   const styles = StyleSheet.create ({
     bigContainer: {
         alignItems: 'center',
-        paddingBottom:100,
         backgroundColor:'white',
         width:'100%',
         height:'100%',
-        position:'relative',
     },
     smallContainer: {
-        width:'100%',
+        width:'95%',
         height:'100%',
         backgroundColor:'white',
         display:'flex',
         flexDirection:'column',
-    },
-    mainContainer: {
-        backgroundColor:'#f9efe0',
-        width:'80%',
-        height:'100%',
-        position:'absolute',
         alignSelf:'center',
+        justifyContent:'space-between'
+    },
+    topContainer: {
+        width:'100%',
+        height:'60%',
+        alignSelf:'center',
+        justifyContent:'space-around',
+        marginTop:-20,
+    },
+    buttonList: {
+        width:'100%',
+        height:'70%',
         display:'flex',
         flexDirection:'column',
-        marginTop:20,
+        alignSelf:'center',
+        justifyContent:'space-between',
+        position:'relative',
+    },
+    rightButton: {
+        width:'80%',
+        height:75,
+        backgroundColor:'#e5e5e5',
+        textAlign:'left',
+        alignSelf:'center',
         zIndex:0,
+        position:'absolute',
+        alignContent:'flex-start',
+    },
+    buttonContent: {
+        width:'70%',
+        height:'100%',
+        justifyContent:'space-between',
+        display:'flex',
+        flexDirection:'row',
+        alignItems:'center',
+        alignSelf:'center',
+        textAlign:'left',
+    },
+    circleColor:{
+        width:50,
+        height:50,
+        borderRadius:25,
+    },
+    rightbuttonText:{
+        color:'black',
+        fontSize:14,
+        fontFamily:'spartan',
+        letterSpacing:0.5,
+    },
+    bottomContainer: {
+        alignSelf:'center',
+        justifyContent:'space-around',
+        width:'100%',
+        height:'40%',
     },
     mainHead: {
         color:'black',
-        fontSize:16,
+        fontSize:18,
         fontFamily:'spartan',
-        textAlign:'left',
-        marginTop:20,
-        marginLeft:30,
-        marginBottom:20,
+        letterSpacing:0.5,
+        textAlign:'right',
     },
-    mainBox: {
-        width:'75%',
-        height:'80%',
-        borderColor:'black',
-        borderWidth:1,
-        alignSelf:'center',
-        // marginTop:150,
-        // marginRight:80,
-    },
-    goalNames: {
-        display:'flex',
-        flexDirection:'column',
-        width:'95%',
-        height:'85%',
-        alignSelf:'center',
-        justifyContent:'space-between',
-        padding:10,
-    },
-    projectLines: {
+    mainBox:{
+        backgroundColor:'#f9efe0',
         width:'100%',
-        height:'5%',
-        textAlign:'left',
+        height:'90%',
+        alignSelf:'flex-end',
+        marginRight:-10,
         display:'flex',
         flexDirection:'column',
-        margin:1,
+        justifyContent:'space-between',
     },
-    projectBox: {
-        borderBottomColor:'#cf6363',
-        borderBottomWidth:2,
-        width:'90%',
-        height:'100%',
-        margin:1,
-    },
-    goalDates: {
-        color:'black',
-        fontSize:14,
-        fontFamily:'spartan',
-        fontWeight:'600',
-    },
-    goalText: {
-        color:'black',
-        fontSize:14,
-        fontFamily:'spartan',
-        letterSpacing:1,
-    },
-    mainbuttonContainer: {
+    goalNames:{
         display:'flex',
         flexDirection:'row',
-        width:'80%',
-        height:'30%',
-        alignSelf:'center',
-        justifyContent:'space-between',
-        marginTop:50,
-    },
-    mainButton: {
-        width:100,
+        width:'45%',
         height:'auto',
-        backgroundColor:'#C4C4C4',
-        textAlign:'center',
-        borderRadius:10,
         padding:10,
-    },
-    mainbuttonText: {
-        color:'black',
-        fontSize:12,
-        fontFamily:'spartan',
-    },
-    sideContainer: {
-        width:'100%',
-        height:'100%',
-        zIndex:1,
-        display:'flex',
-        flexDirection:'row',
-    },
-    leftContainer: {
-        width:'50%',
-        height:'100%',
-        marginTop:450,
-        marginLeft:-30,
-    },
-    leftButton: {
-        borderWidth:1,
-        borderColor:'black',
-        height:40,
-        width:175,
-        transform:[{rotate:'-90deg'}],
-        textAlign:'center',
-        padding:10,
-    },
-    leftbuttonText: {
-        color:'black',
-        fontSize:20,
-        fontFamily:'spartan',
-    },
-    rightContainer:{
-        width:'80%',
-        height:'80%',
-        display:'flex',
-        flexDirection:'column',
-        alignSelf:'center',
         justifyContent:'space-between',
-        marginLeft:100,
+        alignSelf:'flex-end',
+        textAlign:'right',
+        alignItems:'center',
     },
-    rightButtons: {
-        width:100,
-        height:100,
-        borderRadius:50,
-        textAlign:'center',
+    boxButton: {
+        width:15,
+        height:15,
+        backgroundColor:'#c4c4c4',
     },
-    rightbuttonText: {
-        color:'white',
-        fontSize:16,
+    goalDesc: {
+        display:"flex",
+        flexDirection:'column',
+        color:'black',
+        fontSize:14,
         fontFamily:'spartan',
-        fontWeight:'600',
-        paddingTop:40,
+        lineHeight:30,
     }
 });

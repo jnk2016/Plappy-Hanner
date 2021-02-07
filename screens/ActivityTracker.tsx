@@ -5,30 +5,45 @@ import Ellipseavatar from '../assets/images/Ellipseavatar.png';
 import Vector from '../assets/images/Vector.png';
 import Heart from '../assets/images/heart.png';
 import CalStar from '../assets/images/bx_bx-calendar-star.png';
+import { PieChart } from 'react-minimal-pie-chart';
+import LinearGradient from '../assets/features/LinearGradient';
 
 
 export default function ActivityTracker ({navigation}) {
   return (
     <View style={styles.bigContainer}>
       <View style={styles.smallContainer}>
+        <Text style={styles.headText}>TODAY</Text>
+        <View style={styles.headPosition}>
+          <View style={styles.waterCircle}>
+              <View style={styles.waterinnerCircle}>
+              <PieChart style={{alignSelf: 'center'}}
+                data={[
+                  { title: 'One', value: 46, color: '#c8d8f9' },
+                    {title: 'Two', value: 1, color: '#7394d3' },
+                    { title: 'Three', value: 52, color: '#d7e0f1' },
+                    { title: 'Four', value: 1, color: '#7394d3' },
+                ]} lineWidth={100} viewBoxSize={[100,100]}
+                />
+              <Text style={styles.waterText}>48%</Text>
+              </View>
+          </View>
+        </View>
         <View style={styles.topText}>
           <Text style={styles.leftText}>
             <Text>REMAINING</Text>
-            <Text style={{color:'white',fontWeight:'600'}}>1300ml</Text>
+            <Text style={{color:'white',fontWeight:'700', fontSize:16,}}>1300ml</Text>
           </Text>
           <Text style={styles.rightText}>
             <Text>DAILY GOAL</Text>
-            <Text style={{color:'white',fontWeight:'600'}}>2500ml</Text>
+            <Text style={{color:'white',fontWeight:'700', fontSize:16,}}>2500ml</Text>
           </Text>
         </View>
-        <View style={styles.waterCircle}>
-          <Text style={styles.waterText}>
-            <Text style={styles.totalText}>TOTAL INTAKE</Text>
-            <Text style={styles.totalwaterText}>1200ml</Text>
-          </Text>
-        </View>
-        <View style={styles.littleCircle}></View> 
         <View style={styles.recordContainer}>
+          <Text style={styles.recordHead}>
+            <Text>TOTAL INTAKE</Text>
+            <Text style={{fontSize:18, fontWeight:'600'}}>1200ml</Text>
+          </Text>
           <View style={styles.recordInfo}>
             <View style={styles.recordBorder}>
               <Text style={styles.recordTime}>10:00</Text>
@@ -55,32 +70,18 @@ export default function ActivityTracker ({navigation}) {
               <Text style={styles.recordNumber}>250ml</Text>
             </View>
           </View>
-          <TouchableOpacity style={styles.smallButton} onPress={()=> console.log("button pressed")}>
-              <Text style={styles.buttonText}>TRACK MY WATER INTAKE</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.statContainer}>
-          <View style={styles.statBox}>
-            <View style={styles.statCircle}>
-              <Text style={styles.statText}>5 DAYS</Text>
-            </View>
-            <Text style={styles.statDesc}>CURRENT STREAK</Text>
-          </View>
-          <View style={styles.statBox}>
-            <View style={styles.statCircle}>
-              <Text style={styles.statText}>1800ml</Text>
-            </View>
-            <Text style={styles.statDesc}>DAILY AVERAGE</Text>
-          </View>
-          <View style={styles.statBox}>
-            <View style={styles.statCircle}>
-              <Text style={styles.statText}>80%</Text>
-            </View>
-            <Text style={styles.statDesc}>DAILY PERCENTAGE</Text>
+          <View style={styles.buttonContainer}>
+            <TouchableOpacity style={styles.smallButton} onPress={()=> console.log("button pressed")}>
+                <Text style={styles.buttonText}>RECORD WATER</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.smallButton} onPress={()=> console.log("button pressed")}>
+                <Text style={styles.buttonText}>VIEW HISTORY</Text>
+            </TouchableOpacity>
+
           </View>
         </View>
-      </View>
-    </View>
+            </View>
+          </View>
   );
 }
 
@@ -96,6 +97,54 @@ const styles = StyleSheet.create ({
     width:'100%',
     height:'100%',
     backgroundColor:'#d7e0f1',
+    fontFamily:'spartan',
+    display:'flex',
+    flexDirection:'column'
+  },
+  headText: {
+    textAlign:'left',
+    fontSize:20,
+    color:'black',
+    letterSpacing:1,
+    margin:10,
+  },
+  headPosition: {
+    display:'flex',
+    flexDirection:'column',
+    height:'auto',
+    width:'90%',
+    alignSelf:'center',
+    justifyContent:'space-between',
+  },
+  waterCircle: {
+    marginTop:10,
+    borderTopWidth:6,
+    borderBottomWidth:6,
+    borderWidth:5,
+    borderTopColor:'rgba(93,124,184,0.3)',
+    borderBottomColor:'rgba(93,124,184,0.3)',
+    borderColor:'rgba(93,124,184,0.5)',
+    width:250,
+    height:250,
+    alignSelf:'center',
+    alignContent:'center',
+    justifyContent:'space-around',
+    borderRadius:180,
+    textAlign:'center',
+  },
+  waterinnerCircle: {
+    width:200,
+    height:200,
+    borderRadius:100,
+    alignSelf:'center',
+    marginBottom:10,
+  },
+  waterText: {
+    marginTop:-130,
+    display:'flex',
+    flexDirection:'column',
+    color:'white',
+    fontSize:48,
   },
   topText: {
     alignSelf:'center',
@@ -103,7 +152,7 @@ const styles = StyleSheet.create ({
     width:'90%',
     display:'flex',
     flexDirection:'row',
-    marginTop:30,
+    marginTop:10,
   },
   leftText: {
     textAlign:'center',
@@ -121,32 +170,15 @@ const styles = StyleSheet.create ({
     fontSize:14,
     fontFamily:'spartan',
   },
-  waterCircle: {
-    marginTop:70,
-    borderTopWidth:3,
-    borderTopColor:'#5D7CB8',
-    width:'90%',
-    height:'50%',
+  recordHead: {
+    width:'98%',
+    height:'auto',
     alignSelf:'center',
-    justifyContent:'space-around',
-    borderRadius:180,
-    zIndex:0,
-    position:'absolute',
-    textAlign:'center',
-  },
-  littleCircle:{
-    backgroundColor:'white',
-    width:20,
-    height:20,
-    borderRadius:10,
-    zIndex:1,
-    marginLeft:100,
-    marginTop:15,
-  },
-  waterText: {
-    marginTop:-130,
+    justifyContent:'space-between',
     display:'flex',
-    flexDirection:'column',
+    flexDirection:'row',
+    padding:5,
+    color:'white',
   },
   totalText: {
     color:'black',
@@ -162,12 +194,12 @@ const styles = StyleSheet.create ({
     fontWeight:'600'
   },
   recordContainer: {
-    width:'70%',
-    height:'45%',
+    width:'80%',
+    height:'50%',
     alignSelf:'center',
     justifyContent:'center',
     backgroundColor:'#8c96ab',
-    marginTop:120,
+    marginTop:20,
   },
   recordInfo: {
     alignSelf:'center',
@@ -189,20 +221,20 @@ const styles = StyleSheet.create ({
   },
   recordTime: {
     color:'white',
-    fontSize:14,
+    fontSize:12,
     fontFamily:'spartan',
   },
   recordNumber: {
     color:'white',
-    fontSize:14,
+    fontSize:12,
     fontFamily:'spartan',
     fontWeight:'600',
   },
   smallButton: {
-    width:190,
+    width:'40%',
     height:'auto',
     padding:10,
-    backgroundColor:'#c4c4c4',
+    backgroundColor:'#e5e5e5',
     textAlign:'center',
     marginTop:20,
     alignSelf:'center',
@@ -210,48 +242,14 @@ const styles = StyleSheet.create ({
   },
   buttonText: {
     color:'black',
-    fontSize:12,
-    fontFamily:'spartan',
-  },
-  statContainer: {
-    width:'90%',
-    height:'auto',
-    alignSelf:'center',
-    justifyContent:'space-around',
-    display:'flex',
-    flexDirection:'row',
-    marginTop:20,
-  },
-  statBox: {
-    width:'auto',
-    height:'auto',
-    display:'flex',
-    flexDirection:'column',
-    textAlign:'center',
-    alignItems:'center',
-    margin:5,
-  },
-  statCircle: {
-    width:90,
-    height:90,
-    borderRadius:50,
-    borderRightWidth:4,
-    borderRightColor:'#8c96ab',
-    backgroundColor:'#e3edff',
-    textAlign:'center',
-  },
-  statText: {
-    color:'black',
-    fontSize:16,
-    fontFamily:'spartan',
-    fontWeight:'600',
-    paddingTop:40,
-  },
-  statDesc: {
-    color:'black',
     fontSize:10,
     fontFamily:'spartan',
-    textAlign:'center',
-    marginTop:10,
+  },
+  buttonContainer: {
+    display:'flex',
+    flexDirection:'row',
+    alignSelf:'center',
+    justifyContent:'space-between',
+    width:'95%',
   }
 });

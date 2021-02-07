@@ -5,74 +5,39 @@ import { PieChart } from 'react-minimal-pie-chart';
 export default function BudgetBudgets ({navigation}){
 
     return(
-        // <View style={styles.bigContainer}>
+        <View style={styles.bigContainer}>
             <View style={styles.mainContainer}>
-                <TouchableOpacity style={[styles.mainButton,{backgroundColor:'#41634a'}]} onPress={()=> console.log("button pressed")}>
-                    <Text style={styles.headText}>PERSONAL</Text>
-                    <View style={styles.bottomContainer}>
-                        <View style={styles.leftContainer}>
-                            <Text style={styles.leftbuttonText}>
-                                <Text>SET:</Text>
-                                <Text>$300</Text>
-                            </Text>
-                        </View>
-                        <View style={styles.middleContainer}>
-                        <PieChart style={{alignSelf: 'center'}}
-                        data={[
-                            { title: 'One', value: 1, color: '#dda7a7' },
-                            { title: 'Two', value: 1, color: '#F9EFE0' },
-                        ]} lineWidth={35} viewBoxSize={[100,100]}
-                        />
-                        </View>
-                        <View style={styles.rightContainer}>
-                            <Text style={styles.rightbuttonText}>
-                                <Text>ACTUAL:</Text>
-                                <Text>$150</Text>
-                            </Text>
-                        </View>
+                <View style={styles.headContainer}>
+                    <Text style={styles.topText}>MONTHLY BUDGET</Text>
+                    <View style={styles.budgetLine}>
+                        <Text style={styles.budgetText}>$3500</Text>
                     </View>
-                </TouchableOpacity>
-                <TouchableOpacity style={[styles.mainButton,{backgroundColor:'#5a7e64'}]} onPress={()=> console.log("button pressed")}>
-                    <Text style={styles.headText}>BILLS</Text>
-                    <View style={styles.bottomContainer}>
-                        <View style={styles.leftContainer}>
-                            <Text style={styles.leftbuttonText}>
-                                <Text>SET:</Text>
-                                <Text>$1000</Text>
-                            </Text>
+                </View>
+                <View style={styles.buttonContainer}>
+                    <TouchableOpacity style={styles.mainButton} onPress={()=> console.log("button pressed")}>
+                        <View style={styles.topContainer}>
+                            <View style={[styles.leftContainer,{backgroundColor:'#41634a'}]}>
+                                <Text style={styles.leftbuttonText}>
+                                    <Text>SET:</Text>
+                                    <Text>$300</Text>
+                                </Text>
+                            </View>
+                            <View style={styles.rightContainer}>
+                                <Text style={styles.rightbuttonText}>
+                                    <Text>ACTUAL:</Text>
+                                    <Text>$150</Text>
+                                </Text>
+                            </View>
                         </View>
-                        <View style={styles.middleContainer}>
-                        <PieChart style={{alignSelf: 'center'}}
-                        data={[
-                            { title: 'One', value: 3, color: '#dda7a7' },
-                            { title: 'Two', value: 1, color: '#F9EFE0' },
-                        ]} lineWidth={35} viewBoxSize={[100,100]}
-                        />
-                        </View>
-                        <View style={styles.rightContainer}>
-                            <Text style={styles.rightbuttonText}>
-                                <Text>ACTUAL:</Text>
-                                <Text>$850</Text>
-                            </Text>
-                        </View>
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity style={[styles.mainButton,{backgroundColor:'#70997b'}]} onPress={()=> console.log("button pressed")}>
-                    <Text style={styles.headText}>FOOD</Text>
-                    <View style={styles.bottomContainer}>
-                        <View style={styles.leftContainer}>
+                        <Text style={styles.headText}>PERSONAL</Text>
+                    </TouchableOpacity>
+                <TouchableOpacity style={styles.mainButton} onPress={()=> console.log("button pressed")}>
+                    <View style={styles.topContainer}>
+                        <View style={[styles.leftContainer,{backgroundColor:'#70997b'}]}>
                             <Text style={styles.leftbuttonText}>
                                 <Text>SET:</Text>
                                 <Text>$450</Text>
                             </Text>
-                        </View>
-                        <View style={styles.middleContainer}>
-                        <PieChart style={{alignSelf: 'center'}}
-                        data={[
-                            { title: 'One', value: 6, color: '#dda7a7' },
-                            { title: 'Two', value: 4, color: '#F9EFE0' },
-                        ]} lineWidth={35} viewBoxSize={[100,100]}
-                        />
                         </View>
                         <View style={styles.rightContainer}>
                             <Text style={styles.rightbuttonText}>
@@ -81,127 +46,158 @@ export default function BudgetBudgets ({navigation}){
                             </Text>
                         </View>
                     </View>
+                    <Text style={styles.headText}>FOOD</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={[styles.mainButton,{backgroundColor:'#9cc3b0'}]} onPress={()=> console.log("button pressed")}>
-                    <Text style={styles.headText}>ENTERTAINMENT</Text>
-                    <View style={styles.bottomContainer}>
-                        <View style={styles.leftContainer}>
-                            <Text style={styles.leftbuttonText}>
-                                <Text>SET:</Text>
-                                <Text>$100</Text>
-                            </Text>
+                    <TouchableOpacity style={styles.mainButton} onPress={()=> console.log("button pressed")}>
+                        <View style={styles.topContainer}>
+                            <View style={[styles.leftContainer,{backgroundColor:'#9cc3b0'}]}>
+                                <Text style={styles.leftbuttonText}>
+                                    <Text>SET:</Text>
+                                    <Text>$100</Text>
+                                </Text>
+                            </View>
+                            <View style={styles.rightContainer}>
+                                <Text style={styles.rightbuttonText}>
+                                    <Text>ACTUAL:</Text>
+                                    <Text>$30</Text>
+                                </Text>
+                            </View>
                         </View>
-                        <View style={styles.middleContainer}>
-                        <PieChart style={{alignSelf: 'center'}}
-                        data={[
-                            { title: 'One', value: 3, color: '#dda7a7' },
-                            { title: 'Two', value: 7, color: '#F9EFE0' },
-                        ]} lineWidth={35} viewBoxSize={[100,100]}
-                        />
+                        <Text style={styles.headText}>ENTERTAINMENT</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.mainButton} onPress={()=> console.log("button pressed")}>
+                        <View style={styles.topContainer}>
+                            <View style={[styles.leftContainer,{backgroundColor:'#9DADA5'}]}>
+                                <Text style={styles.leftbuttonText}>
+                                    <Text>SET:</Text>
+                                    <Text>$80</Text>
+                                </Text>
+                            </View>
+                            <View style={styles.rightContainer}>
+                                <Text style={styles.rightbuttonText}>
+                                    <Text>ACTUAL:</Text>
+                                    <Text>$50</Text>
+                                </Text>
+                            </View>
                         </View>
-                        <View style={styles.rightContainer}>
-                            <Text style={styles.rightbuttonText}>
-                                <Text>ACTUAL:</Text>
-                                <Text>$30</Text>
-                            </Text>
-                        </View>
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity style={[styles.mainButton,{backgroundColor:'#9DADA5'}]} onPress={()=> console.log("button pressed")}>
-                    <Text style={styles.headText}>HOME</Text>
-                    <View style={styles.bottomContainer}>
-                        <View style={styles.leftContainer}>
-                            <Text style={styles.leftbuttonText}>
-                                <Text>SET:</Text>
-                                <Text>$80</Text>
-                            </Text>
-                        </View>
-                        <View style={styles.middleContainer}>
-                        <PieChart style={{alignSelf: 'center'}}
-                        data={[
-                            { title: 'One', value: 7, color: '#dda7a7' },
-                            { title: 'Two', value: 3, color: '#F9EFE0' },
-                        ]} lineWidth={35} viewBoxSize={[100,100]}
-                        />
-                        </View>
-                        <View style={styles.rightContainer}>
-                            <Text style={styles.rightbuttonText}>
-                                <Text>ACTUAL:</Text>
-                                <Text>$50</Text>
-                            </Text>
-                        </View>
-                    </View>
-                </TouchableOpacity>
+                        <Text style={styles.headText}>HOME</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
-        // </View>
+        </View>
     );
 }
 
 const styles = StyleSheet.create({
-    // bigContainer: {
-    //     width:'100%',
-    //     height:'100%',
-    //     alignSelf:'center',
-    // },
+    bigContainer: {
+        width:'100%',
+        height:'100%',
+        backgroundColor:'#f9efe0',
+    },
     mainContainer: {
         display:'flex',
         flexDirection:'column',
-        width:'100%',
+        width:'95%',
         height:'100%',
+        alignSelf:'center',
+        justifyContent:'space-between',
+    },
+    headContainer: {
+        marginTop:50,
+        width:'90%',
+        height:'10%',
+        display:'flex',
+        flexDirection:'column',
+        alignSelf:'center',
+        justifyContent:'space-around'
+    },
+    topText: {
+        color:'black',
+        fontSize:14,
+        fontFamily:'spartan',
+        letterSpacing:1,
+        textAlign:'center',
+        fontWeight:'600',
+    },
+    headText: {
+        color:'black',
+        fontSize:14,
+        fontFamily:'spartan',
+        letterSpacing:1,
+        textAlign:'left',
+        fontWeight:'600',
+        marginTop:10,
+        marginLeft:5,
+    },
+    budgetLine: {
+        borderTopWidth:1,
+        borderTopColor:'black',
+        width:'100%',
+        height:'auto',
+    },
+    budgetText: {
+        color:'#cf6363',
+        fontSize:30,
+        fontFamily:'spartan',
+        letterSpacing:1,
+        padding:5,
+        textAlign:'center',
+    },
+    buttonContainer: {
+        width:'100%',
+        height:'80%',
+        display:'flex',
+        flexDirection:'column',
+        alignSelf:'center',
+        justifyContent:'space-between',
     },
     mainButton: {
         width:'100%',
         height:'20%',
-        alignContent:'center',
         display:'flex',
         flexDirection:'column',
+        backgroundColor:'white',
     },
-    headText: {
-        color:'white',
-        fontSize:18,
-        fontFamily:'spartan',
-        letterSpacing:2,
-        textAlign:'center',
-        height:'10%',
-        fontWeight:'600',
-        marginTop:10,
-    },
-    bottomContainer: {
+    topContainer: {
         display:'flex',
         flexDirection:'row',
+        width:'100%',
+        height:'70%',
+        alignSelf:'center',
+        justifyContent:'space-between',
+        alignItems:'center',
+    },
+    leftContainer: {
+        width:'70%',
+        height:'100%',
+        paddingTop:30,
+    },
+    rightContainer: {
+        width:'30%',
+        height:'100%',
+        textAlign:'center',
+        paddingTop:20,
+    },
+    leftbuttonText: {
+        color:'white',
+        fontSize:14,
+        display:'flex',
+        flexDirection:'row',
+        fontFamily:'spartan',
         width:'90%',
-        height:'80%',
+        height:'auto',
+        alignItems:'center',
         alignSelf:'center',
         justifyContent:'space-between',
     },
-    leftContainer: {
-        width:'20%',
-        height:'100%',
-    },
-    rightContainer: {
-        width:'25%',
-        height:'100%',
-    },
-    middleContainer: {
-        width:'55%',
-        height:'80%',
-        marginTop:10,
-        marginRight:-10,
-    },
-    leftbuttonText: {
-        textAlign:'center',
-        color:'white',
-        fontSize:14,
-        display:'flex',
-        flexDirection:'column',
-        fontFamily:'spartan',
-    },
     rightbuttonText: {
         textAlign:'center',
-        color:'white',
+        color:'black',
         fontSize:14,
         display:'flex',
         flexDirection:'column',
         fontFamily:'spartan',
-    }
+        letterSpacing:1,
+        lineHeight:25,
+    },
 });

@@ -4,299 +4,379 @@ import Ellipseavatar from '../assets/images/Ellipseavatar.png';
 import Vector from '../assets/images/Vector.png';
 import Heart from '../assets/images/heart.png';
 import CalStar from '../assets/images/bx_bx-calendar-star.png';
+import Event from '../assets/images/EVENT.png';
+import { PieChart } from 'react-minimal-pie-chart';
 
 
 export default function HabitTracker ({navigation}) {
 
   return (
-      <View style={styles.bigContainer}> 
-      <Text style={styles.headingText}>MY STATISTICS</Text>
-        <View style={styles.smallContainer}>
-          <View style={styles.headerContainer}>
-            <View style={styles.headLeft}>
-              <View style={styles.headBox}>
-                <View style={styles.headCircle}>
-                  <Text style={styles.circleText}>
-                    <Text>day</Text>
-                    <Text style={{fontSize:48, fontWeight:'600'}}>32</Text>
-                  </Text>
+    <View style={styles.bigContainer}>
+      <View style={styles.mainContainer}>
+        <View style={styles.leftContainer}>
+          <Text style={{fontSize:20,color:'black',letterSpacing:1,textAlign:'left'}}>TODAY</Text>
+          <View style={styles.leftContent}>
+          <View style={styles.habitOpen}>
+            <View style={styles.habitContainer}>
+              <View style={styles.barContainer}>
+                <View style={styles.habitBar}>
+                  <View style={styles.habitProgress}>
+                    <Text style={styles.habitText}>MOISTURIZE</Text>
+                  </View>
                 </View>
-                <Text style={styles.headboxText}>MY CURRENT STREAK</Text>
               </View>
+              <TouchableOpacity style={styles.addButton}onPress={()=> console.log("button pressed")}>
+                <Image
+                source={Event}
+                style={{width:20,height:20}}
+                />
+              </TouchableOpacity>
             </View>
-            <View style={styles.headRight}>
-              <View style={styles.headbox}>
-                <Text style={styles.boxText}>
-                  <Text style={{fontSize:18,fontWeight:'600'}}>1</Text>
-                  <Text>to do</Text>
-                </Text>
+            <View style={styles.habitContainer}>
+              <View style={styles.barContainer}>
+                <View style={styles.habitBar}>
+                  <View style={styles.habitProgress}>
+                    <Text style={styles.habitText}>PRAY</Text>
+                  </View>
+                </View>
               </View>
-              <View style={styles.headbox}>
-                <Text style={styles.boxText}>
-                  <Text style={{fontSize:18,fontWeight:'600'}}>2</Text>
-                  <Text>started</Text>
-                </Text>
+              <TouchableOpacity style={styles.addButton}onPress={()=> console.log("button pressed")}>
+                <Image
+                source={Event}
+                style={{width:20,height:20}}
+                />
+              </TouchableOpacity>
+            </View>
+            <View style={styles.habitContainer}>
+              <View style={styles.barContainer}>
+                <View style={styles.habitBar}>
+                  <View style={styles.habitProgress}>
+                    <Text style={[styles.habitText,{paddingTop:5,}]}>TAKE VITAMINS</Text>
+                  </View>
+                </View>
               </View>
-              <View style={styles.headbox}>
-                <Text style={styles.boxText}>
-                  <Text style={{fontSize:18,fontWeight:'600'}}>3</Text>
-                  <Text>completed</Text>
-                </Text>
+              <TouchableOpacity style={styles.addButton}onPress={()=> console.log("button pressed")}>
+                <Image
+                source={Event}
+                style={{width:20,height:20}}
+                />
+              </TouchableOpacity>
+            </View>
+            <View style={styles.habitContainer}>
+              <View style={styles.barContainer}>
+              <View style={styles.habitBar}>
+                <View style={styles.habitProgress}>
+                  <Text style={[styles.habitText,{paddingTop:5,}]}>SKIN CARE ROUTINE</Text>
+                </View>
               </View>
+              </View>
+              <TouchableOpacity style={styles.addButton}onPress={()=> console.log("button pressed")}>
+                <Image
+                source={Event}
+                style={{width:20,height:20}}
+                />
+              </TouchableOpacity>
             </View>
           </View>
-          <View style={styles.buttonContainer}>
-            <TouchableOpacity style={[styles.mainButton,{backgroundColor:'#383838',width:45}]} onPress={()=>console.log("button pressed")}>
-              <Text style={[styles.buttonText,{color:'white'}]}>edit</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={[styles.mainButton,{backgroundColor:'#c4c4c4',width:115, marginLeft:60,}]} onPress={()=>console.log("button pressed")}>
-              <Text style={[styles.buttonText,{color:'black'}]}>MONTH VIEW</Text>
-            </TouchableOpacity>
+          <View style={styles.bottomHabit}>
+            <View style={styles.habitComplete}>
+              <Text style={styles.headText}>COMPLETED</Text>
+              <View style={styles.habitcompleteContainer}>
+                <View style={styles.habitcompleteBar}>
+                    <Text style={styles.habitText}>MAKE BED</Text>
+                  </View>
+                </View>
+              </View>
+            <View style={styles.habitSkipped}>
+              <Text style={styles.headText}>SKIPPED</Text>
+              <View style={styles.habitskippedContainer}>
+                <View style={styles.habitBar}>
+                    <Text style={styles.habitText}>CLEAN ROOM</Text>
+                </View>
+              </View>
+
           </View>
-          <View style={styles.habitContainer}>
-            <View style={styles.habitOptions}>
-              <View style={styles.habitBox}>
-                <Text style={styles.habitText}>MAKE BED</Text>
+          </View>  
+          </View>
+          </View>
+        <View style={styles.rightContainer}>
+          <View style={styles.rightBox}>
+            <View style={styles.rightContent}>
+              <View style={styles.buttonContainer}>
+                <TouchableOpacity style={styles.mainButtons}>
+                  <Text style={styles.buttonText}>VIEW WEEK</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.mainButtons}>
+                  <Text style={styles.buttonText}>VIEW MONTH</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.mainButtons}>
+                  <Text style={styles.buttonText}>VIEW HABITS</Text>
+                </TouchableOpacity>
               </View>
-              <View style={styles.habitWeek}>
-                <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
+              <View style={styles.statContainer}>
+                <View style={styles.goalPie}>
+                  <Text style={styles.headText}>HABIT GOAL REACHED:</Text>
+                  <View style={styles.pieContainer}>
+                    <View style={styles.outsidePie}>
+                      <PieChart style={{alignSelf: 'center'}}
+                      data={[
+                      { title: 'One', value: 1, color: 'white' },
+                      {title: 'Two', value: 1, color: '#e8d7f6' },
+                      ]} lineWidth={100} viewBoxSize={[100,100]}
+                      />
+                      <Text style={styles.pieText}>50%</Text>
+                    </View>
+                  </View>
                 </View>
-            </View>
-            <View style={styles.habitOptions}>
-              <View style={styles.habitBox}>
-                <Text style={styles.habitText}>MOISTURIZE</Text>
+                <View style={styles.streakContainer}>
+                  <Text style={styles.headText}>CURRENT STREAK:</Text>
+                  <View style={styles.streakCircle}>
+                    <Text style={styles.streakText}>
+                      <Text>DAY</Text>
+                      <Text style={{fontSize:50}}>5</Text>
+                    </Text>
+                  </View>
+                </View>
               </View>
-              <View style={styles.habitWeek}>
-                <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                </View>
-            </View>
-            <View style={styles.habitOptions}>
-              <View style={styles.habitBox}>
-                <Text style={styles.habitText}>PRAY</Text>
-              </View>
-              <View style={styles.habitWeek}>
-                <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                </View>
-            </View>
-            <View style={styles.habitOptions}>
-              <View style={styles.habitBox}>
-                <Text style={styles.habitText}>CLEAN ROOM</Text>
-              </View>
-              <View style={styles.habitWeek}>
-                <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                </View>
-            </View>
-            <View style={styles.habitOptions}>
-              <View style={styles.habitBox}>
-                <Text style={styles.habitText}>VITAMINS</Text>
-              </View>
-              <View style={styles.habitWeek}>
-                <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                </View>
-            </View>
-            <View style={styles.habitOptions}>
-              <View style={styles.habitBox}>
-                <Text style={styles.habitText}>SKIN CARE ROUTINE</Text>
-              </View>
-              <View style={styles.habitWeek}>
-                <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                  <TouchableOpacity style={styles.habitweekCircle} onPress={()=>console.log("button pressed")}></TouchableOpacity>
-                </View>
-            </View>
+            </View> 
           </View>
         </View>
+        </View>
       </View>
-  
   );
 }
 
 const styles = StyleSheet.create ({
   bigContainer: {
-      width:'100%',
-      height:'100%',
-      backgroundColor:'white',
-  },
-  smallContainer: {
-    width:'90%',
-    height:'100%',
-    alignSelf:'center',
-    alignItems:'center',
-    backgroundColor:'#f1dff4',
-    borderRadius:10,
-    marginTop:30,
-  },
-  headerContainer: {
     width:'100%',
-    height:'auto',
-    alignSelf:'center',
-    justifyContent:'space-around',
+    height:'100%',
+    fontFamily:'spartan',
+    backgroundColor:'white',
+  },
+  mainContainer: {
     display:'flex',
     flexDirection:'row',
-    marginLeft:80,
-    marginTop:-20,
-  },
-  headingText:{
-    color:'black',
+    width:'100%',
+    height:'100%',
     fontFamily:'spartan',
-    fontSize:16,
-    textAlign:'center',
   },
-  headLeft:{
+  leftContainer: {
     display:'flex',
     flexDirection:'column',
-    width:'50%',
+    width:'40%',
+    height:'100%',
+    marginLeft:10,
+  },
+  leftContent: {
+    display:'flex',
+    flexDirection:'column',
+    width:'100%',
+    height:'80%',
+    alignSelf:'flex-start',
+    justifyContent:'space-between'
+  },
+  habitOpen: {
+    display:'flex',
+    flexDirection:'column',
+    width:'90%',
+    height:'50%',
+    alignSelf:'flex-start',
+    justifyContent:'space-between',
+    marginTop:10,
+  },
+  habitContainer: {
+    display:'flex',
+    flexDirection:'row',
+    height:'20%',
+    width:'100%',
+    justifyContent:'space-around',
+    alignSelf:'flex-start',
+    alignItems:'center',
+  },
+  barContainer: {
+    display:'flex',
+    flexDirection:'column',
+    width:'85%',
     height:'auto',
   },
-  headBox: {
-    backgroundColor:'#c2c7d1',
-    width:190,
-    height:150,
+  habitBar: {
+    width:135,
+    height:60,
+    borderRadius:10,
+    backgroundColor:'#e5e5e5',
+    textAlign:'left',
+    alignContent:'center',
+  },
+  habitProgress: {
+    width:65,
+    height:60,
+    backgroundColor:'#e8d7f6',
     borderRadius:10,
   },
-  headCircle: {
-    backgroundColor:'#eeeeee',
-    width:100,
+  habitText: {
+    color:'black',
+    width:'150%',
+    margin:10,
+    paddingTop:10,
+    fontSize:14,
+    letterSpacing:1,
+    textAlign:'left',
+  },
+  addButton: {
+    width:'10%',
+    height:'auto',
+  },
+  bottomHabit: {
+    display:'flex',
+    flexDirection:'column',
+    justifyContent:'space-between',
+    height:'30%',
+    width:'100%',
+    alignSelf:'center'
+  },
+  habitComplete: {
+    width:'100%',
+    height:'15%',
+    display:'flex',
+    flexDirection:'column',
+    alignSelf:'flex-start'
+  },
+  habitcompleteContainer: {
+    display:'flex',
+    flexDirection:'row',
+    height:'20%',
+    width:'100%',
+    alignSelf:'flex-start',
+  },
+  headText: {
+    color:'black',
+    fontSize:16,
+    margin:10,
+    letterSpacing:0.5,
+  },
+  habitcompleteBar: {
+    width:135,
+    height:60,
+    backgroundColor:'#e8d7f6',
+    textAlign:'left',
+    borderRadius:10,
+  },
+  habitSkipped: {
+    width:'100%',
+    height:'15%',
+    display:'flex',
+    flexDirection:'column',
+    alignSelf:'flex-start'
+  },
+  habitskippedContainer: {
+    display:'flex',
+    flexDirection:'row',
+    height:'20%',
+    width:'100%',
+    alignSelf:'flex-start',
+  },
+  rightContainer: {
+    display:'flex',
+    flexDirection:'column',
+    width:'60%',
+    height:'100%',
+    justifyContent:'space-around',
+    alignSelf:'center',
+  },
+  rightBox: {
+    height:'100%',
+    width:'80%',
     alignSelf:'center',
     justifyContent:'space-around',
-    height:95,
-    borderRadius:50,
-    textAlign:'center',
-    margin:5,
+    backgroundColor:'#e8d7f6',
   },
-  circleText: {
-    color:'black',
+  rightContent: {
     display:'flex',
     flexDirection:'column',
-    margin:5,
+    width:'100%',
+    height:'100%',
   },
-  headboxText: {
-    color:'black',
-    fontSize:14,
-    paddingTop:10,
+  buttonContainer: {
+    display:'flex',
+    flexDirection:'column',
+    height:'20%',
+    width:'100%',
+    justifyContent:'space-between',
     alignSelf:'center',
-    fontFamily:'spartan'
+    marginTop:20,
+    marginLeft:50,
   },
-  headRight:{
-    display:'flex',
-    flexDirection:'column',
-    width:'50%',
-    height:'auto',
-    padding:10,
-    marginLeft:30,
-  },
-  headbox: {
-    backgroundColor:'white',
-    width:65,
-    height:40,
-    borderWidth:1,
-    borderColor:'black',
-    margin:5,
+  mainButtons:{
+    backgroundColor:'#e5e5e5',
+    borderRadius:10,
+    width:130,
+    height:35,
     textAlign:'center',
-  },
-  boxText: {
-    display:'flex',
-    flexDirection:'column',
-    color:'black',
-    fontSize:10,
-    fontFamily:'spartan',
-    padding:1,
-  },
-  buttonContainer:{
-    marginTop:5,
-    width:'90%',
-    height:'auto',
-    flexDirection:'row',
-    display:'flex',
-    alignSelf:'center',
+    alignContent:'center',
     justifyContent:'space-around'
   },
-  mainButton: {
-    height:'auto',
-    padding:10,
-    textAlign:'center',
-    borderRadius:10,
-  },
   buttonText: {
-    fontSize:10,
-    fontFamily:'spartan',
+    color:'black',
+    fontSize:12,
+    alignSelf:'center',
   },
-   habitContainer:{
+  statContainer: {
+    marginTop:20,
     display:'flex',
     flexDirection:'column',
-    width:'90%',
-    height:'auto',
-    marginTop:5,
-   },
-   habitOptions: {
     width:'100%',
+    height:'70%',
+    justifyContent:'space-between',
+    textAlign:'center',
+    alignSelf:'center',
+  },
+  goalPie: {
+    display:'flex',
+    flexDirection:'column',
+    width:'100%',
+    height:'40%',
+    justifyContent:'space-between',
+    alignContent:'center',
+    alignSelf:'center',
+  },
+  pieContainer:{
+    alignContent:'center',
+    textAlign:'center',
+    width:'auto',
     height:'auto',
-    margin:5,
-   },
-   habitBox: {
-     display:'flex',
-     flexDirection:'column',
-    width:280,
-    height:45,
-    borderColor:'black',
-    borderWidth:1,
-    margin:10,
-   },
-   habitText: {
-     color:'black',
-     fontSize:12,
-     fontFamily:'spartan',
-     padding:10,
-   },
-   habitWeek: {
-     width:'100%',
-     height:'auto',
-     display:'flex',
-     flexDirection:'row',
-     marginLeft:15,
-   },
-   habitweekCircle: {
-     width:18,
-     height:18,
-     borderRadius:9,
-     borderWidth:1,
-     borderColor:'black',
-     backgroundColor:'white',
-     marginLeft:10,
-     marginTop:-20,
-   }
+  },
+  outsidePie: {
+    width:150,
+    height:150,
+    borderWidth:3,
+    borderColor:'white',
+    borderRadius:75,
+    alignSelf:'center',
+  },
+  pieText: {
+    color:'#383838',
+    fontSize:48,
+    letterSpacing:1,
+    marginTop:-105,
+  },
+  streakContainer: {
+    width:'100%',
+    height:'50%',
+    display:'flex',
+    flexDirection:'column',
+  },
+  streakCircle: {
+    width:150,
+    height:150,
+    backgroundColor:'white',
+    borderRadius:75,
+    alignSelf:'center',
+  },
+  streakText: {
+    color:'black',
+    fontSize:24,
+    display:'flex',
+    flexDirection:'column',
+    marginTop:40,
+  },
 });

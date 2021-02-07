@@ -15,6 +15,13 @@ import FeaturesList from '../screens/FeaturesList';
 import NewHealth from '../screens/newHealth';
 import NewFocus from '../screens/newFocus';
 import NewSelfCare from '../screens/newSelfCare';
+// Home Screens
+import HomeWeekly from '../screens/HomeWeekly';
+import HomeMonthly from '../screens/HomeMonthly';
+
+//Mood Screen
+import Mood from '../screens/Mood';
+import MoodShare from '../screens/MoodShare';
 
 /* Focus Screens */
 import FocusBudgetTracker from '../screens/FocusBudgetTracker';
@@ -30,9 +37,14 @@ import HealthActivityTracker from '../screens/HealthActivityTracker';
 
 // Period Screens
 import Period from '../screens/Period';
-import PeriodSymptoms from '../screens/PeriodSymptoms';
+import SymptomIntimacy from '../screens/SymptomIntimacy';
+import SymptomFlow from '../screens/SymptomFlow';
+import SymptomDischarge from '../screens/SymptomDischarge';
+import SymptomBody from '../screens/SymptomBody';
 import PeriodCalendar from '../screens/PeriodCalendar';
 import PeriodLog from '../screens/PeriodLog';
+import PeriodNote from '../screens/PeriodNote';
+
 // Meal Screens
 import Meal from '../screens/Meal';
 import MealRecipes from '../screens/MealRecipes';
@@ -50,8 +62,14 @@ import SelfCareMoodTracker from '../screens/SelfCareMoodTracker';
 import SelfCareBrainDump from '../screens/SelfCareBrainDump';
 
 import HabitTracker from '../screens/HabitTracker';
-import Mood from '../screens/Mood';
+
+//Brain Dump Screens
 import BrainDump from '../screens/BrainDump';
+import DumpNormal from '../screens/DumpNormal';
+import DumpList from '../screens/DumpList';
+import DumpDraw from '../screens/DumpDraw';
+import DumpRecord from '../screens/DumpRecord';
+import DumpPicture from '../screens/DumpPicture';
 
 const Tab = createBottomTabNavigator();
 
@@ -93,7 +111,7 @@ export default function MyTabs() {
 const HomeStack = createStackNavigator();
 function HomeStackScreen(){
     return(
-        <HomeStack.Navigator screenOptions={{ headerShown: true}}>
+        <HomeStack.Navigator screenOptions={{ headerShown: false}}>
             <HomeStack.Screen name = "Home" component={Home}
                               options={{
                                 title: "Hello, Danphuong",
@@ -105,10 +123,41 @@ function HomeStackScreen(){
                                 headerTitleStyle: {
                                   fontWeight: '600', //Set Header text style
                                   fontFamily: 'Spartan',
-                                },
+                                }, headerShown:true,
                                 headerRight: ()=> <ProfilePic/>,
                               }}
                               />
+            <HomeStack.Screen name = "HomeWeekly" component={HomeWeekly}
+                              options={{
+                                title: "MY WEEK",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '600', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                }, headerShown:true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
+            <HomeStack.Screen name = "HomeMonthly" component={HomeMonthly}
+                              options={{
+                                title: "MY MONTH",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '600', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                }, headerShown:true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
+                              
         </HomeStack.Navigator>
     );
 }
@@ -320,7 +369,55 @@ function PeriodStackScreen(){
                                 headerRight: ()=> <ProfilePic/>,
                               }}
                               />
-          <PeriodStack.Screen name = "PeriodSymptoms" component={PeriodSymptoms}
+          <PeriodStack.Screen name = "SymptomIntimacy" component={SymptomIntimacy}
+                              options={{
+                                title: "LOG SYMPTOMS",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '700', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                  letterSpacing: '0.1em',
+                                }, headerShown: true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
+          <PeriodStack.Screen name = "SymptomFlow" component={SymptomFlow}
+                              options={{
+                                title: "LOG SYMPTOMS",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '700', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                  letterSpacing: '0.1em',
+                                }, headerShown: true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
+          <PeriodStack.Screen name = "SymptomDischarge" component={SymptomDischarge}
+                              options={{
+                                title: "LOG SYMPTOMS",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '700', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                  letterSpacing: '0.1em',
+                                }, headerShown: true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
+          <PeriodStack.Screen name = "SymptomBody" component={SymptomBody}
                               options={{
                                 title: "LOG SYMPTOMS",
                                 headerStyle: {
@@ -368,9 +465,26 @@ function PeriodStackScreen(){
                                 headerRight: ()=> <ProfilePic/>,
                               }}
                               />
+          <PeriodStack.Screen name = "PeriodNote" component={PeriodNote}
+                              options={{
+                                title: "ADD NOTE",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '700', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                  letterSpacing: '0.1em',
+                                }, headerShown: true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
       </PeriodStack.Navigator>
   );
 }
+  
 const BudgetTrackerStack = createStackNavigator();
 function BudgetTrackerStackScreen(){
   return(
@@ -440,6 +554,148 @@ function BudgetTrackerStackScreen(){
                               }}
                               />
       </BudgetTrackerStack.Navigator>
+  );
+}
+
+const MoodStack = createStackNavigator();
+function MoodStackScreen(){
+    return(
+        <MoodStack.Navigator screenOptions={{ headerShown: false}}>
+            <MoodStack.Screen name = "Mood" component={Mood}
+                              options={{
+                                title: "MOODS",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '600', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                }, headerShown:true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
+            <MoodStack.Screen name = "MoodShare" component={MoodShare}
+                              options={{
+                                title: ".",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '600', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                }, headerShown:true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
+        </MoodStack.Navigator>
+    );
+}
+
+const BrainDumpStack = createStackNavigator();
+function BrainDumpStackScreen(){
+  return(
+      <BrainDumpStack.Navigator screenOptions={{ headerShown: false }}>
+          <BrainDumpStack.Screen name = "BrainDump" component={BrainDump}
+                              options={{
+                                title: "BRAIN DUMP",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '700', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                  letterSpacing: '0.1em',
+                                }, headerShown: true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
+          <BrainDumpStack.Screen name = "DumpNormal" component={DumpNormal}
+                              options={{
+                                title: "ADD NOTE",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '700', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                  letterSpacing: '0.1em',
+                                }, headerShown: true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
+          <BrainDumpStack.Screen name = "DumpList" component={DumpList}
+                              options={{
+                                title: "ADD LIST",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '700', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                  letterSpacing: '0.1em',
+                                }, headerShown: true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
+          <BrainDumpStack.Screen name = "DumpDraw" component={DumpDraw}
+                              options={{
+                                title: "ADD DRAWING",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '700', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                  letterSpacing: '0.1em',
+                                }, headerShown: true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
+          <BrainDumpStack.Screen name = "DumpRecord" component={DumpRecord}
+                              options={{
+                                title: "ADD RECORD",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '700', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                  letterSpacing: '0.1em',
+                                }, headerShown: true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
+          <BrainDumpStack.Screen name = "DumpPicture" component={DumpPicture}
+                              options={{
+                                title: "ADD PICTURE",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '700', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                  letterSpacing: '0.1em',
+                                }, headerShown: true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
+      </BrainDumpStack.Navigator>
   );
 }
 

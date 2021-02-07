@@ -15,316 +15,294 @@ import { PieChart } from 'react-minimal-pie-chart';
 export default function Meal ({navigation}) {
   return (
       <View style={styles.bigContainer}>
-        <View style={styles.smallContainer}>
-            <View style={styles.headContainer}>
-            <Text style={styles.headText}>CURRENT CALORIE INTAKE</Text>
-              <View style={styles.topHead}>
-                <View style={styles.topContainer}>
-                  <Text style={styles.calorieText}>
-                    <Text style={{fontWeight:'700'}}>1030</Text>
-                    <Text>/2000</Text>
+        <View style={styles.mainContainer}>
+          <View style={styles.smallContainer}>
+            <View style={styles.topContainer}>
+              <View style={styles.leftFloat}>
+                <Text style={styles.topText}>TOTAL:</Text>
+                <View style={styles.leftList}>
+                    <Text style={styles.lowerDesc}>
+                    <Text style={{fontWeight:'600', fontSize:18, marginBottom:5}}>170g</Text>
+                    <Text>CARBS</Text>
                   </Text>
-                  <Text style={styles.topDesc}>calories</Text>
+                  <Text style={styles.lowerDesc}>
+                    <Text style={{fontWeight:'600', fontSize:18, marginBottom:5}}>5g</Text>
+                    <Text>FATS</Text>
+                  </Text>
+                  <Text style={styles.lowerDesc}>
+                    <Text style={{fontWeight:'600', fontSize:18, marginBottom:5}}>12g</Text>
+                    <Text>PROTEINS</Text>
+                  </Text>
                 </View>
-                <TouchableOpacity style={styles.editButton}>
-                  <Text style={styles.editText}>edit</Text>
-                </TouchableOpacity>
-                <View style={styles.bottomHead}>
-                  <Text style={styles.lowerDesc}>
-                    <Text style={{fontWeight:'600', fontSize:20, marginBottom:10}}>170g</Text>
-                    <Text>CARBS left</Text>
-                  </Text>
-                  <Text style={styles.lowerDesc}>
-                    <Text style={{fontWeight:'600', fontSize:20, marginBottom:10}}>5g</Text>
-                    <Text>FATS left</Text>
-                  </Text>
-                  <Text style={styles.lowerDesc}>
-                    <Text style={{fontWeight:'600', fontSize:20, marginBottom:10}}>12g</Text>
-                    <Text>PROTEINS left</Text>
+                <View style={styles.grayContainer}>
+                  <Text style={styles.calBox}>
+                    <Text style={{fontSize:18, fontWeight:'600'}}>1362</Text>
+                    <Text>CAL</Text>
                   </Text>
                 </View>
               </View>
+            <View style={styles.mealContent}>
+              <Text style={styles.headText}>TODAY'S MEALS</Text>
+              <View style={styles.mealList}>
+                <View style={styles.mealContainer}>
+                  <View style={styles.headBox}>
+                    <Text style={styles.mealHead}>BREAKFAST</Text>
+                  </View>
+                  <Text style={styles.mealDesc}>
+                    <Text>Ham & Cheese HP</Text>
+                    <Text>Low-fat yogurt</Text>
+                    <Text>Granola Bar</Text>
+                  </Text>
+                </View>
+                <View style={styles.mealContainer}>
+                  <View style={styles.headBox}>
+                    <Text style={styles.mealHead}>LUNCH</Text>
+                  </View>
+                  <Text style={styles.mealDesc}>
+                    <Text>Ham & Cheese HP</Text>
+                    <Text>Low-fat yogurt</Text>
+                    <Text>Granola Bar</Text>
+                  </Text>
+                </View>
+                <View style={styles.mealContainer}>
+                  <View style={styles.headBox}>
+                    <Text style={styles.mealHead}>DINNER</Text>
+                  </View>
+                  <Text style={styles.mealDesc}>
+                    <Text>Ham & Cheese HP</Text>
+                    <Text>Low-fat yogurt</Text>
+                    <Text>Granola Bar</Text>
+                  </Text>
+                </View>
+                <View style={styles.mealContainer}>
+                  <View style={styles.headBox}>
+                    <Text style={styles.mealHead}>SNACKS</Text>
+                  </View>
+                  <Text style={styles.mealDesc}>
+                    <Text>Granola Bar</Text>
+                  </Text>
+                </View>
+                </View>
             </View>
-            <View style={styles.mealContainer}>
-              <View style={styles.innerContainer}>
-              <Text style={styles.headinnerText}>UPCOMING MEAL</Text>
-              <View style={styles.mealBorder}>
-                <Text style={styles.mealheadText}>DINNER</Text>
-                <View style={styles.entreeBox}>
-                  <View style={styles.entreePic}></View>
-                  <Text style={styles.entreeText}>
-                    <Text>Chicken Carbonara</Text>
-                    <Text>1 serving</Text>
-                  </Text>
-                  <Text style={styles.entreeCal}>350 cals</Text>
-                </View>
-                <View style={styles.entreeBox}>
-                  <View style={styles.entreePic}></View>
-                  <Text style={styles.entreeText}>
-                    <Text>Garlic Bread with Parmesan</Text>
-                    <Text>1 serving</Text>
-                  </Text>
-                  <Text style={styles.entreeCal}>100 cals</Text>
-                </View>
-              </View>
-              <Text style={styles.totalCal}>
-                <Text>TOTAL CALORIES</Text>
-                <Text>450 cals</Text>
-              </Text>
-              </View>
             </View>
-            <View style={styles.buttonContainer}>
-              <TouchableOpacity style={styles.mainButton} onPress={()=>navigation.navigate('MealRecipes')}>
-                <Image
-                source={Hat}
-                style={{width:40, height:40, alignSelf:'center'}}
-              />
-              <Text style={styles.buttonText}>MY RECIPES</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.mainButton} onPress={()=>navigation.navigate('MealGrocery')}>
-                <Image
-                source={Cart}
-                style={{width:40, height:40, alignSelf:'center'}}
-              />
-              <Text style={styles.buttonText}>GROCERY LIST</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.mainButton}  onPress={()=>navigation.navigate('MealPlanner')}>
-                <Image
-                source={Journal}
-                style={{width:40, height:40, alignSelf:'center'}}
-              />
-              <Text style={styles.buttonText}>MEAL PLANNER</Text>
-              </TouchableOpacity>
+              <View style={styles.buttonContainer}>
+                <View style={styles.buttonRow}>
+                  <View style={styles.buttonOption}>
+                  <TouchableOpacity style={styles.mainButton} onPress={()=>navigation.navigate('MealRecipes')}>
+                    <Image
+                    source={Hat}
+                    style={{width:20, height:20, marginTop:5, alignSelf:'center',}}
+                    />
+                  </TouchableOpacity>
+                    <Text style={styles.buttonText}>MY RECIPES</Text>
+                  </View>
+                  <View style={styles.buttonOption}>
+                    <TouchableOpacity style={styles.mainButton} onPress={()=>navigation.navigate('MealGrocery')}>
+                    <Image
+                    source={Cart}
+                    style={{width:20, height:20, marginTop:5,alignSelf:'center',}}
+                    />
+                    </TouchableOpacity>
+                      <Text style={styles.buttonText}>GROCERY LIST</Text>
+                  </View>
+                  <View style={styles.buttonOption}>
+                    <TouchableOpacity style={styles.mainButton}  onPress={()=>navigation.navigate('MealPlanner')}>
+                    <Image
+                    source={Journal}
+                    style={{width:20, height:20, marginTop:5,alignSelf:'center',}}
+                    />
+                    </TouchableOpacity>
+                      <Text style={styles.buttonText}>MEAL PLANNER</Text>
+                  </View> 
+                </View>
             </View>
           </View>
+        </View>
       </View>
   );
 }
 
 const styles = StyleSheet.create ({
   bigContainer: {
-    alignItems:'center',
     backgroundColor:'white',
     width:'100%',
     height:'100%',
+  },
+  mainContainer: {
+    width:'100%',
+    height:'100%',
+    display:'flex',
+    flexDirection:'column',
+    fontFamily:'spartan',
+    position:'relative',
   },
   smallContainer: {
     width:'90%',
     height:'100%',
-    backgroundColor:'#FFE4CB',
+    backgroundColor:'#F5d2c6',
     alignSelf:'center',
-    justifyContent:'space-around',
-    alignContent:'center',
-    borderRadius:10,
     display:'flex',
     flexDirection:'column',
-    position:'relative',
-    marginTop:20,
-  },
-  headText: {
-    color:'black',
-    letterSpacing:1,
-    fontSize:14,
-    fontFamily:'spartan',
-    alignSelf:'center',
-    marginTop:-80,
-  },
-  headContainer: {
-    width:'95%',
-    height:'40%',
-    display:'flex',
-    flexDirection:'column',
-    position:'relative',
-    marginTop:30,
-    alignSelf:'center',
-    justifyContent:'space-around'
-  },
-  topHead: {
-    borderWidth:1,
-    borderColor:'black',
-    width:'100%',
-    height:'60%',
-    padding:10,
-    zIndex:0,
-    position:'absolute',
-    marginTop:120,
   },
   topContainer: {
-    backgroundColor:'white',
-    width:'50%',
-    height:'65%',
-    borderRadius:10,
-    alignSelf:'center',
-    justifyContent:'center',
-    textAlign:'center',
-    display:'flex',
-    flexDirection:'column'
-  },
-  calorieText: {
-    width:'100%',
-    height:'auto',
-    color:'black',
-    fontFamily:'spartan',
-    fontSize:18,
     display:'flex',
     flexDirection:'row',
-    alignSelf:'center',
-    justifyContent:'center',
+    width:'100%',
+    height:'80%',
+    alignSelf:'flex-start',
+    justifyContent:'space-between',
   },
-  topDesc: {
+  topText: {
     color:'black',
+    fontSize:12,
     fontFamily:'spartan',
-    fontSize:16,
     letterSpacing:1,
-    alignSelf:'center',
-  },
-  editButton: {
-    width:'20%',
-    height:'auto',
-    padding:10,
-    borderRadius:10,
-    backgroundColor:'black',
     textAlign:'center',
-    zIndex:2,
-    marginLeft:120,
-    marginTop:-10,
+    marginTop:10,
   },
-  editText: {
-    color:'white',
-    fontSize:10,
-  },
-  bottomHead: {
-    borderWidth:1,
-    borderColor:'black',
-    width:'100%',
-    height:'auto',
-    padding:10,
+  leftFloat: {
+    width:'20%',
+    height:'80%',
+    backgroundColor:'#f9efe0',
     display:'flex',
-    flexDirection:'row',
+    flexDirection:'column',
+    alignSelf:'flex-start',
+    justifyContent:'space-between',
+    marginLeft:10,
+  },
+  leftList: {
+    width:'100%',
+    height:'60%',
     alignSelf:'center',
     justifyContent:'space-between',
+    display:'flex',
+    flexDirection:'column',
   },
   lowerDesc: {
     display:'flex',
     flexDirection:'column',
-    width:'35%',
+    width:'105%',
     height:'auto',
     color:'black',
     fontSize:10,
-    textAlign:'left',
-    marginLeft:20,
+    textAlign:'center',
+    padding:10,
+    alignSelf:'center',
   },
-  mealContainer: {
+  grayContainer: {
+    backgroundColor:'#c4c4c4',
     width:'100%',
-    height:'50%',
-    position:'relative',
+    height:'20%',
+    alignContent:'center',
+    alignSelf:'baseline'
   },
-  headinnerText: {
+  calBox: {
+    color:'black',
+    fontSize:16,
+    display:'flex',
+    flexDirection:'column',
+    alignSelf:'center',
+    marginTop:10,
+    textAlign:'center',
+  },
+  mealContent: {
+    width:'75%',
+    height:'100%',
+    display:'flex',
+    flexDirection:'column',
+  },
+  headText: {
     color:'black',
     letterSpacing:1,
-    fontSize:14,
+    fontSize:18,
     fontFamily:'spartan',
-    alignSelf:'center',
+    textAlign:'right',
+    margin:10,
   },
-  innerContainer: {
-    backgroundColor:'#fffbdb',
+  mealContainer: {
     width:'80%',
-    height:'90%',
-    alignSelf:'center',
-    justifyContent:'center',  
-    display:'flex',
-    flexDirection:'column',
-    zIndex:0,
-    position:'absolute',
-    marginTop:50,
-  },
-  mealBorder: {
-    width:'110%',
-    height:'60%',
-    zIndex:1,
+    height:'auto',
+    position:'relative',
     borderWidth:1,
     borderColor:'black',
-    alignContents:'center',
     display:'flex',
     flexDirection:'column',
+    padding:10,
     alignSelf:'center',
-    justifyContent:'center'
   },
-  mealheadText: {
-    textAlign:'right',
-    color:'black',
-    fontSize:16,
-    margin:5,
-  },
-  entreeBox: {
-    borderWidth:1,
-    borderColor:'black',
-    width:'90%',
-    height:'auto',
-    padding:5,
-    display:'flex',
-    flexDirection:'row',
-    alignSelf:'center',
-    justifyContent:'space-between',
-    marginBottom:10,
-  },
-  entreePic: {
-    backgroundColor:'white',
-    width:45,
-    height:45,
-    borderWidth:1,
-    borderColor:'black',
-  },
-  entreeText: {
-    display:'flex',
-    flexDirection:'column',
-    width:'50%',
-    height:'auto',
-    lineHeight:15,
-    color:'black',
-    fontSize:12,
-  },
-  entreeCal: {
-    color:'#727272',
-    fontSize:12,
-    textAlign:'right',
-    width:'20%',
-  },
-  totalCal: {
-    color:'black',
-    fontSize:16,
-    width:'95%',
-    height:'auto',
-    alignSelf:'center',
-    justifyContent:'space-between',
-    display:'flex',
-    flexDirection:'row',
+  mealList: {
     marginTop:20,
-  },
-  buttonContainer: {
-    width:'100%',
-    height:'30%',
-    alignSelf:'center',
-    justifyContent:'space-between',
+    width:'95%',
+    height:'80%',
     display:'flex',
-    flexDirection:'row',
-    marginTop:30,
+    flexDirection:'column',
+    alignSelf:'flex-end',
+    justifyContent:'space-between',
   },
-  mainButton: {
-    backgroundColor:'white',
-    borderWidth:1,
-    borderColor:'black',
-    width:'100%',
-    borderRadius:10,
+  mealHead: {
+    fontSize:16,
+    alignSelf:'flex-end',
+    color:'black',
+    letterSpacing:1,
+  },
+  headBox: {
+    backgroundColor:'#F5d2c6',
+    textAlign:'center',
+    marginTop:-20,
+    marginRight:-20,
+    width:'auto',
     height:'auto',
     padding:10,
+    alignSelf:'flex-end',
+    zIndex:2,
+  },
+  mealDesc: {
+    color:'black',
+    fontSize:12,
+    lineHeight:20,
+    textAlign:'left',
     display:'flex',
     flexDirection:'column',
+    letterSpacing:1,
+    fontFamily:'spartan'
+  },
+  buttonContainer: {
+    width:'110%',
+    height:'18%',
+    backgroundColor:'#fffbdb',
+    alignSelf:'center',
+  },
+  buttonRow: {
+    alignSelf:'center',
+    justifyContent:'space-between',
+    display:'flex',
+    flexDirection:'row',
+    width:'95%',
+    height:'100%',
+    padding:5,
+  },
+  buttonOption: {
+    display:'flex',
+    flexDirection:'column',
+    width:'33%',
+    height:'60%',
+    alignSelf:'center',
+    justifyContent:'space-between',
+    alignItems:'center',
+  },
+  mainButton: {
+    width:50,
+    height:50,
+    padding:10,
+    borderWidth:1,
+    borderColor:'black',
+    borderRadius:25,
     textAlign:'center',
   },
   buttonText: {
     color:'black',
-    fontSize:12,
+    fontSize:10,
+    fontFamily:'spartan',
   }
 });
 
