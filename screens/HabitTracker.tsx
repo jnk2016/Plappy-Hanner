@@ -103,13 +103,13 @@ export default function HabitTracker ({navigation}) {
           <View style={styles.rightBox}>
             <View style={styles.rightContent}>
               <View style={styles.buttonContainer}>
-                <TouchableOpacity style={styles.mainButtons}>
+                <TouchableOpacity style={styles.mainButtons} onPress={()=>navigation.navigate('HabitWeek', {screen:'HabitWeek'})}>
                   <Text style={styles.buttonText}>VIEW WEEK</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.mainButtons}>
+                <TouchableOpacity style={styles.mainButtons} onPress={()=>navigation.navigate('HabitMonth', {screen:'HabitMonth'})}>
                   <Text style={styles.buttonText}>VIEW MONTH</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.mainButtons}>
+                <TouchableOpacity style={styles.mainButtons} onPress={()=>navigation.navigate('HabitView', {screen:'HabitView'})}>
                   <Text style={styles.buttonText}>VIEW HABITS</Text>
                 </TouchableOpacity>
               </View>

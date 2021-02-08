@@ -1,6 +1,6 @@
 import React, {Component, useState} from 'react';
 import {Button, Image, StyleSheet, TextInput, TouchableHighlight, Text, View, Alert} from 'react-native';
-// import '../assets/css/selfcare.css';
+// import '../assets/css/selfcare';
 import Ellipseavatar from '../assets/images/Ellipseavatar.png';
 import Vector from '../assets/images/Vector.png';
 import Heart from '../assets/images/heart.png';
