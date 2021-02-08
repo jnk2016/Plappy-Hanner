@@ -1,19 +1,13 @@
-# Happy Planner Android App
+# Happy Planner Android Application
 
-The React App for the Front-End of the project
+A planner mobile app designed for bullet journaling and deriving inspiration from "The Happy Planner" products *(no affiliation with the company)*.
 
-## Installation
+## Setup
+#####Make Sure To Have Installed
+- Node.js (10 or newer)
+- yarn
+- Java SE Development Kit (JDK)
+- Android Studio
 
-```bash
-npm install
-```
-CD into the project directory, and then run the command `npm install`
-After installing all dependencies including expo cli (`expo install` if needed), you can start the project
-
-## Usage
-
-```bash
-npm start
-```
-This will open up localhost with the expo cli
-Click on the `Run in web browser` in the Metro Bundler to get started
+#####Setting Android Development Environment
+Follow the [React Native Doc](https://reactnative.dev/docs/environment-setup) according to the *React Native CLI Quickstart* tab and using `yarn` instead of `npx`.
