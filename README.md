@@ -1,12 +1,6 @@
-<<<<<<< HEAD
-# Happy Planner Mobile Applicatoin
-
-The React App for the Front-End of the Android/IOS application
-=======
 # Happy Planner Mobile Application
 
 The React App for the front-end of the Android/IOS app
->>>>>>> 8e606a3b04f8589b692b98f98512f0f4f497dee3
 
 ## Installation
 CD into the project directory, and then run the command
