@@ -1,291 +1,223 @@
 import React, {Component, useState} from 'react';
-import {Button, Image, StyleSheet, TextInput, TouchableHighlight, Text, View, Alert, ScrollView} from 'react-native';
+import {Button, Image, StyleSheet, TextInput, TouchableHighlight, Text, View, Alert} from 'react-native';
+import Happy from '../assets/images/happy.png';
+import Sleepy from '../assets/images/sleepy.png';
+import Satisfied from '../assets/images/satisfied.png';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
 export default function Mood ({navigation}) {
   return (
-    <ScrollView>
+    <View>
       <View style={styles.bigContainer}>
-        <View style={styles.mainContainer}>
           <View style={styles.headerContainer}>
-            <View style={styles.leftHeader}>
-              <Text style={styles.bigText}>DAILY CHECK-IN</Text>
-              <Text style={{color:'#5D7CB8', fontSize:24, fontFamily:'Spartan-SemiBold'}}>I'M FEELING:</Text>
-            </View>
-            <View style={styles.rightHeader}>
-              <TouchableOpacity style={styles.checkIn} onPress={()=>console.log("button pressed")}>
-                <Text style={styles.buttonText}>Share my mood</Text>
-              </TouchableOpacity>
-            </View>
+            <Text style={styles.headerText}>
+              <Text>OVERALL MOOD TODAY</Text>
+              <Text style={{color:'#5d7cb8'}}>I'M FEELING:</Text>
+            </Text>
+        </View>
+        <View style={styles.mainContainer}>
+          <View style={styles.happyContainer}>
+            <Image
+              source={Happy}
+              style={{width:215,height:205,alignSelf:'center',justifyContent:'space-around'}} 
+            />
+            <Text style={styles.happyText}>HAPPY</Text>
           </View>
-          <View style={styles.moodContainer}>
-            <View style={styles.contentContainer}>
-                <Text style={styles.headerText}>STATISTICS</Text>
-                <TouchableOpacity style={styles.monthCheck}>
-                  <Text style={styles.buttonText}>MONTH VIEW</Text>
-                </TouchableOpacity>
-              </View>
-            </View>
-            <View style={styles.statContainer}>
-              <View style={styles.leftStat}>
-                <Text style={styles.statText}>you have checked in:</Text>
-                <Text style={styles.statBig}>2 times</Text>
-                <Text style={styles.statText}>in the past:</Text>
-                <Text style={styles.statBig}>3 hours</Text>
-              </View>
-              <View style={styles.rightStat}>
-                  <Text style={styles.rightText}>overall mood today:</Text>
-                <Image
-                  source={require('../assets/images/happy.png')}
-                  style={{width: 105, height:100, alignContent:'center',padding:20,marginLeft:30,marginBottom:10,}}
-                />
-              </View>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity style={[styles.mainButton,{backgroundColor:'#dcf0e7'}]} onPress={()=>console.log("button pressed")}>
+            <Text style={styles.buttonText}>View Check-ins</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={[styles.mainButton,{backgroundColor:'white'}]} onPress={()=>console.log("button pressed")}>
+            <Text style={styles.buttonText}>Share my mood</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.weekContainer}>
+          <View style={styles.weekHead}>
+            <Text style={styles.weekheadText}>WEEKLY STATISTICS</Text>
+            <TouchableOpacity style={styles.weekButton} onPress={()=>console.log("button pressed")}>
+              <Text style={styles.weekbuttonText}>MONTH VIEW</Text>
+            </TouchableOpacity>
           </View>
-          <View style={styles.latestContainer}>
-            <Text style={styles.latestText}>latest check in:</Text>
-            <View style={styles.latestUpdate}>
-              <View style={styles.leftUpdate}>
-                <Text style={{color:'#5D7CB8', fontSize:14, fontFamily:'Spartan-Regular',textAlign:'left'}}>I'M FEELING:
-                  <Text style={{color:'black', fontSize:14, fontFamily:'Spartan-Regular'}}>HAPPY</Text>
-                </Text>
-                <Image
-                source={require('../assets/images/happy.png')}
-                style={{width: 85, height:80, marginTop: '2%'}}
-                />
-              </View>
-              <View style={styles.rightUpdate}>
-                <Text style={styles.dateText}>1/08/21</Text>
-                <Text style={styles.lateSmall}>3:01 PM</Text>
-                <View style={{flexDirection:'row', marginVertical: '3%'}}>
-                <Text style={{flex:1,flexShrink:4,lineHeight:20,fontSize:12,fontFamily:'Spartan-Regular',textAlign:'right'}}>Boyfriend decided to get me some coffee to help wake me up!</Text>
-                </View>
-              </View>
+          <View style={styles.weekStats}>
+            <View style={styles.dayBox}>
+              <Text style={styles.dayText}>SUN</Text>
+              <Image
+              source={Sleepy}
+              style={{width:40,height:40,alignSelf:'center',justifyContent:'space-around'}} 
+              />
+              <Text style={styles.moodText}>sleepy</Text>
             </View>
-          </View>
-          <View style={styles.lastContainer}>
-            <Text style={styles.headerText}>THIS WEEK</Text>
-            <View style={styles.weekContainer}>
-              <View style={styles.sleepyContainer}>
-                <Text style={styles.dayText}>TUE</Text>
-                <Image
-                source={require('../assets/images/sleepy.png')}
-                style={{width: 50, height:50, marginLeft:10}}
-                />
-              </View>
-              <View style={styles.satisfiedContainer}>
-                <Text style={styles.dayText}>WED</Text>
-                <Image
-                source={require('../assets/images/satisfied.png')}
-                style={{width: 50, height:50, marginLeft:10}}
-                />
-              </View>
-              <View style={styles.happyContainer}>
-                <Text style={styles.dayText}>THU</Text>
-                <Image
-                source={require('../assets/images/happy.png')}
-                style={{width: 50, height:50, marginLeft:10}}
-                />
-              </View>
+            <View style={styles.dayBox}>
+              <Text style={styles.dayText}>MON</Text>
+              <Image
+              source={Satisfied}
+              style={{width:40,height:40,alignSelf:'center',justifyContent:'space-around'}} 
+              />
+              <Text style={styles.moodText}>satisfied</Text>
+            </View>
+            <View style={styles.dayBox}>
+              <Text style={styles.dayText}>TUE</Text>
+              <Image
+              source={Happy}
+              style={{width:40,height:40,alignSelf:'center',justifyContent:'space-around'}} 
+              />
+              <Text style={styles.moodText}>happy</Text>
+            </View>
+            <View style={styles.dayBox}>
+              <Text style={styles.dayText}>WED</Text>
+              <Image
+              source={Sleepy}
+              style={{width:40,height:40,alignSelf:'center',justifyContent:'space-around'}} 
+              />
+              <Text style={styles.moodText}>sleepy</Text>
+            </View>
+            <View style={styles.dayBox}>
+              <Text style={styles.dayText}>THU</Text>
+              <Image
+              source={Happy}
+              style={{width:40,height:40,alignSelf:'center',justifyContent:'space-around'}} 
+              />
+              <Text style={styles.moodText}>happy</Text>
             </View>
           </View>
         </View>
         </View>
-      </ScrollView>
+      </View>
+    </View>
   );
 }
 
 const styles = StyleSheet.create ({
   bigContainer: {
-    backgroundColor:'white',
+    backgroundColor:'#fffbdb',
     alignContent:'center',
     width:'100%',
     height:'100%',
-  },
-  mainContainer: {
-    backgroundColor: '#F4EAC7',
-    width:'100%',
-    height:'100%',
-    marginTop:10,
-    borderTopLeftRadius:30,
-    borderTopRightRadius:30,
-    paddingBottom:30,
+    paddingBottom:10,
   },
   headerContainer: {
-    backgroundColor:'#e5e5e5',
+    marginTop:20,
     width:'90%',
     height:'auto',
     padding:10,
-    display:'flex',
-    borderRadius: 30,
-    flexDirection:'row',
-    marginLeft:20,
-    alignItems: 'center'
-  },
-  leftHeader: {
-    margin:5,
-  },
-  bigText: {
-    fontSize:16,
-    color:'black',
-    fontFamily:'Spartan-SemiBold',
-    margin:5,
-  },
-  rightHeader: {
-    margin:5,
-  },
-  checkIn: {
-    backgroundColor: 'white',
-    width:'100%',
-    height:'auto',
-    padding:10,
-    // marginLeft:'20%',
-    borderRadius:70,
-    alignSelf: 'center',
-  },
-  buttonText: {
-    textAlign:'center',
-    fontSize:12,
-    fontFamily: 'Spartan-Regular'
+    alignSelf:'center',
+    justifyContent:'space-around',
   },
   headerText: {
-    paddingTop:10,
+    textAlign:'center',
+    color:'black',
+    fontFamily:'Spartan-Regular',
     fontSize:16,
-    marginLeft:20,
-    fontFamily:'Spartan-Regular',
-  },
-  moodContainer: {
-    width:'100%',
-    height:'auto',
-  },
-  contentContainer: {
-    display:'flex',
-    flexDirection:'row',
-    marginLeft:10,
-    marginTop:10,
-  },
-  monthCheck: {
-    width:'70%',
-    backgroundColor:'white',
-    padding:10,
-    borderRadius:20,
-    marginLeft:90,
-  },
-  statContainer: {
-    width:'90%',
-    height:'auto',
-    marginLeft:15,
-    marginTop:10,
-    display:'flex',
-    flexDirection:'row',
-  },
-  leftStat: {
-    backgroundColor:'white',
-    width:'50%',
-    padding:5,
-  },
-  rightStat: {
-    backgroundColor:'#c5c5c5',
-    width:'50%',
-    padding:5,
-  },
-  rightText: {
-    fontSize:13,
-    margin:10,
-    fontFamily:'Spartan-Regular',
-    textAlign:'center',
-  },
-  statText: {
-    color:'black',
-    fontSize:12,
-    fontFamily:'Spartan-Regular',
-    margin:5,
-  },
-  statBig: {
-    color:'black',
-    fontSize:20,
-    fontFamily:'Spartan-SemiBold',
-    margin:5,
-  },
-  latestContainer: {
-    width:'100%',
-    height:'auto',
-    marginLeft:20,
-  },
-  latestText: {
-    color:'black',
-    fontSize:18,
-    fontFamily:"Spartan-Regular",
-    letterSpacing:1,
-    textAlign:'center',
-    marginVertical:10,
-  },
-  latestUpdate: {
-    backgroundColor:'white',
-    width:'90%',
-    height:'auto',
-    padding:10,
-    marginTop:5,
-    display:'flex',
-    flexDirection:'row',
-  },
-  leftUpdate: {
-    padding:10,
-  },
-  rightUpdate: {
-    width:'50%',
+    letterSpacing:2,
     flexDirection:'column',
-    textAlign:'right',
-    marginVertical:1,
-    padding:10,
-  },
-  dateText: {
-    fontSize:12,
-    fontFamily:'Spartan-Regular',
-    textAlign:'right',
-  },
-  lateSmall: {
-    fontSize:9,
-    fontFamily:'Spartan-Regular',
-    margin:1,
-    textAlign: 'right'
-  },
-  weekContainer: {
     display:'flex',
-    marginLeft:10,
-    flexDirection:'row'
+    fontWeight:'600',
+    lineHeight:20,
   },
-  lastContainer: {
+  mainContainer: {
     width:'100%',
     height:'auto',
-  },
-  sleepyContainer: {
-    backgroundColor:'white',
-    width:'30%',
-    height:'auto',
-    padding:20,
-    margin:5,
-    borderRadius:30
-  },
-  satisfiedContainer: {
-    backgroundColor:'white',
-    width:'30%',
-    height:'auto',
-    padding:20,
-    margin:5,
-    borderRadius:30
+    display:'flex',
+    flexDirection:'column',
   },
   happyContainer: {
-    backgroundColor:'white',
-    width:'30%',
+    flexDirection:'column',
+    width:'100%',
     height:'auto',
-    padding:20,
+    marginTop:30,
+    textAlign:'center',
+  },
+  happyText: {
+    color:'#727272',
+    marginTop:10,
+    alignSelf:'center',
+    fontSize:24,
+    letterSpacing:2,
+    fontFamily:'Spartan-Regular',
+  },
+  buttonContainer: {
+    marginTop:'5%',
+    alignSelf:'center',
+    justifyContent:'space-around',
+    width:'100%',
+    height:'auto',
+    display:'flex',
+    flexDirection:'row',
+  },
+  mainButton: {
+    width:130,
+    height:'auto',
+    padding:10,
+    borderRadius:10,
+    textAlign:'center',
+  },
+  buttonText: {
+    color:'black',
+    fontFamily:'Spartan-Regular',
+    fontSize:12,
+  },
+  weekContainer: {
+    width:'100%',
+    height:'auto',
+    marginTop:'12%',
+    alignSelf:'baseline',
+  },
+  weekHead: {
+    display:'flex',
+    flexDirection:'row',
+    alignSelf:'center',
+    alignItems:'center',
+    width:'90%',
+    justifyContent:'space-between',
+  },
+  weekheadText: {
+    color:'black',
+    fontFamily:'Spartan-Regular',
+    fontSize:16,
+  },
+  weekButton: {
+    width:120,
+    height:'auto',
+    backgroundColor:'#c4c4c4',
+    textAlign:'center',
+    padding:10,
+    borderRadius:10,
     margin:5,
-    borderRadius:30
+  },
+  weekbuttonText: {
+    color:'black',
+    fontFamily:'Spartan-Regular',
+    fontSize:10,
+  },
+  weekStats: {
+    width:'90%',
+    height:'auto',
+    alignSelf:'center',
+    borderTopColor:'black',
+    borderTopWidth:1,
+    display:'flex',
+    flexDirection:'row',
+  },
+  dayBox: {
+    width:'auto',
+    height:'auto',
+    display:'flex',
+    flexDirection:'column',
+    margin:5,
+    textAlign:'center'
   },
   dayText: {
-    fontSize:18,
+    color:'black',
+    letterSpacing:1,
+    fontSize:10,
+    padding:5,
+  },
+  moodText: {
+    fontSize:10,
     fontFamily:'Spartan-Regular',
-    textAlign:'center',
+    letterSpacing:2,
+    color:'black',
+    padding:5,
   }
 });

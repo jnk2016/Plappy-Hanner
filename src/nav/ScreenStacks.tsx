@@ -29,6 +29,9 @@ import PeriodCalendar from '../screens/PeriodCalendar';
 import PeriodLog from '../screens/PeriodLog';
 // Meal Screens
 import Meal from '../screens/Meal';
+import MealRecipes from '../screens/MealRecipes';
+import MealGrocery from '../screens/MealGrocery';
+import MealPlanner from '../screens/MealPlanner';
 // ActivityTracker Screens
 import ActivityTracker from '../screens/ActivityTracker';
 
@@ -160,23 +163,7 @@ function HealthStackScreen(){
       <HealthStack.Navigator screenOptions={{ headerShown: false }}>
           <HealthStack.Screen name = "Health" component={Health}/>
           <HealthStack.Screen name = "Period" component={PeriodStackScreen}/>
-          <HealthStack.Screen name = "Meal" component={Meal}
-                              options={{
-                                title: "MEALS",
-                                headerStyle: {
-                                  borderBottomColor: 'transparent',
-                                  backgroundColor: '#FFFFFF', //Set Header color
-                                  elevation: 0,
-                                },
-                                headerTintColor: '#000000', //Set Header text color
-                                headerTitleStyle: {
-                                  fontWeight: '700', //Set Header text style
-                                  fontFamily: 'Spartan-Regular',
-                                  letterSpacing: 1,
-                                }, headerShown: true,
-                                headerRight: ()=> <ProfilePic/>,
-                              }}
-                              />
+          <HealthStack.Screen name = "Meal" component={MealStackScreen}/>
           <HealthStack.Screen name = "ActivityTracker" component={ActivityTracker}
                               options={{
                                 title: "TODAY",
@@ -195,6 +182,78 @@ function HealthStackScreen(){
                               }}
                               />
       </HealthStack.Navigator>
+  );
+}
+
+const MealStack = createStackNavigator();
+function MealStackScreen(){
+  return(
+      <MealStack.Navigator screenOptions={{ headerShown: false }}>
+          <MealStack.Screen name = "Meal" component={Meal}
+                              options={{
+                                title: "MEALS",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '700', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                  letterSpacing: 1,
+                                }, headerShown: true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
+          <MealStack.Screen name = "MealRecipes" component={MealRecipes}
+                              options={{
+                                title: "MY RECIPES",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '700', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                  letterSpacing: 1,
+                                }, headerShown: true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
+          <MealStack.Screen name = "MealGrocery" component={MealGrocery}
+                              options={{
+                                title: "GROCERY LIST",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '700', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                  letterSpacing: 1,
+                                }, headerShown: true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
+          <MealStack.Screen name = "MealPlanner" component={MealPlanner}
+                              options={{
+                                title: "TODAY",
+                                headerStyle: {
+                                  borderBottomColor: 'transparent',
+                                  backgroundColor: '#FFFFFF', //Set Header color
+                                },
+                                headerTintColor: '#000000', //Set Header text color
+                                headerTitleStyle: {
+                                  fontWeight: '700', //Set Header text style
+                                  fontFamily: 'Spartan',
+                                  letterSpacing: 1,
+                                }, headerShown: true,
+                                headerRight: ()=> <ProfilePic/>,
+                              }}
+                              />
+      </MealStack.Navigator>
   );
 }
 

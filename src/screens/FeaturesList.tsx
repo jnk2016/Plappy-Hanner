@@ -5,28 +5,44 @@ import { Image, StyleSheet, View, Button, TouchableOpacity, Text} from 'react-na
 export default function NewFeaturesList({navigation}){
 
     return(
+        <View style={{backgroundColor: 'white'}}>
             <View style = {styles.bigContainer}>
-                <View style={styles.smallContainer}>
-                    <TouchableOpacity style={styles.selfcareOptionsContainer} onPress={()=>navigation.navigate('SelfCare')}>
-                    {/* <TouchableOpacity style={styles.selfcareOptionsContainer} onPress={()=>console.log("Button Pressed")}> */}
-                        <Text style={styles.optionsText}>SELFCARE</Text>
-                        <Image source={require('../assets/images/Vector.png')}
-                        style={{width: '95%', height: '150%',resizeMode: 'contain', alignSelf: 'center'}}/>
-                 </TouchableOpacity>
-                    <TouchableOpacity style={styles.healthOptionsContainer} onPress={()=>navigation.navigate('Health')}>
-                    {/* <TouchableOpacity style={styles.healthOptionsContainer} onPress={()=>console.log("Button Pressed")}> */}
-                        <Text style={styles.optionsText}>HEALTH  </Text>
-                        <Image source={require('../assets/images/heart.png')}
-                        style={{width: '100%', height: '150%',resizeMode: 'contain', alignSelf: 'center'}}/>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.focusOptionsContainer} onPress={()=>navigation.navigate('Focus')}>
-                    {/* <TouchableOpacity style={styles.focusOptionsContainer} onPress={()=>console.log("Button Pressed")}> */}
-                        <Text style={styles.optionsText}>FOCUS    </Text>
-                        <Image source={require('../assets/images/bx_bx-calendar-star.png')}
-                        style={{width: '100%', height: '150%',resizeMode: 'contain', alignSelf: 'center'}}/>
-                    </TouchableOpacity>
+                    <View style={styles.selfcareContainer}>
+                        <TouchableOpacity style={[styles.optionsContainer,{backgroundColor:'#f1dff4'}]} onPress={()=>navigation.navigate('SelfCare', {screen: 'HabitTracker'})}>
+                            <Text style={styles.optionsText}>HABIT TRACKER</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={[styles.optionsContainer,{backgroundColor:'#fffbdb'}]} onPress={()=>navigation.navigate('SelfCare', {screen: 'Mood'})}>
+                            <Text style={styles.optionsText}>MOOD TRACKER</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={[styles.optionsContainer,{backgroundColor:'#f8f8f8'}]} onPress={()=>navigation.navigate('SelfCare', {screen: 'BrainDump'})}>
+                            <Text style={styles.optionsText}>BRAIN DUMP</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.healthContainer}>
+                        <TouchableOpacity style={[styles.optionsContainer,{backgroundColor:'#e9afaf'}]} onPress={()=>navigation.navigate('Health', {screen: 'Period'})}>
+                            <Text style={styles.optionsText}>PERIOD TRACKER</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={[styles.optionsContainer,{backgroundColor:'#ffecdb'}]} onPress={()=>navigation.navigate('Health', {screen: 'Meal'})}>
+                            <Text style={styles.optionsText}>MEAL PLANNER</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={[styles.optionsContainer,{backgroundColor:'#d7e0f1'}]} onPress={()=>navigation.navigate('Health', {screen: 'ActivityTracker'})}>
+                            <Text style={styles.optionsText}>WATER TRACKER</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.focusContainer}>
+                        <TouchableOpacity style={[styles.optionsContainer,{backgroundColor:'#c4c4c4'}]} onPress={()=>navigation.navigate('Focus', {screen: 'Goal'})}>
+                            <Text style={styles.optionsText}>GOAL PLANNER</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={[styles.optionsContainer,{backgroundColor:'#ffc6c6'}]} onPress={()=>navigation.navigate('Focus', {screen: 'Tasks'})}>
+                            <Text style={styles.optionsText}>TASK MANAGER</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={[styles.optionsContainer,{backgroundColor:'#dcf0e7'}]} onPress={()=>navigation.navigate('Focus', {screen: 'BudgetTracker'})}>
+                            <Text style={styles.optionsText}>BUDGET TRACKER</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
-            </View>
+        </View>
+
     );
 }
 
@@ -38,22 +54,19 @@ const styles = StyleSheet.create({
         // paddingBottom: '10%',
     },
     bigContainer:{
-        alignItems: 'center',
-        justifyContent: 'center',
+        // alignItems: 'center',
+        // justifyContent: 'center',
         backgroundColor: '#ffffff',
-        overflow: 'hidden',
-        paddingVertical: '1%',
+        // overflow: 'hidden',
+        // marginVertical: '10%',
+        // paddingTop: '3%',
         height:'100%',
-        width: '100%',
-        // marginBottom: '2%'
-    },
-    smallContainer:{
-        borderRadius: 8,
-        width: '100%',
-        height: '100%',
-        margin: 10,
-        padding: 5,
-        justifyContent: 'space-evenly',
+        width:'100%',
+        // display:'flex',
+        justifyContent:'space-evenly',
+        alignSelf:'center',
+        flexDirection:'column',
+        padding:'3%',
     },
     heading:{
         fontSize:18,
@@ -64,41 +77,35 @@ const styles = StyleSheet.create({
         marginLeft: 40,
         marginTop: 20,
     },
-    selfcareOptionsContainer:{
-        width:'95%',
-        textAlignVertical: 'center',
-        // marginVertical: '3%',
-        marginHorizontal: '2%',
-        paddingVertical: '20%',
-        borderRadius: 20,
-        flexDirection: 'row',
-        backgroundColor:'#f2e6fc',
+    selfcareContainer: {
+        flexDirection:'row',
+        width:'100%',
+        height:'auto',
+        padding:5,
     },
-    healthOptionsContainer:{
-        width:'95%',
-        textAlignVertical: 'center',
-        // marginVertical: '3%',
-        marginHorizontal: '2%',
-        paddingVertical: '20%',
-        borderRadius: 20,
-        flexDirection: 'row',
-        backgroundColor:'#e3edff',
+    healthContainer: {
+        flexDirection:'row',
+        width:'100%',
+        height:'auto',
+        padding:5,
     },
-    focusOptionsContainer:{
-        width:'95%',
-        textAlignVertical: 'center',
-        // marginVertical: '3%',
-        marginHorizontal: '2%',
-        paddingVertical: '20%',
-        borderRadius: 20,
-        flexDirection: 'row',
-        backgroundColor:'#c4c4c4',
+    focusContainer: {
+        flexDirection:'row',
+        width:'100%',
+        height:'auto',
+        padding:5,
     },
-    optionsText:{
-        marginLeft: '4%',
-        fontSize: 20,
-        fontWeight: '500',
-        fontFamily: 'Spartan-Regular',
-        // paddingRight: '3%'
+    optionsContainer: {
+        width:100,
+        height:100,
+        padding:1,
+        margin:10,
+    },
+    optionsText: {
+        fontWeight:'300',
+        fontFamily:'Spartan-Regular',
+        textAlign:'center',
+        paddingTop:30,
+        letterSpacing:1,
     }
 });

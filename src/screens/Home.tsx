@@ -6,256 +6,302 @@ import XDate from 'xdate';
 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
 export default class Home extends Component {
-
     state = {
-        curTime: null,
+        dayOfWeek: null,
         date: null,
+        year: null,
+        month: null,
     }
 
     componentDidMount(){
         setInterval(() => {
             this.setState({
-              curTime : new XDate().toString('HH:mm'),
-              date: new XDate().toString('dddd,  MMMM d')
+              dayOfWeek : new XDate().toString('dddd'),
+              date: new XDate().toString('d MMM'),
+              year: new XDate().toString('yyyy'),
+              month: new XDate().toString('MMMM'),
             })
           }, 1000)
     }
 
     render() {return(
-    <View style={styles.container}>
-        <TextInput style={{alignSelf: 'center',marginTop: '2%', borderRadius: 20, backgroundColor: '#e5e5e5', width: '80%', fontSize: 12, fontFamily: 'Spartan-Regular', height: '6%'}}
-            inlineImageLeft='search_icon'
-            placeholder='     Search'
-            placeholderTextColor='#c4c4c4'/>
-        <View style={styles.smallcontainer}>
-            <View style={{marginTop: '-10%', marginHorizontal: '5%'}}>
-                <View style={styles.variables}>
-                    <Text style={styles.time}>{this.state.curTime}</Text>
-                    <Text style={styles.day}>{this.state.date}</Text>
-                </View>
-                <Calendar // HOW TO USE CALENDAR https://github.com/wix/react-native-calendars
-                // Collection of dates that have to be marked.
-                // markedDates={{
-                //     '2021-01-02': {textColor: 'red'},
-                //     '2021-01-03': {textColor: 'red'},
-                //     '2021-01-04': {textColor: 'red'},
-                //     '2021-01-05': {textColor: 'red'},
-                //     '2021-01-06': {textColor: 'red', marked: true, dotColor: 'pink'}
-                // }}
-                // // Date marking style [simple/period/multi-dot/custom]. Default = 'simple'
-                // markingType='period'
-                // Month format in calendar title. Formatting values: http://arshaw.com/xdate/#Formatting
-                monthFormat={''}
-                // Disable left arrow. Default = false
-                disableArrowLeft={true}
-                hideArrows={true}
-                // Disable right arrow. Default = false
-                disableArrowRight={true}
-                theme={{
-                    textMonthFontSize: 10,
-                    'stylesheet.calendar.header': {
-                        week: {
-                        marginTop: '-10%',
-                        flexDirection: 'row',
-                        justifyContent: 'space-between',
-                        }
-                    },
-                    textDayHeaderFontSize: 11,
-                }}
-                dayComponent={({date, state}) => {
-                    return (
-                    <View>
-                        <Text style={{textAlign: 'center', marginVertical: '2%', fontSize: 10,fontFamily: 'Spartan-Regular', fontWeight: '600', color: state === 'disabled' ? 'gray' : 'black'}}>
-                        {date.day}
-                        </Text>
+        <View style={styles.container}>
+            <View style={styles.topContainer}>
+                    <View style={styles.headerContainer}>
+                        <View style={styles.dateContainer}>
+                            <Text style={styles.dayYearText}>{this.state.dayOfWeek}</Text>
+                            <Text style={styles.dayMonthText}>{this.state.date}</Text>
+                            <Text style={styles.dayYearText}>{this.state.year}</Text>
+                        </View>
                     </View>
-                    );
-                }}
-                // Do not show days of other months in month page. Default = false
-                hideExtraDays={true}
-                style={{width: '100%', alignSelf: 'center', borderRadius: 25, paddingBottom: '3%', marginHorizontal: '6%', marginVertical: '4%'}}
-                />
-            </View>
-            <View style={styles.sections}>
-                <View style={styles.circleGoal}>
-                    <Text style={styles.insideCircle}>4</Text>
+                    <View style={styles.eventsContainer}>
+                        <View style={styles.eventsCircle}></View>
+                            <View style={styles.listBox}>
+                            <View style={styles.listText}>
+                                <Text style={styles.listUpcoming}>goals</Text>
+                                <Text style={{...styles.listUpcoming, fontSize:18}}>9</Text>
+                            </View>
+                            <View style={[styles.listText,{borderColor:'#ff9797'}]}>
+                                <Text style={styles.listUpcoming}>tasks</Text>
+                                <Text style={{...styles.listUpcoming, fontSize:18}}>6</Text>
+                        </View>
+                            <View style={[styles.listText,{borderColor:'#5d7cb8'}]}>
+                                <Text style={styles.listUpcoming}>events</Text>
+                                <Text style={{...styles.listUpcoming, fontSize:18}}>11</Text>
+                            </View>
+                        </View>
+                    </View>
                 </View>
-                <Text style={styles.subscript}>goals</Text>
-                <View style={styles.circleBirth}>
-                    <Text style={styles.insideCircle}>12</Text>
+            <View style={styles.bottomContainer}>
+                <Text style={styles.bottomHead}>SCHEDULE</Text>
+                <View style={styles.smallContainer}>
+                    <Calendar // HOW TO USE CALENDAR https://github.com/wix/react-native-calendars
+                        // Collection of dates that have to be marked.
+                        // markedDates={{
+                        //     '2021-01-02': {textColor: 'red'},
+                        //     '2021-01-03': {textColor: 'red'},
+                        //     '2021-01-04': {textColor: 'red'},
+                        //     '2021-01-05': {textColor: 'red'},
+                        //     '2021-01-06': {textColor: 'red', marked: true, dotColor: 'pink'}
+                        // }}
+                        // // Date marking style [simple/period/multi-dot/custom]. Default = 'simple'
+                        // markingType='period'
+                        // Month format in calendar title. Formatting values: http://arshaw.com/xdate/#Formatting
+                        monthFormat={''}
+                        // Disable left arrow. Default = false
+                        disableArrowLeft={true}
+                        hideArrows={true}
+                        // Disable right arrow. Default = false
+                        disableArrowRight={true}
+                        theme={{
+                            // textMonthFontSize: 0,
+                            'stylesheet.calendar.header': {
+                                week: {
+                                marginTop: '-5%',
+                                flexDirection: 'row',
+                                justifyContent: 'space-between',
+                                marginHorizontal:'2%'
+                                },
+                                monthText: {
+                                    margin:0,
+                                    // position:'absolute',
+                                    // flexDirection:'column',
+                                    // flex:1,
+                                    // fontSize:12
+                                }
+                            },
+                            textDayHeaderFontSize: 11,
+                            // 'stylesheet.day.basic':{
+                            //     base:{
+                            //         marginTop:'-10%',
+                            //         height:10,
+                            //     }
+                            // },
+                        }}
+                        dayComponent={({date, state}) => {
+                            return (
+                            <View>
+                                <Text style={{textAlign: 'center', marginVertical: '0%', fontSize: 12,fontFamily: 'Spartan-Regular', letterSpacing:1, fontWeight: '500', color: state === 'disabled' ? 'gray' : 'black'}}>
+                                {date.day}
+                                </Text>
+                            </View>
+                            );
+                        }}
+                        // Do not show days of other months in month page. Default = false
+                        hideExtraDays={true}
+                        style={{width: '90%', alignSelf: 'flex-start', paddingBottom: '3%'}}
+                        />
+                    <Text style={styles.monthText}>{this.state.month}</Text>
                 </View>
-                <Text style={styles.subscript}>birthdays</Text>
-                <View style={styles.circleEvent}>
-                    <Text style={styles.insideCircle}>3</Text>
+                    
+                <View style={styles.buttonContainer}>
+                    <TouchableOpacity style={styles.mainButton} onPress={()=> console.log("button pressed")}>
+                        <Text style={styles.buttonText}>WEEK VIEW</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.mainButton} onPress={()=> console.log("button pressed")}>
+                        <Text style={styles.buttonText}>MONTH VIEW</Text>
+                    </TouchableOpacity>
                 </View>
-                <Text style={styles.subscript}>events</Text>
-            </View>
+                </View>
         </View>
-        <View style={{backgroundColor: '#fffbdb'}}>
-        <View style={styles.sched}>
-            <Text style={styles.schedHeader}>Schedule</Text>
-            <View style={styles.options}>
-                <TouchableOpacity style={styles.optionsdailyContainer} onPress={()=>console.log("button pressed")}>
-                    <Text style={styles.optionsText}>   DAILY   </Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.optionsweeklyContainer} onPress={()=>console.log("button pressed")}>
-                    <Text style={styles.optionsText}> WEEKLY </Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.optionsmonthlyContainer} onPress={()=>console.log("button pressed")}>
-                    <Text style={styles.optionsText}>MONTHLY</Text>
-                </TouchableOpacity>
-            </View>
-        </View>
-        </View>
-    </View>
-    );
+        );
   }}
   
   
   
   const styles = StyleSheet.create({
-    sched:{
-        backgroundColor: '#F9F7F7',
-        width:'100%',
-        borderTopLeftRadius: 20,
-        borderTopRightRadius: 20,
-        marginTop: '-5%',
-        height:'100%'
-    },
-    schedHeader:{
-        fontSize: 18,
-        paddingVertical: '4%',
-        marginLeft: '4%',
-        fontFamily: 'AbhayaLibre-Regular',
-        letterSpacing: 1
-    },
-    options:{
-        flexDirection: 'row',
-        alignContent: 'space-between',
-        justifyContent: 'space-evenly'
-    },
-    optionsdailyContainer:{
-        backgroundColor: '#ccded6',
-        borderRadius: 15,
-        paddingHorizontal: '5%',
-        paddingVertical: '10%',
-    },
-    optionsweeklyContainer:{
-        backgroundColor: '#AAD3C0',
-        borderRadius: 15,
-        paddingHorizontal: '5%',
-        paddingVertical: '10%',
-    },
-    optionsmonthlyContainer:{
-        backgroundColor: '#9cc3b0',
-        borderRadius: 15,
-        paddingHorizontal: '5%',
-        paddingVertical: '10%',
-    },
-    optionsText:{
-        fontSize: 15,
-        fontFamily: 'Spartan-Regular'
-    },
-    circleGoal:{
-        borderRadius: 50,
-        backgroundColor: '#FF9797',
-        alignItems: 'center',
-    },
-    circleBirth:{
-        borderRadius: 50,
-        backgroundColor: '#e5e5e5',
-        alignItems: 'center',
-    },
-    circleEvent:{
-        borderRadius: 50,
-        backgroundColor: '#9EB4DF',
-        alignItems: 'center'
-    },
-    insideCircle:{
-        fontSize: 22,
-        // paddingHorizontal: '3%',
-        paddingVertical: '4%',
-        alignSelf: 'center',
-        textAlign: 'center',
-        textAlignVertical: 'center',
-        marginVertical: '1%',
-        fontFamily: 'Spartan-SemiBold'
-    },
-    subscript:{
-        fontSize: 13,
-        fontFamily: 'Spartan-Regular',
-        paddingBottom: 20,
-        textAlign: 'center'
-    },
-    sections:{
-        flexDirection: 'column',
-        marginTop: '5%'
-    },
     container: {
     //   justifyContent:'center',
     //   alignItems: 'center',
         height: '100%',
         backgroundColor: 'white',
     },
-    smallcontainer: {
-        backgroundColor: '#fffbdb',
+    topContainer: {
+        backgroundColor:'#FFFBDB',
         width:'100%',
-        flexDirection: 'row',
-        marginTop: '15%',
-        borderTopLeftRadius: 20,
-        borderTopRightRadius: 20,
-        paddingBottom: '5%'
+        height:'45%',
+        display:'flex',
+        flexDirection:'row',
+        position:'relative',
     },
-    variables: {
-        backgroundColor:'#e5e5e5',
-        width:'90%',
-        borderRadius:10,
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingVertical: '3%',
-        
+    headerContainer: {
+        backgroundColor:'white',
+        width:'35%',
+        height:'90%',
+        textAlign:'center',
+        marginTop:20,
+        marginLeft:30,
+        alignSelf:'flex-start',
+        justifyContent:'center',
+        zIndex:1,
     },
-    time: {
-        fontSize:70,
-        fontFamily:'AbhayaLibre-Regular',
-        textAlign:'left',
+    dateContainer: {
+        display:'flex',
+        flexDirection:'column',
+        width:'auto',
+        // lineHeight:30,
     },
-    day: {
+    dayYearText: {
+        textAlign:'center',
+        // display:'flex',
+        flexDirection:'column',
+        // width:'auto',
+        color:'black',
+        fontFamily:'Spartan-Regular',
+        fontSize:14,
+        letterSpacing:1,
+        // lineHeight:30,
+        textTransform:'uppercase',
+    },
+    dayMonthText: {
+        textAlign:'center',
+        // display:'flex',
+        flexDirection:'column',
+        // width:'auto',
+        color:'black',
+        fontFamily:'Spartan-SemiBold',
+        fontSize:30,
+        letterSpacing:1,
+        // lineHeight:30,
+        textTransform:'uppercase',
+    },
+    eventsContainer: {
+        width:'100%',
+        height:'auto',
+        display:'flex',
+        flexDirection:'row',
+        marginTop:20,
+        position:'relative'
+    },
+    eventsCircle: {
+        width:240,
+        height:240,
+        zIndex:0,
+        position:'absolute',
+        borderRadius:115,
+        borderWidth:3,
+        marginLeft:-130,
+        // marginTop:20,
+        borderColor:'#f9efe0',
+        borderRightColor:'#e5e5e5',
+    },
+    listBox: {
+        display:'flex',
+        flexDirection:'column',
+        width:'50%',
+        height:'100%',
+        marginTop:50,
+        marginLeft:10,
+    },
+    listText: {
+        marginTop:10,
+        width:'100%', 
+        // height:'20%',
+        borderWidth:1,
+        borderColor:'gray',
+        padding:5,
+        flexDirection:'row',
+        justifyContent:'space-between',
+        alignSelf:'center',
+        marginBottom:20,
+        alignItems:'center',
+    },
+    listUpcoming: {
+        alignSelf:'center',
+        color:'black',
+        fontSize:14,
+        textAlign:'center',
+        fontFamily:'Spartan-Regular',
+    },
+    bottomContainer: {
+        backgroundColor: 'rgba(140,150,171,0.6)',
+        width:'100%',
+        height:'60%',
+        flexDirection: 'column',
+        paddingBottom: '5%',
+    },
+    bottomHead: {
+        color:'#383838',
         fontSize:18,
-        fontFamily:'AbhayaLibre-Regular',
+        fontFamily:'Spartan-SemiBold',
+        letterSpacing:1,
+        alignSelf:'flex-start',
+        margin:10,
+        fontWeight:'600'
+    },
+    smallContainer: {
+        // display:'flex',
+        flexDirection:'row',
+        width:'90%',
+        // height:'60%',
+        alignSelf:'center',
+        justifyContent:'center',
+        // marginTop:5,
+        // marginVertical:'5%',
+        backgroundColor:'white',
+    },
+    monthText: {
+        // display:'flex',
+        lineHeight:30,
+        // marginLeft:20,
+        flexDirection:'column',
+        // alignSelf:'flex-end',
+        width:20,
+        // flex:1,
+        // alignContent:'space-between',
+        color:'rgba(56,56,56,0.8)',
+        fontSize:16,
+        fontFamily:'Spartan-SemiBold',
+        textTransform:'uppercase',
+        // justifyContent:'space-between',
+        // width:'auto',
+        // fontWeight:'600',
+        // marginTop:15,
+        textAlignVertical:'center'
     },
     left: {
         marginVertical: '2%',
     },
-    insideGoal: {
-        width:"40%",
-        height:"40%",
-        borderRadius: 100/2,
-        backgroundColor:'#9cc3b0',
+    buttonContainer: {
+        width:'90%',
+        height:'auto',
+        display:'flex',
+        flexDirection:'row',
+        alignSelf:'center',
+        justifyContent:'space-between',
         textAlign:'center',
-        fontSize:20,
-        paddingTop:'2%',
+        marginTop:'2%',
     },
-    insideTask: {
-        width:"40%",
-        height:"40%",
-        borderRadius: 100/2,
-        backgroundColor:'#e4e4e4',
-        textAlign:'center',
-        fontSize:20,
-        paddingTop:'2%',
+    mainButton: {
+        borderWidth:1,
+        borderColor:'black',
+        width:'40%',
+        height:'auto',
+        padding:10,
     },
-    insideEvent: {
-        width:"40%",
-        height:"40%",
-        borderRadius: 100/2,
-        backgroundColor:'#9EB4DF',
-        textAlign:'center',
-        fontSize:20,
-        paddingTop:'2%',
+    buttonText: {
+        color:'black',
+        fontSize:14,
+        fontFamily:'Spartan-Regular',
     },
-    text: {
-      color:'black',
-      fontSize:30,
-    }
   })

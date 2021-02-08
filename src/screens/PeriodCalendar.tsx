@@ -15,6 +15,7 @@ export default function PeriodCalendar ({navigation}) {
               // Enable the option to swipe between months. Default = false
               enableSwipeMonths={true}
               theme={{
+                  arrowColor: '#FF2A20',
                   'stylesheet.calendar.header': {
                     monthText: {
                       fontSize: 15,
@@ -37,7 +38,6 @@ export default function PeriodCalendar ({navigation}) {
                     },
                     arrow: {
                       padding: 10,
-                      backgroundColor: '#FFD2D0',
                       borderRadius: 7,
                     }
                   }
@@ -46,11 +46,11 @@ export default function PeriodCalendar ({navigation}) {
               hideExtraDays={true}
               // Collection of dates that have to be marked.
               markedDates={{
-                '2021-01-02': {textColor: 'red', marked: true, dotColor: 'pink'},
-                '2021-01-03': {textColor: 'red', marked: true, dotColor: 'pink'},
-                '2021-01-04': {textColor: 'red', marked: true, dotColor: 'pink'},
-                '2021-01-05': {textColor: 'red', marked: true, dotColor: 'pink'},
-                '2021-01-06': {textColor: 'red', marked: true, dotColor: 'pink'}
+                '2021-01-02': {textColor: 'red', marked: true, dotColor: '#FF9793'},
+                '2021-01-03': {textColor: 'red', marked: true, dotColor: '#FF9793'},
+                '2021-01-04': {textColor: 'red', marked: true, dotColor: '#FF9793'},
+                '2021-01-05': {textColor: 'red', marked: true, dotColor: '#FF9793'},
+                '2021-01-06': {textColor: 'red', marked: true, dotColor: '#FF9793'}
               }}
               // // Date marking style [simple/period/multi-dot/custom]. Default = 'simple'
               // markingType='period'
