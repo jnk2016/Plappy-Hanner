@@ -1,6 +1,5 @@
 import React, {Component, useState} from 'react';
 import {Button, Image, StyleSheet, TextInput, TouchableHighlight, Text, View, Alert, TouchableOpacity} from 'react-native';
-// import '../assets/css/selfcare.css';
 import Ellipseavatar from '../assets/images/Ellipseavatar.png';
 import Vector from '../assets/images/Vector.png';
 import Heart from '../assets/images/heart.png';
@@ -71,10 +70,10 @@ export default function ActivityTracker ({navigation}) {
             </View>
           </View>
           <View style={styles.buttonContainer}>
-            <TouchableOpacity style={styles.smallButton} onPress={()=> console.log("button pressed")}>
+            <TouchableOpacity style={styles.smallButton} onPress={()=>navigation.navigate('WaterRecord', {screen:'WaterRecord'})}>
                 <Text style={styles.buttonText}>RECORD WATER</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.smallButton} onPress={()=> console.log("button pressed")}>
+            <TouchableOpacity style={styles.smallButton} onPress={()=>navigation.navigate('WaterHistory', {screen:'WaterHistory'})}>
                 <Text style={styles.buttonText}>VIEW HISTORY</Text>
             </TouchableOpacity>
 
