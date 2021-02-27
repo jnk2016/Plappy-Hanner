@@ -40,32 +40,7 @@ export default function Goal ({navigation}) {
                     </TouchableOpacity>
                     </View>
                 </View>
-                <View style={styles.bottomContainer}>
-                    <Text style={styles.mainHead}>upcoming deadlines</Text>
-                    <View style={styles.mainBox}>
-                        <View style={styles.goalNames}>
-                            <Text style={styles.goalDesc}>
-                                <Text>1/20</Text>
-                                <Text>APP PROJECT</Text>
-                            </Text>
-                            <TouchableOpacity style={styles.boxButton}></TouchableOpacity>
-                        </View>
-                        <View style={styles.goalNames}>
-                            <Text style={styles.goalDesc}>
-                                <Text>1/20</Text>
-                                <Text>APP PROJECT</Text>
-                            </Text>
-                            <TouchableOpacity style={styles.boxButton}></TouchableOpacity>
-                        </View>
-                        <View style={styles.goalNames}>
-                            <Text style={styles.goalDesc}>
-                                <Text>1/20</Text>
-                                <Text>APP PROJECT</Text>
-                            </Text>
-                            <TouchableOpacity style={styles.boxButton}></TouchableOpacity>
-                        </View>
-                    </View>
-            </View>
+                
             <View style={{position:'absolute',borderLeftWidth:1,borderLeftColor:'black',width:'80%',height:'100%', marginLeft:100, marginTop:50, zIndex:-1,}}></View>
         </View>
      </View>

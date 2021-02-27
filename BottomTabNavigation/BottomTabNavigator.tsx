@@ -61,7 +61,6 @@ import SelfCareBrainDump from '../screens/SelfCareBrainDump';
 import HabitTracker from '../screens/HabitTracker';
 import HabitWeek from '../screens/HabitWeek';
 import HabitMonth from '../screens/HabitMonth';
-import HabitView from '../screens/HabitView';
 
 //Brain Dump Screens
 import BrainDump from '../screens/BrainDump';
@@ -292,7 +291,7 @@ function PeriodStackScreen(){
                                 title: "PERIOD TRACKER",
                                 headerStyle: {
                                   borderBottomColor: 'transparent',
-                                  backgroundColor: '#FFFFFF', //Set Header color
+                                  backgroundColor: '#dda7a7', //Set Header color
                                 },
                                 headerTintColor: '#000000', //Set Header text color
                                 headerTitleStyle: {
@@ -308,7 +307,7 @@ function PeriodStackScreen(){
                                 title: "LOG SYMPTOMS",
                                 headerStyle: {
                                   borderBottomColor: 'transparent',
-                                  backgroundColor: '#FFFFFF', //Set Header color
+                                  backgroundColor: '#dda7a7', //Set Header color
                                 },
                                 headerTintColor: '#000000', //Set Header text color
                                 headerTitleStyle: {
@@ -324,7 +323,7 @@ function PeriodStackScreen(){
                                 title: "LOG SYMPTOMS",
                                 headerStyle: {
                                   borderBottomColor: 'transparent',
-                                  backgroundColor: '#FFFFFF', //Set Header color
+                                  backgroundColor: '#dda7a7', //Set Header color
                                 },
                                 headerTintColor: '#000000', //Set Header text color
                                 headerTitleStyle: {
@@ -340,7 +339,7 @@ function PeriodStackScreen(){
                                 title: "LOG SYMPTOMS",
                                 headerStyle: {
                                   borderBottomColor: 'transparent',
-                                  backgroundColor: '#FFFFFF', //Set Header color
+                                  backgroundColor: '#dda7a7', //Set Header color
                                 },
                                 headerTintColor: '#000000', //Set Header text color
                                 headerTitleStyle: {
@@ -566,21 +565,6 @@ function HabitTrackerStackScreen(){
             <HabitTrackerStack.Screen name = "HabitMonth" component={HabitMonth}
                               options={{
                                 title: "MONTH STATS",
-                                headerStyle: {
-                                  borderBottomColor: 'transparent',
-                                  backgroundColor: '#FFFFFF', //Set Header color
-                                },
-                                headerTintColor: '#000000', //Set Header text color
-                                headerTitleStyle: {
-                                  fontWeight: '600', //Set Header text style
-                                  fontFamily: 'Spartan',
-                                }, headerShown:true,
-                                headerRight: ()=> <ProfilePic/>,
-                              }}
-                              />
-            <HabitTrackerStack.Screen name = "HabitView" component={HabitView}
-                              options={{
-                                title: "MY HABITS",
                                 headerStyle: {
                                   borderBottomColor: 'transparent',
                                   backgroundColor: '#FFFFFF', //Set Header color

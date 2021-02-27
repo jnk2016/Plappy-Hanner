@@ -6,144 +6,110 @@ import Heart from '../assets/images/heart.png';
 import CalStar from '../assets/images/bx_bx-calendar-star.png';
 import Event from '../assets/images/EVENT.png';
 import { PieChart } from 'react-minimal-pie-chart';
+import Accordion from 'react-native-collapsible/Accordion';
 
+const SECTIONS = [
+  {
+    title:'ONGOING',
+    content: 'Lorem ipsum',
+  },
+  {
+    title: 'COMPLETED',
+    content: 'Lorem ipsum...',
+  },
+];
 
-export default function HabitTracker ({navigation}) {
+class AccordionView extends Component {
+  state = {
+    activeSections: [],
+  };
 
-  return (
+  _renderSectionTitle = section => {
+    return (
+      <View style={styles.content}>
+        <Text>{section.content}</Text>
+      </View>
+    );
+  };
+
+  _renderHeader = section => {
+    return (
+      <View style={styles.header}>
+        <Text style={styles.header}>{section.title}</Text>
+      </View>
+    );
+  };
+
+  _updateSections = activeSections => {
+    this.setState({ activeSections });
+  };
+
+// export default function HabitTracker ({navigation}) {
+
+  render() {
+    return (
     <View style={styles.bigContainer}>
-      <View style={styles.mainContainer}>
-        <View style={styles.leftContainer}>
-          <Text style={{fontSize:20,color:'black',letterSpacing:1,textAlign:'left'}}>TODAY</Text>
-          <View style={styles.leftContent}>
-          <View style={styles.habitOpen}>
-            <View style={styles.habitContainer}>
-              <View style={styles.barContainer}>
-                <View style={styles.habitBar}>
-                  <View style={styles.habitProgress}>
-                    <Text style={styles.habitText}>MOISTURIZE</Text>
-                  </View>
-                </View>
-              </View>
-              <TouchableOpacity style={styles.addButton}onPress={()=> console.log("button pressed")}>
-                <Image
-                source={Event}
-                style={{width:20,height:20}}
-                />
-              </TouchableOpacity>
-            </View>
-            <View style={styles.habitContainer}>
-              <View style={styles.barContainer}>
-                <View style={styles.habitBar}>
-                  <View style={styles.habitProgress}>
-                    <Text style={styles.habitText}>PRAY</Text>
-                  </View>
-                </View>
-              </View>
-              <TouchableOpacity style={styles.addButton}onPress={()=> console.log("button pressed")}>
-                <Image
-                source={Event}
-                style={{width:20,height:20}}
-                />
-              </TouchableOpacity>
-            </View>
-            <View style={styles.habitContainer}>
-              <View style={styles.barContainer}>
-                <View style={styles.habitBar}>
-                  <View style={styles.habitProgress}>
-                    <Text style={[styles.habitText,{paddingTop:5,}]}>TAKE VITAMINS</Text>
-                  </View>
-                </View>
-              </View>
-              <TouchableOpacity style={styles.addButton}onPress={()=> console.log("button pressed")}>
-                <Image
-                source={Event}
-                style={{width:20,height:20}}
-                />
-              </TouchableOpacity>
-            </View>
-            <View style={styles.habitContainer}>
-              <View style={styles.barContainer}>
-              <View style={styles.habitBar}>
-                <View style={styles.habitProgress}>
-                  <Text style={[styles.habitText,{paddingTop:5,}]}>SKIN CARE ROUTINE</Text>
-                </View>
-              </View>
-              </View>
-              <TouchableOpacity style={styles.addButton}onPress={()=> console.log("button pressed")}>
-                <Image
-                source={Event}
-                style={{width:20,height:20}}
-                />
-              </TouchableOpacity>
-            </View>
-          </View>
-          <View style={styles.bottomHabit}>
-            <View style={styles.habitComplete}>
-              <Text style={styles.headText}>COMPLETED</Text>
-              <View style={styles.habitcompleteContainer}>
-                <View style={styles.habitcompleteBar}>
-                    <Text style={styles.habitText}>MAKE BED</Text>
-                  </View>
-                </View>
-              </View>
-            <View style={styles.habitSkipped}>
-              <Text style={styles.headText}>SKIPPED</Text>
-              <View style={styles.habitskippedContainer}>
-                <View style={styles.habitBar}>
-                    <Text style={styles.habitText}>CLEAN ROOM</Text>
-                </View>
-              </View>
-
-          </View>
-          </View>  
-          </View>
-          </View>
-        <View style={styles.rightContainer}>
-          <View style={styles.rightBox}>
-            <View style={styles.rightContent}>
-              <View style={styles.buttonContainer}>
-                <TouchableOpacity style={styles.mainButtons} onPress={()=>navigation.navigate('HabitWeek', {screen:'HabitWeek'})}>
-                  <Text style={styles.buttonText}>VIEW WEEK</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.mainButtons} onPress={()=>navigation.navigate('HabitMonth', {screen:'HabitMonth'})}>
-                  <Text style={styles.buttonText}>VIEW MONTH</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.mainButtons} onPress={()=>navigation.navigate('HabitView', {screen:'HabitView'})}>
-                  <Text style={styles.buttonText}>VIEW HABITS</Text>
-                </TouchableOpacity>
-              </View>
-              <View style={styles.statContainer}>
-                <View style={styles.goalPie}>
-                  <Text style={styles.headText}>HABIT GOAL REACHED:</Text>
-                  <View style={styles.pieContainer}>
-                    <View style={styles.outsidePie}>
-                      <PieChart style={{alignSelf: 'center'}}
-                      data={[
-                      { title: 'One', value: 1, color: 'white' },
-                      {title: 'Two', value: 1, color: '#e8d7f6' },
-                      ]} lineWidth={100} viewBoxSize={[100,100]}
-                      />
-                      <Text style={styles.pieText}>50%</Text>
-                    </View>
-                  </View>
-                </View>
-                <View style={styles.streakContainer}>
-                  <Text style={styles.headText}>CURRENT STREAK:</Text>
-                  <View style={styles.streakCircle}>
-                    <Text style={styles.streakText}>
-                      <Text>DAY</Text>
-                      <Text style={{fontSize:50}}>5</Text>
-                    </Text>
-                  </View>
-                </View>
-              </View>
-            </View> 
-          </View>
+      <View style={styles.smallContainer}>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity style={styles.mainButtons}>
+            <Text style={styles.buttonText}>D</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.mainButtons}>
+            <Text style={styles.buttonText}>W</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.mainButtons}>
+            <Text style={styles.buttonText}>M</Text>
+          </TouchableOpacity>
         </View>
+        <View style={styles.mainContainer}>
+          <View style={styles.headContainer}>
+          <Text style={styles.headerText}>TODAY</Text>
+            <View style={styles.pieContainer}>
+              <View style={styles.smallCircle}></View>
+              <Text style={styles.pieText}>
+                <Text style={{fontSize:48,fontWeight:'600'}}>50%</Text>
+                <Text>goal reached</Text>
+              </Text>
+            </View>
+          </View>
+          <View style={styles.habitContainer}>
+            <Text style={styles.headhabitText}>
+              <Text>CURRENT STREAK</Text>
+              <Text>5 DAYS</Text>
+            </Text>
+            <View style={styles.habitButton}>
+              <Accordion
+              sections={SECTIONS}
+              activeSections={this.state.activeSections}
+              renderSectionTitle={this._renderSectionTitle}
+              renderHeader={this._renderContent}
+              onChange={this._updateSections}
+              />
+              <TouchableOpacity style={[styles.habitOptions,{backgroundColor:'#e8d7f6'}]}>
+                <Text style={styles.habitText}>
+                  <Text>ONGOING</Text>
+                  <Text>4</Text>
+                </Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={[styles.habitOptions,{backgroundColor:'#bfb1cb'}]}>
+                <Text style={styles.habitText}>
+                  <Text>COMPLETED</Text>
+                  <Text>1</Text>
+                </Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={[styles.habitOptions,{backgroundColor:'#9c8ca9'}]}>
+                <Text style={styles.habitText}>
+                  <Text>SKIPPED</Text>
+                  <Text>1</Text>
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
         </View>
       </View>
+    </View>
   );
+    }
 }
 
 const styles = StyleSheet.create ({
@@ -153,230 +119,127 @@ const styles = StyleSheet.create ({
     fontFamily:'spartan',
     backgroundColor:'white',
   },
-  mainContainer: {
-    display:'flex',
-    flexDirection:'row',
+  smallContainer:{
     width:'100%',
-    height:'100%',
-    fontFamily:'spartan',
-  },
-  leftContainer: {
+    height:'90%',
+    alignSelf:'center',
     display:'flex',
     flexDirection:'column',
-    width:'40%',
-    height:'100%',
-    marginLeft:10,
   },
-  leftContent: {
+  buttonContainer:{
+    alignSelf:'flex-end',
+    width:'30%',
+    height:'10%',
+    justifyContent:'space-between',
+    display:'flex',
+    flexDirection:'row',
+    margin:20,
+  },
+  mainButtons:{
+    width:30,
+    height:30,
+    borderRadius:15,
+    borderWidth:3,
+    borderColor:'#b59bc9',
+    justifyContent:'center',
+  },
+  buttonText:{
+    color:'#383838',
+    fontSize:14,
+    fontFamily:'spartan',
+    marginTop:1,
+    fontWeight:'600',
+    alignSelf:"center",
+  },
+  mainContainer:{
     display:'flex',
     flexDirection:'column',
     width:'100%',
     height:'80%',
-    alignSelf:'flex-start',
-    justifyContent:'space-between'
+    alignSelf:'center',
+    justifyContent:"space-between",
+    marginTop:20,
   },
-  habitOpen: {
-    display:'flex',
-    flexDirection:'column',
+  headerText:{
+    fontSize:18,
+    fontFamily:'spartan',
+    color:'black',
+    textAlign:'left',
+    height:'20%',
+    marginBottom:10,
+  },
+  headContainer:{
     width:'90%',
     height:'50%',
-    alignSelf:'flex-start',
-    justifyContent:'space-between',
-    marginTop:10,
-  },
-  habitContainer: {
-    display:'flex',
-    flexDirection:'row',
-    height:'20%',
-    width:'100%',
-    justifyContent:'space-around',
-    alignSelf:'flex-start',
-    alignItems:'center',
-  },
-  barContainer: {
-    display:'flex',
-    flexDirection:'column',
-    width:'85%',
-    height:'auto',
-  },
-  habitBar: {
-    width:135,
-    height:60,
-    borderRadius:10,
-    backgroundColor:'#e5e5e5',
-    textAlign:'left',
-    alignContent:'center',
-  },
-  habitProgress: {
-    width:65,
-    height:60,
-    backgroundColor:'#e8d7f6',
-    borderRadius:10,
-  },
-  habitText: {
-    color:'black',
-    width:'150%',
-    margin:10,
-    paddingTop:10,
-    fontSize:14,
-    letterSpacing:1,
-    textAlign:'left',
-  },
-  addButton: {
-    width:'10%',
-    height:'auto',
-  },
-  bottomHabit: {
-    display:'flex',
-    flexDirection:'column',
-    justifyContent:'space-between',
-    height:'30%',
-    width:'100%',
-    alignSelf:'center'
-  },
-  habitComplete: {
-    width:'100%',
-    height:'15%',
-    display:'flex',
-    flexDirection:'column',
-    alignSelf:'flex-start'
-  },
-  habitcompleteContainer: {
-    display:'flex',
-    flexDirection:'row',
-    height:'20%',
-    width:'100%',
-    alignSelf:'flex-start',
-  },
-  headText: {
-    color:'black',
-    fontSize:16,
-    margin:10,
-    letterSpacing:0.5,
-  },
-  habitcompleteBar: {
-    width:135,
-    height:60,
-    backgroundColor:'#e8d7f6',
-    textAlign:'left',
-    borderRadius:10,
-  },
-  habitSkipped: {
-    width:'100%',
-    height:'15%',
-    display:'flex',
-    flexDirection:'column',
-    alignSelf:'flex-start'
-  },
-  habitskippedContainer: {
-    display:'flex',
-    flexDirection:'row',
-    height:'20%',
-    width:'100%',
-    alignSelf:'flex-start',
-  },
-  rightContainer: {
-    display:'flex',
-    flexDirection:'column',
-    width:'60%',
-    height:'100%',
-    justifyContent:'space-around',
-    alignSelf:'center',
-  },
-  rightBox: {
-    height:'100%',
-    width:'80%',
     alignSelf:'center',
     justifyContent:'space-around',
-    backgroundColor:'#e8d7f6',
-  },
-  rightContent: {
-    display:'flex',
-    flexDirection:'column',
-    width:'100%',
-    height:'100%',
-  },
-  buttonContainer: {
-    display:'flex',
-    flexDirection:'column',
-    height:'20%',
-    width:'100%',
-    justifyContent:'space-between',
-    alignSelf:'center',
-    marginTop:20,
-    marginLeft:50,
-  },
-  mainButtons:{
-    backgroundColor:'#e5e5e5',
-    borderRadius:10,
-    width:130,
-    height:35,
-    textAlign:'center',
-    alignContent:'center',
-    justifyContent:'space-around'
-  },
-  buttonText: {
-    color:'black',
-    fontSize:12,
-    alignSelf:'center',
-  },
-  statContainer: {
-    marginTop:20,
-    display:'flex',
-    flexDirection:'column',
-    width:'100%',
-    height:'70%',
-    justifyContent:'space-between',
-    textAlign:'center',
-    alignSelf:'center',
-  },
-  goalPie: {
-    display:'flex',
-    flexDirection:'column',
-    width:'100%',
-    height:'40%',
-    justifyContent:'space-between',
-    alignContent:'center',
-    alignSelf:'center',
   },
   pieContainer:{
-    alignContent:'center',
-    textAlign:'center',
-    width:'auto',
-    height:'auto',
+    borderTopWidth:5,
+    borderTopColor:'#b59bc9',
+    width:320,
+    height:310,
+    borderRadius:160,
+    alignSelf:"center",
   },
-  outsidePie: {
-    width:150,
-    height:150,
-    borderWidth:3,
-    borderColor:'white',
-    borderRadius:75,
-    alignSelf:'center',
+  smallCircle:{
+    backgroundColor:'#e8d7f6',
+    width:30,
+    height:30,
+    borderRadius:15,
+    marginLeft:150,
+    marginTop:-15,
   },
-  pieText: {
-    color:'#383838',
-    fontSize:48,
-    letterSpacing:1,
-    marginTop:-105,
+  pieText:{
+    display:'flex',
+    flexDirection:'column',
+    color:'#b59bc9',
+    fontSize:18,
+    fontFamily:'spartan',
+    alignSelf:'flex-start',
+    marginLeft:50,
+    marginTop:100,
   },
-  streakContainer: {
+  habitContainer:{
     width:'100%',
     height:'50%',
     display:'flex',
     flexDirection:'column',
-  },
-  streakCircle: {
-    width:150,
-    height:150,
-    backgroundColor:'white',
-    borderRadius:75,
     alignSelf:'center',
   },
-  streakText: {
-    color:'black',
-    fontSize:24,
+  headhabitText:{
+    display:'flex',
+    flexDirection:'row',
+    justifyContent:'space-between',
+    alignSelf:'center',
+    width:'90%',
+    height:'auto',
+    padding:5,
+    fontSize:14,
+    fontFamily:'spartan',
+  },
+  habitButton:{
     display:'flex',
     flexDirection:'column',
-    marginTop:40,
+    alignSelf:'center',
+    width:'100%',
+    height:'100%',
+  },
+  habitOptions:{
+    width:'100%',
+    height:'40%',
+    padding:10,
+    justifyContent:'center',
+  },
+  habitText:{
+    display:'flex',
+    flexDirection:'row',
+    color:'#383838',
+    alignSelf:'center',
+    justifyContent:'space-between',
+    fontSize:14,
+    fontWeight:'600',
+    fontFamily:'spartan',
+    width:'90%',
   },
 });

@@ -4,7 +4,6 @@ import React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
-import './assets/css/home.css';
 import MyTabs from './BottomTabNavigation/BottomTabNavigator';
 
 export default function App({navigation}) {
