@@ -1,27 +1,38 @@
 import React, {Component, useState} from 'react';
-import {Button, Image, StyleSheet, TextInput, TouchableHighlight, TouchableOpacity, Text, View, Alert} from 'react-native';
+import {Button, Image, StyleSheet, TextInput, TouchableHighlight, Flatlist, TouchableOpacity, Text, View, Alert} from 'react-native';
 import Ellipseavatar from '../assets/images/Ellipseavatar.png';
 import Vector from '../assets/images/Vector.png';
 import Heart from '../assets/images/heart.png';
 import CalStar from '../assets/images/bx_bx-calendar-star.png';
 import Event from '../assets/images/EVENT.png';
 import { PieChart } from 'react-minimal-pie-chart';
-import Accordion from 'react-native-collapsible/Accordion';
+import Collapsible from 'react-native-collapsible';
+// import Accordion from 'react-native-collapsible/Accordion';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import Colors from '../constants/Colors';
 
 const SECTIONS = [
   {
     title:'ONGOING',
-    content: 'Lorem ipsum',
+    content: 'MOISTURIZE',
+    
   },
   {
     title: 'COMPLETED',
-    content: 'Lorem ipsum...',
+    content: 'Lorem',
+  },
+  {
+    title: 'SKIPPED',
+    content: 'Lorem',
   },
 ];
 
-class AccordionView extends Component {
-  state = {
-    activeSections: [],
+class HabitTracker extends React.Component<{}, any>{
+  constructor(props) {
+    super(props)
+    this.state = {
+      activeSections:[]
+    };
   };
 
   _renderSectionTitle = section => {
@@ -35,7 +46,15 @@ class AccordionView extends Component {
   _renderHeader = section => {
     return (
       <View style={styles.header}>
-        <Text style={styles.header}>{section.title}</Text>
+        <Text style={styles.headerText}>{section.title}</Text>
+      </View>
+    );
+  };
+
+  _renderContent = section => {
+    return (
+      <View style={styles.content}>
+        <Text>{section.content}</Text>
       </View>
     );
   };
@@ -78,14 +97,7 @@ class AccordionView extends Component {
               <Text>5 DAYS</Text>
             </Text>
             <View style={styles.habitButton}>
-              <Accordion
-              sections={SECTIONS}
-              activeSections={this.state.activeSections}
-              renderSectionTitle={this._renderSectionTitle}
-              renderHeader={this._renderContent}
-              onChange={this._updateSections}
-              />
-              <TouchableOpacity style={[styles.habitOptions,{backgroundColor:'#e8d7f6'}]}>
+            <TouchableOpacity style={[styles.habitOptions,{backgroundColor:'#e8d7f6'}]}>
                 <Text style={styles.habitText}>
                   <Text>ONGOING</Text>
                   <Text>4</Text>
@@ -160,6 +172,9 @@ const styles = StyleSheet.create ({
     justifyContent:"space-between",
     marginTop:20,
   },
+  header:{
+    backgroundColor:'e8d7f6',
+  },
   headerText:{
     fontSize:18,
     fontFamily:'spartan',
@@ -167,6 +182,7 @@ const styles = StyleSheet.create ({
     textAlign:'left',
     height:'20%',
     marginBottom:10,
+    fontWeight:'700',
   },
   headContainer:{
     width:'90%',
@@ -222,8 +238,11 @@ const styles = StyleSheet.create ({
     display:'flex',
     flexDirection:'column',
     alignSelf:'center',
+    backgroundColor:'#e8d7f6',
     width:'100%',
     height:'100%',
+    flex:1,
+    paddingBottom:20,
   },
   habitOptions:{
     width:'100%',
@@ -243,3 +262,5 @@ const styles = StyleSheet.create ({
     width:'90%',
   },
 });
+
+export default HabitTracker
