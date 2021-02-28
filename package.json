@@ -23,7 +23,7 @@
     "@react-navigation/native": "^5.7.3",
     "@react-navigation/stack": "^5.9.0",
     "@trendmicro/react-sidenav": "^0.5.0",
-    "axios": "^0.21.0",
+    "axios": "^0.21.1",
     "expo": "^40.0.0",
     "expo-asset": "~8.1.7",
     "expo-constants": "~9.1.1",
@@ -52,12 +52,13 @@
     "react-native-star-rating": "^1.1.0",
     "react-native-tab-view": "^2.15.2",
     "react-native-vector-icons": "^7.1.0",
-    "react-native-web": "~0.11.7",
+    "react-native-web": "^0.15.0",
     "react-navigation": "^4.4.2",
     "react-navigation-drawer": "^2.5.2",
     "react-navigation-stack": "^2.8.4",
     "react-navigation-tabs": "^2.10.1",
     "react-router-dom": "^5.2.0",
+    "rn-vertical-slider": "^2.0.2",
     "xdate": "^0.8.2"
   },
   "devDependencies": {
