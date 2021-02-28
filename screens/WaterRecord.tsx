@@ -41,21 +41,69 @@ export default class Home extends Component<{},any> {
           </View>
           <View style={styles.mainContainer}>
               <View style={styles.textHead}>
-                <Text style={styles.topText}>
-                <Text style={{letterSpacing:1,}}>DAILY GOAL:</Text>
-                <Text>2500ml</Text>
-                </Text>
+                <Text style={styles.topText}>TOTAL:1200ml</Text>
+                <Text style={styles.headText}>TODAY</Text>
               </View>
               <View style={styles.tableContainer}>
-                <View style={styles.graphCircle}>
-                    <Text style={styles.graphText}>1200ml</Text>
-                </View>
-                <View style={styles.totalGraph}>
-                    <View style={styles.doneGraph}></View>
-                </View>
+                  <View style={styles.tableContent}>
+                      <View style={styles.tableHead}>
+                    <Text style={styles.tableheadText}>
+                        <Text>TIME</Text>
+                        <Text>WATER INTAKE</Text>
+                    </Text>
+                      </View>
+                      <View style={styles.tableBox}>
+                          <View style={styles.timeBox}>
+                              <Text style={styles.timeText}>10:00</Text>
+                          </View>
+                          <View style={styles.waterBox}>
+                              <Text style={styles.waterText}>200ml</Text>
+                          </View>
+                      </View>
+                      <View style={styles.tableBox}>
+                          <View style={styles.timeBox}>
+                              <Text style={styles.timeText}>11:30</Text>
+                          </View>
+                          <View style={styles.waterBox}>
+                              <Text style={styles.waterText}>200ml</Text>
+                          </View>
+                      </View>
+                      <View style={styles.tableBox}>
+                          <View style={styles.timeBox}>
+                              <Text style={styles.timeText}>12:15</Text>
+                          </View>
+                          <View style={styles.waterBox}>
+                              <Text style={styles.waterText}>150ml</Text>
+                          </View>
+                      </View>
+                      <View style={styles.tableBox}>
+                          <View style={styles.timeBox}>
+                              <Text style={styles.timeText}>13:00</Text>
+                          </View>
+                          <View style={styles.waterBox}>
+                              <Text style={styles.waterText}>225ml</Text>
+                          </View>
+                      </View>
+                      <View style={styles.tableBox}>
+                          <View style={styles.timeBox}>
+                              <Text style={styles.timeText}>13:45</Text>
+                          </View>
+                          <View style={styles.waterBox}>
+                              <Text style={styles.waterText}>225ml</Text>
+                          </View>
+                      </View>
+                      <View style={styles.tableBox}>
+                          <View style={styles.timeBox}>
+                              <Text style={styles.timeText}>14:30</Text>
+                          </View>
+                          <View style={styles.waterBox}>
+                              <Text style={styles.waterText}>250ml</Text>
+                          </View>
+                      </View>
+                  </View>
               </View>
               <TouchableOpacity style={styles.mainButton}>
-                  <Text style={styles.buttonText}>RECORD WATER</Text>
+                  <Text style={styles.mainText}>RECORD WATER</Text>
               </TouchableOpacity>
           </View>
       </View>
@@ -100,11 +148,12 @@ const styles = StyleSheet.create ({
         justifyContent:'space-around',
     },
     topText:{
-        textAlign:'center',
+        textAlign:'right',
         color:'white',
-        fontSize:18,
-        fontWeight:'800',
+        fontSize:14,
+        letterSpacing:1,
         fontFamily:'spartan',
+        textDecorationLine:'underline',
     },
     headText:{
         color:'white',
@@ -118,38 +167,72 @@ const styles = StyleSheet.create ({
         width:'90%',
         height:'70%',
         display:'flex',
-        flexDirection:'row',
+        flexDirection:'column',
         alignSelf:"center",
         justifyContent:'space-around',
         alignItems:'center',
     },
-    graphCircle:{
-        width:80,
-        height:80,
-        borderRadius:40,
-        backgroundColor:'#5d7cb8',
+    tableheadText:{
+        color:'white',
+        fontSize:14,
+        letterSpacing:0.5,
+        fontFamily:'spartan',
+        display:'flex',
+        flexDirection:'row',
+        width:'70%',
+        height:'auto',
+        alignSelf:'center',
+        justifyContent:"space-between",
+    },
+    tableContent:{
+        display:'flex',
+        flexDirection:'column',
+        width:'100%',
+        height:'80%',
+        alignSelf:'center',
+    },
+    tableHead:{
+        height:'5%',
+        width:'100%',
+    },
+    tableBox:{
+        borderTopWidth:1,
+        borderBottomWidth:1,
+        borderTopColor:'white',
+        borderBottomColor:'white',
+        width:'100%',
+        height:'15%',
+        display:'flex',
+        flexDirection:'row',
+        alignContent:'center',
+    },
+    timeBox:{
+        borderRightColor:'white',
+        borderRightWidth:1,
+        alignContent:'center',
+        width:'35%',
+        height:'100%',
+        justifyContent:'center',
         textAlign:'center',
     },
-    graphText:{
-        fontWeight:'600',
+    timeText:{
         color:'white',
-        fontFamily:'spartan',
-        alignSelf:'center',
-        paddingTop:30,
+        fontFamily:"spartan",
+        fontSize:12,
+        letterSpacing:0.5,
     },
-    totalGraph:{
-        width:100,
-        height:450,
-        backgroundColor:'white',
-        borderRadius:20,
-        alignSelf:'center',
-        justifyContent:'flex-end',
+    waterBox:{
+        width:'55%',
+        height:'100%',
+        alignContent:'center',
+        textAlign:"center",
+        justifyContent:'center',
     },
-    doneGraph:{
-        backgroundColor:'#5d7cb8',
-        width:100,
-        height:210,
-        borderRadius:20,
+    waterText:{
+        color:'white',
+        fontSize:14,
+        fontWeight:'600',
+        letterSpacing:0.5,
         alignSelf:'center',
     },
     mainButton:{
@@ -161,7 +244,7 @@ const styles = StyleSheet.create ({
         alignSelf:"center",
         borderRadius:10,
     },
-    buttonText:{
+    mainText:{
         color:'black',
         fontSize:12,
         fontFamily:'spartan',
