@@ -40,122 +40,83 @@ export default class Mood extends Component<{},any> {
     render() {return(
       <View style={styles.bigContainer}>
         <View style={styles.smallContainer}>
-          <View style={styles.mainContainer}>
-            <View style={styles.headContainer}>
-              <View style={styles.leftHead}>
-                <Text style={styles.headText}>
-                  <Text style={{fontSize:20,}}>TODAY</Text>
-                  <Text style={{color:'#5d7cb8'}}>I'M FEELING:</Text>
-                </Text>
-              </View>
-              <View style={styles.rightHead}>
-                <TouchableOpacity style={styles.buttonContainer} onPress={()=>this.props.navigation.navigate('MoodShare', {screen:'MoodShare'})}>
-                  <Text style={styles.buttonText}>SHARE MY MOOD</Text>
-                </TouchableOpacity>
-              </View>
-            </View>
-              <View style={styles.topContainer}>
-                <View style={styles.leftTop}>
-                  <View style={styles.dateContainer}>
-                    <Text style={styles.currentDate}>
-                      <Text>{this.state.dayShort}</Text>
-                      <Text style={{fontSize:24,}}>{this.state.dateNumber}</Text>
-                    </Text>
-                  </View>
-                </View>
-                <View style={styles.rightTop}>
-                  <Text style={styles.monthText}>{this.state.currentMonth}</Text>
-                  <Calendar // HOW TO USE CALENDAR https://github.com/wix/react-native-calendars
-                    // Collection of dates that have to be marked.
-                    // markedDates={{
-                    //     '2021-01-02': {textColor: 'red'},
-                    //     '2021-01-03': {textColor: 'red'},
-                    //     '2021-01-04': {textColor: 'red'},
-                    //     '2021-01-05': {textColor: 'red'},
-                    //     '2021-01-06': {textColor: 'red', marked: true, dotColor: 'pink'}
-                    // }}
-                    // // Date marking style [simple/period/multi-dot/custom]. Default = 'simple'
-                    // markingType='period'
-                    // Month format in calendar title. Formatting values: http://arshaw.com/xdate/#Formatting
-                    monthFormat={''}
-                    // Disable left arrow. Default = false
-                    disableArrowLeft={true}
-                    hideArrows={true}
-                    // Disable right arrow. Default = false
-                    disableArrowRight={true}
-                    theme={{
-                        textMonthFontSize: 10,
-                        'stylesheet.calendar.header': {
-                            week: {
-                            marginTop: '-10%',
-                            flexDirection: 'row',
-                            justifyContent: 'space-between',
-                            }
-                        },
-                        textDayHeaderFontSize: 11,
-                    }}
-                    dayComponent={({date, state}) => {
-                        return (
-                        <View>
-                            <Text style={{textAlign: 'center', marginVertical: '2%', fontSize: 8,fontFamily: 'Spartan', letterSpacing:1, fontWeight: '500', color: state === 'disabled' ? 'gray' : 'black'}}>
-                            {date.day}
-                            </Text>
-                        </View>
-                        );
-                    }}
-                    // Do not show days of other months in month page. Default = false
-                    hideExtraDays={true}
-                    style={{width: '100%', alignSelf: 'center', paddingBottom: '3%', marginHorizontal: '6%', marginVertical: '4%'}}
-                    />
-                </View>
-              </View>
-              <View style={styles.bottomContainer}>
-                <View style={styles.bottomBack}>
-                <View style={styles.leftBottom}>
-                  <Image
-                  source={Happy}
-                  style={{width:50,height:50,alignSelf:'center',justifyContent:'space-around'}} 
+          <View style={styles.topContainer}>
+            <Text style={styles.monthText}>{this.state.currentMonth}</Text>
+            <View style={styles.calendarContainer}>
+                <Calendar // HOW TO USE CALENDAR https://github.com/wix/react-native-calendars
+                  // Collection of dates that have to be marked.
+                  // markedDates={{
+                  //     '2021-01-02': {textColor: 'red'},
+                  //     '2021-01-03': {textColor: 'red'},
+                  //     '2021-01-04': {textColor: 'red'},
+                  //     '2021-01-05': {textColor: 'red'},
+                  //     '2021-01-06': {textColor: 'red', marked: true, dotColor: 'pink'}
+                  // }}
+                  // // Date marking style [simple/period/multi-dot/custom]. Default = 'simple'
+                  // markingType='period'
+                  // Month format in calendar title. Formatting values: http://arshaw.com/xdate/#Formatting
+                  monthFormat={''}
+                  // Disable left arrow. Default = false
+                  disableArrowLeft={true}
+                  hideArrows={true}
+                  // Disable right arrow. Default = false
+                  disableArrowRight={true}
+                  theme={{
+                      textMonthFontSize: 10,
+                      'stylesheet.calendar.header': {
+                          week: {
+                          // marginTop: '-10%',
+                          flexDirection: 'row',
+                          justifyContent: 'space-between',
+                          }
+                      },
+                      textDayHeaderFontSize: 14,
+                  }}
+                  dayComponent={({date, state}) => {
+                      return (
+                      <View>
+                          <Text style={{textAlign: 'center', marginVertical: '2%', fontSize: 12,fontFamily: 'Spartan', letterSpacing:1, fontWeight: '500', color: state === 'disabled' ? 'gray' : 'black'}}>
+                          {date.day}
+                          </Text>
+                      </View>
+                      );
+                  }}
+                  // Do not show days of other months in month page. Default = false
+                  hideExtraDays={true}
+                  style={{width: '100%', alignSelf: 'center', paddingBottom: '5%', marginHorizontal: '10%', marginVertical: '4%'}}
                   />
+                  </View>
+          </View>
+              <View style={styles.endContainer}>
+                <Text style={styles.date}>{this.state.date}</Text>
+                <View style={styles.moodBottom}>
+                  <View style={styles.happyContainer}>
+                    <Image
+                    source={Happy}
+                    style={{width:50,height:50,alignSelf:'center',justifyContent:'space-around'}} 
+                    />
+                    <Text style={styles.moodText}>HAPPY</Text>
+                    <Text style={styles.timeText}>11:01 AM</Text>
+                  </View>
+                <View style={styles.sleepyContainer}>
+                    <View style={styles.topSleepy}>
                   <Image
                   source={Sleepy}
                   style={{width:50,height:50,alignSelf:'center',justifyContent:'space-around'}} 
                   />
-                  <Image
-                  source={Happy}
-                  style={{width:50,height:50,alignSelf:'center',justifyContent:'space-around'}} 
-                  />
-                  <Image
-                  source={Satisfied}
-                  style={{width:50,height:50,alignSelf:'center',justifyContent:'space-around'}} 
-                  />
-                </View>
-                  <View style={styles.noteContainer}>
-                    <View style={styles.noteWhite}>
-                      <Text style={styles.noteText}>
-                        <Text style={{fontSize:14,fontWeight:'600'}}>HAPPY</Text>
-                        <Text>11:01 AM</Text>
-                      </Text>
-                    </View>
-                    <View style={styles.noteWhite}>
-                      <Text style={styles.noteText}>
-                        <Text style={{fontSize:14,fontWeight:'600'}}>SLEEPY</Text>
-                        <Text>1:20 PM</Text>
-                      </Text>
-                    </View>
-                    <View style={styles.noteWhite}>
-                      <Text style={styles.noteText}>
-                        <Text style={{fontSize:14,fontWeight:'600'}}>HAPPY</Text>
-                        <Text>2:00 PM</Text>
-                      </Text>
-                    </View>
-                    <View style={styles.noteWhite}>
-                      <Text style={styles.noteText}>
-                        <Text style={{fontSize:14,fontWeight:'600'}}>SATISFIED</Text>
-                        <Text>3:01 PM</Text>
-                      </Text>
-                    </View>
+                  <Text style={styles.moodText}>SLEEPY</Text>
+                  <Text style={styles.timeText}>1:20 PM</Text>
                   </View>
-              </View>
+                  <View style={styles.moodDesc}>
+                    <Text>I am finally free from this project!</Text>
+                    <TouchableOpacity style={styles.editButton}>
+                      <Text style={styles.buttonText}>EDIT</Text>
+                    </TouchableOpacity>
+                    </View>
+                </View>
+                <TouchableOpacity style={styles.mainButton}>
+                  <Text style={styles.buttonText}>SHARE MY MOOD</Text>
+                </TouchableOpacity>
                 </View>
           </View>
         </View>
@@ -165,7 +126,7 @@ export default class Mood extends Component<{},any> {
 
 const styles = StyleSheet.create ({
   bigContainer: {
-    backgroundColor:'white',
+    backgroundColor:'#fffbdb',
     alignContent:'center',
     width:'100%',
     height:'100%',
@@ -175,96 +136,24 @@ const styles = StyleSheet.create ({
     justifyContent:'space-around',
     width:'90%',
     height:'100%',
-    fontFamily:'spartan'
-  },
-  mainContainer: {
-    alignSelf:'center',
-    width:'100%',
-    height:'100%',
-    display:'flex',
-    flexDirection:'column',
-  },
-  headContainer: {
-    display:'flex',
-    flexDirection:'row',
-    width:'100%',
-    height:'10%',
-    alignSelf:'center',
-    justifyContent:'space-between',
-    padding:10,
-    fontFamily:'spartan'
-  },
-  leftHead: {
-    width:'40%',
-    height:'100%',
-  },
-  headText: {
-    display:'flex',
-    flexDirection:'column',
-    width:'100%',
-    height:'100%',
-    color:'black',
-    fontSize:14,
-    lineHeight:20,
-    letterSpacing:1,
-  },
-  rightHead: {
-    width:'50%',
-    height:'100%',
-  },
-  buttonContainer: {
-    width:'80%',
-    height:'auto',
-    padding:10,
-    textAlign:'center',
-    backgroundColor:'#e5e5e5',
-    borderRadius:10,
-    alignSelf:'flex-end'
-  },
-  buttonText: {
-    color:'black',
-    fontSize:10,
-    letterSpacing:0.5
+    fontFamily:'spartan',
+    backgroundColor:'#fffbdb',
   },
   topContainer:{
-    backgroundColor:'#fffbd8',
+    backgroundColor:'#fffbdb',
     width:'100%',
-    height:'30%',
-    display:'flex',
-    flexDirection:'row',
-    alignSelf:'center',
-    justifyContent:'space-between',
-  },
-  rightTop: {
+    height:'40%',
     display:'flex',
     flexDirection:'column',
-    width:'70%',
-    height:'auto',
-    backgroundColor:'#fffbd8',
-    padding:5,
+    alignSelf:'center',
   },
   monthText: {
-    fontSize:18,
+    fontSize:24,
     color:'black',
     letterSpacing:1,
-    textAlign:'right',
+    textAlign:'center',
     margin:5,
     fontFamily:'spartan',
-    textTransform:'lowercase'
-  },
-  leftTop: {
-    width:'20%',
-    height:'60%',
-    alignItems:'flex-end',
-    justifyContent:'flex-start',
-  },
-  dateContainer: {
-    width:'85%',
-    height:'100%',
-    backgroundColor:'#c8d8f9',
-    textAlign:'center',
-    padding:5,
-    justifyContent:'center',
   },
   currentDate: {
     color:'black',
@@ -276,53 +165,16 @@ const styles = StyleSheet.create ({
     lineHeight:40,
     textTransform:'uppercase'
   },
-  bottomContainer: {
-    width:'100%',
-    height:'60%',
-  },
-  leftBottom: {
-    display:'flex',
-    flexDirection:'column',
-    width:'25%',
+  calendarContainer:{
+    backgroundColor:'#fffbdb',
+    width:'auto',
     height:'90%',
-    alignSelf:'center',
-    justifyContent:'space-between',
   },
-  bottomBack: {
-    width:'90%',
-    height:'100%',
-    backgroundColor:'#e5e5e5',
-    alignSelf:'center',
-    justifyContent:'space-between',
-    display:'flex',
-    flexDirection:'row',
-    alignItems:'center',
-  },
-  noteContainer: {
-    display:'flex',
-    flexDirection:'column',
-    width:'80%',
-    height:'90%',
-    alignSelf:'center',
-    justifyContent:'space-between',
-  },
-  noteWhite: {
-    width:'80%',
-    height:'15%',
+  endContainer: {
+    width:'110%',
     backgroundColor:'white',
-    padding:10,
-  },
-  noteText: {
-    display:'flex',
-    flexDirection:'row',
+    height:'60%',
     alignSelf:'center',
-    justifyContent:'space-between',
-    color:'black',
-    fontSize:10,
-    width:'95%',
-    alignItems:'center',
-    letterSpacing:0.5,
-    marginTop:10,
   },
   dateText: {
     display:'flex',
@@ -334,4 +186,92 @@ const styles = StyleSheet.create ({
     letterSpacing:1,
     lineHeight:30,
   },
+  date:{
+    marginTop:30,
+    fontFamily:'spartan',
+    fontWeight:'600',
+    fontSize:16,
+    letterSpacing:1,
+    textAlign:'center',
+    textDecoration:'capitalize',
+  },
+  moodBottom:{
+    marginTop:30,
+    display:'flex',
+    flexDirection:'column',
+    width:'90%',
+    height:'70%',
+    justifyContent:'space-between',
+    alignSelf:'center',
+  },
+  happyContainer:{
+    backgroundColor:'#e5e5e5',
+    width:'90%',
+    height:'auto',
+    padding:10,
+    borderRadius:10,
+    display:'flex',
+    flexDirection:'row',
+    justifyContent:'space-between',
+    alignItems:'center',
+    alignSelf:'center',
+  },
+  moodText:{
+    fontFamily:'spartan',
+    fontSize:14,
+    color:'black',
+  },
+  timeText:{
+    fontSize:12,
+    fontFamily:'spartan',
+    justifySelf:'flex-start',
+    color:'black',
+  },
+  moodDesc:{
+    fontFamily:'spartan',
+    fontSize:12,
+    color:'black',
+    display:'flex',
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent:'space-between',
+  },
+  topSleepy:{
+    display:'flex',
+    flexDirection:'row',
+    justifyContent:'space-between',
+    width:'100%',
+    height:'auto',
+    alignItems:'center',
+  },
+  sleepyContainer:{
+    display:'flex',
+    flexDirection:'column',
+    backgroundColor:'#e5e5e5',
+    justifyContent:'space-between',
+    width:'90%',
+    height:'40%',
+    padding:10,
+    borderRadius:10,
+    alignSelf:'center',
+  },
+  editButton:{
+    backgroundColor:'white',
+    padding:10,
+    textAlign:'center',
+    borderRadius:10,
+  },
+  buttonText:{
+    fontFamily:'spartan',
+    fontSize:10,
+    color:'black',
+    alignSelf:'center',
+  },
+  mainButton:{
+    backgroundColor:'#fffbdb',
+    width:'50%',
+    alignSelf:'center',
+    borderRadius:10,
+    padding:10,
+  }
 })

@@ -6,15 +6,21 @@ import Heart from '../assets/images/heart.png';
 import CalStar from '../assets/images/bx_bx-calendar-star.png';
 import { PieChart } from 'react-minimal-pie-chart';
 import LinearGradient from '../assets/features/LinearGradient';
+import Right from '../assets/images/right_arrow.png';
 
 
 export default function ActivityTracker ({navigation}) {
   return (
     <View style={styles.bigContainer}>
       <View style={styles.smallContainer}>
-        <Text style={styles.headText}>TODAY</Text>
         <View style={styles.headPosition}>
           <View style={styles.waterCircle}>
+            <PieChart style={{alignSelf: 'center'}}
+                data={[
+                  { title: 'One', value: 46, color: '#c8d8f9' },
+                    {title: 'Two', value: 1, color: '#7394d3' },
+                  ]} lineWidth={10} viewBoxSize={[150,150]}
+                  />
               <View style={styles.waterinnerCircle}>
               <PieChart style={{alignSelf: 'center'}}
                 data={[
@@ -27,60 +33,35 @@ export default function ActivityTracker ({navigation}) {
               <Text style={styles.waterText}>48%</Text>
               </View>
           </View>
-        </View>
-        <View style={styles.topText}>
-          <Text style={styles.leftText}>
-            <Text>REMAINING</Text>
-            <Text style={{color:'white',fontWeight:'700', fontSize:16,}}>1300ml</Text>
-          </Text>
-          <Text style={styles.rightText}>
-            <Text>DAILY GOAL</Text>
-            <Text style={{color:'white',fontWeight:'700', fontSize:16,}}>2500ml</Text>
-          </Text>
-        </View>
-        <View style={styles.recordContainer}>
-          <Text style={styles.recordHead}>
-            <Text>TOTAL INTAKE</Text>
-            <Text style={{fontSize:18, fontWeight:'600'}}>1200ml</Text>
-          </Text>
-          <View style={styles.recordInfo}>
-            <View style={styles.recordBorder}>
-              <Text style={styles.recordTime}>10:00</Text>
-              <Text style={styles.recordNumber}>200ml</Text>
-            </View>
-            <View style={styles.recordBorder}>
-              <Text style={styles.recordTime}>11:30</Text>
-              <Text style={styles.recordNumber}>200ml</Text>
-            </View>
-            <View style={styles.recordBorder}>
-              <Text style={styles.recordTime}>12:15</Text>
-              <Text style={styles.recordNumber}>150ml</Text>
-            </View>
-            <View style={styles.recordBorder}>
-              <Text style={styles.recordTime}>13:00</Text>
-              <Text style={styles.recordNumber}>225ml</Text>
-            </View>
-            <View style={styles.recordBorder}>
-              <Text style={styles.recordTime}>13:45</Text>
-              <Text style={styles.recordNumber}>225ml</Text>
-            </View>
-            <View style={styles.recordBorder}>
-              <Text style={styles.recordTime}>14:30</Text>
-              <Text style={styles.recordNumber}>250ml</Text>
-            </View>
+          <View style={styles.statisticText}>
+            <Text style={styles.statText}>
+              <Text style={{fontSize:24, fontWeight:'800'}}>5/8</Text>
+              <Text>cups</Text>
+            </Text>
+            <Text style={styles.statText}>
+              <Text style={{fontSize:24, fontWeight:'800'}}>2500ml</Text>
+              <Text>daily goal</Text>
+            </Text>
           </View>
-          <View style={styles.buttonContainer}>
+        </View>
             <TouchableOpacity style={styles.smallButton} onPress={()=>navigation.navigate('WaterRecord', {screen:'WaterRecord'})}>
                 <Text style={styles.buttonText}>RECORD WATER</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.smallButton} onPress={()=>navigation.navigate('WaterHistory', {screen:'WaterHistory'})}>
-                <Text style={styles.buttonText}>VIEW HISTORY</Text>
-            </TouchableOpacity>
-
-          </View>
-        </View>
+            <View style={{justifyContent:'flex-end'}}>
+            <View style={styles.historyContainer}>
+              <Text style={styles.historyText}>VIEW HISTORY</Text>
+              <TouchableOpacity style={styles.historyButton} onPress={()=>navigation.navigate('WaterHistory', {screen:'WaterHistory'})}>
+                  <Image
+                  source={Right}
+                  style={{width:28, height:28, tintColor:'white'}}
+                  />
+              </TouchableOpacity>
+            </View>
             </View>
           </View>
+        </View>
+          
+
   );
 }
 
@@ -98,7 +79,8 @@ const styles = StyleSheet.create ({
     backgroundColor:'#d7e0f1',
     fontFamily:'spartan',
     display:'flex',
-    flexDirection:'column'
+    flexDirection:'column',
+    justifyContent:'flex-end',
   },
   headText: {
     textAlign:'left',
@@ -117,14 +99,10 @@ const styles = StyleSheet.create ({
   },
   waterCircle: {
     marginTop:10,
-    borderTopWidth:6,
-    borderBottomWidth:6,
-    borderWidth:5,
-    borderTopColor:'rgba(93,124,184,0.3)',
-    borderBottomColor:'rgba(93,124,184,0.3)',
+    borderWidth:6,
     borderColor:'rgba(93,124,184,0.5)',
-    width:250,
-    height:250,
+    width:300,
+    height:300,
     alignSelf:'center',
     alignContent:'center',
     justifyContent:'space-around',
@@ -132,8 +110,8 @@ const styles = StyleSheet.create ({
     textAlign:'center',
   },
   waterinnerCircle: {
-    width:200,
-    height:200,
+    width:250,
+    height:250,
     borderRadius:100,
     alignSelf:'center',
     marginBottom:10,
@@ -244,11 +222,43 @@ const styles = StyleSheet.create ({
     fontSize:10,
     fontFamily:'spartan',
   },
-  buttonContainer: {
+  statisticText:{
+    alignSelf:'center',
+    width:"100%",
+    height:'auto',
+    padding:10,
     display:'flex',
     flexDirection:'row',
-    alignSelf:'center',
     justifyContent:'space-between',
-    width:'95%',
+    marginTop:50,
+  },
+  historyContainer:{
+    marginTop:100,
+    backgroundColor:'#a0b2d4',
+    width:'100%',
+    height:'auto',
+    padding:10,
+    justifyContent:'space-between',
+    alignText:'left',
+    alignItems:'center',
+    display:'flex',
+    flexDirection:'row',
+  },
+  historyText:{
+    color:'white',
+    fontSize:18,
+    fontFamily:'spartan',
+    fontWeight:'600',
+  },
+  historyButton:{
+    color:'white'
+  },
+  statText:{
+    display:'flex',
+    flexDirection:'column',
+    color:'#383838',
+    textAlign:'left',
+    fontFamily:'spartan',
+    fontSize:18,
   }
 });

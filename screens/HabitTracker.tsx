@@ -11,256 +11,172 @@ import Collapsible from 'react-native-collapsible';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Colors from '../constants/Colors';
 
-const SECTIONS = [
-  {
-    title:'ONGOING',
-    content: 'MOISTURIZE',
-    
-  },
-  {
-    title: 'COMPLETED',
-    content: 'Lorem',
-  },
-  {
-    title: 'SKIPPED',
-    content: 'Lorem',
-  },
-];
 
-class HabitTracker extends React.Component<{}, any>{
-  constructor(props) {
-    super(props)
-    this.state = {
-      activeSections:[]
-    };
-  };
-
-  _renderSectionTitle = section => {
-    return (
-      <View style={styles.content}>
-        <Text>{section.content}</Text>
-      </View>
-    );
-  };
-
-  _renderHeader = section => {
-    return (
-      <View style={styles.header}>
-        <Text style={styles.headerText}>{section.title}</Text>
-      </View>
-    );
-  };
-
-  _renderContent = section => {
-    return (
-      <View style={styles.content}>
-        <Text>{section.content}</Text>
-      </View>
-    );
-  };
-
-  _updateSections = activeSections => {
-    this.setState({ activeSections });
-  };
-
-// export default function HabitTracker ({navigation}) {
-
-  render() {
-    return (
-    <View style={styles.bigContainer}>
-      <View style={styles.smallContainer}>
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.mainButtons}>
-            <Text style={styles.buttonText}>D</Text>
+export default function HabitTracker ({navigation}) {
+  
+return(
+      <View style={styles.bigContainer}>
+        <View style={styles.textHead}>
+          <Text style={styles.progressText}>MY PROGRESS</Text>
+          <Text style={styles.completeText}>
+            <Text style={{fontSize:48, fontWeight:'600'}}>5/10</Text>
+            <Text>habits completed</Text>
+          </Text>
+        </View>
+        <View style={styles.habitContainer}>
+          <TouchableOpacity style={styles.habitCircle}>
+            <View style={styles.habitColumn}>
+              <TouchableOpacity style={styles.addHabit}>
+                <Image
+                source={Event}
+                style={{width:30, height:30, tintColor:'#383838'}}
+                />
+              </TouchableOpacity>
+              <Text style={styles.habitName}>MAKE BED</Text>
+              <Text style={styles.habitNumber}>1</Text>
+            </View>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.mainButtons}>
-            <Text style={styles.buttonText}>W</Text>
+          <TouchableOpacity style={styles.habitCircle}>
+            <View style={styles.habitColumn}>
+            <TouchableOpacity style={styles.addHabit}>
+                <Image
+                source={Event}
+                style={{width:30, height:30, tintColor:'#383838'}}
+                />
+              </TouchableOpacity>
+              <Text style={[styles.habitName,{fontSize:10}]}>TAKE VITAMINS</Text>
+              <Text style={styles.habitNumber}>1</Text>
+            </View>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.mainButtons}>
-            <Text style={styles.buttonText}>M</Text>
+          <TouchableOpacity style={styles.habitCircle}>
+            <View style={styles.habitColumn}>
+            <TouchableOpacity style={styles.addHabit}>
+                <Image
+                source={Event}
+                style={{width:30, height:30, tintColor:'#383838'}}
+                />
+              </TouchableOpacity>
+              <Text style={styles.habitName}>PRAY</Text>
+              <Text style={styles.habitNumber}>1</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.habittwoCircle}>
+            <View style={styles.habitColumn}>
+              <TouchableOpacity style={styles.addHabit}>
+                <Image
+                source={Event}
+                style={{width:30, height:30, tintColor:'#383838'}}
+                />
+              </TouchableOpacity>
+              <Text style={styles.habitName}>SKIN CARE</Text>
+              <Text style={styles.habitNumber}>2</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity style={[styles.habitCircle,{backgroundColor:'#b59bc9', borderColor:'#b59bc9'}]}>
+            <View style={styles.habitColumn}>
+            <TouchableOpacity style={styles.addHabit}>
+                <Image
+                source={Event}
+                style={{width:30, height:30, tintColor:'white'}}
+                />
+              </TouchableOpacity>
+              <Text style={[styles.habitName,{fontSize:10, color:'white'}]}>CLEAN ROOM</Text>
+              <Text style={[styles.habitNumber, {color:'white'}]}>1</Text>
+            </View>
           </TouchableOpacity>
         </View>
-        <View style={styles.mainContainer}>
-          <View style={styles.headContainer}>
-          <Text style={styles.headerText}>TODAY</Text>
-            <View style={styles.pieContainer}>
-              <View style={styles.smallCircle}></View>
-              <Text style={styles.pieText}>
-                <Text style={{fontSize:48,fontWeight:'600'}}>50%</Text>
-                <Text>goal reached</Text>
-              </Text>
-            </View>
-          </View>
-          <View style={styles.habitContainer}>
-            <Text style={styles.headhabitText}>
-              <Text>CURRENT STREAK</Text>
-              <Text>5 DAYS</Text>
-            </Text>
-            <View style={styles.habitButton}>
-            <TouchableOpacity style={[styles.habitOptions,{backgroundColor:'#e8d7f6'}]}>
-                <Text style={styles.habitText}>
-                  <Text>ONGOING</Text>
-                  <Text>4</Text>
-                </Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={[styles.habitOptions,{backgroundColor:'#bfb1cb'}]}>
-                <Text style={styles.habitText}>
-                  <Text>COMPLETED</Text>
-                  <Text>1</Text>
-                </Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={[styles.habitOptions,{backgroundColor:'#9c8ca9'}]}>
-                <Text style={styles.habitText}>
-                  <Text>SKIPPED</Text>
-                  <Text>1</Text>
-                </Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </View>
       </View>
-    </View>
-  );
-    }
+ 
+);
 }
 
 const styles = StyleSheet.create ({
-  bigContainer: {
+  bigContainer:{
+    backgroundColor:'#f1dff4',
     width:'100%',
     height:'100%',
-    fontFamily:'spartan',
-    backgroundColor:'white',
-  },
-  smallContainer:{
-    width:'100%',
-    height:'90%',
-    alignSelf:'center',
     display:'flex',
     flexDirection:'column',
+    alignSelf:'center',
+    overflow:'scroll',
+    paddingTop:20,
+    justifyContent:'space-between'
   },
-  buttonContainer:{
-    alignSelf:'flex-end',
-    width:'30%',
-    height:'10%',
-    justifyContent:'space-between',
+  textHead:{
     display:'flex',
     flexDirection:'row',
-    margin:20,
-  },
-  mainButtons:{
-    width:30,
-    height:30,
-    borderRadius:15,
-    borderWidth:3,
-    borderColor:'#b59bc9',
-    justifyContent:'center',
-  },
-  buttonText:{
-    color:'#383838',
-    fontSize:14,
-    fontFamily:'spartan',
-    marginTop:1,
-    fontWeight:'600',
-    alignSelf:"center",
-  },
-  mainContainer:{
-    display:'flex',
-    flexDirection:'column',
-    width:'100%',
-    height:'80%',
-    alignSelf:'center',
-    justifyContent:"space-between",
-    marginTop:20,
-  },
-  header:{
-    backgroundColor:'e8d7f6',
-  },
-  headerText:{
-    fontSize:18,
-    fontFamily:'spartan',
-    color:'black',
-    textAlign:'left',
-    height:'20%',
-    marginBottom:10,
-    fontWeight:'700',
-  },
-  headContainer:{
     width:'90%',
-    height:'50%',
+    height:'5%',
     alignSelf:'center',
-    justifyContent:'space-around',
+    justifyContent:'space-between',
   },
-  pieContainer:{
-    borderTopWidth:5,
-    borderTopColor:'#b59bc9',
-    width:320,
-    height:310,
-    borderRadius:160,
-    alignSelf:"center",
+  progressText:{
+    fontSize:14,
+    color:'#383838',
+    fontWeight:'600',
+    fontFamily:'spartan',
   },
-  smallCircle:{
-    backgroundColor:'#e8d7f6',
-    width:30,
-    height:30,
-    borderRadius:15,
-    marginLeft:150,
-    marginTop:-15,
-  },
-  pieText:{
+  completeText:{
+    fontSize:18,
+    color:'#383838',
+    fontFamily:'spartan',
     display:'flex',
     flexDirection:'column',
-    color:'#b59bc9',
-    fontSize:18,
-    fontFamily:'spartan',
-    alignSelf:'flex-start',
-    marginLeft:50,
-    marginTop:100,
+    width:'60%',
+    textAlign:'right'
   },
   habitContainer:{
-    width:'100%',
-    height:'50%',
+    paddingTop:50,
     display:'flex',
     flexDirection:'column',
     alignSelf:'center',
-  },
-  headhabitText:{
-    display:'flex',
-    flexDirection:'row',
     justifyContent:'space-between',
-    alignSelf:'center',
-    width:'90%',
-    height:'auto',
-    padding:5,
-    fontSize:14,
-    fontFamily:'spartan',
-  },
-  habitButton:{
-    display:'flex',
-    flexDirection:'column',
-    alignSelf:'center',
-    backgroundColor:'#e8d7f6',
-    width:'100%',
+    width:'95%',
     height:'100%',
-    flex:1,
-    paddingBottom:20,
   },
-  habitOptions:{
-    width:'100%',
-    height:'40%',
-    padding:10,
+  habitCircle:{
+    borderWidth:5,
+    borderColor:'white',
+    width:120,
+    height:120,
+    borderRadius:60,
+    alignSelf:'center',
     justifyContent:'center',
   },
-  habitText:{
-    display:'flex',
-    flexDirection:'row',
-    color:'#383838',
+  habittwoCircle:{
+    borderWidth:5,
+    borderLeftColor:'white',
+    borderRightColor:'#b59bc9',
+    borderTopColor:'white',
+    borderBottomColor:'#b59bc9',
+    width:120,
+    height:120,
+    borderRadius:60,
     alignSelf:'center',
-    justifyContent:'space-between',
-    fontSize:14,
-    fontWeight:'600',
-    fontFamily:'spartan',
-    width:'90%',
+    justifyContent:'center',
   },
-});
+  habitColumn:{
+    padding:10,
+    alignSelf:'center',
+    display:'flex',
+    flexDirection:'column',
+    textAlign:'center',
+    justifyContent:'space-between',
+    height:'80%',
+  },
+  addHabit:{
+    alignSelf:'center',
+  },
+  habitName:{
+    fontFamily:'spartan',
+    fontSize:12,
+    color:'#383838',
+  },
+  habitNumber:{
+    fontFamily:'spartan',
+    fontSize:12,
+    color:'#383838',
+    fontWeight:'600',
+  }
 
-export default HabitTracker
+});

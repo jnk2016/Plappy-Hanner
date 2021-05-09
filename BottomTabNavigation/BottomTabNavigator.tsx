@@ -499,7 +499,7 @@ function MoodStackScreen(){
                                 title: "MOODS",
                                 headerStyle: {
                                   borderBottomColor: 'transparent',
-                                  backgroundColor: '#FFFFFF', //Set Header color
+                                  // backgroundColor: '#FFFFFF', //Set Header color
                                 },
                                 headerTintColor: '#000000', //Set Header text color
                                 headerTitleStyle: {
